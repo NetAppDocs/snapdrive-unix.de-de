@@ -1,0 +1,14 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_security.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, security, feature 
+summary: Bevor Sie SnapDrive für UNIX verwenden, müssen Sie seine Sicherheitsfunktionen kennen und lernen, wie Sie darauf zugreifen können. 
+---
+= Sicherheitsfunktionen in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie SnapDrive für UNIX verwenden, müssen Sie seine Sicherheitsfunktionen kennen und lernen, wie Sie darauf zugreifen können.

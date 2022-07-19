@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_snapshot_copy_rename.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rename, snapshot, name, command, storage 
+summary: Sie können den Namen einer Snapshot Kopie mit dem Befehl Snapshot Snap umbenennen. Eine Snapshot Kopie, die sich über mehrere Storage-Systeme oder Storage-System-Volumes hinweg befindet, kann auch umbenannt werden. 
+---
+= Umbenennen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Namen einer Snapshot Kopie mit ändern `snapshot snap rename` Befehl. Eine Snapshot Kopie, die sich über mehrere Storage-Systeme oder Storage-System-Volumes hinweg befindet, kann auch umbenannt werden.

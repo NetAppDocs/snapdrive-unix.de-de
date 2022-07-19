@@ -1,0 +1,14 @@
+---
+permalink: aix/concept_how_to_configure_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, unix, configure 
+summary: Sie können die datei snapdrive.conf bearbeiten, die alle Konfigurationsvariablen und Optionen enthält, die in SnapDrive für UNIX verwendet werden, um Optionen entsprechend Ihren Anforderungen zu aktivieren oder zu deaktivieren. Sie können auch Variablen hinzufügen, um hostspezifische Nutzungen zu erstellen. 
+---
+= SnapDrive für UNIX wird konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die bearbeiten `snapdrive.conf` Datei, die alle in SnapDrive für UNIX verwendeten Konfigurationsvariablen und Optionen enthält, um Optionen entsprechend Ihren Anforderungen zu aktivieren oder zu deaktivieren. Sie können auch Variablen hinzufügen, um hostspezifische Nutzungen zu erstellen.

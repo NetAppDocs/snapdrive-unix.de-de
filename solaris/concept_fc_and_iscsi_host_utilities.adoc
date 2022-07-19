@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_fc_and_iscsi_host_utilities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, install, solaris, host, utility 
+summary: Wenn für Ihre Konfiguration Solaris Host Utilities erforderlich sind, müssen Sie diese installieren und sicherstellen, dass das System ordnungsgemäß eingerichtet ist. 
+---
+= Installieren Von Solaris Host Utilities
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn für Ihre Konfiguration Solaris Host Utilities erforderlich sind, müssen Sie diese installieren und sicherstellen, dass das System ordnungsgemäß eingerichtet ist.
+
+Sie sollten die Dokumentation verwenden, die mit Solaris Host Utilities geliefert wird. Sie enthält Informationen über Volume-Manager, Multipathing und die anderen Funktionen, die Sie vor der Installation von SnapDrive für UNIX einrichten müssen.

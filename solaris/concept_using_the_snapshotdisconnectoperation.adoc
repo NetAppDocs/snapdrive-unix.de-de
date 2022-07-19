@@ -1,0 +1,32 @@
+---
+permalink: solaris/concept_using_the_snapshotdisconnectoperation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, disconnect, operation 
+summary: Verwenden Sie den SnapDrive Snap trennen-Befehl, um eine Snapshot-Kopie über mehrere Storage-Systeme oder Storage-System-Volumes hinweg zu trennen. 
+---
+= Trennen der Verbindung mit dem Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie die `snapdrive snap disconnect` Befehl zum Trennen einer Snapshot Kopie, die sich über mehrere Storage-Systeme oder Storage-System-Volumes hinweg befindet.
+
+Sie verwenden das `snapdrive snap disconnect` Befehl zum Entfernen der Zuordnungen für LUNs, für Speichereinheiten und die zugrunde liegenden LUNs oder für NFS Verzeichnisse in der Snapshot Kopie.
+
+Mit diesem Befehl können Sie Snapshot Kopien trennen, die mehrere Storage-System-Volumes oder mehrere Storage-Systeme umfassen. Storage-Einheiten und Volumes können im selben Storage-System oder in verschiedenen Storage-Systemen residieren.
+
+Mit diesem Befehl können Sie die folgenden Verbindungen trennen:
+
+* LUNs
+* Ein direkt auf einer LUN erstelltes Dateisystem
+* Auf LUNs erstellte Festplattengruppen, Host Volumes und Filesysteme
+* NFS Verzeichnisbäume
+* Auf LUNs erstellte freigegebene Festplattengruppen, Host-Volumes und Filesysteme
+
+
+Durch die Trennung wird die verbundene Snapshot Kopie nicht geändert. Standardmäßig werden jedoch alle temporären LUNs oder Klone gelöscht, die durch den entsprechenden Verbindungsvorgang erstellt wurden.
+
+
+NOTE: Bei LUNs, Dateisystemen auf LUNs und LVM-Einheiten ist dieser Befehl äquivalent zu `snapdrive storage delete`.

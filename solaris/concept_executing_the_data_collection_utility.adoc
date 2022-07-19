@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_executing_the_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: Sie müssen einige Schritte durchführen, um das Dienstprogramm zur Datenerfassung auszuführen. 
+---
+= Ausführen des Dienstprogramms zur Datenerfassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einige Schritte durchführen, um das Dienstprogramm zur Datenerfassung auszuführen.
+
+Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+
+.Schritte
+. Wechseln Sie zum Diagnoseverzeichnis SnapDrive für UNIX. Der Pfad lautet: `install_directory/diag`
++
+`install_directory` Ist das Installationsverzeichnis für SnapDrive für UNIX für Ihr Host-Betriebssystem. Dieses Verzeichnis kann je nach Ihrem Host-Betriebssystem variieren.
+
+. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
++
+`*snapdrive.dc [-d directory] [-n file_name] [-f]*`
+
++
+`-d directory` Gibt den Speicherort für die komprimierte Datei an, die dieses Dienstprogramm erstellt. Der Standardspeicherort ist `/tmp/netapp`.
+
++
+`-n file_name` Gibt einen String an, der im Namen des Verzeichnisses und der komprimierten Ausgabedatei enthalten sein soll. Wenn Sie einen Wert für dieses Argument angeben, wird das angezeigt `snapdrive.dc` Dienstprogramm erstellt ein Verzeichnis namens `ntap_snapdrive_name` Und einen Dateinamen namens `ntap_snapdrive_name.tar.Z` Der Standardpfadname ist `/tmp/netapp/ntap_snapdrive_info.tar.Z`
+
+. Senden Sie die `directory/ntap_snapdrive_name.tar.Z` Datei an den technischen Support von NetApp, um Analysen zu erstellen.
+

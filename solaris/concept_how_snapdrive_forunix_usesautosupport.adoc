@@ -1,0 +1,24 @@
+---
+permalink: solaris/concept_how_snapdrive_forunix_usesautosupport.html 
+sidebar: sidebar 
+keywords: snap, snadrive, unix, autosupport 
+summary: 'AutoSupport-Meldungen werden in der EMS-Protokollansicht des Storage-Systems protokolliert, wenn die Option AutoSupport-aktiviert in der datei snapdrive.conf aktiviert ist. Standardmäßig wird diese Option auf in der datei snapdrive.conf eingestellt. SnapDrive für UNIX sendet AutoSupport-Nachrichten an das Speichersystem, in dem die Nachrichten im Ereignismanagementsystem \(EMS\) angemeldet sind.' 
+---
+= So verwendet SnapDrive für UNIX AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport Meldungen werden in der EMS-Protokollansicht des Speichersystems protokolliert, wenn das `_autosupport-enabled_` Die Option ist auf festgelegt `on` Im `snapdrive.conf` Datei: Standardmäßig ist diese Option auf festgelegt `_on_` Im `snapdrive.conf` Datei: SnapDrive für UNIX sendet AutoSupport-Meldungen an das Speichersystem, in dem die Meldungen im Ereignismanagementsystem (EMS) angemeldet sind.
+
+Eine AutoSupport Meldung wird während eines der folgenden Szenarien gesendet:
+
+* Wenn ein Vorgang aufgrund eines Betriebsausfalls angehalten wird, wird eine AutoSupport-Meldung an das Storage-System gesendet, für das der Vorgang fehlgeschlagen ist.
+* Wenn mehrere Storage-Systeme mit dem Host verbunden sind und der Betriebsfehler in mehr als einem Storage-System auftritt, sendet SnapDrive für UNIX die AutoSupport-Meldung an ein bestimmtes Speichersystem, für das der Vorgang fehlschlägt.
+* Wenn ein neuer Storage-Controller mit hinzugefügt wird `_snapdrive config set <username> <filername>_`, SnapDrive für UNIX sendet eine AutoSupport Meldung an das angegebene Speichersystem.
+* Wenn der SnapDrive-Daemon neu gestartet wird oder gestartet wird, wird die AutoSupport Meldung an das konfigurierte Storage-System gesendet.
+* Wenn der `snapdrive storage show -all` Befehl wird ausgeführt, die AutoSupport Meldung wird an alle konfigurierten Storage-Systeme gesendet.
+* Wenn der Snapshot Vorgang erfolgreich erstellt wird, wird die Meldung AutoSupport an das Storage-System gesendet.
+

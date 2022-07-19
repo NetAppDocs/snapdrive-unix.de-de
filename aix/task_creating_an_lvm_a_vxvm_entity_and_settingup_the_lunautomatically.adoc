@@ -1,0 +1,44 @@
+---
+permalink: aix/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lv, lun, create, automatically 
+summary: Sie können eine Einheit wie z. B. ein Dateisystem, ein logisches Volume oder eine Laufwerksgruppe auf dem Host erstellen und SnapDrive für UNIX automatisch die zugehörige LUN erstellen. 
+---
+= Erstellen einer LVM-Einheit und automatische Einrichtung der LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Einheit wie z. B. ein Dateisystem, ein logisches Volume oder eine Laufwerksgruppe auf dem Host erstellen und SnapDrive für UNIX automatisch die zugehörige LUN erstellen.
+
+* Der `host_lvm_fspec` Mit Argument können Sie festlegen, ob ein Dateisystem, ein logisches Volume oder eine Laufwerksgruppe erstellt werden soll. Dieses Argument hat drei allgemeine Formate. Das von Ihnen verwendete Format hängt von der Einheit ab, die Sie erstellen möchten.
++
+Um ein Dateisystem zu erstellen, verwenden Sie dieses Format: `-fs file_spec [-fstype type] [-fsopts options] [-mntopts options] [-nopersist] [ -hostvol file_spec] [ -dg dg_name]`
+
++
+Um ein logisches oder Host-Volume zu erstellen, verwenden Sie dieses Format:
+
++
+`*[-hostvol file_spec] _file_spec_ [-dg _dg_name_]*`
+
++
+Um eine Datenträger- oder Volume-Gruppe zu erstellen, verwenden Sie dieses Format:
+
++
+`*-dg__dg_name__*`
+
+* Wenn Sie ein Dateisystem erstellen, können Sie auch die Spezifikationen für das Host-Volume, die Spezifikationen für die Festplattengruppe oder beide Spezifikationen zur Angabe des Host-Volume und der Laufwerksgruppe, auf der sich das Dateisystem befindet, einschließen. Wenn Sie diese Spezifikationen nicht angeben, generiert SnapDrive für UNIX automatisch die Namen für das Host Volume und die Laufwerksgruppe oder beide.
+* Wenn Sie ein Host-Volume angeben, erstellt SnapDrive für UNIX ein verkettete Host-Volume. Dies ist das einzige von SnapDrive für UNIX unterstützte Format bei der Erstellung von Host-Volumes. Es ermöglicht Ihnen jedoch, vorhandene Striped-Host-Volumes zu manipulieren.
+
+
+.Schritte
+. Geben Sie an der Befehlszeile den folgenden Befehl ein:
++
+`*snapdrive storage create _host_vxvm_fspec_ -filervol _long_filer_path_ -dgsize size [-igroup _ig_name [ig_name ...]]_ [{ -reserve | -noreserve }]*`
+
++
+SnapDrive für UNIX erstellt die Host-Einheit, die Sie angeben und erstellt LUNs für sie auf dem von Ihnen angegebenen Speichersystem. Er führt alle Aufgaben aus, die mit der Vorbereitung und Erkennung des Hosts für jede der LUNs verbunden sind, sowie die Zuordnung und Verbindung der LUNs zur Host-Einheit.
+
+

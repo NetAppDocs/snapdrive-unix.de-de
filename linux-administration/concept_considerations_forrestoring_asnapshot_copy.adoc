@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_considerations_forrestoring_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: Stellen Sie vor dem Wiederherstellen von Snapshot Kopien sicher, dass Sie das Filesystem nicht verwenden und dass Sie den Wiederherstellungsprozess nicht unterbrechen. 
+---
+= Überlegungen beim Wiederherstellen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Stellen Sie vor dem Wiederherstellen von Snapshot Kopien sicher, dass Sie das Filesystem nicht verwenden und dass Sie den Wiederherstellungsprozess nicht unterbrechen.
+
+Berücksichtigen Sie vor dem Wiederherstellen einer Snapshot Kopie die folgenden wichtigen Informationen:
+
+* Stellen Sie sicher, dass Sie sich nicht in einem Verzeichnis auf einem Dateisystem befinden, das Sie wiederherstellen möchten. Sie können die ausführen `snapdrive snap restore` Befehl von einem beliebigen Verzeichnis außer dem auf einem Dateisystem, in dem Sie die Informationen wiederherstellen möchten.
+* Unterbrechen Sie die Wiederherstellung nicht, indem Sie Strg-C eingeben Dadurch könnte Ihr System nicht nutzbar konfiguriert werden. In diesem Fall müssen Sie sich möglicherweise an den technischen Support von NetApp wenden, um eine Wiederherstellung zu erhalten.
+* Wenn Sie die NFS-Entitäten in ein Volume exportieren, legen Sie die Option Anonyme Benutzer-ID für die auf „`0`“ fest `snapdrive snap restore` Befehl erfolgreich funktionieren.
+

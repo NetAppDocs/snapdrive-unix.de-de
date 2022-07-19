@@ -1,0 +1,43 @@
+---
+permalink: linux-installation-7mode/reference_product_overview.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, product, overview, summary 
+summary: SnapDrive für UNIX ist eine Host-basierte Storage- und Datenmanagement-Lösung für UNIX-Umgebungen. SnapDrive für UNIX vereinfacht das Datenmanagement, verbessert die Datenverfügbarkeit und erhöht die Zuverlässigkeit von Applikationsdaten durch vereinfachte Storage-Bereitstellung und dateibasierte Snapshot-Kopien. 
+---
+= Produktübersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX ist eine Host-basierte Storage- und Datenmanagement-Lösung für UNIX-Umgebungen. SnapDrive für UNIX vereinfacht das Datenmanagement, verbessert die Datenverfügbarkeit und erhöht die Zuverlässigkeit von Applikationsdaten durch vereinfachte Storage-Bereitstellung und dateibasierte Snapshot-Kopien.
+
+Sie können SnapDrive für UNIX als Standalone-Produkt oder zusammen mit anderen SnapManager Produkten, die auf UNIX laufen, verwenden. SnapDrive für UNIX, der zusammen mit SnapManager implementiert wird, ermöglicht Ihnen die Erstellung applikationskonsistenter Daten-Backups.
+
+
+
+== SnapDrive Highlights
+
+Mit SnapDrive für UNIX vereinfachen Sie Storage-Management-Aufgaben. Zu den Aufgaben, die Sie mit SnapDrive für UNIX durchführen können, gehören:
+
+* Erstellen von Snapshot Kopien mit NetApp Snapshot Technologie
++
+Mit SnapDrive für UNIX können Sie Snapshot Kopien von File-Systemen, Volume-Gruppen, Host-Volumes oder LUNs erstellen und löschen sowie Storage-Einheiten aus Snapshot Kopien klonen.
+
+* Storage-Bereitstellung und -Management ohne oder mit geringen Applikations- oder Host-Ausfallzeiten
++
+SnapDrive für UNIX ermöglicht das Erstellen und Löschen von Storage-Komponenten, einschließlich Festplattengruppen, Host Volumes, File-Systeme und LUNs in Host-Cluster-Umgebungen. Mit SnapDrive für UNIX können Sie außerdem Storage erweitern, Storage mit einem Host verbinden und Storage von einem Host trennen.
+
+* Bereitstellung einer rollenbasierten Zugriffssteuerung, mit der Storage-Administratoren die Vorgänge, die SnapDrive Benutzer durchführen können, je nach zugewiesenen Rollen einschränken können.
+
+
+Zusätzlich zu diesen wichtigen Funktionen bietet SnapDrive folgende Vorteile:
+
+* Verbesserter Klon-Split-Vorgang
+* Volume-basiertes SnapRestore (VBSR)
+* Optionen für die Befehlszeilenschnittstelle (CLI)
+* Tool zur Datenerfassung
+* Unterstützung für Umbenennungen des Storage-Systems
+* Unterstützung von Fibre Channel RDM LUNs in Linux Gast-Betriebssystemen
+

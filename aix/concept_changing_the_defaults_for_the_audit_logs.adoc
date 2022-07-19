@@ -1,0 +1,35 @@
+---
+permalink: aix/concept_changing_the_defaults_for_the_audit_logs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, default, change, audit, log 
+summary: Sie können snapdrive.conf-Datei verwenden, um die Protokollierungsparameter der Audit-Log-Dateien zu ändern, wie z. B. die maximale Größe der Audit-Log-Datei und die maximale Anzahl alter Audit-Dateien. 
+---
+= Ändern der Standardeinstellungen für die Prüfprotokolle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie können `snapdrive.conf` Datei zum Ändern der Protokollierungsparameter der Audit-Log-Dateien, z. B. maximale Größe der Audit-Log-Datei und maximale Anzahl alter Audit-Dateien.
+
+Der `snapdrive.conf` Mit Datei können Sie die folgenden Werte für die Audit-Protokollierung festlegen:
+
+* Die maximale Größe der Audit-Log-Datei. Die Standardgröße ist 20K. Nachdem die Dateigröße den im angegebenen Wert erreicht hat `snapdrive.conf` Datei, SnapDrive für UNIX benennt die aktuelle Audit-Log-Datei, indem dem Namen eine beliebige Zahl hinzugefügt wird. Anschließend wird eine neue Audit-Datei unter Verwendung des vom angegebenen Namens gestartet `audit-log-file` Wert:
+* Die maximale Anzahl alter Audit-Dateien, die SnapDrive für UNIX speichert. Der Standardwert ist 2.
+
+
+*Beispiel einer Audit-Log-Datei:*
+
+[listing]
+----
+2501: Begin uid=0 gid=1 15:35:02 03/12/04 snapdrv snap create -dg
+rdg -snapname snap_rdg1
+2501: Status=0 15:35:07 03/12/04
+2562: Begin uid=0 gid=1 15:35:16 03/12/04 snapdrv snap create -dg
+rdg -snapname snap_rdg1
+2562: FAILED Status=4 15:35:19 03/12/04
+----
+Das erste Linienpaar in diesem Beispiel zeigt einen Vorgang, der erfolgreich war, wie in der Zeile „Status=0“ angegeben.
+
+Das zweite Paar von Zeilen weist auf einen fehlgeschlagenen Vorgang hin. Der Rückgabecode von "4" bedeutet "`bereits vorhanden.`" If you look at the two command lines, you can see that the first created a Snapshot copy called `snap_rdg1`. In der zweiten Zeile wurde versucht, das gleiche zu tun, aber der Name ist bereits vorhanden, daher ist der Vorgang fehlgeschlagen.

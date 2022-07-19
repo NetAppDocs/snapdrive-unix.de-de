@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/task_guidelines_fordisplayingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, wildcard, copy 
+summary: Sie können Platzhalter zum Anzeigen der Snapshot Kopien verwenden. Sie können alle Snapshot Kopien, die in einem bestimmten Objekt vorhanden sind, anzeigen. 
+---
+= Richtlinien zum Anzeigen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Platzhalter zum Anzeigen der Snapshot Kopien verwenden. Sie können alle Snapshot Kopien, die in einem bestimmten Objekt vorhanden sind, anzeigen.
+
+Beachten Sie folgende Punkte, bevor Sie mit Snapshot Kopien arbeiten:
+
+* Sie können in Namen von Snapshot Kopien das Platzhalterzeichen (*) verwenden. Bei der Snapshot-Anzeige können Sie mithilfe des Platzhalterzeichens alle Namen von Snapshot Kopien anzeigen, die einem bestimmten Muster entsprechen, oder alle Namen von Snapshot Kopien auf einem bestimmten Volume. Folgende Regeln gelten bei Verwendung von Platzhalterzeichen im Namen von Snapshot Kopien:
++
+** Sie können nur am Ende des Namens einen Platzhalter verwenden. Sie können die Platzhalterzeichen am Anfang oder mitten im Namen einer Snapshot Kopie nicht verwenden.
+** Im Feld „Storage-System“ oder „Storage System-Volume“ können Sie die Platzhalterzeichen für einen Namen für die Snapshot Kopie nicht verwenden.
+
+
+* Mit diesem Befehl können Sie auch alle Snapshot Kopien für bestimmte Objekte auflisten, einschließlich Storage-Systeme und ihrer Volumes, Festplattengruppen, Host-Volume-Gruppen, Filesysteme und Host Volumes. Und logischen Volumes.
+* Wenn Sie A eingeben `snapdrive snap show` Befehl und SnapDrive für UNIX finden keine Snapshot Kopien, es zeigt die Meldung „`no matching Snapshot Kopien`“ an. Wenn Sie in der Befehlszeile Argumente angeben und einige Teile davon nicht vorhanden sind, gibt SnapDrive für UNIX eine Teilliste der Argumente zurück, für die Snapshot Kopien gefunden werden. Außerdem werden die Argumente aufgelistet, die ungültig waren.
+* Wenn der `snapdrive snap create` Befehl wird abrupt abgebrochen, ein unvollständig `.stoc.xml` Die Datei wird im Volume auf dem Storage-System gespeichert. Daher erhalten alle vom Storage-System erstellten geplanten Snapshot Kopien eine Kopie des unvollständigen `.stoc.xml` Datei: Für das `snapdrive snap list` Befehl um erfolgreich zu arbeiten, führen Sie die folgenden Schritte aus:
+
+
+.Schritte
+. Löschen Sie die unvollständige `.stoc.xml` Datei im Volume.
+. Löschen Sie die vom Storage-System erstellten geplanten Snapshot-Kopien, die die unvollständige enthalten `.stoc.xml` Datei:
+

@@ -1,0 +1,29 @@
+---
+permalink: linux-administration/task_tips_for_usingthe_storage_disconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, disconnect, command, lun 
+summary: Wenn Sie auf einigen Betriebssystemen den SnapDrive Storage Disconnect-Befehl verwenden, verlieren Sie Informationen wie die Host-Volume-Namen, den Filesystem-Bereitstellungspunkt, die Namen der Storage-System-Volumes und die Namen der LUNs. Ohne diese Informationen kann eine erneute Verbindung zum Storage zu einem späteren Zeitpunkt hergestellt werden. 
+---
+= Tipps für die Verwendung des Befehls zum Trennen von Speicher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie das verwenden `snapdrive storage disconnect` Mit dem Befehl auf einigen Betriebssystemen verlieren Sie Informationen wie die Namen des Host-Volumes, den Filesystem-Bereitstellungspunkt, die Namen der Storage-System-Volumes und die Namen der LUNs. Ohne diese Informationen kann eine erneute Verbindung zum Storage zu einem späteren Zeitpunkt hergestellt werden.
+
+Um Datenverluste zu vermeiden, sollten Sie zuerst mithilfe von eine Snapshot-Kopie des Storage erstellen `snapdrive snap create` Befehl vor dem Ausführen des `snapdrive storage disconnect` Befehl.
+
+Wenn Sie die Verbindung zum Storage später wiederherstellen möchten, können Sie die folgende Behelfslösung verwenden:
+
+.Schritte
+. Führen Sie den folgenden Befehl aus:
++
+`snapdrive snap restore filespec -snapname long_snap_name`
+
++
+Geben Sie in diesem Befehl den vollständigen Pfad zur Snapshot Kopie ein.
+
+. Entfernen Sie optional die Snapshot Kopie durch Ausführen der `snapdrive snap delete` Befehl.
+

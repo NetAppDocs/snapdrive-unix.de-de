@@ -1,0 +1,38 @@
+---
+permalink: linux-administration/task_deleting_a_snapshotcopy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, delelte, command 
+summary: Sie können den Befehl SnapDrive Snap delete verwenden, um eine Snapshot Kopie zu löschen. 
+---
+= Löschen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive snap delete` Befehl zum Löschen einer Snapshot Kopie.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive snap delete [-snapname] _long_snap_name_ [_snap_name..._] [-verbose] [-force [-noprompt]]*`
+
++
+
+NOTE: Wenn die von Ihnen angegebene Snapshot Kopie verwendet wird, schlägt dieser Vorgang fehl. SnapDrive für UNIX meldet, dass dieser Vorgang nur erfolgreich abgeschlossen wurde, wenn alle Snapshot Kopien entfernt werden.
+
+
+
+SnapDrive für UNIX löscht den vorhandenen Inhalt der LUNs, die Sie in angeben `snap delete` Befehlszeile und ersetzt sie durch den Inhalt der LUNs in der von Ihnen angegebenen Snapshot Kopie.
+
+In diesem Beispiel wird eine Liste mit dem aufgeführt, was gelöscht wird:
+
+[listing]
+----
+# snapdrive snap delete -v filer1:/vol/vol1/snap1 snap2 snap3
+snapdrive: deleting
+filer1:/vol/vol1/snap1
+filer1:/vol/vol1/snap2
+filer1:/vol/vol1/snap3
+----

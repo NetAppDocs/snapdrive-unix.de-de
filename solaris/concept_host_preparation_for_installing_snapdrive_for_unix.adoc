@@ -1,0 +1,14 @@
+---
+permalink: solaris/concept_host_preparation_for_installing_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, install, unix, prepare 
+summary: Sie müssen den Host vorbereiten, bevor Sie SnapDrive für UNIX auf Ihrem System installieren können. Im Rahmen der Hostvorbereitung müssen Sie die Solaris Host Utilities installieren. 
+---
+= Host-Vorbereitung für die Installation von SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den Host vorbereiten, bevor Sie SnapDrive für UNIX auf Ihrem System installieren können. Im Rahmen der Hostvorbereitung müssen Sie die Solaris Host Utilities installieren.

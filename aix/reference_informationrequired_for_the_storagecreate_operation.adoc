@@ -1,0 +1,248 @@
+---
+permalink: aix/reference_informationrequired_for_the_storagecreate_operation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, command, operation, required 
+summary: Sie müssen einige Informationen angeben, wenn Sie den Vorgang zum Erstellen von Speicher abgeschlossen haben. 
+---
+= Für den Speichervorgang erforderliche Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einige Informationen angeben, wenn Sie den Vorgang zum Erstellen von Speicher abgeschlossen haben.
+
+In der folgenden Tabelle sind die Informationen aufgeführt, die Sie bei der Verwendung des angeben müssen `snapdrive storage create` Befehl zum Erstellen von Speicher:
+
+|===
+| Anforderungen | Argument 
+
+
+ a| 
+Legen Sie den Storage-Typ fest, den Sie bereitstellen möchten. Auf Grundlage des Befehls, den Sie eingeben, können Sie eine der folgenden Optionen erstellen:
+
+* LUNs
++
+Wenn Sie eine oder mehrere LUNs erstellen, muss das erste Argument den langen Format des LUN-Namens verwenden, der den Namen des Storage-Systems, den Volume-Namen und den Namen der LUN innerhalb des Volume angibt.
+
++
+Zum Angeben weiterer LUNs können Sie allein den LUN-Namen (Kurzname) verwenden, wenn sich die neue LUN auf demselben Storage-System und Volume wie die vorherige LUN befindet. Andernfalls können Sie einen neuen Storage-Systemnamen und einen neuen Volume-Namen (oder nur einen Volume-Namen) angeben, um die vorherigen Werte zu ersetzen.
+
+* Ein direkt auf einer LUN erstelltes Dateisystem
++
+Wenn Sie ein Dateisystem auf einer LUN erstellen, muss das erste Argument das sein `-fs` Bereitstellungspunkt. Verwenden Sie zum Erstellen des Dateisystems auf einer LUN in einem Storage-System und Volume den `_-filervol_` Geben Sie den Namen des Storage-Systems und des Volume an. Verwenden Sie zum Erstellen des Dateisystems auf einer bestimmten LUN das `_-lun_` Geben Sie den Namen des Storage-Systems, den Volume-Namen und den LUN-Namen an. Sie müssen auch die einschließen `-nolvm` Option zum Erstellen des Dateisystems auf der LUN ohne Aktivierung des Host LVM.
+
++
+Standardmäßig führt SnapDrive für UNIX alle Aufgaben im Zusammenhang mit der Host-Vorbereitung und -Erkennung für die LUN automatisch durch und übernimmt die Zuordnung und Verbindung zu ihr.
+
+* LVM-Festplattengruppen mit Host Volumes und Dateisystemen
++
+Wenn Sie eine Festplatten- oder Volume-Gruppe, ein Dateisystem oder ein Host oder ein logisches Volume angeben, führt SnapDrive für UNIX alle Aktionen durch, die zur Erstellung der angegebenen Einheit erforderlich sind. Sie können entweder die LUNs explizit angeben oder nur das Storage-System und die Volume-Informationen bereitstellen und SnapDrive für UNIX die LUNs automatisch erstellen lassen.
+
++
+Wenn Sie eine Einheit wie ein Dateisystem erstellen, müssen Sie keinen Wert für eine Festplatte oder Volume-Gruppe bereitstellen. SnapDrive für UNIX erstellt automatisch eine.
+
+
+
+
+
+ a| 
+* Eine LUN (-lun)
+
+ a| 
+`*long_lun_name*`
+
+
+
+ a| 
+* Weitere LUNs
+
+ a| 
+`*lun_name*` (Lange oder kurze Form)
+
+
+
+ a| 
+* Festplattengruppe (`-dg *dgname*`) Oder Volume-Gruppe (`-vg *vgname*`)
+
+ a| 
+`*disk*` Oder `*volume group name*`
+
+
+
+ a| 
+SnapDrive für UNIX erstellt eine Festplatten- oder Volume-Gruppe zur Aufbewahrung der LUNs basierend auf dem Wert, den Sie mit dem eingeben `-dg` Option. Der Name, den Sie für die Gruppe angeben, darf nicht vorhanden sein.
+
+
+
+ a| 
+* Host Volume (`-hostvol *file_spec*`) Oder logisches Volumen (`-lvol *file_spec*`)
+
+ a| 
+`*Host*` Oder `*logical volume name*`
+
+
+
+ a| 
+* File-System (`-fs *file_spec*`)
+
+ a| 
+`*filesystem_name*`
+
+
+
+ a| 
+`-nolvm`
+ a| 
+~
+
+
+
+ a| 
+*Erforderlich:* Wenn Sie ein Dateisystem erstellen, das sich direkt auf einer LUN befindet, geben Sie das an `-nolvm` Option.
+
+
+
+ a| 
+* Die LUN-Größe (`-lunsize`)
+
+ a| 
+`*size*`
+
+
+
+ a| 
+* Festplattengruppengröße (`-dgsize`)
+* Volume-Gruppengröße (`-vgsize`)
+
+ a| 
+`*size*`
+
+
+
+ a| 
+Geben Sie die Größe in Byte oder eine andere Dateneinheit für jede erstellte Einheit an. Die Größe der LVM-Einheit hängt von der aggregierten Größe der von Ihnen anfragenden LUNs ab.
+
+Um die Größe der Host-Einheit zu steuern, verwenden Sie die `-dgsize` Option zum Festlegen der Größe in Byte der zugrunde liegenden Festplattengruppe.
+
+
+
+ a| 
+* Pfad zum Storage-System-Volume (`-filervol`)
+
+ a| 
+`*long_filer_path*`
+
+
+
+ a| 
+* `-lun`
+
+ a| 
+`*long_lun_path*`
+
+
+
+ a| 
+Geben Sie das Storage-System und sein Volume an, auf dem SnapDrive für UNIX die LUNs automatisch erstellen soll.
+
+* Verwenden Sie die `-filervol` Option zur Angabe des Storage-Systems und des Volumes, auf dem die LUNs erstellt werden sollen.
++
+Geben Sie die LUN nicht an. SnapDrive für UNIX erstellt die LUN automatisch, wenn Sie diese Form von verwenden `snapdrive storage create` Befehl. Mithilfe von Systemstandards werden die LUN-IDs und die Größe jeder LUN festgelegt. Die Namen der zugehörigen Laufwerk-/Volume-Gruppen werden auf dem Namen des Host-Volume oder des Dateisystems erstellt.
+
+* Verwenden Sie die `-lun` Option, um Namen für die LUNs zu erstellen, die Sie verwenden möchten.
+
+
+
+
+ a| 
+Typ des Filesystems (`-fstype`)
+ a| 
+`*type*`
+
+
+
+ a| 
+Wenn Sie ein Dateisystem erstellen, geben Sie die Zeichenfolge für den Dateityp an.
+
+Für AIX akzeptiert SnapDrive für UNIX: `jfs2` Oder `vxfs`.
+
+
+NOTE: Auf einem AIX-Host wird der Typ des JFS-Dateisystems nicht für Speichervorgänge unterstützt, aber für Snapshot-Vorgänge unterstützt.
+
+
+NOTE: Standardmäßig liefert SnapDrive für UNIX diesen Wert, wenn es nur einen Dateityp für Ihre Host-Plattform gibt. In diesem Fall müssen Sie sie nicht eingeben.
+
+
+
+ a| 
+`-vmtype`
+ a| 
+`*type*`
+
+
+
+ a| 
+*Optional:* gibt den Typ des Volume Managers an, der für SnapDrive für UNIX-Vorgänge verwendet werden soll.
+
+
+
+ a| 
+`-fsopts`
+ a| 
+`*option name and value*`
+
+
+
+ a| 
+`-mntopts`
+ a| 
+`*option name and value*`
+
+
+
+ a| 
+`-nopersist`
+ a| 
+~
+
+
+
+ a| 
+`-reserve | -noreserve`
+ a| 
+~
+
+
+
+ a| 
+*Optional:* Wenn Sie ein Dateisystem erstellen, können Sie folgende Optionen festlegen:
+
+* Nutzung `-fsopts` So legen Sie Optionen fest, die an den Host-Befehl übergeben werden sollen, mit dem die Dateisysteme erstellt werden sollen. Beispielsweise können Sie die Optionen angeben, die der enthalten `mkfs` Der Befehl würde verwenden. Der von Ihnen eingegebene Wert muss in der Regel eine zitierte Zeichenfolge sein und den genauen Text enthalten, der an den Befehl übergeben werden soll.
+* Nutzung `-mntopts` So legen Sie Optionen fest, die an den Befehl Host Mount übergeben werden sollen (z. B. zum Festlegen des Protokollierungsverhaltens des Host-Systems). Die von Ihnen angegebenen Optionen werden in der Host-Dateisystemtabelle gespeichert. Die zulässigen Optionen hängen vom Typ des Host-Dateisystems ab.
++
+Der `-mntopts` Argument ist ein Dateisystem `-type` Option, die mit der angegeben wird `mount` Befehl `-o` Flagge. Nehmen Sie das nicht mit ein `-o` Flagge im `_-mntopts_` Argument: Zum Beispiel die Sequenz `-mntopts tmplog` Übergibt den String `-o tmplog` Bis zum `mount` Befehl, und fügt den Text tmplog auf eine neue Kommandozeile ein.
+
++
+
+NOTE: Wenn Sie eine ungültige übergeben `_-mntopts_` Optionen für Storage- und Snap-Vorgänge. SnapDrive für UNIX validiert diese ungültigen Mount-Optionen nicht.
+
+* Nutzung `-nopersist` So erstellen Sie das Dateisystem, ohne einen Eintrag zur Datei System Mount Table Datei auf dem Host hinzuzufügen. Standardmäßig wird der verwendet `snapdrive storage create` Befehl erstellt persistente Mounts. Wenn Sie eine LVM-Speichereinheit auf einem AIX-Host erstellen, erstellt SnapDrive für UNIX automatisch den Speicher, bindet das Dateisystem ein und legt dann einen Eintrag für das Dateisystem in der Tabelle des Host-Dateisystems ab.
+* Nutzung `-reserve | -noreserve` So erstellen Sie den Speicher mit oder ohne eine Platzreservierung.
+
+
+
+
+ a| 
+* der initiatorgruppenname(`*-igroup*`)
+
+ a| 
+`*ig_name*`
+
+
+
+ a| 
+*Optional:* NetApp empfiehlt, die Standardigroup für Ihren Host zu verwenden, statt einen igroup-Namen zur Verfügung zu stellen.
+
+|===

@@ -1,0 +1,28 @@
+---
+permalink: linux-administration/concept_checks_that_can_be_overridden_by_the_user.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, override, check 
+summary: Bevor Volume-basierte SnapRestore durchgeführt wird, führt SnapDrive für UNIX Prüfungen durch, ob ein Benutzer die Option -Force überschreiben kann. Diese Prüfungen sind erforderlich, sodass Volume-basierte SnapRestore sicher verwendet werden können. 
+---
+= Prüfungen, die vom Benutzer außer Kraft gesetzt werden können
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Volume-basierte SnapRestore durchgeführt wird, führt SnapDrive für UNIX einige Überprüfungen durch, die ein Benutzer mit überschreiben kann `-force` Option. Diese Prüfungen sind erforderlich, sodass Volume-basierte SnapRestore sicher verwendet werden können.
+
+Es wird empfohlen, die verschiedenen Überprüfungen des Systems zu befolgen, diese Prüfungen können jedoch mit der überschrieben werden `-force` Option.
+
+Sie können den folgenden SnapDrive für UNIX für Volume-basierte SnapRestore-Prüfungen außer Kraft setzen:
+
+* SnapDrive für UNIX überprüft in der Snapshot Kopie auf LUNs, die nicht absturzkonsistent sind. Wenn in der Snapshot Kopie eine inkonsistentes LUN einer Applikation findet, werden Sie vor ihr gewarnt.
+* SnapDrive für UNIX prüft, ob es im aktiven Volume zusätzliche LUNs gibt, die nach Erstellung der Snapshot Kopie erstellt wurden. Wenn SnapDrive für UNIX zusätzliche LUNs findet, werden Sie darauf hingewiesen, dass diese zusätzlichen LUNs im aktiven Volume verloren gehen.
+* SnapDrive für UNIX überprüft auf neue Snapshot Kopien. Diese neuen Snapshot Kopien werden nicht wiederhergestellt und gehen verloren.
+* SnapDrive für UNIX überprüft auf normale Dateien (vom lokalen Host aus sichtbare Dateien) in einem Volume.
+* SnapDrive für UNIX überprüft NFS-Exporte.
+* SnapDrive für UNIX überprüft CIFS-Freigaben.
+
+
+Wenn Snapshot Kopien mit SnapDrive 3.0 für UNIX oder eine frühere Version erstellt wurden, kann die Vorschau auf Volume-basierte SnapRestore nicht die ersten beiden Prüfungen in der zuvor genannten Liste durchführen. Wenn Sie angegeben haben `-force` Option und dann während der Ausführung von Volume-basierten SnapRestore wird eine Eingabeaufforderung angezeigt, um die Prüfungen zu überfahren und fortzufahren.

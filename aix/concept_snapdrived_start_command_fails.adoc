@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_snapdrived_start_command_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, start, command, fail 
+summary: In manchen Bedingungen schlägt der Befehl snapdrived Start möglicherweise fehl. Es gibt einige Schritte zur Fehlerbehebung. 
+---
+= Der Befehl zum Starten des Snapshots schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unter bestimmten Bedingungen `snapdrived start` Befehl schlägt möglicherweise fehl. Es gibt einige Schritte zur Fehlerbehebung.
+
+* Überprüfen Sie, ob der Daemon-Port in angegeben wurde `snapdrive.conf` Die Datei wird bereits von einer anderen Anwendung verwendet.
+* Überprüfen Sie, ob eine frühere Instanz des Daemon ordnungsgemäß angehalten wurde.
+* Prüfen Sie, ob das systemweite Semaphore-Limit erreicht wird, in diesem Fall funktioniert der Daemon-Start nicht.
+* Überprüfen Sie, ob einer der Dienste wie iSCSI, VxVM nicht auf dem Rechner läuft.
+* Wenn HTTPS auf festgelegt ist `on`, Überprüfen Sie, ob selbstsigniertes Zertifikat im angegebenen Verzeichnis installiert ist.
+

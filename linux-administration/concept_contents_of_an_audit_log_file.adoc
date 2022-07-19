@@ -1,0 +1,56 @@
+---
+permalink: linux-administration/concept_contents_of_an_audit_log_file.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, audit, log, file 
+summary: Das Prüfprotokoll zeigt Informationen zu Befehlen, die Sie mit SnapDrive für UNIX ausgeführt haben. 
+---
+= Inhalt einer Audit-Log-Datei
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Prüfprotokoll zeigt Informationen zu Befehlen, die Sie mit SnapDrive für UNIX ausgeführt haben.
+
+Die Audit-Log-Datei enthält den Verlauf der folgenden Informationen:
+
+* Die Befehle wurden ausgegeben.
+* Der Rückgabewert dieser Befehle.
+* Die Benutzer-ID des Benutzers, der den Befehl aufgerufen hat.
+* Ein Zeitstempel, der angibt, wann der Befehl gestartet wurde (ohne Rückgabecode) und einen anderen Zeitstempel, der angibt, wann der Befehl beendet wurde (mit einem Rückgabecode). Der Prüfprotokolldatensatz zeigt nur Informationen zu `snapdrive` Verwenden (ausgegebene Befehle).
+
+
+Eine Audit-Log-Datei enthält die folgenden Informationen:
+
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+uid
+ a| 
+Benutzer-ID
+
+
+
+ a| 
+gid
+ a| 
+Gruppen-ID
+
+
+
+ a| 
+MsgText
+ a| 
+Nachrichtentext
+
+
+
+ a| 
+ReturnCode
+ a| 
+Geben Sie Code von einem Befehl zurück
+
+|===

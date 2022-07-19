@@ -1,0 +1,14 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration 
+summary: Sie müssen die Konfigurationsoptionen für SnapDrive für UNIX kennen und verstehen, wie SnapDrive für UNIX verwendet werden kann. 
+---
+= Konfiguration von SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Konfigurationsoptionen für SnapDrive für UNIX kennen und verstehen, wie SnapDrive für UNIX verwendet werden kann.

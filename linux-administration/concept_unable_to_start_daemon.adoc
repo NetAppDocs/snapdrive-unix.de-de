@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_unable_to_start_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restart, daemon, host, storage, communicate, start 
+summary: Der Daemon kann nicht gestartet werden, wenn der Host nicht mit einem konfigurierten Speichersystem kommunizieren kann. 
+---
+= Der Daemon kann nicht neu gestartet werden, wenn der Host nicht mit dem Speichersystem kommunizieren kann
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Daemon kann nicht gestartet werden, wenn der Host nicht mit einem konfigurierten Speichersystem kommunizieren kann.
+
+Wenn Sie während dieser Bedingung versuchen, den Daemon neu zu starten, wird der Daemon nicht gestartet und die folgende Fehlermeldung angezeigt.
+
+[listing]
+----
+Unable to start daemon...check daemon log file for more details
+----
+In erster Linie müssen Sie sicherstellen, dass der Host mit dem Speichersystem kommuniziert, indem Sie den Ping-Befehl an das Speichersystem ausführen. Wenn der Host immer noch nicht mit dem Speichersystem kommunizieren kann, versuchen Sie, die folgenden Optionen zu verwenden:
+
+* Löschen Sie das Speichersystem, das nicht mit dem Host kommuniziert, und versuchen Sie dann, den Daemon neu zu starten.
+* In diesem Fall möchten Sie das Speichersystem nicht löschen, das für den Host konfiguriert ist, und deaktivieren Sie dann die Option `_autosupport-enabled_` Bis `_off_` Im `snapdrive.conf` Datei zum Unterdrücken der Fehlermeldung.
+

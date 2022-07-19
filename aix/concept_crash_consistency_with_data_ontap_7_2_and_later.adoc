@@ -1,0 +1,28 @@
+---
+permalink: aix/concept_crash_consistency_with_data_ontap_7_2_and_later.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, crash, consistency, data, ontap 
+summary: SnapDrive für UNIX verwendet die Unterstützung von Konsistenzgruppen, die von Data ONTAP 7.2 und höher bereitgestellt werden, sodass alle Snapshot Kopien, die sich über mehrere Volumes erstrecken, absturzkonsistent sind. 
+---
+= Crash-Konsistenz mit Data ONTAP 7.2 und höher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX verwendet die Unterstützung von Konsistenzgruppen, die von Data ONTAP 7.2 und höher bereitgestellt werden, sodass alle Snapshot Kopien, die sich über mehrere Volumes erstrecken, absturzkonsistent sind.
+
+Data ONTAP Version 7.2 und höher unterstützt Konsistenzgruppen und Fechten des Storage-Systems. SnapDrive für UNIX verwendet diese Funktionen, um sicherzustellen, dass alle Snapshot Kopien, die über mehrere Volumes verteilen, absturzkonsistent sind.
+
+Um eine absturzkonsistente Snapshot Kopie über mehrere Volumes hinweg zu erstellen, führt SnapDrive für UNIX folgende Aktionen aus:
+
+* Zäune (friert) I/O an jedes Volume, das eine Speichereinheit enthält.
+* Erstellt eine Snapshot Kopie jedes Volumes.
+
+
+Die Zeit, die zur Einzäunung des Volume und zur Erstellung der Snapshot Kopie benötigt wird, ist begrenzt und wird von Data ONTAP gesteuert.
+
+Der `*snapcreate-cg-timeout*` Parameter in `snapdrive.conf` Datei gibt den Zeitraum innerhalb von Data ONTAP-Einschränkungen an, den Sie beim Fechten des Speichersystems zulassen möchten. Sie können ein Intervall angeben, das dringend, mittel oder entspannt ist. Wenn das Storage-System mehr Zeit benötigt, als zum Abschließen des Fechten benötigt wird, erstellt SnapDrive für UNIX die Snapshot Kopie unter Verwendung der Konsistenzmethode für frühere Data ONTAP 7.2 Versionen. Sie können diese Methode auch mithilfe von angeben `-nofilerfence` Option, wenn Sie die Snapshot Kopie erstellen.
+
+Wenn Sie eine Snapshot Kopie für eine Storage-Einheit anfordern, die Storage-Systeme mit sowohl Data ONTAP 7.2 als auch mit früheren Data ONTAP Versionen umfasst, erstellt SnapDrive für UNIX mit der Konsistenzmethode für Data ONTAP Versionen vor 7.2 auch die Snapshot Kopie.

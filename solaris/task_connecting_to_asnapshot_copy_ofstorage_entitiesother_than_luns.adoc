@@ -1,0 +1,147 @@
+---
+permalink: solaris/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, lun, storage, entities 
+summary: Sie können den befehl SnapDrive Snap connect zum Verbinden mit einer Snapshot Kopie verwenden, die andere Speichereinheiten als LUNs enthält. Dieser Befehl kann nicht verwendet werden, wenn sich aktuell Zielnamen in Ihrem Namen befinden oder ein Dateisystemname als Bereitstellungspunkt verwendet wird. 
+---
+= Verbindung mit einer Snapshot Kopie von anderen Storage-Einheiten als LUNs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive snap connect` Befehl zum Verbinden mit einer Snapshot Kopie, die andere Storage-Einheiten als LUNs enthält. Dieser Befehl kann nicht verwendet werden, wenn sich aktuell Zielnamen in Ihrem Namen befinden oder ein Dateisystemname als Bereitstellungspunkt verwendet wird.
+
+Wenn Sie eine Verbindung von einem nicht-ursprünglichen Host zu einer Snapshot Kopie herstellen, die das VxFS-Dateisystem enthält, das mit dem Standard-Mount gemountet ist `qio` Option, Sie sollten die Veritas Lizenz für Veritas File Device Driver (VxFDD) installiert haben.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive snap connect -snapname fspec_set [_fspec_set..._] -snapname _long_snap_name_ [-igroup _ig_name_ [_ig_name..._]] [-autoexpand] [-autorename] [-nopersist] [{-reserve | -noreserve}] [-readonly] [-split]*`
+
++
+In der vorhergehenden Verwendung, `_fspec_set_` Weist das folgende Format auf:
+
++
+`*{-dg | -fs | -hostvol} _src_file_spec_ [dest_file_spec] [{-destdg | -destvg} _dgname_] [{-destlv | -desthv} lvname]*`
+
++
+Dieser Befehl muss immer mit dem Namen der Speichereinheit beginnen, die Sie verbinden möchten (z. B. `-dg`, `-hostvol`, Oder `-fs`). Wenn Sie einen NFS-Bereitstellungspunkt angeben, können Sie keine nicht-NFS-Einheiten angeben (`-vg`, `-dg`, `-fs`, `-lvol` Oder `-hostvol`) Auf der gleichen Kommandozeile.
+
+
+
+SnapDrive für UNIX klont die von Ihnen angegebenen LUNs und verbindet sie mit einem neuen Speicherort.
+
+Die folgende Befehlszeile verbindet eine Laufwerksgruppe und verwendet die Standardnamen als Zielnamen (d. h. sie wird aus den Quellnamen erstellt):
+
+[listing]
+----
+# snapdrive snap connect -vg vg1 -snapname
+filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1
+----
+Mit der folgenden Befehlszeile wird eine Laufwerksgruppe mit einem einzelnen Host-Volume verbunden. Sie gibt außerdem einen Namen für das Ziel-Host-Volume und die Laufwerksgruppe an:
+
+[listing]
+----
+# snapdrive snap connect -lvol vg1/vol1 vg1copy/vol1copy -snapname
+filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1copy
+----
+Mit der folgenden Befehlszeile wird eine Laufwerksgruppe mit zwei LUNs und zwei Dateisystemen verbunden. Sie gibt für jedes Dateisystem einen Zielnamen, das Host-Volume für eines der Dateisysteme und die Datenträgergruppen für beide Dateisysteme an:
+
+[listing]
+----
+# snapdrive snap connect -fs mnt/fs1 /mnt/fs1copy -destvg vg1copy \
+-fs /mnt/fs2 /mnt/fs2copy -destlv vg1copy/vol2copy -destvg vg1copy
+\ -snapname filer1:/vol/vol1:vg1snapshot
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1copy
+----
+Die folgende Befehlszeile enthält die `-autoexpand` Option, da eine Laufwerksgruppe mit zwei Dateisystemen verbunden wird. Sie verwendet die Standardnamen als Zielnamen (d. h. sie werden aus den Quellnamen erstellt):
+
+[listing]
+----
+# snapdrive snap connect -lvol mnt/fs1 -snapname
+filer1:/vol/vol1:vg1snapshot \
+-autoexpand
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1
+----
+Die folgende Befehlszeile enthält die Option-autorename, da sie eine Laufwerksgruppe mit zwei Dateisystemen und zwei LUNs verbindet:
+
+[listing]
+----
+# snapdrive snap connect -fs mnt/fs1 -snapname
+filer1:/vol/vol1:vg1snapshot \
+-autorename
+connecting vg1:
+LUN copy vg1_lun1_0 ... created
+(original: filer1:/vol/vol1/vg1_lun1)
+LUN copy vg1_lun2_0 ... created
+(original: filer1:/vol/vol1/vg1_lun2)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vg1_0
+----
+Im folgenden Beispiel wird eine Verbindung zu einer Snapshot Kopie mit Dateisystem, Laufwerksgruppe hergestellt auf dem Veritas Stack hergestellt:
+
+[listing]
+----
+# snapdrive snap connect -fs /mnt/vxfs1 /mnt/vxfs1_clone -snapname
+snoopy:/vol/vol1:snapVxvm -autorename
+connecting vxvm1:
+LUN copy lunVxvm1_0 ... created
+(original: snoopy:/vol/vol1/lunVxvm1)
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+Importing vxvm1_0
+Successfully connected to snapshot snoopy:/vol/vol1:snapVxvm
+disk group vxvm1_0 containing host volumes
+vxfs1_SdHv_0 (filesystem: /mnt/vxfs1_clone)
+----
+Im folgenden Beispiel befindet sich Dateisystem 1 (fs1) auf Speichersystem 1, und Dateisystem 2 (fs2) befindet sich auf Speichersystem 1 und auch auf Speichersystem 2, das das Partnerspeichersystem ist. Filesystem 3 (fs3) befindet sich auf Storage-System1, Partner-Storage-System 2 und Storage-System 3, das nicht zum HA-Paar gehört. Ein zusätzliches Dateisystem fs4 befindet sich vollständig auf dem Speichersystem 4.
+
+Mit dem folgenden Befehl wird eine Snapshot Kopie von fs1, fs2, fs3 und fs4 erstellt:
+
+[listing]
+----
+snapdrive snap create -fs /mnt/fs1 /mnt/fs2 /mnt/fs3 /mnt/fs4
+-snapname fs_all_snap
+----
+Mit dem nächsten Befehl verbinden Sie fs1 und fs2 auf dem Ziel-Speichersystem. Sowohl fs1 als auch fs2 befinden sich auf einem HA-Paar, so dass Sie sie mit einem Befehl wiederherstellen können:
+
+[listing]
+----
+snapdrive snap connect -fs /mnt/fs1 /mt/fs2 -snapname fs_all_snap
+----
+Mit dem folgenden Befehl wird fs4 wiederhergestellt:
+
+[listing]
+----
+snapdrive snap connect -fs /mnt/fs4 -snapname fs_all_snap
+----
+SnapDrive für UNIX kann fs3 nicht mit dem Ziel-Storage-System verbinden, da sich dieses Filesystem auf Storage-System1, Storage-System 2 und Storage-System 3 befindet.

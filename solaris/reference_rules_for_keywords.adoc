@@ -1,0 +1,21 @@
+---
+permalink: solaris/reference_rules_for_keywords.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, keywords, rules 
+summary: SnapDrive für UNIX verwendet Stichwörter, um das Ziel des SnapDrive für UNIX-Vorgänge festzulegen. 
+---
+= Regeln für Schlüsselwörter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX verwendet Stichwörter, um das Ziel des SnapDrive für UNIX-Vorgänge festzulegen.
+
+SnapDrive for UNIX verwendet Stichwörter, um Sequenzen von Strings anzugeben, die den Host- und Speichersystemobjekten entsprechen, mit denen Sie arbeiten. Die folgenden Regeln gelten für SnapDrive for UNIX Keywords:
+
+* Vor jedem Schlüsselwort einen Bindestrich (-) eingeben.
+* Schlüsselwörter nicht verknüpfen.
+* Geben Sie das gesamte Schlüsselwort und den gesamten Bindestrich ein, keine Abkürzung.
+

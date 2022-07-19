@@ -1,0 +1,41 @@
+---
+permalink: linux-administration/task_adding_a_port_set_in_snapdrive.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, vserver, port, storage, set 
+summary: Sie können ein Port-Set im Storage-System hinzufügen, um mit einem Vserver zu kommunizieren. Diese einmalige Aktivität muss vor der Nutzung des Storage-Systems durchgeführt werden. 
+---
+= Hinzufügen eines PortSatzes in SnapDrive
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Port-Set im Storage-System hinzufügen, um mit einem Vserver zu kommunizieren. Diese einmalige Aktivität muss vor der Nutzung des Storage-Systems durchgeführt werden.
+
+
+NOTE: Wenn Sie ein Upgrade auf SnapDrive 5.2 für UNIX durchführen möchten, stellen Sie sicher, dass die früheren Versionen von SnapDrive für UNIX iGroups manuell mit dem vom Storage-Administrator festgelegten Port verknüpft sind.
+
+Im folgenden Beispiel verwendet der Storage-Administrator den Vserver Namen anstelle einer IP-Adresse und überprüft, ob der Vserver-Name auf einem DNS-Server registriert ist.
+
+.Schritte
+. Geben Sie den folgenden Befehl für den Host ein:
++
+`*snapdrive portset add _portset_name filername_ [_filername..._]*`
+
++
+`_portset_name_` Der Name des Port-Satzes.
+
++
+`_filername_` Ist der Name des Vserver.
+
++
+[listing]
+----
+snapdrive portset add ps2 vs91
+Added portset configuration for appliance: vs91
+----
++
+Der Portsatz ps2 wurde erfolgreich in SnapDrive hinzugefügt.
+
+

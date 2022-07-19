@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_connecting_multiple_storage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, multiple, storage, entities 
+summary: Sie können eine Snapshot Kopie mit mehreren Storage-Einheiten verbinden. 
+---
+= Verbinden mehrerer Speichereinheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie mit mehreren Storage-Einheiten verbinden.
+
+Um eine Snapshot Kopie mit Storage-Einheiten zu verbinden, die sich auf mehreren Ziel-Storage-Systemen befinden, müssen Sie folgende Anforderungen erfüllen:
+
+* Die Storage-Einheiten, die Sie an der Eingabeaufforderung angeben, müssen sich auf einem einzelnen Storage-System oder auf einem HA-Paar befinden.
+* Der Name des Volume des Quell-Storage-Systems muss mit dem Namen des Volume des Ziel-Storage-Systems übereinstimmen.
+* Sie müssen die einstellen `_snapmirror-dest-multiple-filervolumes-enabled_` Variable in der snapdrive.conf Datei zu „`auf`“.
+
+
+Mit einem Befehl können Sie Storage-Einheiten verbinden, die sich in einem einzelnen Storage-System oder einem HA-Paar befinden.

@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/concept_data_disappears_when_you_add_luns_to_a_volume_group.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, lun, volume, group, disappear 
+summary: Daten auf der LUN werden ausgeblendet, wenn Sie einer Volume-Gruppe eine vorhandene LUN hinzufügen. 
+---
+= Daten werden ausgeblendet, wenn Sie einer Volume-Gruppe LUNs hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Daten auf der LUN werden ausgeblendet, wenn Sie einer Volume-Gruppe eine vorhandene LUN hinzufügen.
+
+Wenn Sie einer Volume-Gruppe eine vorhandene LUN hinzufügen, die von LVM gemanagt wird, und dann eine ausführen `pvcreate` Befehl, die Daten werden überschrieben.
+
+
+
+== Behelfslösung
+
+Wenn Sie Daten in einer vorhandenen LUN benötigen, müssen Sie diese Daten in eine LUN migrieren, die Sie mit LVM erstellen. Führen Sie die folgenden Schritte aus.
+
+. Erstellen neuer LUNs
+. Platzieren Sie die LUNs unter LVM-Steuerung, indem Sie die verwenden `pvcreate`, Das `vgcreate`, Und das `lvcreate` Befehle.
+. Kopieren Sie Daten aus den vorhandenen LUNs in die LUNs, die Sie erstellt und unter LVM Control platziert haben.
+

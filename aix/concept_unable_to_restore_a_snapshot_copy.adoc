@@ -1,0 +1,44 @@
+---
+permalink: aix/concept_unable_to_restore_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: Es gibt nur wenige Bedingungen, die die Fähigkeit des SnapDrive Snap Restore Befehls zur Wiederherstellung einer Snapshot Kopie beeinflussen. 
+---
+= Es kann keine Snapshot Kopie wiederhergestellt werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt nur wenige Bedingungen, die den betreffen `snapdrive snap restore` Funktion des Befehls, eine Snapshot Kopie wiederherzustellen.
+
+* Der `snapdrive snap restore` Befehl muss die folgenden Aufgaben ausführen können:
++
+** Fragen Sie alle Festplattengruppen nach einer Liste von LUNs ab.
+** Abfrage aller LUNs über SCSI-Befehl. Die Host-Volumes und Dateisysteme müssen nicht für den verfügbar und gemountet sein `snapdrive snap restore` Befehl zum Erfolg.
+
+
+* Die Zugriffsberechtigungen müssen es dem Host ermöglichen, eine Snapshot Kopie von Informationen auf diesem Storage-System zu erstellen und wiederherzustellen.
+* Das über NFS bereitgestellte Verzeichnis muss korrekt an den Host exportiert werden, damit es gemountet werden kann.
+
+
+
+NOTE: Sie sollten immer eine weitere Snapshot Kopie erstellen, nachdem Sie eine LUN hinzugefügt oder eine LUN aus einer Festplattengruppe entfernt haben.
+
+* Wenn Sie einer Laufwerksgruppe nach einer Snapshot Kopie ein Host-Volume oder Dateisysteme hinzufügen und dann versuchen, die Snapshot Kopie wiederherzustellen, wird eine Fehlermeldung angezeigt. Sie müssen das einschließen `force` Option (`-f`) Auf der Kommandozeile für den Wiederherstellungsvorgang in dieser Situation erfolgreich zu sein.
++
+
+NOTE: Auf Host-Volumes und Dateisysteme, die Sie nach Erstellung einer Snapshot Kopie hinzufügen, kann nicht mehr zugegriffen werden, wenn Sie die Snapshot Kopie erstellen und wiederherstellen.
+
+* Wenn Sie ein Host-Volume oder ein Dateisystem umbenennen oder den Mountpoint nach einer Snapshot Kopie ändern und dann versuchen, es wiederherzustellen, schlägt der Wiederherstellungsvorgang fehl. Sie müssen das einschließen `force` Option (`-f`) Auf der Kommandozeile für den Wiederherstellungsvorgang in dieser Situation erfolgreich zu sein.
++
+
+NOTE: Verwenden Sie die `-f` Option mit großer Sorgfalt, um sicherzustellen, dass Sie nicht versehentlich überschreiben etwas, dass Sie nicht beabsichtigen, zu überschreiben.
+
+* Wenn Sie eine LUN nach dem Erstellen einer Snapshot Kopie umbenennen und dann versuchen, diese Snapshot Kopie wiederherzustellen, schlägt der Wiederherstellungsvorgang fehl. Nachdem Sie eine LUN umbenennen, sollten Sie eine neue Snapshot Kopie erstellen.
++
+
+NOTE: Wenn Sie einen Snapshot-Wiederherstellungsvorgang starten, beenden Sie ihn nicht. Wenn Sie diesen Vorgang beenden, kann das System in einem inkonsistenten Zustand belassen werden. Möglicherweise müssen Sie dann ein manuelles Recovery durchführen.
+
+

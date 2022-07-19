@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/task_adding_sd_hostname_to_the_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, sd, hostname, storage, manager, operations, administrator 
+summary: Der Operations Manager-Konsolenadministrator kann den sd-Hostname-Benutzer auf dem Speichersystem mithilfe der Operations Manager-Konsole erstellen. Nach Abschluss der Schritte muss der Operations Manager-Konsolenadministrator die Anmeldeinformationen manuell an den SnapDrive für UNIX-Administrator senden. Sie können jeden Namen anstelle von sd-Hostname verwenden; jedoch ist es am besten, sd-Hostname zu verwenden. 
+---
+= hinzufügen von sd-Hostname zum Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Operations Manager-Konsolenadministrator kann den sd-Hostname-Benutzer auf dem Speichersystem mithilfe der Operations Manager-Konsole erstellen. Nach Abschluss der Schritte muss der Operations Manager-Konsolenadministrator die Anmeldeinformationen manuell an den SnapDrive für UNIX-Administrator senden. Sie können jeden Namen anstelle von sd-Hostname verwenden; jedoch ist es am besten, sd-Hostname zu verwenden.
+
+. Ermitteln Sie das Root-Passwort des Speichersystems und speichern Sie das Passwort.
++
+Um das Passwort für das Speichersystem hinzuzufügen, wählen Sie *Management* > *Speichersystem*.
+
+. Erstellen Sie einen sd-Hostname-Benutzer für jedes UNIX-System.
+. Zuweisen von Funktionen `api-*` Und `login-*` Auf eine Rolle, z. B. sd-Rolle.
+. Diese Rolle (sd-Rolle) in eine neue Benutzergruppe, z. B. sd-Benutzergruppe, aufnehmen.
+. Verknüpfen Sie diese Benutzergruppe (sd-usergroup) mit dem sd-Hostname-Benutzer auf dem Speichersystem.
+

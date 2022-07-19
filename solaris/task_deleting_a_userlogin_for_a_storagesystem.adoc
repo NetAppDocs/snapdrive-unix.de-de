@@ -1,0 +1,33 @@
+---
+permalink: solaris/task_deleting_a_userlogin_for_a_storagesystem.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, user, login, storage, system, command 
+summary: Sie können eine Benutzeranmeldung für ein oder mehrere Storage-Systeme löschen, indem Sie den Befehl SnapDrive config delete ausführen. 
+---
+= Löschen einer Benutzeranmeldung für ein Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Benutzeranmeldung für ein oder mehrere Speichersysteme löschen, indem Sie die ausführen `snapdrive config delete` Befehl.
+
+Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config delete _appliance_name_ [_appliance_name_]*`
+
++
+`_appliance_name_` Ist der Name des Speichersystems, für das Sie die Benutzeranmeldedaten löschen möchten.
+
++
+SnapDrive für UNIX entfernt den Benutzernamen oder die Passwort-Anmeldeinformationen für die von Ihnen angegebenen Speichersysteme.
+
++
+
+NOTE: Um SnapDrive für UNIX für den Zugriff auf das Speichersystem zu aktivieren, müssen Sie eine neue Benutzeranmeldung angeben.
+
+

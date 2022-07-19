@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, syntax, lun, host, file system 
+summary: Verwenden Sie die folgende Syntax, um mit dem befehl SnapDrive Storage Disconnect ein direkt auf einer LUN erstelltes Dateisystem zu entfernen. 
+---
+= Befehlssyntax für das Trennen eines auf einer LUN erstellten Dateisystems vom Host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die zu verwenden `snapdrive storage disconnect` Befehl zum Entfernen eines direkt auf einer LUN erstellten Dateisystems verwenden Sie die folgende Syntax:
+
+`snapdrive storage disconnect -fs file_spec [-fstype type] [-vmtype type]`
+
+
+
+== Beispiel: Trennen eines Dateisystems, das auf einer RDM LUN erstellt wurde
+
+[listing]
+----
+
+#snapdrive storage disconnect -fs /mnt/fs
+disconnect file system /mnt/fs
+  - fs /mnt/fs ... disconnected
+  deporting lun(s) from Guest OS ... done
+   - LUN lech:/vol/vol1/lun1 ... disconnected
+0001-669 Warning:
+      Please save information provided by this command.
+      You will need it to re-connect disconnected filespecs.
+----

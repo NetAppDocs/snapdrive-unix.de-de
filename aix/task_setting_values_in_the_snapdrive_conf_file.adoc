@@ -1,0 +1,68 @@
+---
+permalink: aix/task_setting_values_in_the_snapdrive_conf_file.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, value, name, add, change 
+summary: Sie können die Werte in der datei snapdrive.conf ändern oder neue Name-Value-Paare hinzufügen. 
+---
+= Setzen von Werten in der datei snapdrive.conf
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Werte in ändern `snapdrive.conf` Datei oder neue Name-Wert-Paare hinzufügen.
+
+Sie müssen als Root-Benutzer angemeldet sein.
+
+.Schritte
+. Sichern Sie die `snapdrive.conf` Datei:
+. Öffnen Sie das `snapdrive.conf` Datei in einem Texteditor.
+. Um ein Name-Wert-Paar hinzuzufügen, verwenden Sie das folgende Format:
++
+`*config-option-name=value _value_ # optional comment*`
+
++
+`_config-option-name_` Ist der Name der zu konfigurierenden Variable, z. B. Audit-Log-Datei. `_value_` Ist der Wert, den Sie dieser Option zuweisen möchten.
+
++
+Wenn Sie einen Kommentar mit dem Name-Wert-Paar aufnehmen möchten, geben Sie dem Kommentar ein Zahlenzeichen (#) vor.
+
++
+Sie sollten nur ein Namenswertpaar pro Zeile eingeben.
+
++
+Wenn der Name oder der Wert einen String verwendet, setzen Sie den String in einfache ('`)- oder doppelte („) Anführungszeichen. Sie können die Anführungszeichen entweder um das gesamte Name-Wert-Paar oder um den Wert herum platzieren. Die folgenden Beispiele zeigen, wie Sie Anführungszeichen und Kommentare mit Namenswertpaaren verwenden können:
+
++
+`*"config-option-one=string with white space" # double quotes around the pair*`
+
++
+`*config-option-two="string with white space" # double quotes around the value*`
+
++
+`*config-option-2B=`'string with white space`' # single quotes around the value*`
+
+. Um ein Namenswertpaar zu ändern, ersetzen Sie den aktuellen Wert durch den neuen Wert.
++
+Gehen Sie wie folgt vor, um sicherzustellen, dass die Standardwerte in der Datei erfasst werden.
+
++
+.. Fügen Sie das Zeichen (#) der Zeile hinzu, die Sie ändern möchten.
+.. Kopieren Sie die Zeile.
+.. Aktivieren Sie den kopierten Text, indem Sie das Ziffernzeichen (#) entfernen.
+.. Ändern Sie den Wert.
+
+
++
+Wenn Sie einen leeren Wert angeben möchten (z. B. um die Audit-Log-Datei zu deaktivieren), geben Sie ein Paar doppelte Anführungszeichen (“) ein.
+
+. Speichern Sie die Datei, nachdem Sie Ihre Änderungen vorgenommen haben.
++
+SnapDrive für UNIX prüft diese Datei automatisch jedes Mal, wenn sie startet. Ihre Änderungen werden beim nächsten Start wirksam.
+
+. Starten Sie den SnapDrive for UNIX Daemon mit dem neu `snapdrived restart` Befehl.
++
+Der Daemon wird neu gestartet `snapdrive.conf` Dateiänderungen, die wirksam werden.
+
+

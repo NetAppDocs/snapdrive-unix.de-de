@@ -1,0 +1,25 @@
+---
+permalink: aix/concept_default_vaules_for_the_trace_log_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, default, value, trace, log, file 
+summary: Mit den Trace-Log-Dateien können Sie verschiedene Parameter einstellen und auch ändern. Diese Parameter müssen in der Datei snapdrive.conf definiert werden. 
+---
+= Standardwerte für die Trace-Log-Dateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit den Trace-Log-Dateien können Sie verschiedene Parameter einstellen und auch ändern. Diese Parameter müssen im festgelegt werden `snapdrive.conf` Datei:
+
+Die folgenden Werte müssen im festgelegt werden `snapdrive.conf` Datei:
+
+* Der Name der Datei, die das Trace-Protokoll enthält.
+* Die maximale Größe der Trace-Log-Datei. Die Standardgröße beträgt „0 “ Byte. Dieser Wert stellt sicher, dass jede Trace-Log-Datei nur einen SnapDrive für UNIX-Befehl enthält.
++
+Wenn Sie die Standardgröße auf einen anderen Wert als 0 zurücksetzen, wenn die Datei die von Ihnen angegebene Größe erreicht, benennt SnapDrive für UNIX die aktuelle Trace-Log-Datei, indem Sie dem Namen eine beliebige Zahl hinzufügen. Dann startet sie eine neue Trace-Log-Datei unter Verwendung des vom angegebenen Namens `trace-log-file` Wert:
+
+* Die maximale Anzahl alter Trace-Dateien, die SnapDrive für UNIX speichert. Der Standardwert ist 100.
+* Die Arten von Meldungen, die SnapDrive für UNIX in die Trace-Log-Datei schreibt. Standardmäßig enthält die Trace-Log-Datei fatale Fehler, Admin-Fehler, Befehlsfehler, Warnmeldungen und Informationsmeldungen.
+

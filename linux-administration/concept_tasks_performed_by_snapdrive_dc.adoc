@@ -1,0 +1,37 @@
+---
+permalink: linux-administration/concept_tasks_performed_by_snapdrive_dc.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, diagnostic, copy, log, file, data, utility 
+summary: Das Datenerfassungsprogramm führt die NetApp Diagnoseprogramme aus, kopiert SnapDrive für UNIX Log-Dateien und erstellt eine komprimierte Datei, die für die Analyse verwendet wird. 
+---
+= Aufgaben durchgeführt von snapdrive.dc
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Datenerfassungsprogramm führt die NetApp Diagnoseprogramme aus, kopiert SnapDrive für UNIX Log-Dateien und erstellt eine komprimierte Datei, die für die Analyse verwendet wird.
+
+Der `snapdrive.dc` Dienstprogramm führt die folgenden Aufgaben aus:
+
+* Führt die aus `host_info` Und `filer_info` Dienstprogramme, um Informationen über den Host und die mit dem Host verbundenen Speichersysteme zu sammeln und diese Informationen in einer komprimierten Datei zu speichern. Der `host_info` Utility und `filer_info` Utility wird zusammen mit dem Installationspaket SnapDrive für UNIX ausgeliefert.
++
+Unter Linux ist es zum Beispiel der `linux_info` Utility:
+
+* Erstellt ein Verzeichnis namens /tmp/netapp/ntap_snapdrive_Name. Das Tool legt Kopien der folgenden Dateien im Verzeichnis ab:
++
+** SnapDrive für UNIX-Version, wie durch Ausführen des SnapDrive-Versionsbefehls angezeigt
+** Der `snapdrive.conf` Datei
+** Die Audit-Log-Dateien
+** Die Trace-Log-Dateien
+** Die Recovery-Log-Dateien
+** Die vom Dienstprogramm Host_info erstellten Dateien
+
+
+* Erstellt eine komprimierte Datei des Verzeichnisinhalts und zeigt eine Nachricht an, die Sie an den technischen Support von NetApp senden.
+
+
+*Verwandte Informationen*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["Installationsleitfaden Für Linux Unified Host Utilities 7.1"]

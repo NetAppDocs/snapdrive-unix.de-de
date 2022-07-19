@@ -1,0 +1,93 @@
+---
+permalink: linux-administration/task_disconnectingsnapshot_copy_withstorage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, command 
+summary: Sie können den befehl SnapDrive Snap Trennen verwenden, um eine Snapshot Kopie, die Storage Entitäten enthält, zu trennen. 
+---
+= Verbindung zwischen Snapshot Kopien und Storage-Einheiten wird getrennt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive snap disconnect` Befehl zum Trennen einer Snapshot Kopie, die Storage-Einheiten enthält.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*SnapDrive Snap disconnect {-dg} -fs} _file_spec_ [_file_spec..._]{-dg -fs _file_spec_ [file_spec...]] [-full] [-fstype type type] [-vmtype type] [-split]
+
++
+Dieser Befehl muss immer mit der Storage-Einheit beginnen, z. B. `-lun`, `-dg`, `-hostvol`, Oder `-fs`.
+
++
+** Wenn Sie eine LUN angeben  `-lun`), Sie müssen den langen LUN-Namen eingeben. Sie können eine LUN nicht mit angeben `-lun` Option auf derselben Befehlszeile wie andere Storage-Einheiten (`-vg`,`-dg`,`-fs`,`-lvol`, Oder `-hostvol` Optionen).
+** Wenn Sie eine RDM-LUN angeben  `-lun`), Sie müssen den langen RDM LUN-Namen eingeben. Sie können keine RDM-LUN mit dem angeben `-lun` Option auf derselben Befehlszeile wie andere Storage-Einheiten (`-vg`,`-dg`,`-fs`,`-lvol`, Oder `-hostvol` Optionen).
+** Wenn Sie einen NFS-Bereitstellungspunkt angeben, können Sie keine nicht-NFS-Einheiten angeben (`-vg`, `-dg`, `-fs`, `-lvol`, Oder `-hostvol`) Auf der gleichen Kommandozeile. Sie müssen einen separaten Befehl verwenden, um den NFS-Bereitstellungspunkt anzugeben.
+
+
+
+
+
+NOTE: Eine Fehlermeldung erscheint, wenn die Host-Einheit LUNs verwendet, die nicht Teil der Snapshot Kopie sind. Ein Fehler tritt auch auf, wenn Sie eine Teilmenge der Host-Volumes und/oder Dateisysteme in jeder Zielplattengruppe angeben.
+
+SnapDrive für UNIX entfernt die Zuordnungen für die in der Befehlszeile angegebenen Speichereinheiten.
+
+Über diese Befehlszeile werden die Zuordnungen zu allen LUNs entfernt, die dem Host-Volume dg5/myVolume zugrunde liegen. Es werden alle temporären LUNs entfernt, die mit einem Snapshot Connect-Vorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -hostvol dg5/myvolume
+----
+Über diese Befehlszeile werden die Zuordnungen zu allen LUNs entfernt, die dem Host-Volume dg5/myVolume zugrunde liegen. Es werden alle temporären LUNs entfernt, die mit einem Snapshot Connect-Vorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -hostvol dg5/myvolume
+----
+Mit diesem Befehl wird die Zuordnung zu Festplattengruppe 1 (dg1) und zur zugrunde liegenden LUN getrennt. Zudem werden alle temporären LUNs entfernt, die mit dem Snapshot Verbindungsvorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -lun toaster:/vol/vol1/luna -dg dg1
+----
+Diese Befehlszeile entfernt die Zuordnung zum Dateisystem fs1 und zur RDM-LUN, auf der sie basiert. Es entfernt außerdem alle temporären RDM LUNs, die beim Snapshot Connect-Vorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -fs mnt/RDMNew
+----
+Diese Befehlszeile entfernt die Zuordnung zum Dateisystem fs1 und zur LUN, auf der sie basiert. Zudem werden alle temporären LUNs entfernt, die mit dem Snapshot Verbindungsvorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -fs mnt/fs1
+----
+Durch diese Befehlszeile werden die Zuordnungen für Festplattengruppen dg1, dg2 und dg3 entfernt. Es werden alle temporären LUNs entfernt, die mit dem Snapshot Connect-Vorgang erstellt werden:
+
+[listing]
+----
+# snapdrive snap disconnect -dg dg1 dg2 dg3
+----
+Im folgenden Beispiel wird die Verbindung einer Snapshot Kopie mit Dateisystem, Festplattengruppe auf dem LVM-Stack getrennt:
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/fs1_clone -fstype ext3
+
+delete file system /mnt/fs1_clone
+- fs /mnt/fs1_clone ... deleted
+- hostvol lvm1_0/fs1_SdHv_0 ... deleted
+- dg lvm1_0 ... deleted
+- LUN snoopy:/vol/vol1/lunLvm1_0 ... deleted
+----
+Im folgenden Beispiel wird die Verbindung einer Snapshot Kopie mit dem Dateisystem getrennt:
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/fs1
+delete file system /mnt/fs1
+- fs /mnt/fs1 ... deleted
+- LUN lech:/vol/vol1/lun1_0 ... deleted
+----

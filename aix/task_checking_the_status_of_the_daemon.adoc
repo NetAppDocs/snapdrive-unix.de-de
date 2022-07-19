@@ -1,0 +1,23 @@
+---
+permalink: aix/task_checking_the_status_of_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, check, daemon, status, command 
+summary: Sie können den Status des Daemon überprüfen, um zu sehen, ob der Daemon ausgeführt wird. Wenn der Daemon bereits ausgeführt wird, müssen Sie ihn erst neu starten, wenn die Konfigurationsdatei SnapDrive für UNIX aktualisiert wurde. 
+---
+= Überprüfen des Status des Daemon
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Status des Daemon überprüfen, um zu sehen, ob der Daemon ausgeführt wird. Wenn der Daemon bereits ausgeführt wird, müssen Sie ihn erst neu starten, wenn die Konfigurationsdatei SnapDrive für UNIX aktualisiert wurde.
+
+Sie müssen als Root-Benutzer angemeldet sein.
+
+.Schritte
+. Überprüfen Sie den Status des Daemon:
++
+`*snapdrived status*`
+
+

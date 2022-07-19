@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/task_deleting_a_user_for_a_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, user, vserver, login, config 
+summary: Sie können die Anmeldeinformationen von einem Vserver löschen, indem Sie den Befehl SnapDrive config delete ausführen. 
+---
+= Löschen eines Benutzers aus einem Vserver
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Anmeldeinformationen von einem Vserver löschen, indem Sie den ausführen `snapdrive config delete` Befehl.
+
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config delete _appliance_name_*``
+
++
+`_appliance_name_` Ist der Name des Vservers, auf dem die Anmeldeinformationen gelöscht werden sollen.
+
++
+[listing]
+----
+# snapdrive config delete clstr-vs2
+Deleted configuration for appliance: clstr-vs2
+----
++
+SnapDrive für UNIX entfernt die Anmeldeinformationen für den von Ihnen angegebenen Vserver.
+
+

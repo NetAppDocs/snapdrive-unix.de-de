@@ -1,0 +1,19 @@
+---
+permalink: solaris/concept_guidelines_fordisconnectingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy 
+summary: Nachfolgend sind die Richtlinien aufgeführt, um eine Snapshot Kopie für LUNs, Storage-Einheiten oder NFS Directorys zu trennen. 
+---
+= Richtlinien zum Trennen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachfolgend sind die Richtlinien aufgeführt, um eine Snapshot Kopie für LUNs, Storage-Einheiten oder NFS Directorys zu trennen.
+
+* Wenn Sie ein Dateisystem trennen, entfernt SnapDrive für UNIX immer den Mountpoint.
+* Um die Auswirkungen der Snapshot-Verbindung rückgängig zu machen, verwenden Sie den Befehl Snapshot Trennen.
+* Wenn Sie die einstellen `_enable-split-clone_` Wert der Konfigurationsvariable auf `on` Oder `sync` Während der Snapshot-Verbindung und `off` Während der Abtrennung von Snapshot löscht SnapDrive für UNIX nicht das ursprüngliche Volume oder die LUN, die sich in der Snapshot Kopie befindet.
+

@@ -1,0 +1,17 @@
+---
+permalink: solaris/concept_disconnecting_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy 
+summary: Sie können eine Snapshot Kopie von einer LUN, einem Dateisystem auf einer LUN, Festplattengruppen, NFS Verzeichnissen oder gemeinsam genutzten Festplattengruppen, Host-Volumes und Dateisystemen auf einer LUN trennen. 
+---
+= Trennen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie von einer LUN, einem Dateisystem auf einer LUN, Festplattengruppen, NFS Verzeichnissen oder gemeinsam genutzten Festplattengruppen, Host-Volumes und Dateisystemen auf einer LUN trennen.
+
+
+NOTE: Sie können die geteilten Clone-Volumes von SnapDrive für UNIX 4.2 und höher Versionen trennen.

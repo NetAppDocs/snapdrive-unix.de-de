@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_contents_of_the_recovery_log.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, recovery, log, system, support 
+summary: Das Wiederherstellungsprotokoll hilft Ihnen, die Gründe für einen inkonsistenten Systemzustand zu verfolgen. SnapDrive für UNIX generiert diese Datei, wenn einige Vorgänge nicht mehr funktionieren. 
+---
+= Inhalt des Wiederherstellungsprotokolls
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Wiederherstellungsprotokoll hilft Ihnen, die Gründe für einen inkonsistenten Systemzustand zu verfolgen. SnapDrive für UNIX generiert diese Datei, wenn einige Vorgänge nicht mehr funktionieren.
+
+Wenn Sie Strg-C drücken, um SnapDrive für UNIX anzuhalten, oder wenn der Host oder das Storage-System während eines Vorgangs ausfällt, kann das System nicht automatisch wiederhergestellt werden.
+
+Wenn der Vorgang unterbrochen werden könnte, das System inkonsistent zu verlassen, schreibt SnapDrive für UNIX Daten in eine Wiederherstellungsprotokoll-Datei. Wenn ein Problem auftritt, können Sie diese Datei an den technischen Support von NetApp senden, damit diese Sie bei der Wiederherstellung des Systemstatus unterstützen können.
+
+Das Dienstprogramm Recovery Log speichert die Datensätze der Befehle, die während des Vorgangs ausgegeben werden. Jeder Befehl ist mit einem Operation_Index gekennzeichnet (eine Nummer, die die ausgeführte Operation eindeutig identifiziert), gefolgt von dem Datums-/Zeitstempel und dem Nachrichtentext.

@@ -1,0 +1,16 @@
+---
+permalink: linux-administration/concept_support_for_partitioned_or_non_partitioned_devices_in_rhel_and_suse.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, suse, server, sles, partitioning, scheme, rhel, red, enterprise 
+summary: Bei RHEL partitioniert SnapDrive für UNIX die Festplatten, um Host-Speichereinheiten bereitzustellen. SnapDrive für UNIX ermöglicht jedoch die Bereitstellung und Verwaltung von SnapDrive-Operationen sowohl für Partitionierungen als auch für Geräte ohne Partitionierung auf SLES 11 und nur für Geräte ohne Partitionierung auf SLES 10. 
+---
+= Speicherpartitionierungsschema in Red hat Enterprise Linux (RHEL) und SUSE Linux Enterprise Server (SLES)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei RHEL partitioniert SnapDrive für UNIX die Festplatten, um Host-Speichereinheiten bereitzustellen. SnapDrive für UNIX ermöglicht jedoch die Bereitstellung und Verwaltung von SnapDrive-Operationen sowohl für Partitionierungen als auch für Geräte ohne Partitionierung auf SLES 11 und nur für Geräte ohne Partitionierung auf SLES 10.
+
+Die Kernel-Versionen Linux 2.2 und 2.4 konnten keine RAW-Festplatten für die Erstellung von Dateisystemen verwenden, da in der Vergangenheit alle Microsoft x86-Systemarchitektur das Windows-Betriebssystem verwendet und immer die Festplatten partitioniert. Da der anfängliche Kernel geschrieben wurde, um auf den Windows-Betriebssystemen zu arbeiten, wurde der Kernel auch so geschrieben, dass Partitionen auf der Festplatte zu erwarten sind. Für die Erstellung von Dateisystemen auf RAW-Geräten wurde immer eine weitere Partitionierung durchgeführt. Eine Partitionierung der LUNs erfolgt niemals für einen Teil einer Festplattengruppe und/oder für RAW-LUNs. Daher ist jede Änderung in Bezug auf das Partitionierungsschema auf das Verhalten beschränkt, wenn Dateisysteme nur auf RAW-Geräten verwendet werden.

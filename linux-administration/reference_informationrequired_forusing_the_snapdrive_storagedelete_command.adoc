@@ -1,0 +1,117 @@
+---
+permalink: linux-administration/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, command 
+summary: Bevor Sie den Befehl SnapDrive Storage delete verwenden können, müssen Sie einige Informationen angeben. Diese Informationen helfen Ihnen bei der korrekten Verwendung des Befehls. 
+---
+= Die für die Verwendung des Befehls SnapDrive Storage delete erforderlichen Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt einige Informationen, die Sie angeben müssen, bevor Sie den verwenden können `snapdrive storage delete` Befehl. Diese Informationen helfen Ihnen bei der korrekten Verwendung des Befehls.
+
+|===
+| Anforderungen | Argument 
+
+
+ a| 
+Basierend auf dem eingegebenen Befehl können Sie einen der folgenden Storage-Typen löschen:
+
+* LUNs
++
+Geben Sie eine oder mehrere LUNs an, die Sie aus dem Speichersystem löschen möchten.
+
++
+Wenn Sie eine oder mehrere LUNs löschen, muss das erste Argument den langen Format des LUN-Namens verwenden, der den Namen des Storage-Systems, den Volume-Namen und den Namen der LUN innerhalb des Volume angibt.
+
++
+Zum Angeben weiterer LUNs können Sie den LUN-Namen allein verwenden, wenn sich die neue LUN auf demselben Storage-System und Volume wie die vorherige LUN befindet. Andernfalls können Sie einen neuen Storage-Systemnamen und einen neuen Volume-Namen (oder nur einen Volume-Namen) angeben, um die vorherigen Werte zu ersetzen.
+
+* Ein direkt auf einer LUN erstelltes Dateisystem
+* Festplatten- oder Volume-Gruppen
+* File-Systeme auf Festplatten- oder Volume-Gruppen
+* Host oder logische Volumes
+
+
+Der Wert, den Sie für das Argument file_spec eingeben, muss die Speichereinheit identifizieren, die Sie löschen.
+
+
+
+ a| 
+EINE LUN (`-lun`)
+ a| 
+`_long_lun_name_`
+
+
+
+ a| 
+Weitere LUNs
+ a| 
+`_lun_name_` (Lange oder kurze Form)
+
+
+
+ a| 
+Festplattengruppe (`-dg _file_spec_`) Oder Volume-Gruppe (`- vg _file_spec_`)
+ a| 
+Name der Laufwerksgruppe oder Volume-Gruppe
+
+
+
+ a| 
+File-System (`-fs _file_spec_`)
+ a| 
+`_filesystem_name_`
+
+
+
+ a| 
+Host Volume (`-hostvol _file_spec_`) Oder logisches Volumen (`-lvol _file_spec_`)
+ a| 
+Name des Host-Volume oder des logischen Volumes
+
+
+NOTE: Sie müssen sowohl das angeforderte Volume als auch die Laufwerksgruppe mit angeben, z. B. `- hostvol dg3/acct_volume`.
+
+
+
+ a| 
+Wenn Sie möchten, dass SnapDrive für UNIX den Storage löschen soll, geben Sie an, selbst wenn Sie an der Eingabeaufforderung eine Host-seitige Einheit mit anderen Einheiten (z. B. eine Festplattengruppe mit einem oder mehreren Host Volumes) angeben, schließen Sie die ein `-full` Option an der Eingabeaufforderung.
+
+Wenn Sie diese Option nicht angeben, müssen Sie nur leere Einheiten auf Host-Seite angeben.
+
+
+
+ a| 
+`-full`
+ a| 
+~
+
+
+
+ a| 
+So geben Sie die freigegebene Host-Einheit an, für die Sie den Speicher löschen möchten.
+
+
+
+ a| 
+`-fstype`
+ a| 
+`_type_`
+
+
+
+ a| 
+`-vmtype`
+ a| 
+`_type_`
+
+
+
+ a| 
+*Optional:* gibt den Typ des Dateisystems und Volume Managers an, der für SnapDrive für UNIX-Vorgänge verwendet werden soll.
+
+|===

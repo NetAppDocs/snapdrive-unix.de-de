@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_methods_forcreating_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, storage, method 
+summary: SnapDrive für UNIX bietet einige grundlegende Formate für den SnapDrive Storage Create-Befehl, um die Erstellung des gewünschten Storage zu vereinfachen. Der Speichervorgang wird in verschiedene allgemeine Kategorien unterteilt. 
+---
+= Methoden zum Erstellen von Speicher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet einige grundlegende Formate für die `snapdrive storage create` Befehl, um das Erstellen des gewünschten Storage zu erleichtern. Der Speichervorgang wird in verschiedene allgemeine Kategorien unterteilt.
+
+* Erstellen von LUNs --the `snapdrive storage create` Befehl erstellt die LUNs automatisch im Storage-System, erstellt jedoch keine zusätzlichen Storage-Einheiten. SnapDrive für UNIX führt alle Aufgaben im Zusammenhang mit der Hostvorbereitung und dem Erstellen von Storage-Erkennung für jede LUN sowie der Zuordnung und Verbindung zu ihr aus.
+* Das Erstellen eines Dateisystems direkt auf einer LUN und das automatische Einrichten der LUN – SnapDrive für UNIX führt alle zur Einrichtung des Dateisystems erforderlichen Aktionen durch. Sie müssen keine LUNs angeben, die erstellt werden sollen.
+* Erstellen eines Dateisystems direkt auf einer LUN und Angabe der LUN, die ihr zugeordnet werden soll - in diesem Fall verwenden Sie das `snapdrive storage create` Befehl zum Festlegen des Dateisystems, das eingerichtet werden soll, und der LUN, die mit dem Dateisystem verknüpft werden soll.
+* Erstellen einer LVM und Einrichten der LUN automatisch --das `snapdrive storage create` Mit dem Befehl können Sie ein Dateisystem, ein logisches Volume oder eine Laufwerksgruppe auf dem Host erstellen. SnapDrive für UNIX führt alle Aktionen durch, die zum Einrichten der Einheit erforderlich sind, einschließlich der automatischen Erstellung der erforderlichen Festplattengruppe und LUN. Sie müssen keine LUN angeben, die erstellt werden soll.
+* Erstellen einer LVM-Einheit auf dem Host und Festlegen der LUN, die ihr zugeordnet werden soll. In diesem Fall verwenden Sie die `snapdrive storage create` Befehl zur Angabe der Einheit, die eingerichtet werden soll (Dateisystem, logisches Volume oder Laufwerksgruppe) und der LUN, die dieser Einheit zugeordnet werden soll.
+* Erstellen eines Dateisystems auf einem freigegebenen Host in einer Host-Cluster-Umgebung – in diesem Fall erstellen Sie ein Dateisystem, ein logisches Volume oder eine Laufwerksgruppe auf dem freigegebenen Host.
+

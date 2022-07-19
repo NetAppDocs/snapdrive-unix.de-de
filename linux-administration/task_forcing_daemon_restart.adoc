@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/task_forcing_daemon_restart.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, force, restart, daemon, stop 
+summary: Sie können den Daemon zwingen, neu zu starten. Ein kraftvoller Neustart des Dämons stoppt die Ausführung aller ausgeführten Befehle. 
+---
+= Erzwingen des Neustarts des Daemon
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Daemon zwingen, neu zu starten. Ein kraftvoller Neustart des Dämons stoppt die Ausführung aller ausgeführten Befehle.
+
+Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um den Daemon gewaltsam neu zu starten:
++
+`*snapdrived -force restart*`
+
++
+Nachdem die Anforderung zum Neustart erzwingen empfangen wurde, werden alle Befehle in der Ausführung und in der Warteschlange angehalten. Der Daemon wird erst neu gestartet, nachdem die Ausführung aller ausgeführten Befehle abgebrochen wurde.
+
+

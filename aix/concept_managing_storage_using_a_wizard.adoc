@@ -1,0 +1,31 @@
+---
+permalink: aix/concept_managing_storage_using_a_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, wizard, manage 
+summary: Mit dem Assistenten von SnapDrive für UNIX können Sie Storage interaktiv und effizient erstellen. Der Assistent führt Sie durch eine Reihe von Fragen, die Sie bei der Erstellung von Speicher unterstützen. 
+---
+= Storage-Management mit einem Assistenten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit dem Assistenten von SnapDrive für UNIX können Sie Storage interaktiv und effizient erstellen. Der Assistent führt Sie durch eine Reihe von Fragen, die Sie bei der Erstellung von Speicher unterstützen.
+
+Sie können den Assistenten mit starten `snapdrive storage wizard create` Befehl.
+
+Folgende Storage-Managementvorgänge können ausgeführt werden:
+
+* Erstellen einer LUN
+* Erstellen einer Laufwerksgruppe und automatische Einrichtung der LUN
+* Erstellen einer Festplattengruppe und Festlegen der LUN.
+* Erstellen eines Host-Volume und automatische Einrichtung der LUN
+* Erstellen eines Host-Volume und Angeben der LUN
+* Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung der LUN
+* Erstellen eines Dateisystems auf einer LUN und Festlegen der LUN.
+* Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung der LUN mit dem angegebenen Logical Volume Manager (LVM) und der Laufwerksgruppe
+* Erstellen eines Dateisystems auf einer LUN und Angabe der LUN mit LVM und Laufwerksgruppe angegeben
+* Erstellen eines Dateisystems auf einer LUN und Einrichtung der LUN automatisch mit LVM und Hostvolume angegeben
+* Erstellen eines Dateisystems auf einer LUN und Festlegen der LUN mit LVM und Hostvolume
+

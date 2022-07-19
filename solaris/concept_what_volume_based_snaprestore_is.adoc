@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_what_volume_based_snaprestore_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, volume 
+summary: 'Volume-basierte SnapRestore \(VBSR\) stellt das Volume mit allen Storage-Objekten wieder her. Die Volume-basierte Wiederherstellung ist schneller als jedes Storage-Objekt, das einzeln wiederhergestellt werden muss. VBSR funktioniert auch mit FlexClone Volumes und vFiler Konfigurationen. VBSR für vFiler ist für Data ONTAP 7.3 und höher verfügbar.' 
+---
+= Was ist das Volume-basierte SnapRestore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Volume-basierte SnapRestore (VBSR) stellt das Volume mit allen Storage-Objekten wieder her. Die Volume-basierte Wiederherstellung ist schneller als jedes Storage-Objekt, das einzeln wiederhergestellt werden muss. VBSR funktioniert auch mit FlexClone Volumes und vFiler Konfigurationen. VBSR für vFiler ist für Data ONTAP 7.3 und höher verfügbar.
+
+SnapDrive 3.0 für UNIX und frühere Versionen können LUNs für eine Host-seitige Einheit wie Filesystem, Festplattengruppen und Host-Volumes oder normale Dateien wiederherstellen, die über NFS aus einem applikationskonsistenten Snapshot erstellt wurden. SnapDrive für UNIX verwendet Single File Snap Restore SFSR, implementiert in Data ONTAP. SFSR funktioniert wie folgt:
+
+* Bei normalen Dateien während des SFSR-Vorgangs wird jeder Vorgang unterbrochen, der versucht, die Datei zu ändern, bis SFSR abgeschlossen ist.
+* Für LUNs ist die LUN verfügbar, wenn SFSR fortfahren und I/OS (sowohl Lese- als auch Schreibvorgänge) zulässig. SFSR für normale Dateien sowie LUNs kann je nach Größe der LUN oder der wiederherzustellenden Datei eine lange Zeit in Anspruch nehmen.
+
+
+Daher ist SFSR für einige Umgebungen ein Hindernis.
+
+SnapDrive 4.0 für UNIX und höher ermöglicht die Erstellung von Volume-basierten Snapshot Kopien. VBSR ist viel schneller und benötigt weniger CPU- und Storage-Ressourcen. Durch diese Lösung werden alle Daten im aktiven File-System wiederhergestellt. Diese Funktion kann verwendet werden, wenn ein Benutzer alle LUNs oder normalen Dateien auf einem Volume aus derselben Snapshot Kopie wiederherstellen möchte.
+
+Volume-basierte Snapshot Kopien sollten mit Vorsicht verwendet werden, da alle Snapshot Kopien, die nach der Snapshot Kopie des Volumes erstellt wurden, gelöscht werden. Alle neuen Dateien und neuen LUNs, die auf diesem Volume erstellt wurden, müssen gelöscht werden.

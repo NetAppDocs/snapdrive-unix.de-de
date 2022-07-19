@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_displayingsnapshot_copies_of_a_storage_system_volume.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, storage, volume, copy, display 
+summary: Mit dem SnapDrive-Befehl können Sie Snapshot Kopien auf einem Storage-System-Volume anzeigen. 
+---
+= Anzeigen von Snapshot Kopien eines Storage-System-Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit dem SnapDrive-Befehl können Sie Snapshot Kopien auf einem Storage-System-Volume anzeigen.
+
+Verwenden Sie die folgende Syntax, um Informationen über Snapshot Kopien eines Storage System-Volumes anzuzeigen:
+
+`snapdrive snap show -filervol filervol [filervol...] [-verbose]`

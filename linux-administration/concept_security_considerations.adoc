@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_security_considerations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, security, access, storage, host, configure, password, login 
+summary: Sie können SnapDrive für UNIX aktivieren, um auf die mit dem Host verbundenen Speichersysteme zuzugreifen, und müssen den Host so konfigurieren, dass die Anmeldenamen und Passwörter verwendet werden, die den Speichersystemen zugewiesen sind. Wenn Sie diese Informationen nicht zur Verfügung stellen, kann SnapDrive für UNIX nicht mit dem Speichersystem kommunizieren. 
+---
+= Sicherheitsüberlegungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können SnapDrive für UNIX aktivieren, um auf die mit dem Host verbundenen Speichersysteme zuzugreifen, und müssen den Host so konfigurieren, dass die Anmeldenamen und Passwörter verwendet werden, die den Speichersystemen zugewiesen sind. Wenn Sie diese Informationen nicht zur Verfügung stellen, kann SnapDrive für UNIX nicht mit dem Speichersystem kommunizieren.
+
+Ein Root-Benutzer kann es anderen Benutzern ermöglichen, spezifische Befehle auszuführen, abhängig von den ihnen zugewiesenen Rollen. Sie müssen kein Root-Benutzer sein, um die Speicher- und Snap-Management-Vorgänge durchzuführen.
+
+SnapDrive für UNIX speichert Benutzerauthentifizierungsdaten über den Host in einer verschlüsselten Datei. Auf Linux-Hosts verschlüsselt SnapDrive standardmäßig die Kennwortinformationen und sendet sie über das Netzwerk. SnapDrive für UNIX kommuniziert über HTTPS über die standardmäßige IP-Verbindung.

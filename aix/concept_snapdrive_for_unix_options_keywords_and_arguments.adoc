@@ -1,0 +1,14 @@
+---
+permalink: aix/concept_snapdrive_for_unix_options_keywords_and_arguments.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, option, keyword, argument 
+summary: SnapDrive for UNIX-Befehle verfügen über Optionen, Schlüsselwörter und Argumente. 
+---
+= SnapDrive for UNIX-Optionen, Schlüsselwörter und Argumente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive for UNIX-Befehle verfügen über Optionen, Schlüsselwörter und Argumente.

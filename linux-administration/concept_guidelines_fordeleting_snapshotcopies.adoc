@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_guidelines_fordeleting_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, copy, storage, command 
+summary: Sie können keine Snapshot Kopie, die verwendet wird, oder wenn sich die Snapshot Kopie über mehrere Storage-System-Volumes hinweg befindet, nicht löschen. 
+---
+= Richtlinien zum Löschen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können keine Snapshot Kopie, die verwendet wird, oder wenn sich die Snapshot Kopie über mehrere Storage-System-Volumes hinweg befindet, nicht löschen.
+
+Befolgen Sie diese Richtlinien, wenn Sie das verwenden `snapdrive snap delete` Befehl:
+
+* Der Vorgang zum Löschen des Snapshots schlägt fehl, wenn eine der Snapshot-Kopien, die Sie löschen möchten, verwendet wird oder nicht von SnapDrive für UNIX erstellt wird. Sie können dieses Verhalten überschreiben, indem Sie das einschreiben `-force` Option mit dem `snapdrive snap delete` Befehl.
+* Wenn Sie über eine Snapshot Kopie verfügen, die sich über mehrere Storage-System-Volumes erstreckt, müssen Sie die Snapshot Kopie auf jedem Volume manuell löschen.
+

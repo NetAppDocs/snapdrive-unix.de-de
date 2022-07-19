@@ -1,0 +1,97 @@
+---
+permalink: linux-administration/task_verifying_the_status_of_clone_split.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, status, clone, split, specification 
+summary: Sie können den Status „Clone Split“ mit einer Job-ID oder Dateispezifikation abfragen. SnapDrive für UNIX zeigt den aktuellen Status der Teilung des Klons als „in-progress“, „failed“ oder „complete“ an. 
+---
+= Anzeigen des Status eines Volume-Klons oder einer LUN-Klonabteilung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Status „Clone Split“ mit einer Job-ID oder Dateispezifikation abfragen. SnapDrive für UNIX zeigt den aktuellen Status der Teilung des Klons als „in-progress“, „failed“ oder „complete“ an.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um den Split-Status des Klons mithilfe einer Job-ID oder Dateispezifikation abzufragen.
++
+`*snapdrive clone split status [-lun] _long_lun_name_ [_long_lun_name..._] [{-dg | -vg | -fs | -hostvol | -lvol} _file_spec_ [_file_spec..._]][-job _<jobid>_ ] [-all]*`
+
+
+
+Im folgenden Beispiel wird der Status „Clone Split“ unter Verwendung einer Job-ID angezeigt.
+
+[listing]
+----
+# snapdrive clone split status -job SVE2oxKXzH
+Clone-Split-Status for /fs1-1_3 is 1% Complete
+Clone-Split-Status for /fs1_0 is 73% Complete
+Clone-Split-Status for /fs1_1 is 73% Complete
+Clone-Split-Status for /fs1_2 is 74% Complete
+Clone-Split-Status for /fs1_3 is 1% Complete
+----
+[NOTE]
+====
+Sie können den Status eines Fortschritts für die Teilung von Klonen auf eine der folgenden Arten überprüfen:
+
+* Sie können den Klon mit überprüfen
++
+`*snapdrive storage show -fs /mnt/my_mnt*``
+
++
+Oder
+
++
+`*snapdrive storage show -lun _long_lun_pathname_*`
+
++
+Befehle. In beiden Fällen wird der Klontyp als FlexClone oder LUN-Klon angezeigt, wenn der Split noch nicht abgeschlossen ist.
+
+* Sie können den Status der Teilung von Klonen überprüfen, indem Sie sich beim Storage-System anmelden und die folgenden Befehle im Storage-System-CLI verwenden:
++
+`*vol clone split status _vol_name_*`
+
++
+`*lun clone split status _lun_name_*`
+
+
+
+====
+Das folgende Beispiel zeigt eine Abfrage zum Split-Status eines Klons, die anhand der Dateispezifikation erstellt wurde:
+
+[listing]
+----
+# snapdrive clone split status -fs /mnt/my_mnt3 -fs /mnt/my_mnt4
+Clone-Split-Status for /mnt/my_mnt3 is 14% Complete
+Clone-Split-Status for /mnt/my_mnt4 is 17% Complete
+----
+Im folgenden Beispiel wird eine Abfrage zum Split-Status von Klonen angezeigt, die ausgeführt wird:
+
+[listing]
+----
+# snapdrive clone split status -all
+Job ID: SVE2oxKXzH:
+Clone-Split-Status for /fs1-1_3 is 100% Complete
+Clone-Split-Status for /fs1_0 is 100% Complete
+Clone-Split-Status for /fs1_1 is 100% Complete
+Clone-Split-Status for /fs1_2 is 100% Complete
+Clone-Split-Status for /fs1_3 is 100% Complete
+----
+* Wenn ein Job aus dem Jobsatz entfernt wird und Sie den Status eines Klon-Split-Status mithilfe der Dateispezifikation abfragen, zeigt SnapDrive für UNIX die Fehlermeldung als an
++
+`No split is currently in progress for the given resource.`
+
+* Wenn ein Job aus der Jobgruppe entfernt wird und Sie den Status eines Clone Split mit einer Job-ID abfragen, zeigt SnapDrive für UNIX die Fehlermeldung als an
++
+`Job ID is not valid.`
+
+* Wenn alle Dateispezifikationen aus einem Job entfernt werden und Sie den Status eines geteilten Klons mit der Job-ID abfragen, wird SnapDrive für UNIX als angezeigt
++
+`Job ID is not valid`
+
++
+Weil der Job aus dem Jobsatz entfernt wird.
+
+* Wenn Dateispezifikationen aufgrund eines unzureichenden Speicherplatzes im Speichersystem fehlschlagen, wird der Job weiterhin für die übrigen Dateispezifikationen aufgeteilt. Das bedeutet, dass der Job nicht aus der Jobwarteschlange gelöscht wird und der Jobstatus beibehalten wird, bis Sie das Gesamtergebnis abfragen.
+

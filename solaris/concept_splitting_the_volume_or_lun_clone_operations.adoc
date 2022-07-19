@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_splitting_the_volume_or_lun_clone_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, split, volume, clone, lun 
+summary: SnapDrive für UNIX ermöglicht die Aufteilung eines Volume-Klons oder eines LUN-Klons. Nach Abschluss der Trennung des Klons wird die Beziehung zwischen dem übergeordneten Volume und dem Klon zerstört. Beide Einheiten sind unabhängig voneinander und verfügen über eigenen individuellen Speicherplatz. 
+---
+= Durch das Aufteilen eines Volume-Klons oder eines LUN-Klons
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX ermöglicht die Aufteilung eines Volume-Klons oder eines LUN-Klons. Nach Abschluss der Trennung des Klons wird die Beziehung zwischen dem übergeordneten Volume und dem Klon zerstört. Beide Einheiten sind unabhängig voneinander und verfügen über eigenen individuellen Speicherplatz.
+
+Nachfolgend sind die Split-Vorgänge für Klone aufgeführt:
+
+* Schätzen Sie den Speicherplatz (in MB) für einen Volume-Klon oder LUN-Klon.
+* Teilen Sie einen Volume-Klon oder einen LUN-Klon auf.
+* Beenden Sie die Aufteilung des Volume-Klons oder des LUN-Klons.
+* Zeigen Sie den Status der geteilten Klone an, die gerade ausgeführt, beendet oder fehlgeschlagen ist.
+
+
+[NOTE]
+====
+* Wenn ein Volume-Klon abgetrennt wird, werden alle Snapshot-Kopien im geklonten Volume gelöscht.
+* Es muss der Befehl „Schätzung für die Aufteilung der Dateien“ ausgeführt werden, bevor die Dateispezifikation aufgeteilt wird. So muss festgestellt werden, ob im geklonten Volume Snapshot-Kopien erstellt werden.
+* Für alle Befehle zum Aufteilen von Klonen muss nur der lange LUN-Name mit angegeben werden `-lun` Option. Sie können nicht angeben `-lun` Option auf derselben Befehlszeile zusammen mit anderen Speichereinheiten (-vg, -dg, -fs, - lvol oder -hostvol Optionen).
+* Bei Befehlen zum Aufteilen von Klonen muss immer der absolute Pfadname für die Dateispezifikationen verwendet werden.
+* Die Schätzung für die Aufteilung von LUN-Klonen mit Snapshot ist nur für Snapshot Kopien verfügbar, die aus SnapDrive 4.2 für UNIX und später erstellt werden.
+
+
+====

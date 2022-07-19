@@ -1,0 +1,29 @@
+---
+permalink: solaris/concept_lun_names_in_san_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, name, san, environment 
+summary: Bei allen SAN-Vorgängen sollte das Format der LUN-Namen immer den Host-Namen aufweisen, unabhängig davon, ob es in eine IP-Adresse aufgelöst wird. In einer reinen SAN-Umgebung gibt es kein Konzept des Datenpfads. Die Zuordnung der Managementoberfläche muss mit der Datenpfadschnittstelle übereinstimmen. 
+---
+= LUN-Namen in SAN-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei allen SAN-Vorgängen sollte das Format der LUN-Namen immer den Host-Namen aufweisen, unabhängig davon, ob es in eine IP-Adresse aufgelöst wird. In einer reinen SAN-Umgebung gibt es kein Konzept des Datenpfads. Die Zuordnung der Managementoberfläche muss mit der Datenpfadschnittstelle übereinstimmen.
+
+
+
+== Ausgabe der Konfigurationsliste in einer SAN Umgebung mit mehreren Subnetzen
+
+[listing]
+----
+
+#snapdrive config set -mgmtpath f3050-197-91 f3050-197-91
+
+#snapdrive config list -mgmtpath
+system name        management interface   datapath interface
+------------------------------------------------------------
+bart               10.72.197.91           10.72.197.91
+----

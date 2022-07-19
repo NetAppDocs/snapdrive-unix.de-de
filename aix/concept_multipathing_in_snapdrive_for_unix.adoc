@@ -1,0 +1,14 @@
+---
+permalink: aix/concept_multipathing_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multipathing 
+summary: SnapDrive für UNIX unterstützt Multipathing. SnapDrive für UNIX unterstützt nicht die Verwendung von Aliasen für Geräte, die mit den Befehlen mknod und/oder rendev erstellt wurden. 
+---
+= Multipathing in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt Multipathing. SnapDrive for UNIX unterstützt nicht die Verwendung von Aliase für Geräte, die mit dem erstellt wurden `mknod` Und/oder `rendev` Befehle.

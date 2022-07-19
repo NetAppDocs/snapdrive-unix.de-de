@@ -1,0 +1,134 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snap, create, command, information, required 
+summary: Wenn Sie eine Snapshot Kopie erstellen, sollten Sie die Storage-Einheit bestimmen, die Sie erfassen möchten, und einen Namen der Snapshot Kopie angeben. 
+---
+= Für die Verwendung des SnapDrive Snap create-Befehls sind Informationen erforderlich
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine Snapshot Kopie erstellen, sollten Sie die Storage-Einheit bestimmen, die Sie erfassen möchten, und einen Namen der Snapshot Kopie angeben.
+
+In der folgenden Tabelle finden Sie die Informationen, die Sie bei der Verwendung des benötigen `snapdrive snap create` Befehl:
+
+|===
+| Anforderungen/Optionen | Argument 
+
+
+ a| 
+Geben Sie den Typ der Storage-Einheit an, die in der Snapshot Kopie erfasst werden soll. Sie können NFS-Einheiten, LUNs, Dateisysteme, die direkt auf LUNs erstellt wurden, und LVM-Einheiten in einer einzigen Befehlszeile angeben.
+
+Geben Sie den Namen des Elements mit dem entsprechenden Argument an. Dies ist der Wert für das `file_spec` Argument:
+
+* Wenn Sie eine Laufwerksgruppe angeben, die über eine Host-Volume- oder Dateispezifikation verfügt, wird das Argument in eine Reihe von Laufwerksgruppen auf dem Speichersystem übersetzt. SnapDrive für UNIX erstellt die gesamte Festplattengruppe, die die Einheit enthält, selbst wenn die Einheit ein Host-Volume oder ein Dateisystem ist.
+* Wenn Sie eine Dateispezifikation angeben, die ein NFS-Bereitstellungspunkt ist, wird das Argument in die Verzeichnisstruktur des Speichersystemvolume übersetzt.
+* Wenn Sie eine LUN oder eine LUN angeben, die über ein Dateisystem verfügt, wird das Argument auf die LUN oder auf die LUN mit dem Filesystem übersetzt.
++
+
+NOTE: Sie können keine Sonderzeichen mit den Speichereinheiten, z. B. angeben `-vg`, `-dg`, `-fs`, `-lvol`, und `-hostvol`. Ein Schrägstrich (/) ist jedoch für Storage-Einheiten wie z. B. zulässig `-fs`, `-lvol`, und `-hostvol`.
+
+
+
+
+
+ a| 
+LUN (`-lun file_spec`)
+ a| 
+Der Name der LUN
+
+Sie müssen den Namen des Storage-Systems, des Volumes und der LUN angeben.
+
+
+
+ a| 
+Festplattengruppe (`-dg file_spec`) Oder Volume-Gruppe (`-vg file_spec`)
+ a| 
+Name der Festplatte oder Volume-Gruppe
+
+
+
+ a| 
+File-System (`-fs file_spec`)
+ a| 
+Filesystem_Name
+
+
+
+ a| 
+Host Volume (`-hostvol file_spec`) Oder logisches Volumen (`-lvol file_spec`)
+ a| 
+Name des Hosts oder logischen Volumes
+
+
+NOTE: Sie müssen sowohl das angeforderte Volume als auch die Laufwerksgruppe mit angeben, z. B. `-hostvol dg3/acct_volume`.
+
+
+
+ a| 
+Der Name der Snapshot Kopie (`-snapname snap_name`)
+ a| 
+Name der Snapshot Kopie
+
+
+
+ a| 
+Geben Sie den Namen für die Snapshot Kopie an. Dabei kann es sich entweder um die lange Version des Namens handeln, die das Storage-System und das Volume mit dem Namen der Snapshot Kopie enthält, oder um die Kurzversion des Namens für die Snapshot Kopie.
+
+
+NOTE: Sie müssen sicherstellen, dass der für angegebene Wert angegeben ist `snapname` Maximal 200 Zeichen.
+
+
+
+ a| 
+`-unrelated`
+ a| 
+~
+
+
+
+ a| 
+Optional: Um eine Snapshot Kopie von Storage-Einheiten zu erstellen, die beim Erstellen der Snapshot Kopie keinen abhängigen Schreibvorgang haben, erstellt SnapDrive für UNIX eine absturzkonsistente Snapshot Kopie der einzelnen Storage-Einheiten. Es wird jedoch nicht versucht, die Einheiten miteinander in Einklang zu bringen.
+
+
+
+ a| 
+`-force`
+ a| 
+~
+
+
+
+ a| 
+`-noprompt`
+ a| 
+~
+
+
+
+ a| 
+Optional: Entscheiden Sie, ob Sie eine vorhandene Snapshot Kopie überschreiben möchten. Ohne diese Option stoppt dieser Vorgang, wenn Sie den Namen einer vorhandenen Snapshot Kopie angeben. Wenn Sie diese Option angeben und den Namen einer vorhandenen Snapshot Kopie angeben, werden Sie vom Befehl aufgefordert, zu bestätigen, dass Sie die Snapshot Kopie überschreiben möchten. Um zu verhindern, dass SnapDrive für UNIX die Eingabeaufforderung anzeigt, fügen Sie den ein `-noprompt` Optionen ebenfalls. (Sie müssen immer die einschließen `-force` Option, wenn Sie die verwenden möchten `-noprompt` Option.)
+
+
+
+ a| 
+`-fstype`
+ a| 
+`_type_`
+
+
+
+ a| 
+`-vmtype`
+ a| 
+`_type_`
+
+
+
+ a| 
+Optional: Geben Sie den Typ des Dateisystems und des Volume-Managers an, die für SnapDrive für UNIX-Vorgänge verwendet werden sollen.
+
+|===

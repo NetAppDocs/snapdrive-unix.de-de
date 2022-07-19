@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_using_port_set_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, port, set 
+summary: Der Port-Satz ist eine Gruppe von SAN-Daten-Ports oder -Schnittstellen und dient zur Steuerung des für einen Host verfügbaren Pfads, indem der Satz von SAN-Daten-Port oder -Schnittstelle gruppiert wird. 
+---
+= Verwenden des Ports, der in SnapDrive für UNIX eingestellt ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Port-Satz ist eine Gruppe von SAN-Daten-Ports oder -Schnittstellen und dient zur Steuerung des für einen Host verfügbaren Pfads, indem der Satz von SAN-Daten-Port oder -Schnittstelle gruppiert wird.
+
+Die Port-Set-Konfiguration wird vom Storage-Administrator auf dem Speichersystem erstellt, und dies ist eine optionale Aufgabe. Wenn auf dem Host kein Port-Set konfiguriert ist, kann der Host abhängig von den Konfigurationslimits des Host-SCSI alle Pfade anzeigen. Mithilfe von SnapDrive für UNIX kann der Storage-Administrator einen einzelnen Port-Satz pro Vserver festlegen. Daher wird die Anzahl der Pfade, die der Host über den Vserver sehen kann, beschränkt.

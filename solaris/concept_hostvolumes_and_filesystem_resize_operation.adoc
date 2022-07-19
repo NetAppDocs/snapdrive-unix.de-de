@@ -1,0 +1,31 @@
+---
+permalink: solaris/concept_hostvolumes_and_filesystem_resize_operation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, volume, resize, file 
+summary: Der Befehl SnapDrive Storage Resize gilt nur für Festplattengruppen des Storage-Systems und Volume-Gruppen. Wenn Sie die Größe Ihres Host-Volume oder Dateisystems erhöhen möchten, müssen Sie LVM-Befehle verwenden. 
+---
+= Die Größe der Host Volumes und des File-Systems kann geändert werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `snapdrive storage resize` Befehl gilt nur für Storage-System-Festplattengruppen und Volume-Gruppen. Wenn Sie die Größe Ihres Host-Volume oder Dateisystems erhöhen möchten, müssen Sie LVM-Befehle verwenden.
+
+Die folgende Tabelle fasst die LVM-Befehle zusammen, die Sie auf den verschiedenen Plattformen verwenden können. Weitere Informationen zu diesen Befehlen finden Sie in den man-Pages der Befehle.
+
+|===
+| *Gastgeber* | *Volume Manager* | *Host Volume* | *Dateisysteme* 
+
+
+ a| 
+Solaris
+ a| 
+VxVM
+ a| 
+`vxassist`
+ a| 
+`fsadm`
+
+|===

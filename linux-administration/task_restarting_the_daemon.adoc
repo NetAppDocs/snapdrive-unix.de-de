@@ -1,0 +1,25 @@
+---
+permalink: linux-administration/task_restarting_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restart, daemon, command, configuration 
+summary: Sie müssen den Daemon neu starten, nachdem Sie ihn angehalten haben, damit Änderungen an der Konfigurationsdatei oder an den anderen Modulen wirksam werden. Der SnapDrive for UNIX Daemon wird erst neu gestartet, nachdem alle Befehle ausgeführt und in der Warteschlange ausgeführt wurden. Nachdem die Anforderung für einen Neustart empfangen wurde, werden keine neuen Befehle ausgeführt. 
+---
+= Starten Sie den Daemon neu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den Daemon neu starten, nachdem Sie ihn angehalten haben, damit Änderungen an der Konfigurationsdatei oder an den anderen Modulen wirksam werden. Der SnapDrive for UNIX Daemon wird erst neu gestartet, nachdem alle Befehle ausgeführt und in der Warteschlange ausgeführt wurden. Nachdem die Anforderung für einen Neustart empfangen wurde, werden keine neuen Befehle ausgeführt.
+
+* Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+* Stellen Sie sicher, dass keine anderen Sitzungen parallel auf demselben Host ausgeführt werden. Der `snapdrived restart` Befehl hängt das System in solchen Situationen.A
+
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um den Daemon neu zu starten:
++
+`*snapdrived restart*`
+
+

@@ -1,0 +1,24 @@
+---
+permalink: solaris/concept_support_for_guest_operating_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, guest, operating, system 
+summary: 'SnapDrive für UNIX: Unterstützung von Gastbetriebssystemen ermöglicht die Erstellung von Storage und das Management von Snapshot Kopien von LUNs, Dateisystemen, logischen Volumes und Festplattengruppen. Für die Bereitstellung von RDM LUNs müssen Sie das Fibre Channel \(FC\)-Protokoll in der snapdrive.conf Datei angeben.' 
+---
+= Unterstützung von Gast-Betriebssystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX: Unterstützung von Gastbetriebssystemen ermöglicht die Erstellung von Storage und das Management von Snapshot Kopien von LUNs, Dateisystemen, logischen Volumes und Festplattengruppen. Für die Bereitstellung von RDM LUNs müssen Sie das Fibre Channel (FC)-Protokoll in der snapdrive.conf Datei angeben.
+
+* Erstellen Sie Speicher mit LUNs, RDM LUNs, File-Systemen, logischen Volumes und Festplattengruppen.
++
+Nach dem Erstellen des Speichers können Sie die Speicherkapazität erhöhen oder verringern, den Speicher mit einem Host verbinden oder trennen und Konfigurationsinformationen zum Speicher anzeigen.
+
+* Erstellen Sie eine Snapshot Kopie von einer oder mehreren Volume-Gruppen auf einem Storage-System.
++
+Die Snapshot Kopie kann Filesysteme, logische Volumes, Festplattengruppen, LUNs, RDM-LUNs, enthalten. Und NFS Verzeichnisbäume. Nachdem Sie eine Snapshot Kopie erstellt haben, können Sie die Snapshot Kopie umbenennen, wiederherstellen oder löschen. Sie können eine Snapshot-Kopie auch an einen anderen Speicherort auf demselben oder einem anderen Host verbinden. Nachdem Sie die Snapshot Kopie verbunden haben, können Sie den Inhalt anzeigen und ändern oder die Verbindung trennen. Sie können auch Informationen über die Snapshot Kopien anzeigen.
+
+

@@ -1,0 +1,113 @@
+---
+permalink: solaris/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, disconenct, command, information, required 
+summary: In der folgenden Tabelle finden Sie die Informationen, die Sie bei Verwendung des Befehls SnapDrive Storage Disconnect benötigen. 
+---
+= Für die Verwendung des Befehls SnapDrive Storage Disconnect sind Informationen erforderlich
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In der folgenden Tabelle finden Sie die Informationen, die Sie bei der Verwendung des angeben müssen `snapdrive storage disconnect` Befehl:
+
+|===
+| Anforderungen | Argument 
+
+
+ a| 
+Basierend auf dem eingegebenen Befehl können Sie Zuordnungen von folgenden entfernen:
+
+* LUNs
++
+Wenn Sie eine oder mehrere LUNs trennen, muss das erste Argument das lange Format des LUN-Namens verwenden, der den Namen des Storage-Systems, den Volume-Namen und den Namen der LUN innerhalb des Volume angibt.
+
++
+Zum Angeben weiterer LUNs können Sie den LUN-Namen allein verwenden, wenn sich die neue LUN auf demselben Storage-System und Volume wie die vorherige LUN befindet. Andernfalls können Sie einen neuen Storage-Systemnamen und einen neuen Volume-Namen (oder nur einen Volume-Namen) angeben, um die vorherigen Werte zu ersetzen.
+
+* File-Systeme auf LUNs
++
+Der `_file_spec_` Gegeben `-fs` Ist der Name des Filesystem-Bereitstellungspunkts. SnapDrive für UNIX sucht und trennt die LUN automatisch, die mit dem angegebenen Dateisystem verknüpft ist.
+
+* Festplatten- oder Volume-Gruppen
+* File-Systeme auf Festplatten- oder Volume-Gruppen
+* Host oder logische Volumes
+
+
+Der Wert, den Sie für das Argument file_spec eingeben, muss die Speichereinheit angeben, die Sie trennen.
+
+
+
+ a| 
+EINE LUN (`-lun`)
+ a| 
+`_lun_name_` (Lange oder kurze Form)
+
+
+
+ a| 
+Festplattengruppe (`-dg _file_spec_`) Oder Volume-Gruppe (`-vg _file_spec_`)
+ a| 
+Name der Festplatte oder Volume-Gruppe
+
+
+
+ a| 
+File-System (`-fs _file_spec_`)
+ a| 
+`_filesystem_name_`
+
+
+
+ a| 
+Host Volume (`-hostvol _file_spec_`) Oder logisches Volumen (`-lvol _file_spec_`)
+ a| 
+Name des Hosts oder logischen Volumes
+
+
+
+ a| 
+Wenn Sie möchten, dass SnapDrive für UNIX den Speicher abtrennt, geben Sie an, selbst wenn Sie an der Eingabeaufforderung eine Host-seitige Einheit mit anderen Einheiten (z. B. eine Laufwerksgruppe mit einem oder mehreren Host Volumes) angeben, schließen Sie die ein `-full` Option an der Eingabeaufforderung.
+
+Wenn Sie diese Option nicht angeben, müssen Sie nur leere Einheiten auf Host-Seite angeben.
+
+
+
+ a| 
+`-full`
+ a| 
+~
+
+
+
+ a| 
+Wenn ein Knoten oder ein Host-Cluster die Freigabe eines Dateisystems deaktivieren soll
+
+
+
+ a| 
+`-devicetype`
+ a| 
+
+
+
+ a| 
+`-fstype`
+ a| 
+`_type_`
+
+
+
+ a| 
+`-vmtype`
+ a| 
+`_type_`
+
+
+
+ a| 
+*Optional:* gibt den Typ des Dateisystems und Volume Managers an, der für SnapDrive für UNIX-Vorgänge verwendet werden soll.
+
+|===

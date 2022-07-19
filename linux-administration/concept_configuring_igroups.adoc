@@ -1,0 +1,17 @@
+---
+permalink: linux-administration/concept_configuring_igroups.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, igroup, storage, configure 
+summary: Mit SnapDrive für UNIX können Sie eine Initiatorgruppe konfigurieren, die auf dem Storage-System vorhanden ist. Die konfigurierte Initiatorgruppe wird verwendet, um die LUNs auf dem Storage-System zuzuordnen. 
+---
+= Initiatorgruppen werden konfiguriert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie eine Initiatorgruppe konfigurieren, die auf dem Storage-System vorhanden ist. Die konfigurierte Initiatorgruppe wird verwendet, um die LUNs auf dem Storage-System zuzuordnen.
+
+
+NOTE: Die Initiatorgruppen müssen den Quell-Initiator und den Ziel-Initiator enthalten.

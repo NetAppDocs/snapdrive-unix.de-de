@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_storage_system_volume_preparation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, system, volume, prepare 
+summary: Sie können entweder die Eingabeaufforderung im Storage-System oder die Option FilerView verwenden, um ein Storage System-Volume für den dedizierten Einsatz von SnapDrive für UNIX zu erstellen. 
+---
+= Vorbereitung der Volumes des Storage-Systems
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können entweder die Eingabeaufforderung im Storage-System oder die Option FilerView verwenden, um ein Storage System-Volume für den dedizierten Einsatz von SnapDrive für UNIX zu erstellen.
+
+Sie müssen die folgenden Aufgaben auf dem Storage-System ausführen, um ein Volume zu erstellen, auf dem die LUN- (SnapDrive für UNIX Logical Unit Numbers) oder NFS-Einheiten (Network File System) enthalten sein können, die mit einem einzelnen Host verbunden sind:
+
+* Erstellung eines Storage-System-Volumes
+* Wenn sich eine Fibre-Channel- oder iSCSI-Umgebung (Internet Small Computer System Interface) befindet, setzen Sie den zurück `snapdrive snap reserve` Option auf null Prozent auf dem Storage-System-Volume, das alle mit dem Host verbundenen LUNs zur Volume-Optimierung enthält.
+
+
+Wenn Sie ein Volume auf einem Storage-System erstellen, um LUNs oder NFS Verzeichnisbäume festzuhalten, sollten Sie Folgendes beachten:
+
+* Sie können mehrere LUNs oder NFS-Verzeichnisbäume auf einem Storage System-Volume erstellen.
+* Sie sollten keine Benutzerdaten im Root-Volume auf dem Storage-System oder der vFiler Einheit speichern.
+
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com/portal/documentation["NetApp Dokumentation"]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["ONTAP 9 NFS Referenz"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["Data ONTAP 8.2 – Leitfaden für Dateizugriff und Protokoll-Management für 7-Mode"]

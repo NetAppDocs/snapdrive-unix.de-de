@@ -1,0 +1,85 @@
+---
+permalink: linux-administration/concept_volume_based_snaprestore_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, volume, command 
+summary: Dieser Abschnitt beschreibt die Befehle und die Optionen zur Verwendung von Volume-basierten SnapRestore. 
+---
+= Volume-basierter SnapRestore-Befehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dieser Abschnitt beschreibt die Befehle und die Optionen zur Verwendung von Volume-basierten SnapRestore.
+
+`-vbsr` Option ist in Snap Restore CLI hinzugefügt, um volumenbasierte SnapRestore auszuwählen. Verwenden Sie die folgende Befehlssyntax für, um die Wiederherstellung mithilfe von Volume-basierten SnapRestore durchzuführen:
+
+[listing]
+----
+snapdrive snap restore {-lun | -dg | -vg | -hostvol |
+-lvol | -fs |-file} file_spec [file_spec ...] [{-lun | -dg |
+-vg | -hostvol | -lvol | -fs -file} file_spec [file_spec ...]
+...] -snapname snap_name [-force [-noprompt]][{-reserve |
+-noreserve}]
+[-vbsr [execute | preview]]
+----
+Wenn kein Argument mit dem geliefert wird `-vbsr`, Die Standardausgabe ist die des `preview` Option. A `-verbose` Die Option wird verwendet, die eine detaillierte Ausgabe aller obligatorischen Prüfungen ermöglicht, die vom Benutzer übergangen werden können. Die Standardausgabe, wenn `-verbose` Die Option ist nicht angegeben zeigt die Ergebnisse der fehlgeschlagenen Prüfungen an.
+
+Wenn beim Ausführen von Volume-basierten SnapRestore keine Bestätigungsmeldung angezeigt wird, können Sie verwenden `-noprompt` Und `-force` Option mit `snap restore -vbsr execute` Befehl. Die folgende Tabelle beschreibt das Verhalten von SnapDrive für UNIX in Abhängigkeit von den von Ihnen bereitgestellten Optionen.
+
+|===
+| S.N. | -Vbsr execute | -Force | -Noprompt | Ergebnis 
+
+
+ a| 
+1.
+ a| 
+Nein
+ a| 
+NA
+ a| 
+NA
+ a| 
+Der Vorschaumodus ist der Standardmodus. Alle Prüfungen werden durchgeführt und jeder Prüfung wird ein Bericht erstellt.
+
+
+
+ a| 
+2.
+ a| 
+Ja.
+ a| 
+Nein
+ a| 
+Nein
+ a| 
+Alle Überprüfungen werden durchgeführt. Wenn obligatorische Prüfungen erforderlich sind, dass ein Benutzer das Überschreiben nicht ausführen kann, zeigt SnapDrive für UNIX eine Fehlermeldung an.
+
+
+
+ a| 
+3.
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Nein
+ a| 
+Alle Überprüfungen werden durchgeführt. Wenn obligatorische Überprüfungen fehlschlagen, zeigt SnapDrive für UNIX eine Fehlermeldung an. Wenn eine Überprüfung fehlschlägt, dass ein Benutzer das Überschreiben von Daten ausführen kann, werden Sie von SnapDrive für UNIX aufgefordert.
+
+
+
+ a| 
+4.
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Ja.
+ a| 
+Alle Überprüfungen werden durchgeführt. Wenn obligatorische Überprüfungen fehlschlagen, zeigt SnapDrive für UNIX eine Fehlermeldung an. Wenn eine Überprüfung fehlschlägt, dass ein Benutzer das Überschreiben ausführen kann, werden Sie von SnapDrive für UNIX nicht aufgefordert.
+
+|===

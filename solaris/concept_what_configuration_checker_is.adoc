@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_what_configuration_checker_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, checker 
+summary: Das SnapDrive Configuration Checker Tool hilft Ihnen dabei, die von SnapDrive für UNIX unterstützten Konfigurationen zu identifizieren und zu überprüfen. 
+---
+= Was ist die Konfigurationsprüfung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapDrive Configuration Checker Tool hilft Ihnen dabei, die von SnapDrive für UNIX unterstützten Konfigurationen zu identifizieren und zu überprüfen.
+
+Das Konfigurationsprüfungstool behebt das Problem mehrerer Supportkonfigurationen, indem die Benutzerkonfiguration sowohl in NAS- als auch in SAN-Umgebungen überprüft wird.
+
+Das SnapDrive Configuration Checker-Tool unterstützt die folgenden Konfigurationsprüfungen in SnapDrive für UNIX:
+
+* Überprüft die im angegebene Konfiguration `snapdrive.conf` Datei, die am Standardspeicherort verfügbar ist.
+* Überprüft die Konfiguration, die mit der CLI angegeben wurde.
+

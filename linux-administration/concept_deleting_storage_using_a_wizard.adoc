@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/concept_deleting_storage_using_a_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, wizard, storage 
+summary: Sie können den Assistenten zum Löschen von Speicher verwenden, um bestimmte Löschvorgänge durchzuführen. 
+---
+= Löschen von Speicher mit einem Assistenten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Assistenten zum Löschen von Speicher verwenden, um bestimmte Löschvorgänge durchzuführen.
+
+Sie können den Assistenten mit starten `snapdrive storage wizard delete` Befehl.
+
+Sie können die folgenden Elemente löschen:
+
+* EINE LUN
+* Eine Laufwerksgruppe
+* Einem logischen Volume
+* Ein Dateisystem
+

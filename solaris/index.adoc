@@ -1,0 +1,14 @@
+---
+permalink: solaris/index.html 
+sidebar: sidebar 
+keywords: documentation, guide, installation, administration, solaris 
+summary: Beschreibt die Installation, Konfiguration und Verwendung von SnapDrive für UNIX auf einer Solaris-Plattform. 
+---
+= Installations- und Administrationsanleitung für Solaris
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dieses Handbuch beschreibt die Installation, Konfiguration und Verwendung von SnapDrive 5.3.2 für UNIX auf einer Solaris-Plattform.

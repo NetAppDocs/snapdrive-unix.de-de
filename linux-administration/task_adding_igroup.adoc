@@ -1,0 +1,30 @@
+---
+permalink: linux-administration/task_adding_igroup.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, igroup, storage, host 
+summary: Mit SnapDrive für UNIX können Sie dem Host eine bestimmte Initiatorgruppe für das Storage-System hinzufügen und SnapDrive-Vorgänge über die konfigurierte Initiatorgruppe durchführen. Sie müssen sicherstellen, dass die Initiatorgruppe im Storage-System verfügbar ist. 
+---
+= Hinzufügen einer Initiatorgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie dem Host eine bestimmte Initiatorgruppe für das Storage-System hinzufügen und SnapDrive-Vorgänge über die konfigurierte Initiatorgruppe durchführen. Sie müssen sicherstellen, dass die Initiatorgruppe im Storage-System verfügbar ist.
+
+.Schritte
+. Geben Sie den folgenden Befehl für den Host ein:
++
+`*snapdrive igroup add _igroup_name filer_name_ [_filer_name..._]*`
+
++
+[listing]
+----
+snapdrive igroup add ig toaster
+Added igroup configuration for appliance: toaster
+----
++
+Der `ig` initiatorgruppe wurde für den Toaster des Speichersystems erfolgreich hinzugefügt.
+
+

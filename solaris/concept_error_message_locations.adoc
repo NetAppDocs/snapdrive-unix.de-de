@@ -1,0 +1,43 @@
+---
+permalink: solaris/concept_error_message_locations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message, location 
+summary: SnapDrive für UNIX bietet Informationen über Fehlermeldungen als Befehlsausgabe und in verschiedenen Log-Dateien. 
+---
+= Fehlermeldungs-Speicherorte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet Informationen über Fehlermeldungen als Befehlsausgabe und in verschiedenen Log-Dateien.
+
+SnapDrive für UNIX bietet Informationen über Fehlermeldungen an folgenden Stellen:
+
+* Die Befehlsausgabe
++
+Es zeigt alle Meldungen an der Standard-Fehlerausgabe des SnapDrive für UNIX-Befehls an.
+
+* Systemprotokoll
++
+SnapDrive für UNIX protokolliert alle Fehler, deren Schweregrad „fatal“ ist, und Admin-Fehler im Systemprotokoll mithilfe des Syslog(3)-Mechanismus.
+
+* Die Audit-Log-Datei
++
+Das Prüfprotokoll zeichnet die folgenden Informationen für jeden SnapDrive für UNIX-Befehl auf:
+
++
+** Wer hat sie ausgestellt
+** Wenn sie ausgestellt wurde
+** Was war sein Exit-Status.
++
+Dies ist sehr nützlich bei der Bestimmung, was tatsächlich auf einem System passiert ist.
+
+
+
+* Die Trace-Log-Datei
++
+Das Trace-Protokoll zeichnet detailliertere Informationen über Fehler auf, die auftreten. Der technische Support von NetApp verwendet dieses Protokoll bei der Diagnose von Problemen.
+
+

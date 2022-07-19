@@ -1,0 +1,14 @@
+---
+permalink: aix/concept_snapshot_copies_information_display.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, information, display, snapshot, copy 
+summary: 'Sie können Snapshot Kopien für ein Storage-System, ein Storage-System-Volume, LUNs und andere Storage-Einheiten anzeigen. Verwenden Sie den Befehl SnapDrive Snap show \(oder list\), um eine Snapshot Kopie anzuzeigen.' 
+---
+= Snapshot Kopien zeigen Informationen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Snapshot Kopien für ein Storage-System, ein Storage-System-Volume, LUNs und andere Storage-Einheiten anzeigen. Verwenden Sie den Befehl `snapdrive snap show` (Oder `list`) Um eine Snapshot Kopie anzuzeigen.

@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_snapshot_connectand_snapshotrestore_operations.html 
+sidebar: sidebar 
+keywords: snap, snapshot, restore, connect, operation 
+summary: Snapshot Kopie klont die Informationen, wenn Sie eine Verbindung zur Snapshot Kopie herstellen. 
+---
+= Snapshot Verbindung und Snapshot Wiederherstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Snapshot Kopie klont die Informationen, wenn Sie eine Verbindung zur Snapshot Kopie herstellen.
+
+Anders als bei der Wiederherstellung des Snapshot ersetzt die Verbindung mit dem Snapshot nicht den vorhandenen Inhalt der LUNs, aus denen die Host-Einheit mit dem Inhalt der Snapshot Kopie besteht. Es werden die Informationen klonen.
+
+Nach dem Herstellen der Verbindung führen sowohl Snapshot Connect- als auch Snapshot-Restore-Vorgänge ähnliche Aktivitäten aus:
+
+* Über den Snapshot-Verbindungsvorgang werden logische Volumes für die Storage-Einheit aktiviert, Dateisysteme gemountet und optional der Tabelle des Host-Filesystems einen Eintrag hinzugefügt.
+* Der Vorgang zur Snapshot Wiederherstellung aktiviert die logischen Volumes für die Storage-Einheit, mountet die Filesysteme und wendet die Mount-Einträge für das Host-Filesystem an, die in der Snapshot Kopie erhalten wurden.
+

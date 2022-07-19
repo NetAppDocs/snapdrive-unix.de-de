@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_about_the_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: 'SnapDrive für UNIX bietet ein Datenerfassungs-Utility \(snapdrive.dc\), das Diagnosedaten zu SnapDrive für UNIX, SnapDrive Configuration Checker und Ihrem System-Setup erfasst.' 
+---
+= Über das Dienstprogramm zur Datenerfassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet ein Tool zur Datenerfassung (`snapdrive.dc`) Das sammelt Diagnoseinformationen über SnapDrive für UNIX, SnapDrive-Konfigurationsprüfer und Ihr System-Setup.
+
+Dazu werden NetApp Diagnose-Utilities ausgeführt und SnapDrive für UNIX-Log-Dateien in ein spezielles Verzeichnis kopiert. Dann erstellt es eine komprimierte Datei mit diesen Informationen, die Sie an den technischen Support von NetApp zur Analyse senden können.
+
+In SnapDrive 5.0 für UNIX wurde der von `-dump` Und `-dumpall` Es werden Optionen implementiert. Der `-dump` Die Option sammelt das erste Protokoll des SnapDrive-Befehls und das `-dumpall` Die Option sammelt alle Protokolle des SnapDrive-Befehls. Wenn Sie die SnapDrive-Vorgänge mit dem ausführen `-dump` Oder `-dumpall` Option, `snapdrive.dc` Wird erzeugt und führt den Speicherort der komprimierten Datei auf. Die tar-Datei sammelt alle Log-Informationen der SnapDrive-Befehle, Sie können die Datei enttar und von dem jeweiligen Speicherort abrufen.
+
+Der `-dump` Oder `-dumpall` Die Option wird für SnapDrive-Befehle wie z. B. implementiert `snapdrive storage show`, `snapdrive storage create`, `snapdrive storage delete`, `snapdrive snap create`, `snapdrive snap connect`, `snapdrive snap disconnect`, `snapdrive snap restore`, `snapdrive clone split estimate`, und `snapdrive clone split start` Betrieb:
+
+
+NOTE: Die Datei mit Anmeldeinformationen für die Storage-Systeme wird nicht kopiert. Auch keine Konfigurationsänderungen werden vorgenommen.

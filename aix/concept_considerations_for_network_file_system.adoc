@@ -1,0 +1,30 @@
+---
+permalink: aix/concept_considerations_for_network_file_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, nfs, configuration 
+summary: 'Bevor Sie SnapDrive für UNIX installieren, sollten Sie den Speicherort berücksichtigen, auf dem der Network File System \(NFS\)-Service ausgeführt wird, und den Speicherort, an den die Verzeichnisse des Speichersystems exportiert werden. Sie sollten die NFS-Client-Berechtigungen und die Schnittstelle Lese-Schreib-Berechtigungen überprüfen.' 
+---
+= Richtlinien für NFS-Konfigurationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie SnapDrive für UNIX installieren, sollten Sie den Speicherort berücksichtigen, auf dem der NFS-Service (Network File System) ausgeführt wird, und den Speicherort, an den die Verzeichnisse des Speichersystems exportiert werden. Sie sollten die NFS-Client-Berechtigungen und die Schnittstelle Lese-Schreib-Berechtigungen überprüfen.
+
+Wenn Sie SnapDrive für UNIX zum Wiederherstellen oder Herstellen einer Verbindung zu NFS-gemounteten Verzeichnissen verwenden, müssen Sie sicherstellen, dass die Verzeichnisse des Speichersystems korrekt an den Host exportiert werden. Wenn Ihr Host über mehrere IP-Schnittstellen verfügt, die auf das Speichersystem zugreifen können, müssen Sie sicherstellen, dass das Verzeichnis korrekt auf jedes davon exportiert wird.
+
+SnapDrive für UNIX gibt Warnungen vor, sofern alle diese Schnittstellen über Lese-/Schreibzugriff verfügen, oder im Fall von `snapdrive snap connect` Mit dem `-readonly` Option oder zumindest schreibgeschützt. Der `snapdrive snap restore` Und `snapdrive snap connect` Befehle schlagen fehl, wenn keine dieser Schnittstellen über die Berechtigung zum Zugriff auf das Verzeichnis verfügen.
+
+Wenn Sie Single File SnapRestore (SFSR) als Root-Benutzer ausführen, müssen Sie sicherstellen, dass die Verzeichnisse des Speichersystems mit Lese-/Schreibberechtigungen auf den Host exportiert werden und die folgenden Exportregeln festgelegt werden müssen:
+
+* `rw=<hostname>, root=<hostname>` In Data ONTAP 7-Mode
+* `rwrule = sys, rorule=sys, superuser= sys` In Clustered Data ONTAP
+
+
+*Verwandte Informationen*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["ONTAP 9 NFS Referenz"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["Data ONTAP 8.2 – Leitfaden für Dateizugriff und Protokoll-Management für 7-Mode"]

@@ -1,0 +1,35 @@
+---
+permalink: aix/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, disconnect, copy, nfs, entities 
+summary: Die Trennung einer Snapshot Kopie kann von jedem Knoten in einer Host-Cluster-Umgebung ausgeführt werden. Verwenden Sie Befehlsoptionen, um eine Speichereinheit von einem bestimmten Node zu trennen. 
+---
+= Richtlinien zum Trennen von Snapshot Kopien für NFS Einheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Trennung einer Snapshot Kopie kann von jedem Knoten in einer Host-Cluster-Umgebung ausgeführt werden. Verwenden Sie Befehlsoptionen, um eine Speichereinheit von einem bestimmten Node zu trennen.
+
+Beachten Sie beim Trennen von Snapshot Kopien, die NFS-Einheiten enthalten:
+
+* Wenn Sie eine NFS-Verzeichnisstruktur trennen, die Sie mit schreibgeschützter Berechtigung verbunden haben, führt SnapDrive für UNIX die folgenden Aktionen durch:
++
+** Hängt das Dateisystem ab.
+** Entfernt den Mount-Eintrag in der Dateisystemtabelle.
+** Entfernt den Bereitstellungspunkt.
+** Entfernt nicht die Exportregeln des Snapshot-Kopienverzeichnisses, das während der Verbindung von NFS-Dateiepec vom sekundären Host erstellt wurde (dem Host, der keine Exportberechtigung auf dem übergeordneten Volume hat).
+
+
+* Wenn Sie eine NFS-Verzeichnisstruktur trennen, die Sie mit Lese- und Schreibberechtigung verbunden haben, führt SnapDrive für UNIX die folgenden Aktionen durch:
++
+** Hängt das Dateisystem ab.
+** Entfernt den Mount-Eintrag in der Dateisystemtabelle.
+** Löscht die NFS-Verzeichnisstruktur, die dem Dateisystem im FlexVol-Volume-Klon entspricht.
+** Zerstört den zugrunde liegenden FlexVol Volume-Klon (wenn er leer ist).
+** Entfernt den Bereitstellungspunkt.
+
+
+

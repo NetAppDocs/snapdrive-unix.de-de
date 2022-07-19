@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/concept_guidelines_forconnectingsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, guidelines 
+summary: Beachten Sie beim Verbinden mit Snapshot Kopien die Richtlinien. 
+---
+= Richtlinien zum Verbinden von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beachten Sie beim Verbinden mit Snapshot Kopien die Richtlinien.
+
+* Der `snapdrive snap connect` Befehl funktioniert nur mit den in SnapDrive 4.2 für UNIX erstellten Snapshot-Kopien.
+* SnapDrive 4.1 für UNIX unterstützt auf einem nicht vom Ursprung stammenden Host den Snapshot Verbindungsvorgang unter Verwendung von Linux LVM1 oder LVM2. Es unterstützt jedoch den Snapshot Verbindungsvorgang auf dem ursprünglichen Host nicht, wenn die LUN Teil des Linux LVM1 Volume Manager ist.
+* SnapDrive für UNIX unterstützt auf einem von Ursprung stammenden Host das Verbinden und Wiederherstellen von Snapshot Kopien, die von früheren Versionen von SnapDrive für UNIX erstellt wurden.
++
+
+NOTE: Der Verbindungsvorgang auf einem Linux-Host funktioniert nur mit Linux LVM2 und von SnapDrive für UNIX erstellten Snapshot Kopien.
+
+* Auf Linux-Hosts, das `snapdrive snap connect` Befehl wird unterstützt, wenn die zu verbinde Snapshot Kopie eine LUN oder eine LUN mit einem Dateisystem enthält, die ohne Aktivierung des Linux LVM1 erstellt wurde. SnapDrive für UNIX unterstützt das nicht `snapdrive snap connect` Befehl für Linux-Einheiten, die mit dem Linux LVM1 erstellt werden.
++
+Der `snapdrive snap connect` Mit dem Befehl können Sie die Laufwerksgruppe auf einem Linux-Host nicht umbenennen. Beispielsweise wird der folgende Befehl nicht unterstützt: `snapdrive snap connect -dg dg1 dg1copy -snapname toaster:/vol/vol1:dg1snapshot`
+
+* Für Lese- und Schreibzugriff auf NFS Verzeichnisbäume, die `snapdrive snap connect` Befehl verwendet die Data ONTAP FlexVol-Volume-Funktion und erfordert daher Data ONTAP 7.3 oder höher. Konfigurationen mit Data ONTAP 7.1 können NFS-Dateien oder Verzeichnisbäume verbinden, werden aber mit schreibgeschütztem Zugriff bereitgestellt.
+* Wenn Sie die einstellen `enable-split-clone` Wert der Konfigurationsvariable für „`on`“ oder „`sync`“ während der Verbindungsherstellung mit Snapshots und „`off`“ während der Momentabtrennung des Snapshots löscht SnapDrive für UNIX nicht das ursprüngliche Volume oder die ursprüngliche LUN, die sich in der Snapshot Kopie befindet.
+* Sie müssen den Wert der Data ONTAP 7.2.2-Konfigurationsoption einstellen `vfiler.vol_clone_zapi_allow` Zu „`auf`“, um eine Verbindung zu einer Snapshot Kopie eines Volume oder einer LUN in einer vFiler Einheit herzustellen.
+* Der Snapshot-Verbindungsvorgang wird auf den Hosts mit unterschiedlichen Host-Konfigurationen nicht unterstützt.
+* Der `snapdrive snap connect` Befehl, der für die Verbindung mit einem Root-Volume eines physischen Storage-Systems oder einer vFiler Einheit verwendet wird, schlägt fehl, da Data ONTAP das Klonen eines Root-Volumes nicht erlaubt.
+

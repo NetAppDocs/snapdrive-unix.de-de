@@ -1,0 +1,40 @@
+---
+permalink: aix/concept_what_access_control_settings_are.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, settings 
+summary: Um den Benutzerzugriff zu bestimmen, überprüft SnapDrive für UNIX eine von zwei Berechtigungsdateien im Root-Volume des Speichersystems. Sie müssen die in dieser Datei festgelegten Regeln überprüfen, um die Zugriffssteuerung zu bewerten. 
+---
+= Welche Zugriffskontrolleinstellungen sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um den Benutzerzugriff zu bestimmen, überprüft SnapDrive für UNIX eine von zwei Berechtigungsdateien im Root-Volume des Speichersystems. Sie müssen die in dieser Datei festgelegten Regeln überprüfen, um die Zugriffssteuerung zu bewerten.
+
+* `sdhost-name.prbac` Die Datei befindet sich im Verzeichnis `/vol/vol0/sdprbac` (SnapDrive Berechtigungen rollenbasierte Zugriffssteuerung).
++
+Der Dateiname lautet `sdhost-name.prbac`, Wo `_host-name_` Ist der Name des Hosts, auf den die Berechtigungen gelten. Sie können für jeden Host, der mit dem Speichersystem verbunden ist, eine Berechtigungsdatei haben. Sie können das verwenden `snapdrive config access` Befehl zum Anzeigen von Informationen über die für einen Host verfügbaren Berechtigungen auf einem bestimmten Speichersystem.
+
++
+Wenn der `sdhost-name.prbac` Ist nicht vorhanden, verwenden Sie dann das `sdgeneric.prbac` Datei, um die Zugriffsberechtigungen zu prüfen.
+
+* `sdgeneric.prbac` Datei ist auch im Verzeichnis `/vol/vol0/sdprbac`.
++
+Der Dateiname `sdgeneric.prbac` Wird als Standard-Zugriffseinstellungen für mehrere Hosts verwendet, die keinen Zugriff auf haben `sdhost-name.prbac` Datei auf dem Speichersystem.
+
+
+
+Wenn Sie beides haben `sdhost-name.prbac` Und `sdgeneric.prbac` Dateien, die im verfügbar sind `/vol/vol0/sdprbac` Verwenden Sie dann den Pfad `sdhost-name.prbac` Um die Zugriffsberechtigungen zu überprüfen, werden die Werte, für die sie bereitgestellt wurden, überschrieben `sdgeneric.prbac` Datei:
+
+Wenn Sie nicht beide haben `sdhost-name.prbac` Und `sdgeneric.prbac` Dateien und anschließend die Konfigurationsvariable prüfen `_all-access-if-rbac-unspecified_` Das wird im definiert `snapdrive.conf` Datei:
+
+Die Einrichtung der Zugriffssteuerung von einem bestimmten Host zu einer bestimmten vFiler Einheit erfolgt manuell. Der Zugriff von einem bestimmten Host wird durch eine Datei im Root-Volume der betroffenen vFiler Einheit gesteuert. Die Datei enthält `/vol/<vfiler root volume>/sdprbac/sdhost-name.prbac`, Wo der `_host-name_` Ist der Name des betroffenen Hosts, der von zurückgegeben wird `gethostname(3)`. Sie sollten sicherstellen, dass diese Datei vom Host, der auf sie zugreifen kann, lesbar, aber nicht beschreibbar ist.
+
+
+NOTE: Um den Namen des Hosts zu bestimmen, führen Sie den aus `hostname` Befehl.
+
+Wenn die Datei leer, unlesbar oder ein ungültiges Format hat, gewährt SnapDrive für UNIX dem Host keinen Zugriff auf die Vorgänge.
+
+Wenn die Datei fehlt, überprüft SnapDrive für UNIX die Konfigurationsvariable `_all-access-if-rbac-unspecified_` Im `snapdrive.conf` Datei: Wenn die Variable auf festgelegt ist `on` (Standardwert). Sie ermöglicht den Hosts vollständigen Zugriff auf all diese Vorgänge auf diesem Speichersystem. Wenn die Variable auf festgelegt ist `off`, SnapDrive für UNIX verweigert die Host-Berechtigung, alle Operationen durchzuführen, die durch die Zugriffssteuerung auf diesem Speichersystem geregelt sind.

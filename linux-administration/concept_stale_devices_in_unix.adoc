@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_stale_devices_in_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, lun, clone, stale 
+summary: Das Löschen VON LUNS und Klonen kann veraltete Geräte in UNIX belassen und das Löschen dieser veralteten Geräte wird von SnapDrive für UNIX nicht ausgeführt. 
+---
+= Das Löschen von LUNs und Klonen belassen veraltete Geräte in UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Löschen VON LUNS und Klonen kann veraltete Geräte in UNIX belassen und das Löschen dieser veralteten Geräte wird von SnapDrive für UNIX nicht ausgeführt.
+
+Wenn Sie Geräte für LUNs und Klone von LUNs aus Snapshot-Kopien erstellen, entweder manuell oder mit SnapDrive für UNIX, werden Geräteeinträge automatisch in UNIX erstellt. Das Löschen von Geräten für LUNs und das Klonen von LUNs aus Snapshot Kopien mit SnapDrive für UNIX führt möglicherweise zu veralteten Geräten in UNIX.
+
+Das Löschen veralteter Geräte liegt in der Verantwortung des Endbenutzers und muss von einem UNIX-Administrator ausgeführt werden.

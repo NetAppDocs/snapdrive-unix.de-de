@@ -1,0 +1,118 @@
+---
+permalink: linux-administration/reference_some_configuration_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, configuration, config 
+summary: Die Konfiguration von SnapDrive für UNIX mithilfe einiger Befehle erleichtert Ihnen die Konfiguration. 
+---
+= Einige Konfigurationsbefehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Konfiguration von SnapDrive für UNIX mithilfe einiger Befehle erleichtert Ihnen die Konfiguration.
+
+In der folgenden Tabelle sind weitere Befehle zusammengefasst, die bei der Konfiguration von SnapDrive für UNIX hilfreich sind:
+
+|===
+| Befehl oder Aktion | Beschreibung 
+
+
+ a| 
+Konfigurieren und Überprüfen Ihrer Version der SnapDrive für UNIX Software
+
+
+
+ a| 
+`*snapdrive config show*`
+ a| 
+Überprüfen Sie die Werte im `snapdrive.conf` Datei:
+
+
+
+ a| 
+`*snapdrive version*``
+ a| 
+Überprüfen Sie die Version von SnapDrive für UNIX.
+
+
+
+ a| 
+`*snapdrived start*`
+ a| 
+Starten Sie den SnapDrive for UNIX Daemon.
+
+
+
+ a| 
+`*snapdrive config prepare luns -count count_value*`
+ a| 
+Bereiten Sie den Host für die Erstellung einer bestimmten Anzahl von LUNs vor und bestimmen Sie, wie viele LUNs Sie erstellen können.
+
+
+
+ a| 
+`*snapdrive config set -viadmin <user> <viadmin_name>*`
+ a| 
+Vorbereiten des Gasts zum Erstellen von RDM-LUNs auf dem Linux-Gastbetriebssystem
+
+
+NOTE: Sie können diese Befehle nur auf Linux Host verwenden, indem Sie das FCP-Protokoll ohne Host Utilities verwenden.
+
+
+
+ a| 
+`*snapdrive clone split*``
+ a| 
+Den Status der Aufteilung für einen Volume-Klon oder einen LUN-Klon einschätzen, starten, stoppen und abfragen.
+
+
+
+ a| 
+Bearbeiten Sie die Variablen im `snapdrive.conf` Datei:
+ a| 
+Ändern Sie den Pfadnamen und die Optionen für die Protokolldateien. SnapDrive für UNIX protokolliert Informationen in drei Dateien:
+
+* Audit-Datei
+* Wiederherstellungsdatei
+* Eine Trace-Datei
+
+
+
+
+ a| 
+Einrichten und Anzeigen von Zugriffskontrollberechtigungen zwischen einem Host und einem Speichersystem.
+
+
+
+ a| 
+Bearbeiten Sie die Berechtigungsdatei für die Zugriffssteuerung (sd) `_hostname_`.Prbac) auf dem Speichersystem, das mit diesem Gastgeber verbunden ist.
+ a| 
+Legen Sie die Zugriffskontrollberechtigungen fest, die ein Host auf einem Speichersystem besitzt. Sie können die folgenden Zugriffsebenen für einen Host auf einem Speichersystem festlegen:
+
+* KEIN--kein Zugriff.
+* SNAPSHOT Kopien MIT SNAP ERSTELLEN.
+* SNAP USE--Delete and umbenennen Snapshot Kopien.
+* SNAP ALL – Erstellen, Wiederherstellen, Löschen und Umbenennen von Snapshot Kopien
+* SPEICHER ERSTELLEN LÖSCHEN--erstellen, ändern und löschen Speicher.
+* STORAGE-NUTZUNG –-Connect und Trennung von Storage
+* SPEICHER ALL- Erstellen, Löschen, Verbinden und trennen Sie Speicher.
+* UND ALLE ZUGRIFFS- – All-in-Operationen.
+
+
+
+
+ a| 
+`*snapdrive config access show <filer_name>*`
+ a| 
+Informationen über die Zugriffskontrollberechtigungen anzeigen, die ein Host zu einem Speichersystem hat.
+
+
+
+ a| 
+`*snapdrive config delete <filername> [<filername> . . .]*`
+ a| 
+Entfernen Sie das angegebene Paarpaar für Benutzernamen und Kennwort aus SnapDrive für UNIX.
+
+|===

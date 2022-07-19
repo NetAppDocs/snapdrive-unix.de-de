@@ -1,0 +1,49 @@
+---
+permalink: solaris/reference_preconfigured_roles_for_ease_of_user_role_configuration.html 
+sidebar: sidebar 
+keywords: snapdrive, snap, user, role, configuration, preconfigured 
+summary: Vorkonfigurierte Rollen vereinfachen die Zuweisung von Rollen zu Benutzern. 
+---
+= Vorkonfigurierte Rollen zur einfachen Konfiguration von Benutzerrollen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vorkonfigurierte Rollen vereinfachen die Zuweisung von Rollen zu Benutzern.
+
+In der folgenden Tabelle werden die vordefinierten Rollen aufgeführt:
+
+|===
+| Rollenname | Beschreibung 
+
+
+ a| 
+GlobalSDStorage
+ a| 
+Storage-Management mit SnapDrive für UNIX
+
+
+
+ a| 
+GlobalSDConfig
+ a| 
+Managen Sie Konfigurationen mit SnapDrive für UNIX
+
+
+
+ a| 
+GlobalSDSnapshot
+ a| 
+Managen Sie Snapshot Kopien mit SnapDrive für UNIX
+
+
+
+ a| 
+GlobalSDFullControl
+ a| 
+Vollständige Verwendung von SnapDrive für UNIX
+
+|===
+In der vorstehenden Tabelle bezieht sich Global auf alle Storage-Systeme, die von einer Operations Manager-Konsole gemanagt werden.

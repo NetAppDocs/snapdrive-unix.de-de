@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, lvm, nfs, raw, device 
+summary: SnapDrive Befehle können zum Erstellen, Wiederherstellen und Managen von Snapshot Kopien von LVM, RAW-Geräten und NFS-Einheiten verwendet werden. 
+---
+= Managen von Snapshot-Kopien von LVM, RAW-Geräten und NFS-Einheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive Befehle können zum Erstellen, Wiederherstellen und Managen von Snapshot Kopien von LVM, RAW-Geräten und NFS-Einheiten verwendet werden.
+
+Sie müssen die Befehle auf dem Host ausführen, um Snapshot Kopien von Storage-Einheiten zu erstellen, wiederherzustellen und zu managen.
+
+* Volume Manager-Einheiten
++
+Die Volume-Manager-Einheiten sind Festplattengruppen mit Host-Volumes und Dateisystemen, die Sie mit dem Host Volume Manager erstellt haben.
+
+* Roheinheiten
++
+Bei den RAW-Einheiten handelt es sich entweder um LUNs oder LUNs, die Dateisysteme enthalten, ohne Volumes oder Festplattengruppen zu erstellen. Sie werden direkt dem Host zugeordnet.
+
+* NFS Einheiten
++
+Bei den NFS-Entitäten handelt es sich um NFS-Dateien und Verzeichnisbäume.
+
+
+
+Die von Ihnen erstellte Snapshot Kopie kann auf mehreren Storage-Systemen und Storage-System-Volumes bestehen. SnapDrive überprüft die Lese- oder Schreibberechtigung für die Storage-Einheiten in der Snapshot Kopie, um sicherzustellen, dass alle Daten der Snapshot Kopie absturzkonsistent sind. SnapDrive erstellt keine Snapshot Kopie, es sei denn, die Daten sind absturzkonsistent.

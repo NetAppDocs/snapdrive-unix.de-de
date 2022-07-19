@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, storage, lun, command, connect 
+summary: Sie können den SnapDrive Snap connect Befehl verwenden, um eine Verbindung zu einer Snapshot Kopie von anderen Shared Storage-Einheiten als LUNs herzustellen. 
+---
+= Verbindung mit Snapshot Kopien von anderen Shared Storage-Einheiten als LUNs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive snap connect` Befehl zum Herstellen einer Verbindung zu einer Snapshot Kopie von anderen Shared Storage-Einheiten als LUNs.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive snap connect _fspec_set_ [_fspec_set..._] -snapname _long_snap_name_*`
+
++
+`*_fspec_set_ [_fspec_set..._] -snapname _long_snap_name_ [-devicetype shared] [-split]*`
+
++
+In dieser Syntax `_fspec_set_` Ist: `{-dg | -fs} _src_file_spec [dest_file_spec_ ] [-destdg _dgname_]``
+
+

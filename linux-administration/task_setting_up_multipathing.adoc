@@ -1,0 +1,117 @@
+---
+permalink: linux-administration/task_setting_up_multipathing.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multipathing, configure 
+summary: Sie können mehrere Netzwerkpfade zwischen dem Host und dem Storage-System konfigurieren, indem Sie Multipathing einrichten. SnapDrive für UNIX unterstützt die Verwendung von Alias in Multipath-Umgebungen. Sie müssen sicherstellen, dass der richtige Aliasname für die Mapper-Geräte in der Datei /etc/Multipath.conf konfiguriert ist. 
+---
+= Multipathing einrichten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können mehrere Netzwerkpfade zwischen dem Host und dem Storage-System konfigurieren, indem Sie Multipathing einrichten. SnapDrive für UNIX unterstützt die Verwendung von Alias in Multipath-Umgebungen. Sie müssen sicherstellen, dass der richtige Aliasname für die Mapper-Geräte in konfiguriert ist `/etc/multipath.conf` Datei:
+
+.Schritte
+. Nachdem der Host neu gebootet wurde, sollte der Multipath-Daemon wie im folgenden Beispiel gezeigt ausgeführt werden:
++
+[listing]
+----
+root@lnx197-123 ~]# ps -ef | grep multipathd
+root      5713     1  0 22:44 ?        00:00:00 /sbin/multipathd
+root      5739  1783  0 22:44 pts/1    00:00:00 grep multipathd
+----
++
+Wenn der Multipath-Daemon nicht ausgeführt wird, stellen Sie sicher, dass Sie den Daemon nach dem Neubooten neu starten. Sie können den Multipath-Daemon starten, indem Sie den folgenden Befehl ausführen:
+
++
+[listing]
+----
+[root@lnx197-123 ~]# chkconfig --level 345 multipathd on
+----
++
+
+NOTE: In der folgenden Tabelle sind einige SnapDrive Vorgänge aufgeführt, die die Verwendung von Alias-Namen in einer Multipath-Umgebung unterstützen.
+
++
+|===
+| Betrieb | Alias-Name-Unterstützung | Gerätetyp 
+
+
+ a| 
+Snap Create und Restore (SFSR und VBSR) von primär auf dem primären Host
+ a| 
+Ja.
+ a| 
+Kalibrierte Geräte
+
+
+
+ a| 
+Klonen von primärem oder sekundärem
+ a| 
+Ja.
+ a| 
+Geräte ohne Aliasing
+
+
+
+ a| 
+Wiederherstellung auf Alternate
+ a| 
+Ja.
+ a| 
+Geräte ohne Aliasing
+
+
+
+ a| 
+Wiederherstellung aus sekundärem System
+ a| 
+Ja.
+ a| 
+Geräte ohne Aliasing
+
+|===
++
+** Sie müssen im keine Werte festlegen `/etc/multipath.conf` Datei, wenn Sie Red hat Enterprise Linux (RHEL) 6.4 oder höher oder Oracle Linux 6.4 oder höher verwenden.
++
+Allerdings müssen Sie noch eine Dummy `/etc/multipath.conf` Datei, die entweder leer sein kann oder die auf der schwarzen Liste aufgeführten Informationen und Alias-Namen enthält, falls erforderlich.
+
+** Sie müssen kein A beibehalten `/etc/multipath.conf` Datei, wenn Sie SUSE Linux Enterprise Server (SLES) 11 SP3 oder höher verwenden.
++
+Sie können jedoch ein haben `/etc/multipath.conf` Datei, die ggf. die Blacklisting-Informationen und Aliasnamen enthält.
+
+
+
+. Ersetzen Sie den String `HITACHI_HUS103073FL3800_V3WTL7XA` Mit der Ausgabe des Befehls `scsi_id -gus /block/<LD>`, Wo `LD` Der lokale Blockgerätame.
++
+
+NOTE: Für einige lokale Blockgeräte, die `scsi_id` Der Befehl gibt möglicherweise keine Strings aus. In diesem Fall muss das lokale Blockgerät unter Verwendung der devnode-Direktive auf die schwarze Liste gesetzt werden.
+
+. Erhöhen Sie die Anzahl der Dateideskriptoren, die ein Prozess im Host öffnen kann, indem Sie die folgenden Zeilen im anhängen `/etc/security/limits.conf` Datei:
++
+[listing]
+----
+soft nofile 4096
+       hard nofile 4096
+----
+. Stellen Sie sicher, dass der Linux SG-Treiber nach dem Systemneustart immer geladen ist, indem Sie den folgenden Befehl eingeben:
++
+[listing]
+----
+echo "modprobe sg" >> /etc/rc.local
+----
+. Starten Sie den Host neu, um sicherzustellen, dass die Einstellungen aktiv sind.
++
+
+NOTE: Die lvm2-2.02.17-7.27.8 und die `_filter_` Einstellung muss als = zugewiesen werden `["r|/dev/.\*/by-path/.*|"`, `"r|/dev/.\*/by-id/.*|"`, `"r|/dev/cciss/.\*|", "a/.*/"]` Im `lvm.conf` Datei in SLES10 SP2.
+
+
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com["NetApp Support"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["Installationsleitfaden Für Linux Unified Host Utilities 7.1"]

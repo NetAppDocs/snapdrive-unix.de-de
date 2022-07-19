@@ -1,0 +1,18 @@
+---
+permalink: solaris/reference_using_exit_status_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, exit, status, value 
+summary: Exit-Status-Werte werden in Skripten verwendet, um den Erfolg oder Ausfall eines SnapDrive für UNIX-Befehls zu bestimmen. 
+---
+= Die Werte für den Exit-Status werden verwendet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Exit-Status-Werte werden in Skripten verwendet, um den Erfolg oder Ausfall eines SnapDrive für UNIX-Befehls zu bestimmen.
+
+* Ein Wert von null zeigt an, dass der Befehl erfolgreich abgeschlossen wurde.
+* Ein anderer Wert als null zeigt an, dass der Befehl nicht abgeschlossen wurde, und liefert Informationen über die Ursache und den Schweregrad des Fehlers.
+

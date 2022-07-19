@@ -1,0 +1,2702 @@
+---
+settings:
+  name: Snapdrive for Unix
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+sidebar:
+  entries:
+  - title: Zu Hause
+    url: "/index.html"
+  - title: Versionshinweise
+    url: "/releasenotes.html"
+  - title: Installation und Einrichtung von Linux für Clustered Data ONTAP
+    url: "/linux-installation-cmode/index.html"
+    entries:
+    - title: Produktübersicht
+      url: "/linux-installation-cmode/reference_product_overview.html"
+    - title: Implementierungs-Workflow
+      url: "/linux-installation-cmode/reference_deployment_workflow.html"
+    - title: Bereitstellung wird vorbereitet
+      url: "/linux-installation-cmode/task_preparing_for_deployment.html"
+      entries:
+      - title: Lizenzanforderungen für SnapDrive für UNIX
+        url: "/linux-installation-cmode/reference_snapdrive_licensing.html"
+      - title: Unterstützte Konfigurationen
+        url: "/linux-installation-cmode/reference_supported_configurations.html"
+      - title: Anforderungen an Linux-Hosts
+        url: "/linux-installation-cmode/reference_linux_host_requirements.html"
+    - title: Installation von SnapDrive für UNIX
+      url: "/linux-installation-cmode/task_installing_snapdrive_for_unix.html"
+      entries:
+      - title: Überprüfen der Installation
+        url: "/linux-installation-cmode/task_verifying_the_installation.html"
+      - title: Ausführen von Aufgaben nach der Installation
+        url: "/linux-installation-cmode/task_performing_post_installation_tasks.html"
+    - title: Überprüfen der Linux-Hostkonfigurationen mithilfe des Konfigurationsprüfers
+      url: "/linux-installation-cmode/concept_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: Datendateien werden importiert
+        url: "/linux-installation-cmode/task_importing_data_files.html"
+      - title: Überprüfen der unterstützten Konfigurationen
+        url: "/linux-installation-cmode/task_verifying_the_supported_configurations.html"
+    - title: Storage-Bereitstellung
+      url: "/linux-installation-cmode/concept_provisioning_storage.html"
+      entries:
+      - title: Bereitstellung von Volumes
+        url: "/linux-installation-cmode/task_provisioning_volumes.html"
+      - title: Bereitstellung RDM-LUNs
+        url: "/linux-installation-cmode/task_provisioning_rdm_luns.html"
+    - title: Verbinden von Linux-Hosts mit Speichersystemen
+      url: "/linux-installation-cmode/task_connecting_linux_host_to_the_storage_system.html"
+    - title: Erstellen von Snapshot Kopien
+      url: "/linux-installation-cmode/concept_creating_snapshot_copies.html"
+      entries:
+      - title: Erstellen einer Snapshot Kopie
+        url: "/linux-installation-cmode/task_creating_a_snapshot_copy.html"
+      - title: Überprüfen der Snapshot Kopie
+        url: "/linux-installation-cmode/task_verifying_the_snapshot_copy.html"
+    - title: Weitere Schritte
+      url: "/linux-installation-cmode/reference_where_to_go_next.html"
+  - title: Installation und Einrichtung für Linux für Data ONTAP in 7-Mode
+    url: "/linux-installation-7mode/index.html"
+    entries:
+    - title: Produktübersicht
+      url: "/linux-installation-7mode/reference_product_overview.html"
+    - title: Implementierungs-Workflow
+      url: "/linux-installation-7mode/reference_deployment_workflow.html"
+    - title: Bereitstellung wird vorbereitet
+      url: "/linux-installation-7mode/task_preparing_for_deployment.html"
+      entries:
+      - title: Lizenzanforderungen für SnapDrive für UNIX
+        url: "/linux-installation-7mode/reference_snapdrive_licensing.html"
+      - title: Unterstützte Konfigurationen
+        url: "/linux-installation-7mode/reference_supported_configurations.html"
+      - title: Anforderungen an Linux-Hosts
+        url: "/linux-installation-7mode/reference_linux_host_requirements.html"
+    - title: Installation von SnapDrive für UNIX
+      url: "/linux-installation-7mode/task_installing_snapdrive_for_unix.html"
+      entries:
+      - title: Überprüfen der Installation
+        url: "/linux-installation-7mode/task_verifying_the_installation.html"
+      - title: Ausführen von Aufgaben nach der Installation
+        url: "/linux-installation-7mode/task_performing_post_installation_tasks.html"
+    - title: Überprüfen der Linux-Hostkonfigurationen mithilfe des Konfigurationsprüfers
+      url: "/linux-installation-7mode/concept_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: Datendateien werden importiert
+        url: "/linux-installation-7mode/task_importing_data_files.html"
+      - title: Überprüfen der unterstützten Konfigurationen
+        url: "/linux-installation-7mode/task_verifying_the_supported_configurations.html"
+    - title: Storage-Bereitstellung
+      url: "/linux-installation-7mode/concept_provisioning_storage.html"
+      entries:
+      - title: Bereitstellung von Volumes
+        url: "/linux-installation-7mode/task_provisioning_volumes.html"
+      - title: Bereitstellung RDM-LUNs
+        url: "/linux-installation-7mode/task_provisioning_rdm_luns.html"
+    - title: Verbinden von Linux-Hosts mit Speichersystemen
+      url: "/linux-installation-7mode/task_connecting_linux_host_to_the_storage_system.html"
+    - title: Erstellen von Snapshot Kopien
+      url: "/linux-installation-7mode/concept_creating_snapshot_copies.html"
+      entries:
+      - title: Erstellen einer Snapshot Kopie
+        url: "/linux-installation-7mode/task_creating_a_snapshot_copy.html"
+      - title: Überprüfen der Snapshot Kopie
+        url: "/linux-installation-7mode/task_verifying_the_snapshot_copy.html"
+    - title: Weitere Schritte
+      url: "/linux-installation-7mode/reference_where_to_go_next.html"
+  - title: Administration für Linux
+    url: "/linux-administration/index.html"
+    entries:
+    - title: Produktübersicht
+      url: "/linux-administration/reference_product_overview.html"
+      entries:
+      - title: Clustered Data ONTAP Funktionen in SnapDrive für UNIX verfügbar
+        url: "/linux-administration/concept_clustered_data_ontap_features_available_in_snapdrive_for_unix.html"
+      - title: Support für Vserver
+        url: "/linux-administration/concept_support_for_vserver.html"
+      - title: Unterstützung von NetAppDataMotion für vFiler
+        url: "/linux-administration/concept_support_for_datamotion_for_vfiler.html"
+      - title: Unterstützung für die Volume-Migration
+        url: "/linux-administration/concept_support_for_volume_migration.html"
+        entries:
+        - title: Volume-Migration in SnapDrive für UNIX
+          url: "/linux-administration/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: Support-Probleme bei der vFiler Einheit
+        url: "/linux-administration/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: Überlegungen bei der Verwendung von SnapDrive für UNIX
+        url: "/linux-administration/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: Management einer LVM und einer RAW-Entität
+        url: "/linux-administration/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: SnapDrive für UNIX-Bereitstellung in einer LVM-Umgebung
+          url: "/linux-administration/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: SnapDrive für UNIX und RAW-Einheiten
+          url: "/linux-administration/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: Managen von Snapshot-Kopien von LVM, RAW-Geräten und NFS-Einheiten
+        url: "/linux-administration/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: Sicherheitsüberlegungen
+        url: "/linux-administration/concept_security_considerations.html"
+      - title: Greifen Sie auf Berechtigungen auf einem Speichersystem zu
+        url: "/linux-administration/concept_access_permissions_on_a_storage_system.html"
+      - title: Stack-Anforderungen
+        url: "/linux-administration/reference_stack_requirements.html"
+      - title: Unterstützte FC-, iSCSI- oder NFS-Konfigurationen
+        url: "/linux-administration/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: Einschränkungen
+        url: "/linux-administration/reference_limitations.html"
+      - title: Einschränkungen von von LUNs, die von SnapDrive gemanagt werden
+        url: "/linux-administration/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: Grenzen von RDM LUNs, die von SnapDrive gemanagt werden
+        url: "/linux-administration/concept_limitations_of_rdm_luns_managed_by_snapdrive.html"
+      - title: SnapDrive Limitierungen für Clustered Data ONTAP
+        url: "/linux-administration/concept_snapdrive_limitations_for_data_ontap_operating_in_cluster_mode.html"
+      - title: Einschränkungen für NFS-Dateien oder Verzeichnisbäume
+        url: "/linux-administration/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/linux-administration/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: Volume Manager auf SnapDrive für UNIX
+        url: "/linux-administration/concept_volume_managers_on_snapdrive_for_unix.html"
+    - title: Neu in dieser Version
+      url: "/linux-administration/reference_new_in_this_release.html"
+    - title: Informationen zum SnapDrive for UNIX Daemon
+      url: "/linux-administration/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: Was der Webdienst und der Daemon sind
+        url: "/linux-administration/concept_what_the_web_service_and_daemon_are.html"
+      - title: Überprüfen des Status des Daemon
+        url: "/linux-administration/task_checking_the_status_of_the_daemon.html"
+      - title: Starten des SnapDrive for UNIX Daemon
+        url: "/linux-administration/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: Ändern des Standard-Daemon-Passworts
+        url: "/linux-administration/task_changing_the_default_daemon_password.html"
+      - title: Beenden des Daemon
+        url: "/linux-administration/task_stopping_the_daemon.html"
+        entries:
+        - title: Den Dämon gewaltsam stoppen
+          url: "/linux-administration/task_nonforcibly_stopping_the_daemon.html"
+        - title: Gewaltsam das Anhalten des Dämons
+          url: "/linux-administration/task_forcibly_stopping_the_daemon.html"
+      - title: Starten Sie den Daemon neu
+        url: "/linux-administration/task_restarting_the_daemon.html"
+      - title: Erzwingen des Neustarts des Daemon
+        url: "/linux-administration/task_forcing_daemon_restart.html"
+      - title: Sichere Daemon Kommunikation mit HTTPS
+        url: "/linux-administration/concept_secure_daemon_communication_using_https.html"
+      - title: Selbstsignierte Zertifikate werden generiert
+        url: "/linux-administration/task_generating_self_signed_certificates.html"
+      - title: Erstellen eines CA-signierten Zertifikats
+        url: "/linux-administration/task_generating_ca_signed_certificate.html"
+    - title: Unterstützung für Umbenennung des Storage-Systems
+      url: "/linux-administration/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: Konfigurieren des neuen Speichersystemnamens in einem Hostsystem
+        url: "/linux-administration/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: Anzeigen der Liste der Speichersysteme
+        url: "/linux-administration/task_viewing_the_list_of_storage_system.html"
+      - title: Migration von einem alten Storage-System zu einem neuen Storage-System
+        url: "/linux-administration/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: Anzeigen des migrierten neuen Speichersystems
+        url: "/linux-administration/task_viewing_the_migrated_new_storage_system.html"
+      - title: Löschen der Zuordnungsinformationen des Speichersystems vom Hostsystem
+        url: "/linux-administration/task_deleting_a_storage_system_entry.html"
+    - title: Konfiguration von SnapDrive für UNIX
+      url: "/linux-administration/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: SnapDrive für UNIX wird konfiguriert
+        url: "/linux-administration/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: Was die snapdrive.conf Datei ist
+          url: "/linux-administration/concept_what_the_snapdrive_conf_file_is.html"
+        - title: Konfigurationsoptionen und ihre Standardwerte
+          url: "/linux-administration/concept_configuration_options_and_their_default_values.html"
+        - title: Was macht der SnapDrive-Konfigurationsassistent
+          url: "/linux-administration/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive-Konfigurationsassistent
+          url: "/linux-administration/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: Einige Konfigurationsbefehle
+          url: "/linux-administration/reference_some_configuration_commands.html"
+        - title: Verwenden des SnapDrive-Konfigurationsassistenten
+          url: "/linux-administration/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: Setzen von Werten in der datei snapdrive.conf
+          url: "/linux-administration/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: Überprüfen der Version von SnapDrive für UNIX
+          url: "/linux-administration/task_checking_version_of_snapdrive_for_unix.html"
+      - title: Konfigurationsinformationen in SnapDrive für UNIX für das Gastbetriebssystem
+        url: "/linux-administration/concept_configuration_information_in_snapdrive_for_unix_for_guest_os.html"
+        entries:
+        - title: Konfiguration der Virtual Storage Console für SnapDrive für UNIX
+          url: "/linux-administration/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html"
+        - title: Angeben von Anmeldeinformationen für die virtuelle Speicherkonsole
+          url: "/linux-administration/task_specifying_login_information_for_virtual_storage_console.html"
+        - title: Überprüfen der Anmeldeinformationen für die Virtual Storage Console
+          url: "/linux-administration/task_verifying_virtual_storage_console.html"
+        - title: Löschen einer Benutzeranmeldung für eine virtuelle Speicherkonsole
+          url: "/linux-administration/task_deleting_a_user_login_for_a_virtual_storage_console.html"
+      - title: Konfigurationsinformationen für Vserver
+        url: "/linux-administration/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: Login-Informationen für den Vserver
+          url: "/linux-administration/concept_login_information_for_vserver.html"
+        - title: Festlegen von Anmeldeinformationen für den Vserver
+          url: "/linux-administration/task_specifying_login_information_for_vserver.html"
+        - title: Überprüfen der Anmeldeinformationen für Vserver
+          url: "/linux-administration/task_verifying_login_information_for_vserver.html"
+        - title: Löschen eines Benutzers aus einem Vserver
+          url: "/linux-administration/task_deleting_a_user_for_a_vserver.html"
+      - title: Host-Vorbereitung für das Hinzufügen von LUNs
+        url: "/linux-administration/task_hosts_preparation_for_adding_luns.html"
+        entries:
+        - title: Hostinformationen werden überprüft
+          url: "/linux-administration/concept_checking_host_information.html"
+        - title: Ermitteln, wie viele LUNs erstellt werden können
+          url: "/linux-administration/concept_determining_howmany_luns_can_becreated.html"
+        - title: Hinzufügen von Hosteinträgen für neue LUNs
+          url: "/linux-administration/task_adding_host_entries_for_new_luns.html"
+      - title: Audit-, Recovery- und Trace-Protokollierung in SnapDrive für UNIX
+        url: "/linux-administration/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: Protokolltypen
+          url: "/linux-administration/concept_types_of_logs.html"
+        - title: Aktivieren und Deaktivieren von Protokolldateien
+          url: "/linux-administration/task_enabling_and_disabling_log_files.html"
+        - title: Rotationseinstellungen für Protokolldateien
+          url: "/linux-administration/concept_log_file_rotation_settings.html"
+        - title: Inhalt einer Audit-Log-Datei
+          url: "/linux-administration/concept_contents_of_an_audit_log_file.html"
+        - title: Ändern der Standardeinstellungen für die Prüfprotokolle
+          url: "/linux-administration/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: Inhalt des Wiederherstellungsprotokolls
+          url: "/linux-administration/concept_contents_of_the_recovery_log.html"
+        - title: Standardwerte für die Wiederherstellungsprotokolle
+          url: "/linux-administration/concept_default_values_for_the_recovery_logs.html"
+        - title: Was die Trace-Log-Datei ist
+          url: "/linux-administration/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: Standardwerte für die Trace-Log-Dateien
+            url: "/linux-administration/concept_default_vaules_for_the_trace_log_files.html"
+      - title: Was ist AutoSupport
+        url: "/linux-administration/concept_what_autosupport_is.html"
+        entries:
+        - title: So verwendet SnapDrive für UNIX AutoSupport
+          url: "/linux-administration/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: Inhalt von AutoSupport Meldungen
+          url: "/linux-administration/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: Beispiele für AutoSupport-Meldungen
+          url: "/linux-administration/concept_example_of_an_autosupport_message.html"
+      - title: Unterstützung für Multipath-Zugriff in SnapDrive für UNIX
+        url: "/linux-administration/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Multipathing
+          url: "/linux-administration/task_enabling_multipathing.html"
+        - title: Multipath-Einrichtung
+          url: "/linux-administration/concept_multipath_setup.html"
+          entries:
+          - title: HBA-Einrichtung
+            url: "/linux-administration/concept_hba_setup.html"
+          - title: Einrichten des HBA-Treiberparameters
+            url: "/linux-administration/task_setting_up_hba_driver_parameter.html"
+          - title: Multipath-Konfigurationsvariablen
+            url: "/linux-administration/concept_multipath_configuration_variables.html"
+          - title: Multipathing einrichten
+            url: "/linux-administration/task_setting_up_multipathing.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/linux-administration/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Thin Provisioning für LUNs
+          url: "/linux-administration/task_enabling_thin_provisioning_for_luns.html"
+        - title: Aktivieren von Thin Provisioning für NFS-Einheiten
+          url: "/linux-administration/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: Mehrere Subnetzkonfigurationen
+        url: "/linux-administration/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: Konfiguration von Management- und Datenschnittstellen für ein Storage-System
+          url: "/linux-administration/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: Anzeigen aller Datenschnittstellen für eine Managementoberfläche
+          url: "/linux-administration/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: Löschen eines Datenschnittstelleneintrags für eine Managementoberfläche
+          url: "/linux-administration/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: LUN-Namen in SAN-Umgebung
+          url: "/linux-administration/concept_lun_names_in_san_environment.html"
+        - title: Reine NFS Umgebung
+          url: "/linux-administration/concept_pure_nfs_environment.html"
+        - title: Kombinierte SAN- und NFS-Umgebungen
+          url: "/linux-administration/concept_mixed_environments_of_san_and_nfs.html"
+      - title: Automatische Erkennung von Host-Einheiten
+        url: "/linux-administration/concept_automatic_detection_of_host_entities.html"
+      - title: Was sind SnapDrive-Assistenten
+        url: "/linux-administration/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: Vorgänge werden mithilfe von Assistenten durchgeführt
+          url: "/linux-administration/concept_operations_performed_using_wizards.html"
+        - title: Storage-Management mit einem Assistenten
+          url: "/linux-administration/concept_managing_storage_using_a_wizard.html"
+        - title: Verwalten von Snapshot Kopien mit einem Assistenten
+          url: "/linux-administration/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: Löschen von Speicher mit einem Assistenten
+          url: "/linux-administration/concept_deleting_storage_using_a_wizard.html"
+      - title: Verwenden des Ports, der in SnapDrive für UNIX eingestellt ist
+        url: "/linux-administration/concept_using_port_set_in_snapdrive_for_unix.html"
+        entries:
+        - title: Hinzufügen eines PortSatzes in SnapDrive
+          url: "/linux-administration/task_adding_a_port_set_in_snapdrive.html"
+        - title: Anzeigen der Liste des PortSatzes
+          url: "/linux-administration/task_viewing_the_list_of_port_set.html"
+        - title: Entfernen eines PortSatzes aus dem SnapDrive
+          url: "/linux-administration/task_removing_a_port_set_from_snapdrive.html"
+        - title: Migration auf einen neuen Vserver Namen
+          url: "/linux-administration/concept_migrating_to_new_vserver_name.html"
+      - title: Initiatorgruppen werden konfiguriert
+        url: "/linux-administration/concept_configuring_igroups.html"
+        entries:
+        - title: Hinzufügen einer Initiatorgruppe
+          url: "/linux-administration/task_adding_igroup.html"
+        - title: Löschen einer Initiatorgruppe
+          url: "/linux-administration/task_deleting_igroup.html"
+        - title: Anzeigen der Liste der Initiatorgruppen
+          url: "/linux-administration/task_viewing_the_list_of_igroups.html"
+      - title: Verwenden der Selective LUN Map in SnapDrive for UNIX
+        url: "/linux-administration/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+      - title: FlexClone Volumes in SnapDrive für UNIX
+        url: "/linux-administration/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+        entries:
+        - title: Welche FlexClone Volumes sind
+          url: "/linux-administration/concept_what_flexclone_volumes_are.html"
+        - title: Vorteile von FlexClone Volumes
+          url: "/linux-administration/concept_benefits_of_flexclone_volumes.html"
+        - title: Typen von FlexClone Volumes
+          url: "/linux-administration/concept_types_of_flexclone_volumes.html"
+        - title: SnapDrive für UNIX Vorgänge auf FlexClone Volumes
+          url: "/linux-administration/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+          entries:
+          - title: Rollenbasierte Zugriffssteuerung für FlexClone Volume-Vorgänge
+            url: "/linux-administration/concept_role_based_access_control_for_flexclone_volume_operations.html"
+          - title: Snap-Connect-Verfahren
+            url: "/linux-administration/concept_snap_connect_procedure.html"
+          - title: Vorgehensweise zum Abtrennen von Schnappverbindungen
+            url: "/linux-administration/concept_snap_disconnect_procedure.html"
+          - title: Verbindung zu einem einzigen Dateisystem in einer LUN wird hergestellt
+            url: "/linux-administration/concept_connecting_to_a_single_filespec_in_a_lun.html"
+          - title: Verbindung mit mehreren Dateipecs wird hergestellt
+            url: "/linux-administration/concept_connecting_to_multiple_filespecs.html"
+          - title: Trennen einer Dateispezifikation
+            url: "/linux-administration/concept_disconnecting_a_filespec.html"
+          - title: Durch Aufteilung des FlexClone Volume
+            url: "/linux-administration/concept_splitting_the_flexclone_volume.html"
+          - title: Platzreservierung mit einem FlexClone Volume
+            url: "/linux-administration/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: Sicherheitsfunktionen in SnapDrive für UNIX
+      url: "/linux-administration/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: Was sind die Sicherheitsfunktionen
+        url: "/linux-administration/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: Zugriffssteuerung in SnapDrive für UNIX
+        url: "/linux-administration/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: Welche Zugriffskontrolleinstellungen sind
+          url: "/linux-administration/concept_what_access_control_settings_are.html"
+        - title: Verfügbare Zugriffssteuerungsstufen
+          url: "/linux-administration/concept_available_access_control_levels.html"
+        - title: Einrichten der Zugriffskontrollberechtigung
+          url: "/linux-administration/task_setting_up_access_control_permission.html"
+        - title: Zugriffsberechtigung anzeigen
+          url: "/linux-administration/task_viewing_the_access_control_permission.html"
+      - title: Anmeldeinformationen für Storage-Systeme
+        url: "/linux-administration/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: Angeben von Anmeldeinformationen
+          url: "/linux-administration/task_specifying_login_information.html"
+        - title: Überprüfung der mit SnapDrive für UNIX verknüpften Benutzernamen
+            auf Storage-Systemen
+          url: "/linux-administration/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: Löschen einer Benutzeranmeldung für ein Speichersystem
+          url: "/linux-administration/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: Einrichten von HTTP
+        url: "/linux-administration/task_setting_up_http.html"
+    - title: Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX
+      url: "/linux-administration/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche rollenbasierte Zugriffssteuerung (Role Based Access Control,
+          RBAC) bietet SnapDrive für UNIX
+        url: "/linux-administration/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: Interaktion von SnapDrive für UNIX und der Operations Manager Konsole
+        url: "/linux-administration/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: Konfiguration der rollenbasierten Zugriffssteuerung in SnapDrive für
+          UNIX
+        url: "/linux-administration/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: konfigurieren von sd-Admin in der Operations Manager-Konsole
+          url: "/linux-administration/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: konfigurieren von sd-Admin über Befehlszeilenschnittstelle
+            url: "/linux-administration/task_configuring_sd_admin_using_cli.html"
+        - title: hinzufügen von sd-Hostname zum Speichersystem
+          url: "/linux-administration/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: hinzufügen von sd- Hostname zum Speichersystem mithilfe von CLI
+            url: "/linux-administration/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: Konfigurieren von Benutzeranmeldeinformationen auf SnapDrive für
+            UNIX
+          url: "/linux-administration/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: Formate für Benutzernamen zur Durchführung von Zugriffsprüfungen
+            mithilfe der Operations Manager Konsole
+          url: "/linux-administration/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: Konfigurationsvariablen für die rollenbasierte Zugriffssteuerung
+          url: "/linux-administration/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive-Befehle und -Funktionen
+        url: "/linux-administration/concept_snapdrive_commands_and_capabilities.html"
+      - title: Vorkonfigurierte Rollen zur einfachen Konfiguration von Benutzerrollen
+        url: "/linux-administration/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Automatische Aktualisierung des Storage-Systems auf der Operations
+          Manager Konsole
+        url: "/linux-administration/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: Mehrere Operations Manager Konsolen-Server
+        url: "/linux-administration/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager-Konsole nicht verfügbar
+        url: "/linux-administration/concept_operations_manager_unavailable.html"
+      - title: Beispiele für RBAC und Storage-Vorgänge
+        url: "/linux-administration/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: Vorgang mit einem einzigen Dateisystem auf einem einzigen Storage-Objekt
+          url: "/linux-administration/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: Betrieb mit einem einzigen Dateisystem auf mehreren Speicherobjekten
+          url: "/linux-administration/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Dateiepec- und Speicherobjekten
+          url: "/linux-administration/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: Betrieb mit mehreren Storage-Objekten
+          url: "/linux-administration/concept_operation_with_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Operations Manager Konsolen-Servern, die Storage-Systeme
+            managen
+          url: "/linux-administration/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: Storage-Bereitstellung in SnapDrive für UNIX
+      url: "/linux-administration/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: Storage-Vorgänge in SnapDrive für UNIX
+        url: "/linux-administration/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: Storage-Vorgänge für mehrere Storage-System-Volumes
+          url: "/linux-administration/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: Überlegungen zum Storage-Betrieb
+          url: "/linux-administration/concept_considerations_forstorage_operations.html"
+        - title: Überlegungen bei der Bereitstellung von RDM LUNs
+          url: "/linux-administration/task_considerations_for_provisioning_rdm_luns.html"
+        - title: VMware VMotion-Unterstützung in SnapDrive für UNIX
+          url: "/linux-administration/concept_storage_provisioning_for_rdm_luns.html"
+      - title: Storage-Erstellung mit SnapDrive für UNIX
+        url: "/linux-administration/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: Methoden zum Erstellen von Speicher
+          url: "/linux-administration/concept_methods_forcreating_storage.html"
+        - title: Richtlinien für den Speichervorgang erstellen
+          url: "/linux-administration/concept_guidelines_for_thestorage_createoperation.html"
+        - title: Für den Speichervorgang erforderliche Informationen
+          url: "/linux-administration/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: Storage-Erstellung für LVM-Einheiten
+          url: "/linux-administration/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: Speichererstellung für ein Dateisystem, das sich auf einer LUN befindet
+          url: "/linux-administration/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: Speicherpartitionierungsschema in Red hat Enterprise Linux (RHEL)
+            und SUSE Linux Enterprise Server (SLES)
+          url: "/linux-administration/concept_support_for_partitioned_or_non_partitioned_devices_in_rhel_and_suse.html"
+          entries:
+          - title: Unterstützte Partitionsgeräte
+            url: "/linux-administration/concept_supported_partition_devices.html"
+        - title: Erstellen von LUNs ohne Host-Einheiten
+          url: "/linux-administration/task_creating_lunswithout_hostentities.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung
+            der LUN
+          url: "/linux-administration/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und Festlegen der LUN
+          url: "/linux-administration/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: Erstellen einer LVM-Einheit und automatische Einrichtung der LUN
+          url: "/linux-administration/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: Erstellen einer LVM-Einheit und Festlegen der LUN
+          url: "/linux-administration/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: Befehl zum Anzeigen von verfügbarem Speicher
+        url: "/linux-administration/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: Methoden zum Anzeigen von Speicherinformationen
+          url: "/linux-administration/concept_methods_fordisplaying_storageinformation.html"
+      - title: Erhöhung der Storage-Größe mit SnapDrive für UNIX
+        url: "/linux-administration/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: Richtlinien für den Befehl „Speichergröße ändern“
+          url: "/linux-administration/concept_guidelines_for_the_storage_resize_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Resize benötigte
+            Informationen
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: Befehlssyntax für, um die Größe des Speichers zu erhöhen
+          url: "/linux-administration/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: Die Größe der Host Volumes und des File-Systems kann geändert werden
+          url: "/linux-administration/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: Der Befehl Storage connect
+        url: "/linux-administration/concept_the_storageconnect_command.html"
+        entries:
+        - title: Richtlinien für den Befehl Storage connect
+          url: "/linux-administration/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: Zur Verwendung des Befehls SnapDrive Storage connect erforderliche
+            Informationen
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: Verbinden von LUNs mit Festplattengruppen, Host-Volumes und Dateisystemen
+          url: "/linux-administration/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: Vorhandene LUNs mit gemeinsam genutzten Ressourcen verbinden
+          url: "/linux-administration/concept_connecting_existingluns_with_sharedresources.html"
+      - title: Befehl zum Trennen der Speicherverbindung
+        url: "/linux-administration/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: Methoden zum Trennen der Speicherung
+          url: "/linux-administration/concept_methods_fordisconnectingstorage.html"
+        - title: Richtlinien für den SnapDrive Storage Trennen Befehl
+          url: "/linux-administration/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+        - title: Tipps für die Verwendung des Befehls zum Trennen von Speicher
+          url: "/linux-administration/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Disconnect sind
+            Informationen erforderlich
+          url: "/linux-administration/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: Befehlssyntax für das Trennen von LUNs vom Host
+          url: "/linux-administration/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: Befehlssyntax für das Trennen eines auf einer LUN erstellten Dateisystems
+            vom Host
+          url: "/linux-administration/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: Befehlssyntax für das Trennen von LUNs und Speichereinheiten vom
+            Host
+          url: "/linux-administration/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+      - title: Der Befehl Storage delete
+        url: "/linux-administration/concept_the_storagedeletecommand.html"
+        entries:
+        - title: Richtlinien für die Verwendung des Befehls „Storage delete“
+          url: "/linux-administration/concept_guidelines_for_usingthe_storage_deletecommand.html"
+        - title: Die für die Verwendung des Befehls SnapDrive Storage delete erforderlichen
+            Informationen
+          url: "/linux-administration/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: Erstellen und Verwenden von Snapshot Kopien in SnapDrive für UNIX
+      url: "/linux-administration/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche Snapshot Vorgänge gibt es in SnapDrive für UNIX
+        url: "/linux-administration/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: Überlegungen beim Arbeiten mit Snapshot Kopien
+          url: "/linux-administration/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Vorgänge der Snapshot-Kopien
+        url: "/linux-administration/concept_snapshot_copy_operations.html"
+        entries:
+        - title: Absturzkonsistente Snapshot Kopien
+          url: "/linux-administration/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: Crash-Konsistenz mit Data ONTAP 7.2 und höher
+            url: "/linux-administration/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: Snapshot Kopien von Konsistenzgruppen in SnapDrive für UNIX
+            url: "/linux-administration/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: Erstellen einer Snapshot Kopie einer Konsistenzgruppe
+            url: "/linux-administration/task_capturing_a_consistency_group_snapshot.html"
+          - title: Deaktivieren von Snapshot Kopien von Konsistenzgruppen
+            url: "/linux-administration/task_disabling_consistency_group_snapshots.html"
+        - title: Applikationskonsistente Snapshot Kopien
+          url: "/linux-administration/concept_application_consistentsnapshot_copies.html"
+        - title: Snapshot Kopien für Storage-Systeme oder Volumes
+          url: "/linux-administration/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: Erstellen von Snapshot-Kopien von nicht verwandten Elementen
+          url: "/linux-administration/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: Richtlinien für das Erstellen von Snapshot Kopien
+          url: "/linux-administration/concept_guidelines_forsnapshot_copycreation.html"
+        - title: Für die Verwendung des SnapDrive Snap create-Befehls sind Informationen
+            erforderlich
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: Erstellen einer Snapshot Kopie
+          url: "/linux-administration/task_creating_asnapshot_copy.html"
+      - title: Snapshot Kopien zeigen Informationen an
+        url: "/linux-administration/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: Befehl zum Anzeigen von Informationen zu Snapshot Kopien
+          url: "/linux-administration/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: Richtlinien zum Anzeigen von Snapshot Kopien
+          url: "/linux-administration/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: Zur Verwendung von SnapDrive Snap show- oder Listenbefehlen erforderliche
+            Informationen
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: Anzeigen von Snapshot Kopien, die sich auf einem Storage-System befinden
+          url: "/linux-administration/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: Anzeigen von Snapshot Kopien eines Storage-System-Volumes
+          url: "/linux-administration/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: Anzeigen einer Snapshot Kopie
+          url: "/linux-administration/task_displaying_asnapshot_copy.html"
+        - title: Andere Möglichkeiten, Namen von Snapshot Kopien zu erhalten
+          url: "/linux-administration/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Umbenennen von Snapshot Kopien
+        url: "/linux-administration/concept_snapshot_copy_rename.html"
+        entries:
+        - title: Befehl zum Umbenennen einer Snapshot Kopie
+          url: "/linux-administration/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: Umbenennen einer Snapshot Kopie, die sich über Storage-Systeme oder
+            Volumes erstreckt
+          url: "/linux-administration/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: Richtlinien zum Umbenennen von Snapshot Kopien
+          url: "/linux-administration/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: Der Name einer Snapshot Kopie wird geändert
+          url: "/linux-administration/task_changing_asnapshot_copyname.html"
+      - title: Wiederherstellen einer Snapshot Kopie
+        url: "/linux-administration/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Wiederherstellen von Snapshot Kopien
+          url: "/linux-administration/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: Wiederherstellen von Snapshot Kopien auf einem Ziel-Storage-System
+          url: "/linux-administration/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: Wiederherstellung mehrerer Speichereinheiten
+            url: "/linux-administration/concept_restoring_multiple_storage_entities.html"
+        - title: Überlegungen beim Wiederherstellen einer Snapshot Kopie
+          url: "/linux-administration/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: Zur Verwendung des Befehls SnapDrive Snap Restore erforderliche Informationen
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: Wiederherstellen einer Snapshot Kopie
+          url: "/linux-administration/task_restoring_asnapshot_copy.html"
+        - title: Wiederherstellen einer Snapshot Kopie von einem anderen Host
+          url: "/linux-administration/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: Volume-basierte SnapRestore
+          url: "/linux-administration/concept_volume_based_snaprestore.html"
+          entries:
+          - title: Was ist das Volume-basierte SnapRestore
+            url: "/linux-administration/concept_what_volume_based_snaprestore_is.html"
+          - title: Zu beachten ist bei der Verwendung von Volume-basiertem SnapRestore
+            url: "/linux-administration/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: Obligatorische Überprüfungen für Volume-basierte SnapRestore
+            url: "/linux-administration/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: Prüfungen, die vom Benutzer außer Kraft gesetzt werden können
+            url: "/linux-administration/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: Volume-basierter SnapRestore-Befehl
+            url: "/linux-administration/concept_volume_based_snaprestore_command.html"
+          - title: Informationen über LUNs, die lokalen oder Remote-Hosts zugeordnet
+              sind
+            url: "/linux-administration/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: Hosten Sie filepec-Informationen für ein bestimmtes Volume
+            url: "/linux-administration/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: Volume-basierte SnapRestore zur Speicherplatzreservierung
+            url: "/linux-administration/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: Verbindung mit einer Snapshot Kopie wird hergestellt
+        url: "/linux-administration/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: Funktionsweise des SnapDrive Snap connect -Befehls
+          url: "/linux-administration/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: Verbinden von Snapshot Kopien auf gespiegelten Speichersystemen
+          url: "/linux-administration/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: Verbinden mehrerer Speichereinheiten
+            url: "/linux-administration/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot Verbindung und Snapshot Wiederherstellung
+          url: "/linux-administration/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: Richtlinien zum Verbinden von Snapshot Kopien
+          url: "/linux-administration/concept_guidelines_forconnectingsnapshot_copies.html"
+        - title: Zur Verwendung des SnapDrive Snap connect -Befehls erforderliche
+            Informationen
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: Verbindung mit einer Snapshot Kopie, die LUNs enthält, wird hergestellt
+          url: "/linux-administration/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: Verbindung mit einer Snapshot Kopie von anderen Storage-Einheiten
+            als LUNs
+          url: "/linux-administration/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: Verbindung mit Snapshot Kopien von anderen Shared Storage-Einheiten
+            als LUNs
+          url: "/linux-administration/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: Durch das Aufteilen eines Volume-Klons oder eines LUN-Klons
+        url: "/linux-administration/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines Volume-Klons
+          url: "/linux-administration/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines LUN-Klons
+          url: "/linux-administration/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: Schätzung des Speicherplatzes mit einer Snapshot-Kopie
+          url: "/linux-administration/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: Starten der Trennung des Volume-Klons oder des LUN-Klons
+          url: "/linux-administration/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: Anzeigen des Status eines Volume-Klons oder einer LUN-Klonabteilung
+          url: "/linux-administration/task_verifying_the_status_of_clone_split.html"
+        - title: Beenden des Volume-Klons oder des LUN-Klonabtrennens
+          url: "/linux-administration/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: Anzeigen des Ergebnisses eines Klonabteilvorgangs unter Verwendung
+            von Job-ID oder Dateispezifikation
+          url: "/linux-administration/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: Löschen einer Snapshot Kopie
+        url: "/linux-administration/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Löschen von Snapshot Kopien
+          url: "/linux-administration/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: Gründe für das Löschen von Snapshot Kopien
+          url: "/linux-administration/concept_reasons_to_deletesnapshotcopies.html"
+        - title: Richtlinien zum Löschen von Snapshot Kopien
+          url: "/linux-administration/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: Für die Verwendung des Befehls SnapDrive Snap delete sind Informationen
+            erforderlich
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: Löschen einer Snapshot Kopie
+          url: "/linux-administration/task_deleting_a_snapshotcopy.html"
+      - title: Trennen einer Snapshot Kopie
+        url: "/linux-administration/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: Trennen der Verbindung mit dem Snapshot
+          url: "/linux-administration/concept_using_the_snapshotdisconnectoperation.html"
+        - title: Richtlinien zum Trennen von Snapshot Kopien
+          url: "/linux-administration/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: Richtlinien zum Trennen von Snapshot Kopien für NFS Einheiten
+            url: "/linux-administration/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+        - title: Für die Verwendung des SnapDrive Snap Disconnect -Befehls sind Informationen
+            erforderlich
+          url: "/linux-administration/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: Verbindung der Snapshot Kopie mit LUNs und ohne Speichereinheiten
+            wird getrennt
+          url: "/linux-administration/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: Verbindung zwischen Snapshot Kopien und Storage-Einheiten wird getrennt
+          url: "/linux-administration/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: Trennung von Snapshot Kopien mit gemeinsam genutzten Storage-Einheiten
+          url: "/linux-administration/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: Tool zur Datenerfassung
+      url: "/linux-administration/concept_data_collection_utility.html"
+      entries:
+      - title: Über das Dienstprogramm zur Datenerfassung
+        url: "/linux-administration/concept_about_the_data_collection_utility.html"
+      - title: Aufgaben durchgeführt von snapdrive.dc
+        url: "/linux-administration/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: Ausführen des Dienstprogramms zur Datenerfassung
+        url: "/linux-administration/concept_executing_the_data_collection_utility.html"
+      - title: Beispiele für die Verwendung von snapdrive.dc
+        url: "/linux-administration/reference_examples_of_using_snapdrive_dc.html"
+    - title: Fehlerbehebung
+      url: "/linux-administration/concept_troubleshooting.html"
+      entries:
+      - title: Allgemeines zu Fehlermeldungen
+        url: "/linux-administration/concept_understanding_error_messages.html"
+        entries:
+        - title: Fehlermeldungs-Speicherorte
+          url: "/linux-administration/concept_error_message_locations.html"
+        - title: Fehlermeldformat
+          url: "/linux-administration/concept_error_message_format.html"
+          entries:
+          - title: Beispielfehlermeldung
+            url: "/linux-administration/reference_sample_error_message.html"
+      - title: Allgemeine Fehlermeldungen
+        url: "/linux-administration/concept_common_error_messages.html"
+        entries:
+        - title: Die Beschränkungen für offene Dateien werden vom Betriebssystem begrenzt
+          url: "/linux-administration/concept_operating_system_limits_on_open_files.html"
+        - title: Das Löschen von LUNs und Klonen belassen veraltete Geräte in UNIX
+          url: "/linux-administration/concept_stale_devices_in_unix.html"
+        - title: Fehlermeldwerte
+          url: "/linux-administration/reference_error_message_values.html"
+      - title: Der Befehl zum Erstellen von SnapDrive Storage schlägt fehl, wenn mehrere
+          SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist
+        url: "/linux-administration/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: Wenn ein Volume auf dem Vserver gelöscht wird, ohne das Volume auf
+          dem Host-System zu mounten, zeigt der Befehl SnapDrive Storage show den
+          falschen Pfad an
+        url: "/linux-administration/concept_snapdrive_storage_show_command_returns_incorrect_path_if_volume_deleted_without_unmount.html"
+      - title: Snap Management Operation schlägt in RHEL/OEL 5.x fehl wegen eines
+          Problems mit umount Befehl
+        url: "/linux-administration/concept_snap_management_operation_fails_in_rhel_or_oel_5.x_due_to_an_issue_with_umount_command.html"
+      - title: Die Snap-Wiederherstellung schlägt fehl, wenn die nfsv3- und nfsv4-Versionen
+          im Host und Speichersystem aktiviert sind
+        url: "/linux-administration/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: Die Verbindung mit Snap trennen kann das geklonte Volume nicht löschen
+        url: "/linux-administration/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: SnapRestore- und Snapconnect-Vorgänge funktionieren nach der Migration
+          des Multipathing-Typs nicht in Linux
+        url: "/linux-administration/concept_snaprestore_and_snapconnect_operations_do_not_work_in_linux_after_multipathing_migration.html"
+      - title: SnapDrive für UNIX meldet einen Fehler, wenn iSCSI nicht ausgeführt
+          wird
+        url: "/linux-administration/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: Diskrepanz in der Fehlermeldung Fehlercode
+        url: "/linux-administration/concept_discrepancy_in_the_error_code_message.html"
+      - title: Daten werden ausgeblendet, wenn Sie einer Volume-Gruppe LUNs hinzufügen
+        url: "/linux-administration/concept_data_disappears_when_you_add_luns_to_a_volume_group.html"
+      - title: Der SnapDrive-Befehl schlägt fehl, wenn die Verbindung des Transportprotokolls
+          fehlschlägt
+        url: "/linux-administration/concept_snapdrive_commands_fails_when_the_transport_protocol_connectivity_fails.html"
+      - title: Autodetection funktioniert nicht mit MPIO Setup für ein FS, das über
+          eine RAW-LUN erstellt wurde
+        url: "/linux-administration/concept_autodetection_does_not_work_with_mpio_setup_for_an_fs_created_over_a_raw_lun.html"
+      - title: Das Herstellen einer Snapshot-Kopie schlägt fehl
+        url: "/linux-administration/concept_connecting_to_a_snapshot_copy_fails.html"
+      - title: Das Löschen von LUNs mit exportierten Festplattengruppen auf Linux
+          LVM2 schlägt fehl
+        url: "/linux-administration/concept_deleting_luns_with_exported_disk_groups_on_linux_lvm_2_fails.html"
+      - title: Die LUN-Erkennung schlägt aufgrund der Einschränkung des iSCSI-Daemon
+          fehl
+        url: "/linux-administration/concept_lun_discovery_fails_because_of_iscsi_daemon_limitation.html"
+      - title: Befehle werden blockiert angezeigt
+        url: "/linux-administration/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: 'Nach jedem Neustart Snap connect ergibt „0001-680 Admin Fehler: Host
+          OS erfordert ein Update auf interne Daten“'
+        url: "/linux-administration/concept_0001_680_admin_error_host_os_requires_an_update_to_internal_data_after_each_reboot.html"
+      - title: SnapDrive-Fehler aus, wenn libgcc_s.so.1 nicht installiert ist
+        url: "/linux-administration/concept_snapdrive_errors_out_if_libgcc_s_so_1_is_not_properly_installed.html"
+      - title: Fehler beim Laden von /usr/lib/libqlsdm.so in HBA_LoadLibrary
+        url: "/linux-administration/concept_error_loading_the_usr_lib_libqlsdm_so_in_hba_loadlibrary.html"
+      - title: Das Wiederherstellen eines Filesystems aus einer Snapshot Kopie schlägt
+          fehl
+        url: "/linux-administration/concept_restoring_a_file_system_from_a_restoring_a_file_system_from_a_snapshot_copy_fails.html"
+      - title: Die Snapshot-Wiederherstellung kann das Dateisystem auf der RAW-LUN
+          nicht wiederherstellen
+        url: "/linux-administration/concept_snapshot_restore_operation_fails_to_restore_file_system_on_raw_lun.html"
+      - title: Snap-Connect-Vorgang fehlgeschlagen
+        url: "/linux-administration/concept_snap_connect_operation_fails.html"
+      - title: Standard-Werte für den Exit-Status
+        url: "/linux-administration/concept_standard_exit_status_values.html"
+        entries:
+        - title: Allgemeines zu Werten für den Exit-Status von Fehlermeldungen
+          url: "/linux-administration/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: Die Werte für den Exit-Status werden verwendet
+          url: "/linux-administration/reference_using_exit_status_values.html"
+        - title: Skriptbeispiel
+          url: "/linux-administration/reference_script_example.html"
+        - title: Statuswerte beenden
+          url: "/linux-administration/reference_exit_status_values.html"
+      - title: Bereinigung der zugeordneten RDM LUNs im Gastbetriebssystem und ESX-Server
+        url: "/linux-administration/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html"
+      - title: Die Volume-basierte SnapRestore-Prüfung schlägt fehl
+        url: "/linux-administration/concept_volume_based_snaprestore_check_fails.html"
+      - title: Das Erstellen und Löschen von Snapshots schlägt fehl
+        url: "/linux-administration/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: Eine Snapshot Kopie kann nicht erstellt werden
+        url: "/linux-administration/concept_unable_to_create_a_snapshot_copy.html"
+      - title: Es kann keine Snapshot Kopie wiederhergestellt werden
+        url: "/linux-administration/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: Der Daemon kann nicht neu gestartet werden, wenn der Host nicht mit
+          dem Speichersystem kommunizieren kann
+        url: "/linux-administration/concept_unable_to_start_daemon.html"
+      - title: Der Daemon konnte nicht gestartet werden
+        url: "/linux-administration/concept_unable_to_start_the_daemon.html"
+      - title: Der Befehl zum Starten des Snapshots schlägt fehl
+        url: "/linux-administration/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive Befehle führen manchmal zum Mounten oder Aufhängen von Dateisystemen
+          und zum Ändern von Systemdateien
+        url: "/linux-administration/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: Es kann kein Storage-Stack ausgewählt werden
+        url: "/linux-administration/concept_unable_to_select_a_storage_stack.html"
+      - title: Der Snapdrived-Stopp-Befehl oder der Snapdrived-Start-Befehl hängt
+        url: "/linux-administration/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive für UNIX-Befehle Anzeigen konnten den Zugriffsfehler nicht
+          überprüfen
+        url: "/linux-administration/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: Montage eines FlexVol Volumes schlägt in der NFS-Umgebung fehl
+        url: "/linux-administration/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: 'Empfangener Fehler iscsi64 SnapDrive: 0001-666 SCHWERER Fehler'
+        url: "/linux-administration/task_receiving_error_iscsi64_snapdrive_0001_666_fatal_error.html"
+      - title: SnapDrive für UNIX interpretiert das Dollarzeichen falsch
+        url: "/linux-administration/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: SnapDrive für UNIX zeigt eine Fehlermeldung an, nachdem SUSE Linux
+          Enterprise Server von Version 10 auf 11 aktualisiert wurde
+        url: "/linux-administration/concept_snapdrive_for_unix_faces_issue_after_sles_upgrade_from_version_10_to_11.html"
+      - title: Der Befehl zum Erstellen von SnapDrive für UNIX-Speicher schlägt beim
+          Erkennen einiger zugeordneten Geräte fehl
+        url: "/linux-administration/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: SnapDrive für UNIX-Befehle schlagen mit angepasster LD_LIBRARY_PATH
+          fehl
+        url: "/linux-administration/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: SnapDrive Vorgänge schlagen in einer Vielzahl von Subnetzkonfigurationen
+          fehl
+        url: "/linux-administration/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: Befehle von SnapDrive für UNIX schlagen fehl, wenn Umgebungsvariablen
+          mithilfe einer Command Shell festgelegt werden
+        url: "/linux-administration/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: SnapDrive für UNIX löscht nicht automatisch veraltete Geräte in UNIX
+        url: "/linux-administration/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+      - title: SnapDrive fügt in RHEL 6.6 und höher nicht neu zugeordnete LUNs hinzu
+        url: "/linux-administration/concept_snapdrive_fails_to_add_newly_mapped_luns_in_rhel_6_6_and_rhel_7.html"
+      - title: SnapDrive für UNIX schlägt aufgrund unsachgemäßer Multipath-Einstellungen
+          bei der Verwendung von Aliased-Geräten fehl.
+        url: "/linux-administration/reference_snapdrive_for_unix_operations_fails_improper_multipath_settings_aliased_devices_used.html"
+    - title: Befehlsreferenz
+      url: "/linux-administration/concept_command_reference.html"
+      entries:
+      - title: Erfassen der von SnapDrive für UNIX-Befehle benötigten Informationen
+        url: "/linux-administration/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Sammeln von Informationen, die durch Befehle benötigt werden
+          url: "/linux-administration/reference_collecting_information_needed_by_commands.html"
+        - title: Allgemeine Hinweise zu den Befehlen
+          url: "/linux-administration/reference_general_notes_about_the_commands.html"
+      - title: Zusammenfassung der Befehle SnapDrive für UNIX
+        url: "/linux-administration/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Befehlsübersicht
+          url: "/linux-administration/reference_command_summary.html"
+          entries:
+          - title: Zeilen für Konfigurationsbefehle
+            url: "/linux-administration/reference_configuration_command_lines.html"
+          - title: Befehlszeilen für die Storage-Bereitstellung
+            url: "/linux-administration/reference_storage_provisioning_command_lines.html"
+          - title: Host-seitige Befehlszeile
+            url: "/linux-administration/reference_host_side_command_lines.html"
+          - title: Befehlszeilen der Snapshot Operation
+            url: "/linux-administration/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX-Optionen, Schlüsselwörter und Argumente
+          url: "/linux-administration/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: Befehlszeilenoptionen
+            url: "/linux-administration/reference_command_line_options.html"
+          - title: Regeln für Schlüsselwörter
+            url: "/linux-administration/reference_rules_for_keywords.html"
+          - title: Befehlszeilenwörter
+            url: "/linux-administration/reference_command_line_keywords.html"
+          - title: Befehlszeilenargumente
+            url: "/linux-administration/reference_command_line_arguments.html"
+  - title: Installation und Administration für Solaris
+    url: "/solaris/index.html"
+    entries:
+    - title: SnapDrive für UNIX – Übersicht
+      url: "/solaris/concept_snapdrive_for_unix_overview.html"
+      entries:
+      - title: Was macht SnapDrive für UNIX
+        url: "/solaris/concept_what_snapdrive_for_unix_is.html"
+      - title: In SnapDrive für UNIX unterstützte Funktionen
+        url: "/solaris/concept_features_supported_in_snapdrive_for_unix.html"
+      - title: Betrieb auf eigenständigen UNIX-Systemen
+        url: "/solaris/concept_operations_performed_on_stand_alone_unix_systems.html"
+      - title: Unterstützung von Gast-Betriebssystemen
+        url: "/solaris/concept_support_for_guest_operating_systems.html"
+      - title: Betrieb wird auf dem Host-Cluster-UNIX-Systemen unterstützt
+        url: "/solaris/concept_operations_supported_on_host_clustered_unix_systems.html"
+      - title: Die Funktionsweise von SnapDrive für UNIX auf einem Host-Cluster-UNIX-System
+        url: "/solaris/concept_how_snapdrive_for_unix_works_on_host_clustered_unix_systems.html"
+      - title: Support für Vserver
+        url: "/solaris/concept_support_for_vserver.html"
+      - title: Support-Probleme bei der vFiler Einheit
+        url: "/solaris/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: Überlegungen bei der Verwendung von SnapDrive für UNIX
+        url: "/solaris/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: Management von VxVM und Roheinheiten
+        url: "/solaris/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: SnapDrive für UNIX-Bereitstellung in einer VxVM-Umgebung
+          url: "/solaris/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: SnapDrive für UNIX und RAW-Einheiten
+          url: "/solaris/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: Wie man Snapshot Kopien von VxVM, RAW-Geräten und NFS-Einheiten verwaltet
+        url: "/solaris/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: Sicherheitsüberlegungen
+        url: "/solaris/concept_security_considerations.html"
+      - title: Greifen Sie auf Berechtigungen auf einem Speichersystem zu
+        url: "/solaris/concept_access_permissions_on_a_storage_system.html"
+      - title: Anforderungen an Storage-Systeme
+        url: "/solaris/concept_requirements_for_storage_systems.html"
+      - title: Stack-Anforderungen
+        url: "/solaris/reference_stack_requirements.html"
+      - title: Unterstützte FC-, iSCSI- oder NFS-Konfigurationen
+        url: "/solaris/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: Einschränkungen
+        url: "/solaris/reference_limitations.html"
+      - title: Einschränkungen von von LUNs, die von SnapDrive gemanagt werden
+        url: "/solaris/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: Grenzen von RDM LUNs, die von SnapDrive gemanagt werden
+        url: "/solaris/concept_limitations_of_rdm_luns_managed_by_snapdrive.html"
+      - title: Unterstützung von NetAppDataMotion für vFiler
+        url: "/solaris/concept_support_for_datamotion_for_vfiler.html"
+      - title: Unterstützung für die Volume-Migration
+        url: "/solaris/concept_support_for_volume_migration.html"
+        entries:
+        - title: Volume-Migration in SnapDrive für UNIX
+          url: "/solaris/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: Was ist die Konfigurationsprüfung
+        url: "/solaris/concept_what_configuration_checker_is.html"
+      - title: Einschränkungen für NFS-Dateien oder Verzeichnisbäume
+        url: "/solaris/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/solaris/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: Volume Manager auf SnapDrive für UNIX
+        url: "/solaris/concept_volume_managers_on_snapdrive_for_unix.html"
+      - title: Host-Cluster-Umgebung für SnapDrive für UNIX
+        url: "/solaris/concept_host_cluster_environment_for_snapdrive_for_unix.html"
+    - title: Vorbereiten der Installation von SnapDrive für UNIX
+      url: "/solaris/concept_preparation_for_installing_snapdrive_for_unix.html"
+      entries:
+      - title: Hardware- und Softwarekonfiguration
+        url: "/solaris/concept_prerequisites_for_using_snapdrive_for_unix.html"
+        entries:
+        - title: FC- oder iSCSI-Konfigurationsprüfungen
+          url: "/solaris/concept_fc_or_iscsi_configuration_checks.html"
+        - title: NFS-Konfigurationsprüfungen
+          url: "/solaris/concept_nfs_configuration_checks.html"
+      - title: Bereiten Sie Ihr Speichersystem vor
+        url: "/solaris/concept_storage_system_checks.html"
+        entries:
+        - title: Überprüfung der Bereitschaft und der Lizenzen des Storage-Systems
+          url: "/solaris/concept_verification_of_storage_system_readiness_and_licenses.html"
+        - title: IP-Adresse oder Bestätigung des Schnittstellennamens des Storage-Systems
+          url: "/solaris/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html"
+        - title: Richtlinien für NFS-Konfigurationen
+          url: "/solaris/concept_considerations_for_network_file_system.html"
+        - title: Vorbereitung der Volumes des Storage-Systems
+          url: "/solaris/concept_storage_system_volume_preparation.html"
+        - title: Volume-Optimierung in einer FC- oder iSCSI-Umgebung
+          url: "/solaris/concept_volume_optimization_in_an_fc_or_iscsi_environment.html"
+        - title: Zurücksetzen der Option Snap Reserve
+          url: "/solaris/concept_reset_the_snap_reserve_option.html"
+          entries:
+          - title: Zurücksetzen der Snap Reserve-Option auf dem Speichersystem
+            url: "/solaris/task_resetting_the_snap_reserve_option_on_the_storage_system.html"
+          - title: Zurücksetzen der Snap Reserve Option mithilfe von FilerView
+            url: "/solaris/task_resetting_the_snap_reserve_option_by_using_filerview.html"
+      - title: Host-Vorbereitung für die Installation von SnapDrive für UNIX
+        url: "/solaris/concept_host_preparation_for_installing_snapdrive_for_unix.html"
+        entries:
+        - title: Installieren Von Solaris Host Utilities
+          url: "/solaris/concept_fc_and_iscsi_host_utilities.html"
+        - title: Überprüfen, ob die Hosts bereit sind
+          url: "/solaris/concept_verify_that_the_hosts_are_ready.html"
+      - title: Vorbereitung des Gastbetriebssystems für die Installation von SnapDrive
+          für UNIX
+        url: "/solaris/concept_guest_os_preparation_for_installing_sdu.html"
+        entries:
+        - title: Installieren Von Solaris Host Utilities
+          url: "/solaris/task_installing_iscsi_host_utilities.html"
+        - title: Überprüfen, ob der Gast bereit ist
+          url: "/solaris/task_verifying_that_the_guest_is_ready.html"
+    - title: Installation oder Upgrade von SnapDrive für UNIX
+      url: "/solaris/concept_snapdrive_for_unix_installation_and_upgrade.html"
+      entries:
+      - title: Herunterladen und Dekomprimieren des Softwarepakets
+        url: "/solaris/task_decompressing_the_software_package_you_downloaded.html"
+      - title: Installieren von SnapDrive für UNIX auf einem Solaris-Host
+        url: "/solaris/task_installing_snapdrivefor_unix_on_asolaris_host.html"
+      - title: Einrichtung einer SFRAC-I/O-Zaunsumgebung auf einem Storage-System
+        url: "/solaris/task_setting_up_an_sfrac_i_o_fencing_environment_on_a_storage_system.html"
+      - title: Hinzufügen eines Node zu einem Host-Cluster
+        url: "/solaris/task_adding_a_node_to_a_host_cluster.html"
+      - title: Entfernen eines Node aus einem Host-Cluster
+        url: "/solaris/concept_removing_a_node_from_a_host_cluster.html"
+      - title: Deinstallieren von SnapDrive für UNIX von einem Solaris-Host
+        url: "/solaris/task_uninstalling_snapdrive_for_unix_from_a_solaris_host.html"
+      - title: Überprüfung der Veritas Stack-Konfiguration
+        url: "/solaris/task_verifying_the_veritas_stack_configuration.html"
+      - title: Prüfungen nach der Installation durchführen
+        url: "/solaris/concept_postinstallation_checks.html"
+      - title: Von SnapDrive für UNIX installierte Dateien
+        url: "/solaris/concept_files_installed_by_snapdrive_for_unix.html"
+        entries:
+        - title: Von SnapDrive für UNIX installierte ausführbare Dateien
+          url: "/solaris/concept_executables_installed_by_snapdrive_for_unix.html"
+        - title: Von SnapDrive für UNIX installierte Konfigurationsdateien
+          url: "/solaris/concept_configuration_files_installed_by_snapdrive_for_unix.html"
+        - title: Deinstallieren Sie Dateien, die von SnapDrive für UNIX installiert
+            wurden
+          url: "/solaris/concept_uninstall_files_installed_by_snapdrive_for_unix.html"
+        - title: Von SnapDrive für UNIX installierte Diagnosedateien
+          url: "/solaris/concept_diagnostic_files_installed_by_snapdrive_for_unix.html"
+        - title: Man-Pages installiert von SnapDrive für UNIX
+          url: "/solaris/concept_manual_pages_installed_by_snapdrive_for_unix.html"
+      - title: Aktualisieren Sie SnapDrive für UNIX auf die aktuelle Version
+        url: "/solaris/concept_what_snapdrive_for_unix_does_when_you_upgrade_your_current_version.html"
+    - title: Informationen zum SnapDrive for UNIX Daemon
+      url: "/solaris/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: Was der Webdienst und der Daemon sind
+        url: "/solaris/concept_what_the_web_service_and_daemon_are.html"
+      - title: Überprüfen des Status des Daemon
+        url: "/solaris/task_checking_the_status_of_the_daemon.html"
+      - title: Starten des SnapDrive for UNIX Daemon
+        url: "/solaris/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: Ändern des Standard-Daemon-Passworts
+        url: "/solaris/task_changing_the_default_daemon_password.html"
+      - title: Beenden des Daemon
+        url: "/solaris/task_stopping_the_daemon.html"
+        entries:
+        - title: Den Dämon gewaltsam stoppen
+          url: "/solaris/task_nonforcibly_stopping_the_daemon.html"
+        - title: Gewaltsam das Anhalten des Dämons
+          url: "/solaris/task_forcibly_stopping_the_daemon.html"
+      - title: Starten Sie den Daemon neu
+        url: "/solaris/task_restarting_the_daemon.html"
+      - title: Erzwingen des Neustarts des Daemon
+        url: "/solaris/task_forcing_daemon_restart.html"
+      - title: Sichere Daemon Kommunikation mit HTTPS
+        url: "/solaris/concept_secure_daemon_communication_using_https.html"
+      - title: Selbstsignierte Zertifikate werden generiert
+        url: "/solaris/task_generating_self_signed_certificates.html"
+      - title: Erstellen eines CA-signierten Zertifikats
+        url: "/solaris/task_generating_ca_signed_certificate.html"
+    - title: Überprüfen unterstützter Konfigurationen
+      url: "/solaris/task_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: Datendateien werden importiert
+        url: "/solaris/task_importing_data_files.html"
+      - title: Identifizieren der installierten Komponenten
+        url: "/solaris/task_identifying_the_installed_components.html"
+      - title: Überprüfen der unterstützten Konfigurationen
+        url: "/solaris/task_verifying_the_supported_configurations.html"
+    - title: Unterstützung für Umbenennung des Storage-Systems
+      url: "/solaris/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: Konfigurieren des neuen Speichersystemnamens in einem Hostsystem
+        url: "/solaris/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: Anzeigen der Liste der Speichersysteme
+        url: "/solaris/task_viewing_the_list_of_storage_system.html"
+      - title: Migration von einem alten Storage-System zu einem neuen Storage-System
+        url: "/solaris/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: Anzeigen des migrierten neuen Speichersystems
+        url: "/solaris/task_viewing_the_migrated_new_storage_system.html"
+      - title: Löschen der Zuordnungsinformationen des Speichersystems vom Hostsystem
+        url: "/solaris/task_deleting_a_storage_system_entry.html"
+    - title: Verwenden des Ports, der in SnapDrive für UNIX eingestellt ist
+      url: "/solaris/concept_using_port_set_in_snapdrive_for_unix.html"
+      entries:
+      - title: Hinzufügen eines PortSatzes in SnapDrive
+        url: "/solaris/task_adding_a_port_set_in_snapdrive.html"
+      - title: Anzeigen der Liste des PortSatzes
+        url: "/solaris/task_viewing_the_list_of_port_set.html"
+      - title: Entfernen eines PortSatzes aus dem SnapDrive
+        url: "/solaris/task_removing_a_port_set_from_snapdrive.html"
+      - title: Migration auf einen neuen Vserver Namen
+        url: "/solaris/concept_migrating_to_new_vserver_name.html"
+    - title: Initiatorgruppen werden konfiguriert
+      url: "/solaris/concept_configuring_igroups.html"
+      entries:
+      - title: Hinzufügen einer Initiatorgruppe
+        url: "/solaris/task_adding_igroup.html"
+      - title: Löschen einer Initiatorgruppe
+        url: "/solaris/task_deleting_igroup.html"
+      - title: Anzeigen der Liste der Initiatorgruppen
+        url: "/solaris/task_viewing_the_list_of_igroups.html"
+    - title: Verwenden der Selective LUN Map in SnapDrive for UNIX
+      url: "/solaris/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+    - title: Konfiguration von SnapDrive für UNIX
+      url: "/solaris/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: SnapDrive für UNIX wird konfiguriert
+        url: "/solaris/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: Was die snapdrive.conf Datei ist
+          url: "/solaris/concept_what_the_snapdrive_conf_file_is.html"
+        - title: Konfigurationsoptionen und ihre Standardwerte
+          url: "/solaris/concept_configuration_options_and_their_default_values.html"
+        - title: Was macht der SnapDrive-Konfigurationsassistent
+          url: "/solaris/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive-Konfigurationsassistent
+          url: "/solaris/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: Einige Konfigurationsbefehle
+          url: "/solaris/reference_some_configuration_commands.html"
+        - title: Verwenden des SnapDrive-Konfigurationsassistenten
+          url: "/solaris/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: Setzen von Werten in der datei snapdrive.conf
+          url: "/solaris/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: Überprüfen der Version von SnapDrive für UNIX
+          url: "/solaris/task_checking_version_of_snapdrive_for_unix.html"
+      - title: Konfigurationsinformationen in SnapDrive für UNIX für das Gastbetriebssystem
+        url: "/solaris/concept_configuration_information_in_snapdrive_for_unix_for_guest_os.html"
+        entries:
+        - title: Konfiguration der Virtual Storage Console für SnapDrive für UNIX
+          url: "/solaris/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html"
+        - title: Angeben von Anmeldeinformationen für die virtuelle Speicherkonsole
+          url: "/solaris/task_specifying_login_information_for_virtual_storage_console.html"
+        - title: Überprüfen der Anmeldeinformationen für die Virtual Storage Console
+          url: "/solaris/task_verifying_virtual_storage_console.html"
+        - title: Löschen einer Benutzeranmeldung für eine virtuelle Speicherkonsole
+          url: "/solaris/task_deleting_a_user_login_for_a_virtual_storage_console.html"
+      - title: Konfigurationsinformationen für Vserver
+        url: "/solaris/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: Login-Informationen für den Vserver
+          url: "/solaris/concept_login_information_for_vserver.html"
+        - title: Festlegen von Anmeldeinformationen für den Vserver
+          url: "/solaris/task_specifying_login_information_for_vserver.html"
+        - title: Überprüfen der Anmeldeinformationen für Vserver
+          url: "/solaris/task_verifying_login_information_for_vserver.html"
+        - title: Löschen eines Benutzers aus einem Vserver
+          url: "/solaris/task_deleting_a_user_for_a_vserver.html"
+      - title: Host-Vorbereitung für das Hinzufügen von LUNs
+        url: "/solaris/task_hosts_preparation_for_adding_luns.html"
+        entries:
+        - title: Ermitteln, wie viele LUNs erstellt werden können
+          url: "/solaris/concept_determining_howmany_luns_can_becreated.html"
+        - title: Hinzufügen von Hosteinträgen für neue LUNs
+          url: "/solaris/task_adding_host_entries_for_new_luns.html"
+      - title: Audit-, Recovery- und Trace-Protokollierung in SnapDrive für UNIX
+        url: "/solaris/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: Protokolltypen
+          url: "/solaris/concept_types_of_logs.html"
+        - title: Aktivieren und Deaktivieren von Protokolldateien
+          url: "/solaris/task_enabling_and_disabling_log_files.html"
+        - title: Rotationseinstellungen für Protokolldateien
+          url: "/solaris/concept_log_file_rotation_settings.html"
+        - title: Inhalt einer Audit-Log-Datei
+          url: "/solaris/concept_contents_of_an_audit_log_file.html"
+        - title: Ändern der Standardeinstellungen für die Prüfprotokolle
+          url: "/solaris/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: Inhalt des Wiederherstellungsprotokolls
+          url: "/solaris/concept_contents_of_the_recovery_log.html"
+        - title: Standardwerte für die Wiederherstellungsprotokolle
+          url: "/solaris/concept_default_values_for_the_recovery_logs.html"
+        - title: Was die Trace-Log-Datei ist
+          url: "/solaris/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: Standardwerte für die Trace-Log-Dateien
+            url: "/solaris/concept_default_vaules_for_the_trace_log_files.html"
+      - title: Was ist AutoSupport
+        url: "/solaris/concept_what_autosupport_is.html"
+        entries:
+        - title: So verwendet SnapDrive für UNIX AutoSupport
+          url: "/solaris/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: Inhalt von AutoSupport Meldungen
+          url: "/solaris/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: Beispiele für AutoSupport-Meldungen
+          url: "/solaris/concept_example_of_an_autosupport_message.html"
+      - title: Unterstützung für Multipath-Zugriff in SnapDrive für UNIX
+        url: "/solaris/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Multipathing
+          url: "/solaris/task_enabling_multipathing.html"
+        - title: Grund für die Aktualisierung der DMP-Pfade
+          url: "/solaris/concept_reason_to_refresh_the_dmp_paths.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/solaris/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Thin Provisioning für LUNs
+          url: "/solaris/task_enabling_thin_provisioning_for_luns.html"
+        - title: Aktivieren von Thin Provisioning für NFS-Einheiten
+          url: "/solaris/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: Mehrere Subnetzkonfigurationen
+        url: "/solaris/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: Konfiguration von Management- und Datenschnittstellen für ein Storage-System
+          url: "/solaris/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: Anzeigen aller Datenschnittstellen für eine Managementoberfläche
+          url: "/solaris/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: Löschen eines Datenschnittstelleneintrags für eine Managementoberfläche
+          url: "/solaris/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: LUN-Namen in SAN-Umgebung
+          url: "/solaris/concept_lun_names_in_san_environment.html"
+        - title: Reine NFS Umgebung
+          url: "/solaris/concept_pure_nfs_environment.html"
+        - title: Kombinierte SAN- und NFS-Umgebungen
+          url: "/solaris/concept_mixed_environments_of_san_and_nfs.html"
+      - title: Automatische Erkennung von Host-Einheiten
+        url: "/solaris/concept_automatic_detection_of_host_entities.html"
+      - title: Was sind SnapDrive-Assistenten
+        url: "/solaris/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: Vorgänge werden mithilfe von Assistenten durchgeführt
+          url: "/solaris/concept_operations_performed_using_wizards.html"
+        - title: Storage-Management mit einem Assistenten
+          url: "/solaris/concept_managing_storage_using_a_wizard.html"
+        - title: Verwalten von Snapshot Kopien mit einem Assistenten
+          url: "/solaris/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: Löschen von Speicher mit einem Assistenten
+          url: "/solaris/concept_deleting_storage_using_a_wizard.html"
+    - title: Sicherheitsfunktionen in SnapDrive für UNIX
+      url: "/solaris/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: Was sind die Sicherheitsfunktionen
+        url: "/solaris/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: Zugriffssteuerung in SnapDrive für UNIX
+        url: "/solaris/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: Welche Zugriffskontrolleinstellungen sind
+          url: "/solaris/concept_what_access_control_settings_are.html"
+        - title: Verfügbare Zugriffssteuerungsstufen
+          url: "/solaris/concept_available_access_control_levels.html"
+        - title: Einrichten der Zugriffskontrollberechtigung
+          url: "/solaris/task_setting_up_access_control_permission.html"
+        - title: Zugriffsberechtigung anzeigen
+          url: "/solaris/task_viewing_the_access_control_permission.html"
+      - title: Anmeldeinformationen für Storage-Systeme
+        url: "/solaris/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: Angeben von Anmeldeinformationen
+          url: "/solaris/task_specifying_login_information.html"
+        - title: Überprüfung der mit SnapDrive für UNIX verknüpften Benutzernamen
+            auf Storage-Systemen
+          url: "/solaris/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: Löschen einer Benutzeranmeldung für ein Speichersystem
+          url: "/solaris/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: Einrichten von HTTP
+        url: "/solaris/task_setting_up_http.html"
+    - title: Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX
+      url: "/solaris/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche rollenbasierte Zugriffssteuerung (Role Based Access Control,
+          RBAC) bietet SnapDrive für UNIX
+        url: "/solaris/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: Interaktion von SnapDrive für UNIX und der Operations Manager Konsole
+        url: "/solaris/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: Konfiguration der rollenbasierten Zugriffssteuerung in SnapDrive für
+          UNIX
+        url: "/solaris/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: konfigurieren von sd-Admin in der Operations Manager-Konsole
+          url: "/solaris/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: konfigurieren von sd-Admin über Befehlszeilenschnittstelle
+            url: "/solaris/task_configuring_sd_admin_using_cli.html"
+        - title: hinzufügen von sd-Hostname zum Speichersystem
+          url: "/solaris/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: hinzufügen von sd- Hostname zum Speichersystem mithilfe von CLI
+            url: "/solaris/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: Konfigurieren von Benutzeranmeldeinformationen auf SnapDrive für
+            UNIX
+          url: "/solaris/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: Formate für Benutzernamen zur Durchführung von Zugriffsprüfungen
+            mithilfe der Operations Manager Konsole
+          url: "/solaris/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: Konfigurationsvariablen für die rollenbasierte Zugriffssteuerung
+          url: "/solaris/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive-Befehle und -Funktionen
+        url: "/solaris/concept_snapdrive_commands_and_capabilities.html"
+      - title: Vorkonfigurierte Rollen zur einfachen Konfiguration von Benutzerrollen
+        url: "/solaris/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Automatische Aktualisierung des Storage-Systems auf der Operations
+          Manager Konsole
+        url: "/solaris/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: Mehrere Operations Manager Konsolen-Server
+        url: "/solaris/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager-Konsole nicht verfügbar
+        url: "/solaris/concept_operations_manager_unavailable.html"
+      - title: Beispiele für RBAC und Storage-Vorgänge
+        url: "/solaris/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: Vorgang mit einem einzigen Dateisystem auf einem einzigen Storage-Objekt
+          url: "/solaris/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: Betrieb mit einem einzigen Dateisystem auf mehreren Speicherobjekten
+          url: "/solaris/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Dateiepec- und Speicherobjekten
+          url: "/solaris/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: Betrieb mit mehreren Storage-Objekten
+          url: "/solaris/concept_operation_with_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Operations Manager Konsolen-Servern, die Storage-Systeme
+            managen
+          url: "/solaris/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: FlexClone Volumes in SnapDrive für UNIX
+      url: "/solaris/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche FlexClone Volumes sind
+        url: "/solaris/concept_what_flexclone_volumes_are.html"
+      - title: Vorteile von FlexClone Volumes
+        url: "/solaris/concept_benefits_of_flexclone_volumes.html"
+      - title: Typen von FlexClone Volumes
+        url: "/solaris/concept_types_of_flexclone_volumes.html"
+      - title: SnapDrive für UNIX Vorgänge auf FlexClone Volumes
+        url: "/solaris/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+        entries:
+        - title: Rollenbasierte Zugriffssteuerung für FlexClone Volume-Vorgänge
+          url: "/solaris/concept_role_based_access_control_for_flexclone_volume_operations.html"
+        - title: Snap-Connect-Verfahren
+          url: "/solaris/concept_snap_connect_procedure.html"
+        - title: Vorgehensweise zum Abtrennen von Schnappverbindungen
+          url: "/solaris/concept_snap_disconnect_procedure.html"
+        - title: Verbindung zu einem einzigen Dateisystem in einer LUN wird hergestellt
+          url: "/solaris/concept_connecting_to_a_single_filespec_in_a_lun.html"
+        - title: Verbindung mit mehreren Dateipecs wird hergestellt
+          url: "/solaris/concept_connecting_to_multiple_filespecs.html"
+        - title: Trennen einer Dateispezifikation
+          url: "/solaris/concept_disconnecting_a_filespec.html"
+        - title: Durch Aufteilung des FlexClone Volume
+          url: "/solaris/concept_splitting_the_flexclone_volume.html"
+        - title: Platzreservierung mit einem FlexClone Volume
+          url: "/solaris/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: Storage-Bereitstellung in SnapDrive für UNIX
+      url: "/solaris/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: Storage-Vorgänge in SnapDrive für UNIX
+        url: "/solaris/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: Storage-Vorgänge für mehrere Storage-System-Volumes
+          url: "/solaris/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: Überlegungen zum Storage-Betrieb
+          url: "/solaris/concept_considerations_forstorage_operations.html"
+        - title: Überlegungen bei der Bereitstellung von RDM LUNs
+          url: "/solaris/task_considerations_for_provisioning_rdm_luns.html"
+        - title: VMware VMotion-Unterstützung in SnapDrive für UNIX
+          url: "/solaris/concept_storage_provisioning_for_rdm_luns.html"
+      - title: Storage-Erstellung mit SnapDrive für UNIX
+        url: "/solaris/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: Methoden zum Erstellen von Speicher
+          url: "/solaris/concept_methods_forcreating_storage.html"
+        - title: Richtlinien für den Speichervorgang erstellen
+          url: "/solaris/concept_guidelines_for_thestorage_createoperation.html"
+          entries:
+          - title: Richtlinien für den Speichererstellungvorgang in einer Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_storage_create_operation_in_a_host_cluster_environment.html"
+        - title: Für den Speichervorgang erforderliche Informationen
+          url: "/solaris/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: Storage-Erstellung für VxVM-Einheiten
+          url: "/solaris/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: Speichererstellung für ein Dateisystem, das sich auf einer LUN befindet
+          url: "/solaris/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: Erstellen von LUNs ohne Host-Einheiten
+          url: "/solaris/task_creating_lunswithout_hostentities.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung
+            der LUN
+          url: "/solaris/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und Festlegen der LUN
+          url: "/solaris/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: Erstellen einer VxVM-Einheit und automatische Einrichtung der LUN
+          url: "/solaris/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: Erstellen einer VxVM-Einheit und Festlegen der LUN
+          url: "/solaris/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: Befehl zum Anzeigen von verfügbarem Speicher
+        url: "/solaris/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: Methoden zum Anzeigen von Speicherinformationen
+          url: "/solaris/concept_methods_fordisplaying_storageinformation.html"
+      - title: Erhöhung der Storage-Größe mit SnapDrive für UNIX
+        url: "/solaris/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: Richtlinien für den Befehl „Speichergröße ändern“
+          url: "/solaris/concept_guidelines_for_the_storage_resize_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Resize benötigte
+            Informationen
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: Befehlssyntax für, um die Größe des Speichers zu erhöhen
+          url: "/solaris/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: Die Größe der Host Volumes und des File-Systems kann geändert werden
+          url: "/solaris/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: Der Befehl Storage connect
+        url: "/solaris/concept_the_storageconnect_command.html"
+        entries:
+        - title: Richtlinien für den Befehl Storage connect
+          url: "/solaris/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: Richtlinien für die Storage-Verbindung in einer Host-Cluster-Umgebung
+          url: "/solaris/concept_guidelines_for_storage_connection_in_a_host_cluster_environment.html"
+        - title: Zur Verwendung des Befehls SnapDrive Storage connect erforderliche
+            Informationen
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: Verbinden von LUNs mit Festplattengruppen, Host-Volumes und Dateisystemen
+          url: "/solaris/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: Vorhandene LUNs mit gemeinsam genutzten Ressourcen verbinden
+          url: "/solaris/concept_connecting_existingluns_with_sharedresources.html"
+      - title: Befehl zum Trennen der Speicherverbindung
+        url: "/solaris/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: Methoden zum Trennen der Speicherung
+          url: "/solaris/concept_methods_fordisconnectingstorage.html"
+        - title: Richtlinien für den SnapDrive Storage Trennen Befehl
+          url: "/solaris/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+          entries:
+          - title: Richtlinien für die Verwendung des Befehls zum Trennen in einer
+              Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_using_the_disconnect_command_in_a_host_cluster_environment.html"
+        - title: Tipps für die Verwendung des Befehls zum Trennen von Speicher
+          url: "/solaris/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Disconnect sind
+            Informationen erforderlich
+          url: "/solaris/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: Befehlssyntax für das Trennen von LUNs vom Host
+          url: "/solaris/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: Befehlssyntax für das Trennen eines auf einer LUN erstellten Dateisystems
+            vom Host
+          url: "/solaris/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: Befehlssyntax für das Trennen von LUNs und Speichereinheiten vom
+            Host
+          url: "/solaris/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+        - title: Deaktivieren Sie einen Node oder ein Cluster aus der Verwendung gemeinsam
+            genutzter Ressourcen
+          url: "/solaris/concept_disable_a_node_ora_cluster_from_usingshared_resources.html"
+      - title: Der Befehl Storage delete
+        url: "/solaris/concept_the_storagedeletecommand.html"
+        entries:
+        - title: Richtlinien für die Verwendung des Befehls „Storage delete“
+          url: "/solaris/concept_guidelines_for_usingthe_storage_deletecommand.html"
+          entries:
+          - title: Richtlinien zum Löschen von Storage in einer Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_storage_deletion_in_a_host_cluster_environment.html"
+        - title: Die für die Verwendung des Befehls SnapDrive Storage delete erforderlichen
+            Informationen
+          url: "/solaris/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: Erstellen und Verwenden von Snapshot Kopien in SnapDrive für UNIX
+      url: "/solaris/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche Snapshot Vorgänge gibt es in SnapDrive für UNIX
+        url: "/solaris/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: Überlegungen beim Arbeiten mit Snapshot Kopien
+          url: "/solaris/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Vorgänge der Snapshot-Kopien
+        url: "/solaris/concept_snapshot_copy_operations.html"
+        entries:
+        - title: Absturzkonsistente Snapshot Kopien
+          url: "/solaris/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: Crash-Konsistenz mit Data ONTAP 7.2 und höher
+            url: "/solaris/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: Snapshot Kopien von Konsistenzgruppen in SnapDrive für UNIX
+            url: "/solaris/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: Erstellen einer Snapshot Kopie einer Konsistenzgruppe
+            url: "/solaris/task_capturing_a_consistency_group_snapshot.html"
+          - title: Deaktivieren von Snapshot Kopien von Konsistenzgruppen
+            url: "/solaris/task_disabling_consistency_group_snapshots.html"
+        - title: Applikationskonsistente Snapshot Kopien
+          url: "/solaris/concept_application_consistentsnapshot_copies.html"
+        - title: Snapshot Kopien für Storage-Systeme oder Volumes
+          url: "/solaris/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: Erstellen von Snapshot-Kopien von nicht verwandten Elementen
+          url: "/solaris/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: Richtlinien für das Erstellen von Snapshot Kopien
+          url: "/solaris/concept_guidelines_forsnapshot_copycreation.html"
+          entries:
+          - title: Richtlinien für die Erstellung von Snapshot Kopien in einer Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_snapshot_copy_creation_in_a_host_cluster_environment.html"
+        - title: Für die Verwendung des SnapDrive Snap create-Befehls sind Informationen
+            erforderlich
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: Erstellen einer Snapshot Kopie
+          url: "/solaris/task_creating_asnapshot_copy.html"
+      - title: Snapshot Kopien zeigen Informationen an
+        url: "/solaris/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: Befehl zum Anzeigen von Informationen zu Snapshot Kopien
+          url: "/solaris/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: Richtlinien zum Anzeigen von Snapshot Kopien
+          url: "/solaris/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: Zur Verwendung von SnapDrive Snap show- oder Listenbefehlen erforderliche
+            Informationen
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: Anzeigen von Snapshot Kopien, die sich auf einem Storage-System befinden
+          url: "/solaris/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: Anzeigen von Snapshot Kopien eines Storage-System-Volumes
+          url: "/solaris/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: Anzeigen einer Snapshot Kopie
+          url: "/solaris/task_displaying_asnapshot_copy.html"
+        - title: Andere Möglichkeiten, Namen von Snapshot Kopien zu erhalten
+          url: "/solaris/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Umbenennen von Snapshot Kopien
+        url: "/solaris/concept_snapshot_copy_rename.html"
+        entries:
+        - title: Befehl zum Umbenennen einer Snapshot Kopie
+          url: "/solaris/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: Umbenennen einer Snapshot Kopie, die sich über Storage-Systeme oder
+            Volumes erstreckt
+          url: "/solaris/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: Richtlinien zum Umbenennen von Snapshot Kopien
+          url: "/solaris/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: Der Name einer Snapshot Kopie wird geändert
+          url: "/solaris/task_changing_asnapshot_copyname.html"
+      - title: Wiederherstellen einer Snapshot Kopie
+        url: "/solaris/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Wiederherstellen von Snapshot Kopien
+          url: "/solaris/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: Wiederherstellen von Snapshot Kopien auf einem Ziel-Storage-System
+          url: "/solaris/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: Wiederherstellung einer einzelnen Storage-Einheit auf einem Storage-System
+              oder einem Storage-System HA-Paar
+            url: "/solaris/concept_restoring_a_single_storage_entity_on_a_storage_system_or_storagesystem_cluster.html"
+          - title: Wiederherstellung mehrerer Speichereinheiten
+            url: "/solaris/concept_restoring_multiple_storage_entities.html"
+          - title: Richtlinien zum Wiederherstellen einer Snapshot Kopie in einer
+              Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_restoring_a_snapshot_copy_in_a_host_cluster_environment.html"
+        - title: Überlegungen beim Wiederherstellen einer Snapshot Kopie
+          url: "/solaris/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: Zur Verwendung des Befehls SnapDrive Snap Restore erforderliche Informationen
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: Wiederherstellen einer Snapshot Kopie
+          url: "/solaris/task_restoring_asnapshot_copy.html"
+        - title: Wiederherstellen einer Snapshot Kopie von einem anderen Host
+          url: "/solaris/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: Volume-basierte SnapRestore
+          url: "/solaris/concept_volume_based_snaprestore.html"
+          entries:
+          - title: Was ist das Volume-basierte SnapRestore
+            url: "/solaris/concept_what_volume_based_snaprestore_is.html"
+          - title: Zu beachten ist bei der Verwendung von Volume-basiertem SnapRestore
+            url: "/solaris/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: Obligatorische Überprüfungen für Volume-basierte SnapRestore
+            url: "/solaris/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: Prüfungen, die vom Benutzer außer Kraft gesetzt werden können
+            url: "/solaris/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: Volume-basierter SnapRestore-Befehl
+            url: "/solaris/concept_volume_based_snaprestore_command.html"
+          - title: Informationen über LUNs, die lokalen oder Remote-Hosts zugeordnet
+              sind
+            url: "/solaris/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: Hosten Sie filepec-Informationen für ein bestimmtes Volume
+            url: "/solaris/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: Volume-basierte SnapRestore zur Speicherplatzreservierung
+            url: "/solaris/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: Verbindung mit einer Snapshot Kopie wird hergestellt
+        url: "/solaris/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: Funktionsweise des SnapDrive Snap connect -Befehls
+          url: "/solaris/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: Verbinden von Snapshot Kopien auf gespiegelten Speichersystemen
+          url: "/solaris/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: Verbinden einer einzelnen Storage-Einheit auf einem Storage-System
+              oder einem Storage-System HA-Paar
+            url: "/solaris/concept_connecting_a_single_storage_entity_on_a_storage_system_or_storage_system_ha_pair.html"
+          - title: Verbinden mehrerer Speichereinheiten
+            url: "/solaris/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot Verbindung und Snapshot Wiederherstellung
+          url: "/solaris/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: Richtlinien zum Verbinden von Snapshot Kopien
+          url: "/solaris/concept_guidelines_forconnectingsnapshot_copies.html"
+          entries:
+          - title: Richtlinien zum Verbinden von Snapshot Kopien in einer Host-Cluster-Umgebung
+            url: "/solaris/concept_guidelines_for_connecting_snapshot_copies_in_a_host_cluster_environment.html"
+        - title: Zur Verwendung des SnapDrive Snap connect -Befehls erforderliche
+            Informationen
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: Verbindung mit einer Snapshot Kopie, die LUNs enthält, wird hergestellt
+          url: "/solaris/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: Verbindung mit einer Snapshot Kopie von anderen Storage-Einheiten
+            als LUNs
+          url: "/solaris/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: Verbindung mit Snapshot Kopien von anderen Shared Storage-Einheiten
+            als LUNs
+          url: "/solaris/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: Durch das Aufteilen eines Volume-Klons oder eines LUN-Klons
+        url: "/solaris/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines Volume-Klons
+          url: "/solaris/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines LUN-Klons
+          url: "/solaris/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: Schätzung des Speicherplatzes mit einer Snapshot-Kopie
+          url: "/solaris/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: Starten der Trennung des Volume-Klons oder des LUN-Klons
+          url: "/solaris/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: Anzeigen des Status eines Volume-Klons oder einer LUN-Klonabteilung
+          url: "/solaris/task_verifying_the_status_of_clone_split.html"
+        - title: Beenden des Volume-Klons oder des LUN-Klonabtrennens
+          url: "/solaris/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: Anzeigen des Ergebnisses eines Klonabteilvorgangs unter Verwendung
+            von Job-ID oder Dateispezifikation
+          url: "/solaris/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: Löschen einer Snapshot Kopie
+        url: "/solaris/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Löschen von Snapshot Kopien
+          url: "/solaris/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: Gründe für das Löschen von Snapshot Kopien
+          url: "/solaris/concept_reasons_to_deletesnapshotcopies.html"
+        - title: Richtlinien zum Löschen von Snapshot Kopien
+          url: "/solaris/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: Für die Verwendung des Befehls SnapDrive Snap delete sind Informationen
+            erforderlich
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: Löschen einer Snapshot Kopie
+          url: "/solaris/task_deleting_a_snapshotcopy.html"
+      - title: Trennen einer Snapshot Kopie
+        url: "/solaris/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: Trennen der Verbindung mit dem Snapshot
+          url: "/solaris/concept_using_the_snapshotdisconnectoperation.html"
+        - title: Richtlinien zum Trennen von Snapshot Kopien
+          url: "/solaris/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: Richtlinien zum Trennen von Snapshot Kopien für NFS Einheiten
+            url: "/solaris/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+          - title: Richtlinien zum Trennen von Snapshot Kopien in einer Host Cluster
+              Umgebung
+            url: "/solaris/concept_guidelines_for_disconnecting_snapshot_copies_in_a_host_clusterenvironment.html"
+        - title: Für die Verwendung des SnapDrive Snap Disconnect -Befehls sind Informationen
+            erforderlich
+          url: "/solaris/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: Verbindung der Snapshot Kopie mit LUNs und ohne Speichereinheiten
+            wird getrennt
+          url: "/solaris/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: Verbindung zwischen Snapshot Kopien und Storage-Einheiten wird getrennt
+          url: "/solaris/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: Trennung von Snapshot Kopien mit gemeinsam genutzten Storage-Einheiten
+          url: "/solaris/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: Tool zur Datenerfassung
+      url: "/solaris/concept_data_collection_utility.html"
+      entries:
+      - title: Über das Dienstprogramm zur Datenerfassung
+        url: "/solaris/concept_about_the_data_collection_utility.html"
+      - title: Aufgaben durchgeführt von snapdrive.dc
+        url: "/solaris/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: Ausführen des Dienstprogramms zur Datenerfassung
+        url: "/solaris/concept_executing_the_data_collection_utility.html"
+      - title: Beispiele für die Verwendung von snapdrive.dc
+        url: "/solaris/reference_examples_of_using_snapdrive_dc.html"
+    - title: Fehlerbehebung
+      url: "/solaris/concept_troubleshooting.html"
+      entries:
+      - title: Allgemeines zu Fehlermeldungen
+        url: "/solaris/concept_understanding_error_messages.html"
+        entries:
+        - title: Fehlermeldungs-Speicherorte
+          url: "/solaris/concept_error_message_locations.html"
+        - title: Fehlermeldformat
+          url: "/solaris/concept_error_message_format.html"
+          entries:
+          - title: Beispielfehlermeldung
+            url: "/solaris/reference_sample_error_message.html"
+      - title: Allgemeine Fehlermeldungen
+        url: "/solaris/concept_common_error_messages.html"
+        entries:
+        - title: Die Beschränkungen für offene Dateien werden vom Betriebssystem begrenzt
+          url: "/solaris/concept_operating_system_limits_on_open_files.html"
+        - title: Das Löschen von LUNs und Klonen belassen veraltete Geräte in UNIX
+          url: "/solaris/concept_stale_devices_in_unix.html"
+        - title: Fehlermeldwerte
+          url: "/solaris/reference_error_message_values.html"
+      - title: Der Befehl zum Erstellen von SnapDrive Storage schlägt fehl, wenn mehrere
+          SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist
+        url: "/solaris/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: Die Snap-Wiederherstellung schlägt fehl, wenn die nfsv3- und nfsv4-Versionen
+          im Host und Speichersystem aktiviert sind
+        url: "/solaris/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: Die Verbindung mit Snap trennen kann das geklonte Volume nicht löschen
+        url: "/solaris/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: SnapDrive für UNIX meldet einen Fehler, wenn iSCSI nicht ausgeführt
+          wird
+        url: "/solaris/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: Diskrepanz in der Fehlermeldung Fehlercode
+        url: "/solaris/concept_discrepancy_in_the_error_code_message.html"
+      - title: Befehle werden blockiert angezeigt
+        url: "/solaris/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: Die Volume-basierte Wiederherstellung des Snapshots schlägt im Slave-Knoten
+          fehl
+        url: "/solaris/concept_volume_based_snap_restore_operation_fails_in_slave_node.html"
+      - title: Der Befehl Snap Restore kann das Dateisystem nicht mounten
+        url: "/solaris/concept_snap_restore_command_fails_to_mount_the_file_system.html"
+      - title: Die Verbindung zum Storage kann nicht mit einer auf einem Storage-System
+          erstellten LUN mithilfe des Befehls LUN create hergestellt werden
+        url: "/solaris/concept_storage_connect_operation_fails_lun_created_on_storage_system_using_lun_create.html"
+      - title: SnapDrive für UNIX zeigt nicht die unterstützten Dateitypen für den
+          Speichererzeugen an
+        url: "/solaris/concept_snapdrive_for_unix_does_not_show_supported_file_system_types_for_storage_create_operation.html"
+      - title: Das Erstellen eines Dateisystems direkt auf einer LUN schlägt fehl
+        url: "/solaris/concept_creating_a_file_system_directly_on_a_lun_fails.html"
+      - title: Nach dem Neubooten des Hosts können das Betriebssystem und die Cluster-Services
+          nicht gestartet werden
+        url: "/solaris/concept_after_rebooting_the_host_os_and_cluster_services_fail_to_start.html"
+      - title: Standard-Werte für den Exit-Status
+        url: "/solaris/concept_standard_exit_status_values.html"
+        entries:
+        - title: Allgemeines zu Werten für den Exit-Status von Fehlermeldungen
+          url: "/solaris/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: Die Werte für den Exit-Status werden verwendet
+          url: "/solaris/reference_using_exit_status_values.html"
+        - title: Skriptbeispiel
+          url: "/solaris/reference_script_example.html"
+        - title: Statuswerte beenden
+          url: "/solaris/reference_exit_status_values.html"
+      - title: Bereinigung der zugeordneten RDM LUNs im Gastbetriebssystem und ESX-Server
+        url: "/solaris/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html"
+      - title: Die Volume-basierte SnapRestore-Prüfung schlägt fehl
+        url: "/solaris/concept_volume_based_snaprestore_check_fails.html"
+      - title: Das Erstellen und Löschen von Snapshots schlägt fehl
+        url: "/solaris/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: Eine Snapshot Kopie kann nicht erstellt werden
+        url: "/solaris/concept_unable_to_create_a_snapshot_copy.html"
+      - title: Es kann keine Snapshot Kopie wiederhergestellt werden
+        url: "/solaris/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: Der Daemon kann nicht neu gestartet werden, wenn der Host nicht mit
+          dem Speichersystem kommunizieren kann
+        url: "/solaris/concept_unable_to_start_daemon.html"
+      - title: Der Daemon konnte nicht gestartet werden
+        url: "/solaris/concept_unable_to_start_the_daemon.html"
+      - title: Der Befehl zum Starten des Snapshots schlägt fehl
+        url: "/solaris/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive Befehle führen manchmal zum Mounten oder Aufhängen von Dateisystemen
+          und zum Ändern von Systemdateien
+        url: "/solaris/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: Einige Befehle werden verzögert, wenn sich der Failover-Modus des Storage-Clusters
+          befindet
+        url: "/solaris/concept_some_commands_are_delayed_when_the_storage_cluster_is_in_failover_mode.html"
+      - title: Es kann kein Storage-Stack ausgewählt werden
+        url: "/solaris/concept_unable_to_select_a_storage_stack.html"
+      - title: Der Snapdrived-Stopp-Befehl oder der Snapdrived-Start-Befehl hängt
+        url: "/solaris/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive für UNIX-Befehle Anzeigen konnten den Zugriffsfehler nicht
+          überprüfen
+        url: "/solaris/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: Montage eines FlexVol Volumes schlägt in der NFS-Umgebung fehl
+        url: "/solaris/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: SnapDrive für UNIX interpretiert das Dollarzeichen falsch
+        url: "/solaris/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: Der Befehl zum Erstellen von SnapDrive für UNIX-Speicher schlägt beim
+          Erkennen einiger zugeordneten Geräte fehl
+        url: "/solaris/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: SnapDrive für UNIX-Befehle schlagen mit angepasster LD_LIBRARY_PATH
+          fehl
+        url: "/solaris/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: Die Spezifikation für die Speicherbereich-Netzwerkdatei, die mit Solaris
+          Volume Manager unter Verwendung von iSCSI erstellt wurde, wird nicht automatisch
+          bereitgestellt
+        url: "/solaris/concept_san_filespec_created_with_solaris_volume_manager_svm_using_iscsi_does_not_automount.html"
+      - title: SnapDrive Vorgänge schlagen in einer Vielzahl von Subnetzkonfigurationen
+          fehl
+        url: "/solaris/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: Befehle von SnapDrive für UNIX schlagen fehl, wenn Umgebungsvariablen
+          mithilfe einer Command Shell festgelegt werden
+        url: "/solaris/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: SnapDrive für UNIX löscht nicht automatisch veraltete Geräte in UNIX
+        url: "/solaris/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+      - title: Die Trennung der Speicherverbindung der Laufwerksgruppe schlägt fehl
+        url: "/solaris/reference_storage_disconnect_of_disk_group_fails.html"
+    - title: Befehlsreferenz
+      url: "/solaris/concept_command_reference.html"
+      entries:
+      - title: Erfassen der von SnapDrive für UNIX-Befehle benötigten Informationen
+        url: "/solaris/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Sammeln von Informationen, die durch Befehle benötigt werden
+          url: "/solaris/reference_collecting_information_needed_by_commands.html"
+        - title: Allgemeine Hinweise zu den Befehlen
+          url: "/solaris/reference_general_notes_about_the_commands.html"
+      - title: Zusammenfassung der Befehle SnapDrive für UNIX
+        url: "/solaris/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Befehlsübersicht
+          url: "/solaris/reference_command_summary.html"
+          entries:
+          - title: Zeilen für Konfigurationsbefehle
+            url: "/solaris/reference_configuration_command_lines.html"
+          - title: Befehlszeilen für die Storage-Bereitstellung
+            url: "/solaris/reference_storage_provisioning_command_lines.html"
+          - title: Host-seitige Befehlszeile
+            url: "/solaris/reference_host_side_command_lines.html"
+          - title: Befehlszeilen der Snapshot Operation
+            url: "/solaris/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX-Optionen, Schlüsselwörter und Argumente
+          url: "/solaris/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: Befehlszeilenoptionen
+            url: "/solaris/reference_command_line_options.html"
+          - title: Regeln für Schlüsselwörter
+            url: "/solaris/reference_rules_for_keywords.html"
+          - title: Befehlszeilenwörter
+            url: "/solaris/reference_command_line_keywords.html"
+          - title: Befehlszeilenargumente
+            url: "/solaris/reference_command_line_arguments.html"
+  - title: Installation and Administration for IBM AIX
+    url: "/aix/index.html"
+    entries:
+    - title: SnapDrive für UNIX – Übersicht
+      url: "/aix/concept_snapdrive_for_unix_overview.html"
+      entries:
+      - title: Was macht SnapDrive für UNIX
+        url: "/aix/concept_what_snapdrive_for_unix_is.html"
+      - title: In SnapDrive für UNIX unterstützte Funktionen
+        url: "/aix/concept_features_supported_in_snapdrive_for_unix.html"
+      - title: Betrieb auf eigenständigen UNIX-Systemen
+        url: "/aix/concept_operations_performed_on_stand_alone_unix_systems.html"
+      - title: Support für Vserver
+        url: "/aix/concept_support_for_vserver.html"
+      - title: Support-Probleme bei der vFiler Einheit
+        url: "/aix/concept_considerations_for_supporting_vfiler_unit.html"
+      - title: Überlegungen bei der Verwendung von SnapDrive für UNIX
+        url: "/aix/concept_considerations_for_using_snapdrive_for_unix.html"
+      - title: Management einer LVM und einer RAW-Entität
+        url: "/aix/concept_management_of_lvm_and_raw_entities.html"
+        entries:
+        - title: SnapDrive für UNIX-Bereitstellung in einer LVM-Umgebung
+          url: "/aix/concept_snapdrive_for_unix_provisioning_in_an_lvma_vxvm_environment.html"
+        - title: SnapDrive für UNIX und RAW-Einheiten
+          url: "/aix/concept_snapdrive_for_unix_and_raw_entities.html"
+      - title: Managen von Snapshot-Kopien von LVM, RAW-Geräten und NFS-Einheiten
+        url: "/aix/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html"
+      - title: Sicherheitsüberlegungen
+        url: "/aix/concept_security_considerations.html"
+      - title: Greifen Sie auf Berechtigungen auf einem Speichersystem zu
+        url: "/aix/concept_access_permissions_on_a_storage_system.html"
+      - title: Anforderungen an Storage-Systeme
+        url: "/aix/concept_requirements_for_storage_systems.html"
+      - title: Stack-Anforderungen
+        url: "/aix/reference_stack_requirements.html"
+      - title: Unterstützte FC-, iSCSI- oder NFS-Konfigurationen
+        url: "/aix/concept_supported_fc_iscsi_or_nfs_configurations.html"
+      - title: Einschränkungen
+        url: "/aix/reference_limitations.html"
+      - title: Einschränkungen von von LUNs, die von SnapDrive gemanagt werden
+        url: "/aix/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html"
+      - title: Unterstützung von NetAppDataMotion für vFiler
+        url: "/aix/concept_support_for_datamotion_for_vfiler.html"
+      - title: Unterstützung für die Volume-Migration
+        url: "/aix/concept_support_for_volume_migration.html"
+        entries:
+        - title: Volume-Migration in SnapDrive für UNIX
+          url: "/aix/concept_managing_volume_migration_using_snapdrive_for_unix.html"
+      - title: Was ist die Konfigurationsprüfung
+        url: "/aix/concept_what_configuration_checker_is.html"
+      - title: Einschränkungen für NFS-Dateien oder Verzeichnisbäume
+        url: "/aix/concept_limitations_for_nfs_file_or_directory_trees.html"
+      - title: Multipathing in SnapDrive für UNIX
+        url: "/aix/concept_multipathing_in_snapdrive_for_unix.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/aix/concept_thin_provisioning_in_snapdrive_for_unix_overview.html"
+      - title: Volume Manager auf SnapDrive für UNIX
+        url: "/aix/concept_volume_managers_on_snapdrive_for_unix.html"
+    - title: Vorbereiten der Installation von SnapDrive für UNIX
+      url: "/aix/concept_preparation_for_installing_snapdrive_for_unix.html"
+      entries:
+      - title: Hardware- und Softwarekonfiguration
+        url: "/aix/concept_prerequisites_for_using_snapdrive_for_unix.html"
+        entries:
+        - title: FC- oder iSCSI-Konfigurationsprüfungen
+          url: "/aix/concept_fc_or_iscsi_configuration_checks.html"
+        - title: NFS-Konfigurationsprüfungen
+          url: "/aix/concept_nfs_configuration_checks.html"
+      - title: Bereiten Sie Ihr Speichersystem vor
+        url: "/aix/concept_storage_system_checks.html"
+        entries:
+        - title: Überprüfung der Bereitschaft und der Lizenzen des Storage-Systems
+          url: "/aix/concept_verification_of_storage_system_readiness_and_licenses.html"
+        - title: IP-Adresse oder Bestätigung des Schnittstellennamens des Storage-Systems
+          url: "/aix/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html"
+        - title: Richtlinien für NFS-Konfigurationen
+          url: "/aix/concept_considerations_for_network_file_system.html"
+        - title: Vorbereitung der Volumes des Storage-Systems
+          url: "/aix/concept_storage_system_volume_preparation.html"
+        - title: Volume-Optimierung in einer FC- oder iSCSI-Umgebung
+          url: "/aix/concept_volume_optimization_in_an_fc_or_iscsi_environment.html"
+        - title: Zurücksetzen der Option Snap Reserve
+          url: "/aix/concept_reset_the_snap_reserve_option.html"
+          entries:
+          - title: Zurücksetzen der Snap Reserve-Option auf dem Speichersystem
+            url: "/aix/task_resetting_the_snap_reserve_option_on_the_storage_system.html"
+          - title: Zurücksetzen der Snap Reserve Option mithilfe von FilerView
+            url: "/aix/task_resetting_the_snap_reserve_option_by_using_filerview.html"
+      - title: Host-Vorbereitung für die Installation von SnapDrive für UNIX
+        url: "/aix/concept_host_preparation_for_installing_snapdrive_for_unix.html"
+        entries:
+        - title: Installieren von AIX Host Utilities
+          url: "/aix/concept_fc_and_iscsi_host_utilities.html"
+        - title: Überprüfen, ob die Hosts bereit sind
+          url: "/aix/concept_verify_that_the_hosts_are_ready.html"
+    - title: Installation oder Upgrade von SnapDrive für UNIX
+      url: "/aix/concept_snapdrive_for_unix_installation_and_upgrade.html"
+      entries:
+      - title: Dekomprimieren der heruntergeladenen Software
+        url: "/aix/task_decompressing_the_downloaded_software.html"
+      - title: Installation von SnapDrive für UNIX auf einem AIX-Host
+        url: "/aix/task_installing_snapdrive_for_unix_on_an_aix_host.html"
+      - title: Deinstallieren von SnapDrive for UNIX von einem AIX-Host
+        url: "/aix/task_uninstalling_snapdrive_for_unix_from_an_aix_host.html"
+      - title: Prüfungen nach der Installation durchführen
+        url: "/aix/concept_postinstallation_checks.html"
+      - title: Von SnapDrive für UNIX installierte Dateien
+        url: "/aix/concept_files_installed_by_snapdrive_for_unix.html"
+        entries:
+        - title: Von SnapDrive für UNIX installierte ausführbare Dateien
+          url: "/aix/concept_executables_installed_by_snapdrive_for_unix.html"
+        - title: Von SnapDrive für UNIX installierte Konfigurationsdateien
+          url: "/aix/concept_configuration_files_installed_by_snapdrive_for_unix.html"
+        - title: Von SnapDrive für UNIX installierte Diagnosedateien
+          url: "/aix/concept_diagnostic_files_installed_by_snapdrive_for_unix.html"
+        - title: Man-Pages installiert von SnapDrive für UNIX
+          url: "/aix/concept_manual_pages_installed_by_snapdrive_for_unix.html"
+      - title: Aktualisieren Sie SnapDrive für UNIX auf die aktuelle Version
+        url: "/aix/concept_what_snapdrive_for_unix_does_when_you_upgrade_your_current_version.html"
+    - title: Informationen zum SnapDrive for UNIX Daemon
+      url: "/aix/concept_the_snapdrive_for_unix_daemon.html"
+      entries:
+      - title: Was der Webdienst und der Daemon sind
+        url: "/aix/concept_what_the_web_service_and_daemon_are.html"
+      - title: Überprüfen des Status des Daemon
+        url: "/aix/task_checking_the_status_of_the_daemon.html"
+      - title: Starten des SnapDrive for UNIX Daemon
+        url: "/aix/task_starting_the_snapdrive_for_unix_daemon.html"
+      - title: Ändern des Standard-Daemon-Passworts
+        url: "/aix/task_changing_the_default_daemon_password.html"
+      - title: Beenden des Daemon
+        url: "/aix/task_stopping_the_daemon.html"
+        entries:
+        - title: Den Dämon gewaltsam stoppen
+          url: "/aix/task_nonforcibly_stopping_the_daemon.html"
+        - title: Gewaltsam das Anhalten des Dämons
+          url: "/aix/task_forcibly_stopping_the_daemon.html"
+      - title: Starten Sie den Daemon neu
+        url: "/aix/task_restarting_the_daemon.html"
+      - title: Erzwingen des Neustarts des Daemon
+        url: "/aix/task_forcing_daemon_restart.html"
+      - title: Sichere Daemon Kommunikation mit HTTPS
+        url: "/aix/concept_secure_daemon_communication_using_https.html"
+      - title: Selbstsignierte Zertifikate werden generiert
+        url: "/aix/task_generating_self_signed_certificates.html"
+      - title: Erstellen eines CA-signierten Zertifikats
+        url: "/aix/task_generating_ca_signed_certificate.html"
+    - title: Überprüfen unterstützter Konfigurationen
+      url: "/aix/task_verifying_supported_configurations_using_configuration_checker_tool.html"
+      entries:
+      - title: Datendateien werden importiert
+        url: "/aix/task_importing_data_files.html"
+      - title: Identifizieren der installierten Komponenten
+        url: "/aix/task_identifying_the_installed_components.html"
+      - title: Überprüfen der unterstützten Konfigurationen
+        url: "/aix/task_verifying_the_supported_configurations.html"
+    - title: Unterstützung für Umbenennung des Storage-Systems
+      url: "/aix/concept_support_for_storage_system_rename.html"
+      entries:
+      - title: Konfigurieren des neuen Speichersystemnamens in einem Hostsystem
+        url: "/aix/task_configuring_a_new_storage_system_name_to_a_host_system.html"
+      - title: Anzeigen der Liste der Speichersysteme
+        url: "/aix/task_viewing_the_list_of_storage_system.html"
+      - title: Migration von einem alten Storage-System zu einem neuen Storage-System
+        url: "/aix/task_migrating_from_old_host_name_to_new_host_name.html"
+      - title: Anzeigen des migrierten neuen Speichersystems
+        url: "/aix/task_viewing_the_migrated_new_storage_system.html"
+      - title: Löschen der Zuordnungsinformationen des Speichersystems vom Hostsystem
+        url: "/aix/task_deleting_a_storage_system_entry.html"
+    - title: Verwenden des Ports, der in SnapDrive für UNIX eingestellt ist
+      url: "/aix/concept_using_port_set_in_snapdrive_for_unix.html"
+      entries:
+      - title: Hinzufügen eines PortSatzes in SnapDrive
+        url: "/aix/task_adding_a_port_set_in_snapdrive.html"
+      - title: Anzeigen der Liste des PortSatzes
+        url: "/aix/task_viewing_the_list_of_port_set.html"
+      - title: Entfernen eines PortSatzes aus dem SnapDrive
+        url: "/aix/task_removing_a_port_set_from_snapdrive.html"
+      - title: Migration auf einen neuen Vserver Namen
+        url: "/aix/concept_migrating_to_new_vserver_name.html"
+    - title: Initiatorgruppen werden konfiguriert
+      url: "/aix/concept_configuring_igroups.html"
+      entries:
+      - title: Hinzufügen einer Initiatorgruppe
+        url: "/aix/task_adding_igroup.html"
+      - title: Löschen einer Initiatorgruppe
+        url: "/aix/task_deleting_igroup.html"
+      - title: Anzeigen der Liste der Initiatorgruppen
+        url: "/aix/task_viewing_the_list_of_igroups.html"
+    - title: Verwenden der Selective LUN Map in SnapDrive for UNIX
+      url: "/aix/concept_using_selective_lun_map_in_snapdrive_for_unix.html"
+    - title: Konfiguration von SnapDrive für UNIX
+      url: "/aix/concept_snapdrive_for_unix_configuration.html"
+      entries:
+      - title: SnapDrive für UNIX wird konfiguriert
+        url: "/aix/concept_how_to_configure_snapdrive_for_unix.html"
+        entries:
+        - title: Was die snapdrive.conf Datei ist
+          url: "/aix/concept_what_the_snapdrive_conf_file_is.html"
+        - title: Konfigurationsoptionen und ihre Standardwerte
+          url: "/aix/concept_configuration_options_and_their_default_values.html"
+        - title: Was macht der SnapDrive-Konfigurationsassistent
+          url: "/aix/concept_what_the_configuration_wizard_does.html"
+        - title: SnapDrive-Konfigurationsassistent
+          url: "/aix/concept_when_to_use_the_snapdrive_configuration_wizard.html"
+        - title: Einige Konfigurationsbefehle
+          url: "/aix/reference_some_configuration_commands.html"
+        - title: Verwenden des SnapDrive-Konfigurationsassistenten
+          url: "/aix/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html"
+        - title: Setzen von Werten in der datei snapdrive.conf
+          url: "/aix/task_setting_values_in_the_snapdrive_conf_file.html"
+        - title: Überprüfen der Version von SnapDrive für UNIX
+          url: "/aix/task_checking_version_of_snapdrive_for_unix.html"
+      - title: Konfigurationsinformationen für Vserver
+        url: "/aix/concept_configuration_information_for_vserver_environment.html"
+        entries:
+        - title: Login-Informationen für den Vserver
+          url: "/aix/concept_login_information_for_vserver.html"
+        - title: Festlegen von Anmeldeinformationen für den Vserver
+          url: "/aix/task_specifying_login_information_for_vserver.html"
+        - title: Überprüfen der Anmeldeinformationen für Vserver
+          url: "/aix/task_verifying_login_information_for_vserver.html"
+        - title: Löschen eines Benutzers aus einem Vserver
+          url: "/aix/task_deleting_a_user_for_a_vserver.html"
+      - title: Audit-, Recovery- und Trace-Protokollierung in SnapDrive für UNIX
+        url: "/aix/concept_audit_recovery_and_trace_logging_in_snapdrive_for_unix.html"
+        entries:
+        - title: Protokolltypen
+          url: "/aix/concept_types_of_logs.html"
+        - title: Aktivieren und Deaktivieren von Protokolldateien
+          url: "/aix/task_enabling_and_disabling_log_files.html"
+        - title: Rotationseinstellungen für Protokolldateien
+          url: "/aix/concept_log_file_rotation_settings.html"
+        - title: Inhalt einer Audit-Log-Datei
+          url: "/aix/concept_contents_of_an_audit_log_file.html"
+        - title: Ändern der Standardeinstellungen für die Prüfprotokolle
+          url: "/aix/concept_changing_the_defaults_for_the_audit_logs.html"
+        - title: Inhalt des Wiederherstellungsprotokolls
+          url: "/aix/concept_contents_of_the_recovery_log.html"
+        - title: Standardwerte für die Wiederherstellungsprotokolle
+          url: "/aix/concept_default_values_for_the_recovery_logs.html"
+        - title: Was die Trace-Log-Datei ist
+          url: "/aix/concept_what_the_trace_log_file_is.html"
+          entries:
+          - title: Standardwerte für die Trace-Log-Dateien
+            url: "/aix/concept_default_vaules_for_the_trace_log_files.html"
+      - title: Was ist AutoSupport
+        url: "/aix/concept_what_autosupport_is.html"
+        entries:
+        - title: So verwendet SnapDrive für UNIX AutoSupport
+          url: "/aix/concept_how_snapdrive_forunix_usesautosupport.html"
+        - title: Inhalt von AutoSupport Meldungen
+          url: "/aix/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html"
+        - title: Beispiele für AutoSupport-Meldungen
+          url: "/aix/concept_example_of_an_autosupport_message.html"
+      - title: Unterstützung für Multipath-Zugriff in SnapDrive für UNIX
+        url: "/aix/concept_multipath_access_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Multipathing
+          url: "/aix/task_enabling_multipathing.html"
+        - title: Grund für die Aktualisierung der DMP-Pfade
+          url: "/aix/concept_reason_to_refresh_the_dmp_paths.html"
+      - title: Thin Provisioning in SnapDrive für UNIX
+        url: "/aix/concept_thin_provisioning_in_snapdrive_for_unix.html"
+        entries:
+        - title: Aktivieren von Thin Provisioning für LUNs
+          url: "/aix/task_enabling_thin_provisioning_for_luns.html"
+        - title: Aktivieren von Thin Provisioning für NFS-Einheiten
+          url: "/aix/task_enabling_thin_provisioning_for_nfs_entities.html"
+      - title: Mehrere Subnetzkonfigurationen
+        url: "/aix/concept_multiple_subnet_configuration.html"
+        entries:
+        - title: Konfiguration von Management- und Datenschnittstellen für ein Storage-System
+          url: "/aix/task_configuring_management_and_data_interfaces_for_a_storage_system.html"
+        - title: Anzeigen aller Datenschnittstellen für eine Managementoberfläche
+          url: "/aix/task_viewing_all_the_data_interfaces_of_a_management_interface.html"
+        - title: Löschen eines Datenschnittstelleneintrags für eine Managementoberfläche
+          url: "/aix/task_deleting_a_data_interface_entry_of_a_management_interface.html"
+        - title: LUN-Namen in SAN-Umgebung
+          url: "/aix/concept_lun_names_in_san_environment.html"
+        - title: Reine NFS Umgebung
+          url: "/aix/concept_pure_nfs_environment.html"
+        - title: Kombinierte SAN- und NFS-Umgebungen
+          url: "/aix/concept_mixed_environments_of_san_and_nfs.html"
+      - title: Automatische Erkennung von Host-Einheiten
+        url: "/aix/concept_automatic_detection_of_host_entities.html"
+      - title: Was sind SnapDrive-Assistenten
+        url: "/aix/concept_what_snapdrive_wizard_is.html"
+        entries:
+        - title: Vorgänge werden mithilfe von Assistenten durchgeführt
+          url: "/aix/concept_operations_performed_using_wizards.html"
+        - title: Storage-Management mit einem Assistenten
+          url: "/aix/concept_managing_storage_using_a_wizard.html"
+        - title: Verwalten von Snapshot Kopien mit einem Assistenten
+          url: "/aix/concept_managing_snapshot_copy_using_a_wizard.html"
+        - title: Löschen von Speicher mit einem Assistenten
+          url: "/aix/concept_deleting_storage_using_a_wizard.html"
+    - title: Sicherheitsfunktionen in SnapDrive für UNIX
+      url: "/aix/concept_snapdrive_for_unix_security.html"
+      entries:
+      - title: Was sind die Sicherheitsfunktionen
+        url: "/aix/concept_security_featuresprovided_bysnapdrive_for_unix.html"
+      - title: Zugriffssteuerung in SnapDrive für UNIX
+        url: "/aix/concept_access_control_in_snapdrive_for_unix.html"
+        entries:
+        - title: Welche Zugriffskontrolleinstellungen sind
+          url: "/aix/concept_what_access_control_settings_are.html"
+        - title: Verfügbare Zugriffssteuerungsstufen
+          url: "/aix/concept_available_access_control_levels.html"
+        - title: Einrichten der Zugriffskontrollberechtigung
+          url: "/aix/task_setting_up_access_control_permission.html"
+        - title: Zugriffsberechtigung anzeigen
+          url: "/aix/task_viewing_the_access_control_permission.html"
+      - title: Anmeldeinformationen für Storage-Systeme
+        url: "/aix/concept_login_information_for_storage_systems.html"
+        entries:
+        - title: Angeben von Anmeldeinformationen
+          url: "/aix/task_specifying_login_information.html"
+        - title: Überprüfung der mit SnapDrive für UNIX verknüpften Benutzernamen
+            auf Storage-Systemen
+          url: "/aix/task_verifying_storagesystem_user_namesassociated_withsnapdrive_for_unix.html"
+        - title: Löschen einer Benutzeranmeldung für ein Speichersystem
+          url: "/aix/task_deleting_a_userlogin_for_a_storagesystem.html"
+      - title: Einrichten von HTTP
+        url: "/aix/task_setting_up_http.html"
+    - title: Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX
+      url: "/aix/concept_role_based_access_control_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche rollenbasierte Zugriffssteuerung (Role Based Access Control,
+          RBAC) bietet SnapDrive für UNIX
+        url: "/aix/concept_what_rbac_in_snapdrive_for_unix_is.html"
+      - title: Interaktion von SnapDrive für UNIX und der Operations Manager Konsole
+        url: "/aix/concept_snapdrive_for_unix_and_operations_manager_interaction.html"
+      - title: Konfiguration der rollenbasierten Zugriffssteuerung in SnapDrive für
+          UNIX
+        url: "/aix/concept_role_based_access_control_configuration_on_snapdrive_for_unix.html"
+        entries:
+        - title: konfigurieren von sd-Admin in der Operations Manager-Konsole
+          url: "/aix/concept_configuring_sd_admin_in_operations_manager.html"
+          entries:
+          - title: konfigurieren von sd-Admin über Befehlszeilenschnittstelle
+            url: "/aix/task_configuring_sd_admin_using_cli.html"
+        - title: hinzufügen von sd-Hostname zum Speichersystem
+          url: "/aix/task_adding_sd_hostname_to_the_storage_system.html"
+          entries:
+          - title: hinzufügen von sd- Hostname zum Speichersystem mithilfe von CLI
+            url: "/aix/task_adding_sd_hostname_to_storage_system_using_cli.html"
+        - title: Konfigurieren von Benutzeranmeldeinformationen auf SnapDrive für
+            UNIX
+          url: "/aix/task_configuring_user_credentials_on_snapdrive_for_unix.html"
+        - title: Formate für Benutzernamen zur Durchführung von Zugriffsprüfungen
+            mithilfe der Operations Manager Konsole
+          url: "/aix/concept_user_name_formats_for_access_check_with_operations_manager.html"
+        - title: Konfigurationsvariablen für die rollenbasierte Zugriffssteuerung
+          url: "/aix/reference_configuration_parameters_for_role_based_access_control.html"
+      - title: SnapDrive-Befehle und -Funktionen
+        url: "/aix/concept_snapdrive_commands_and_capabilities.html"
+      - title: Vorkonfigurierte Rollen zur einfachen Konfiguration von Benutzerrollen
+        url: "/aix/reference_preconfigured_roles_for_ease_of_user_role_configuration.html"
+      - title: Automatische Aktualisierung des Storage-Systems auf der Operations
+          Manager Konsole
+        url: "/aix/concept_automatic_storage_system_update_on_operations_manager.html"
+      - title: Mehrere Operations Manager Konsolen-Server
+        url: "/aix/concept_multiple_operations_manager_servers.html"
+      - title: Operations Manager-Konsole nicht verfügbar
+        url: "/aix/concept_operations_manager_unavailable.html"
+      - title: Beispiele für RBAC und Storage-Vorgänge
+        url: "/aix/concept_rbac_and_storage_operation_examples.html"
+        entries:
+        - title: Vorgang mit einem einzigen Dateisystem auf einem einzigen Storage-Objekt
+          url: "/aix/concept_operation_with_a_single_filespec_on_a_single_storage_object.html"
+        - title: Betrieb mit einem einzigen Dateisystem auf mehreren Speicherobjekten
+          url: "/aix/concept_operation_with_a_single_filespec_on_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Dateiepec- und Speicherobjekten
+          url: "/aix/concept_operation_with_multiple_filespec_and_storage_objects.html"
+        - title: Betrieb mit mehreren Storage-Objekten
+          url: "/aix/concept_operation_with_multiple_storage_objects.html"
+        - title: Betrieb mit mehreren Operations Manager Konsolen-Servern, die Storage-Systeme
+            managen
+          url: "/aix/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html"
+    - title: FlexClone Volumes in SnapDrive für UNIX
+      url: "/aix/concept_flexclone_volumes_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche FlexClone Volumes sind
+        url: "/aix/concept_what_flexclone_volumes_are.html"
+      - title: Vorteile von FlexClone Volumes
+        url: "/aix/concept_benefits_of_flexclone_volumes.html"
+      - title: Typen von FlexClone Volumes
+        url: "/aix/concept_types_of_flexclone_volumes.html"
+      - title: SnapDrive für UNIX Vorgänge auf FlexClone Volumes
+        url: "/aix/concept_snapdrive_for_unix_operations_on_flexclone_volumes.html"
+        entries:
+        - title: Rollenbasierte Zugriffssteuerung für FlexClone Volume-Vorgänge
+          url: "/aix/concept_role_based_access_control_for_flexclone_volume_operations.html"
+        - title: Snap-Connect-Verfahren
+          url: "/aix/concept_snap_connect_procedure.html"
+        - title: Vorgehensweise zum Abtrennen von Schnappverbindungen
+          url: "/aix/concept_snap_disconnect_procedure.html"
+        - title: Verbindung zu einem einzigen Dateisystem in einer LUN wird hergestellt
+          url: "/aix/concept_connecting_to_a_single_filespec_in_a_lun.html"
+        - title: Verbindung mit mehreren Dateipecs wird hergestellt
+          url: "/aix/concept_connecting_to_multiple_filespecs.html"
+        - title: Trennen einer Dateispezifikation
+          url: "/aix/concept_disconnecting_a_filespec.html"
+        - title: Durch Aufteilung des FlexClone Volume
+          url: "/aix/concept_splitting_the_flexclone_volume.html"
+        - title: Platzreservierung mit einem FlexClone Volume
+          url: "/aix/concept_space_reservation_with_a_flexclone_volume.html"
+    - title: Storage-Bereitstellung in SnapDrive für UNIX
+      url: "/aix/concept_storage_provisioning_in_snapdrive_for_unix.html"
+      entries:
+      - title: Storage-Vorgänge in SnapDrive für UNIX
+        url: "/aix/concept_storageprovisioning_withsnapdrive_for_unix.html"
+        entries:
+        - title: Storage-Vorgänge für mehrere Storage-System-Volumes
+          url: "/aix/concept_storageoperations_acrossmultiple_storagesystem_volumes.html"
+        - title: Überlegungen zum Storage-Betrieb
+          url: "/aix/concept_considerations_forstorage_operations.html"
+      - title: Storage-Erstellung mit SnapDrive für UNIX
+        url: "/aix/concept_storagecreation_with_snapdrive_forunix.html"
+        entries:
+        - title: Methoden zum Erstellen von Speicher
+          url: "/aix/concept_methods_forcreating_storage.html"
+        - title: Richtlinien für den Speichervorgang erstellen
+          url: "/aix/concept_guidelines_for_thestorage_createoperation.html"
+        - title: Für den Speichervorgang erforderliche Informationen
+          url: "/aix/reference_informationrequired_for_the_storagecreate_operation.html"
+        - title: Storage-Erstellung für LVM-Einheiten
+          url: "/aix/concept_storage_creation_for_lvm_vxvm_entities.html"
+        - title: Speichererstellung für ein Dateisystem, das sich auf einer LUN befindet
+          url: "/aix/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html"
+        - title: Erstellen von LUNs ohne Host-Einheiten
+          url: "/aix/task_creating_lunswithout_hostentities.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung
+            der LUN
+          url: "/aix/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html"
+        - title: Erstellen eines Dateisystems auf einer LUN und Festlegen der LUN
+          url: "/aix/task_creating_a_filesystem_on_a_lunand_specifying_thelun.html"
+        - title: Erstellen einer LVM-Einheit und automatische Einrichtung der LUN
+          url: "/aix/task_creating_an_lvm_a_vxvm_entity_and_settingup_the_lunautomatically.html"
+        - title: Erstellen einer LVM-Einheit und Festlegen der LUN
+          url: "/aix/task_creating_an_lvm_a_vxvmentity_andspecifying_the_lun.html"
+      - title: Befehl zum Anzeigen von verfügbarem Speicher
+        url: "/aix/concept_command_to_use_todisplay_availablestorage.html"
+        entries:
+        - title: Methoden zum Anzeigen von Speicherinformationen
+          url: "/aix/concept_methods_fordisplaying_storageinformation.html"
+      - title: Erhöhung der Storage-Größe mit SnapDrive für UNIX
+        url: "/aix/concept_increase_in_storage_size_using_snapdrive_for_unix.html"
+        entries:
+        - title: Richtlinien für den Befehl „Speichergröße ändern“
+          url: "/aix/concept_guidelines_for_the_storage_resize_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Resize benötigte
+            Informationen
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html"
+        - title: Befehlssyntax für, um die Größe des Speichers zu erhöhen
+          url: "/aix/concept_command_syntax_to_increase_the_sizeof_the_storage.html"
+        - title: Die Größe der Host Volumes und des File-Systems kann geändert werden
+          url: "/aix/concept_hostvolumes_and_filesystem_resize_operation.html"
+      - title: Der Befehl Storage connect
+        url: "/aix/concept_the_storageconnect_command.html"
+        entries:
+        - title: Richtlinien für den Befehl Storage connect
+          url: "/aix/concept_guidelines_for_thestorage_connectcommand.html"
+        - title: Zur Verwendung des Befehls SnapDrive Storage connect erforderliche
+            Informationen
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html"
+        - title: Verbinden von LUNs mit Festplattengruppen, Host-Volumes und Dateisystemen
+          url: "/aix/concept_connecting_lunswith_disk_groups_host_volumes_andfile_systems.html"
+        - title: Vorhandene LUNs mit gemeinsam genutzten Ressourcen verbinden
+          url: "/aix/concept_connecting_existingluns_with_sharedresources.html"
+      - title: Befehl zum Trennen der Speicherverbindung
+        url: "/aix/concept_the_storagedisconnect_command.html"
+        entries:
+        - title: Methoden zum Trennen der Speicherung
+          url: "/aix/concept_methods_fordisconnectingstorage.html"
+        - title: Richtlinien für den SnapDrive Storage Trennen Befehl
+          url: "/aix/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html"
+        - title: Tipps für die Verwendung des Befehls zum Trennen von Speicher
+          url: "/aix/task_tips_for_usingthe_storage_disconnect_command.html"
+        - title: Für die Verwendung des Befehls SnapDrive Storage Disconnect sind
+            Informationen erforderlich
+          url: "/aix/reference_informationrequired_forusing_the_snapdrive_storagedisconnect_command.html"
+        - title: Befehlssyntax für das Trennen von LUNs vom Host
+          url: "/aix/concept_command_syntax_for_disconnectingluns_from_the_host.html"
+        - title: Befehlssyntax für das Trennen eines auf einer LUN erstellten Dateisystems
+            vom Host
+          url: "/aix/concept_command_syntax_for_disconnecting_a_filesystem_created_on_alun_from_the_host.html"
+        - title: Befehlssyntax für das Trennen von LUNs und Speichereinheiten vom
+            Host
+          url: "/aix/concept_command_syntax_for_disconnectingluns_and_storageentities_from_thehost.html"
+      - title: Der Befehl Storage delete
+        url: "/aix/concept_the_storagedeletecommand.html"
+        entries:
+        - title: Richtlinien für die Verwendung des Befehls „Storage delete“
+          url: "/aix/concept_guidelines_for_usingthe_storage_deletecommand.html"
+        - title: Die für die Verwendung des Befehls SnapDrive Storage delete erforderlichen
+            Informationen
+          url: "/aix/reference_informationrequired_forusing_the_snapdrive_storagedelete_command.html"
+    - title: Erstellen und Verwenden von Snapshot Kopien in SnapDrive für UNIX
+      url: "/aix/concept_snapshot_copies_in_snapdrive_for_unix.html"
+      entries:
+      - title: Welche Snapshot Vorgänge gibt es in SnapDrive für UNIX
+        url: "/aix/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html"
+        entries:
+        - title: Überlegungen beim Arbeiten mit Snapshot Kopien
+          url: "/aix/concept_considerations_when_working_with_snapshot_copies.html"
+      - title: Vorgänge der Snapshot-Kopien
+        url: "/aix/concept_snapshot_copy_operations.html"
+        entries:
+        - title: Absturzkonsistente Snapshot Kopien
+          url: "/aix/concept_crash_consistent_snapshot_copies.html"
+          entries:
+          - title: Crash-Konsistenz mit Data ONTAP 7.2 und höher
+            url: "/aix/concept_crash_consistency_with_data_ontap_7_2_and_later.html"
+          - title: Snapshot Kopien von Konsistenzgruppen in SnapDrive für UNIX
+            url: "/aix/concept_using_consistency_group_snapshots_in_snapdrive_for_unix.html"
+          - title: Erstellen einer Snapshot Kopie einer Konsistenzgruppe
+            url: "/aix/task_capturing_a_consistency_group_snapshot.html"
+          - title: Deaktivieren von Snapshot Kopien von Konsistenzgruppen
+            url: "/aix/task_disabling_consistency_group_snapshots.html"
+        - title: Applikationskonsistente Snapshot Kopien
+          url: "/aix/concept_application_consistentsnapshot_copies.html"
+        - title: Snapshot Kopien für Storage-Systeme oder Volumes
+          url: "/aix/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html"
+        - title: Erstellen von Snapshot-Kopien von nicht verwandten Elementen
+          url: "/aix/concept_creating_snapshotcopies_of_unrelatedentities.html"
+        - title: Richtlinien für das Erstellen von Snapshot Kopien
+          url: "/aix/concept_guidelines_forsnapshot_copycreation.html"
+        - title: Für die Verwendung des SnapDrive Snap create-Befehls sind Informationen
+            erforderlich
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapcreate_command.html"
+        - title: Erstellen einer Snapshot Kopie
+          url: "/aix/task_creating_asnapshot_copy.html"
+      - title: Snapshot Kopien zeigen Informationen an
+        url: "/aix/concept_snapshot_copies_information_display.html"
+        entries:
+        - title: Befehl zum Anzeigen von Informationen zu Snapshot Kopien
+          url: "/aix/concept_command_to_use_todisplay_snapshotcopy_information.html"
+        - title: Richtlinien zum Anzeigen von Snapshot Kopien
+          url: "/aix/task_guidelines_fordisplayingsnapshot_copies.html"
+        - title: Zur Verwendung von SnapDrive Snap show- oder Listenbefehlen erforderliche
+            Informationen
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapshow_or_list_commands.html"
+        - title: Anzeigen von Snapshot Kopien, die sich auf einem Storage-System befinden
+          url: "/aix/concept_displayingsnapshot_copiesresiding_on_astorage_system.html"
+        - title: Anzeigen von Snapshot Kopien eines Storage-System-Volumes
+          url: "/aix/concept_displayingsnapshot_copies_of_a_storage_system_volume.html"
+        - title: Anzeigen einer Snapshot Kopie
+          url: "/aix/task_displaying_asnapshot_copy.html"
+        - title: Andere Möglichkeiten, Namen von Snapshot Kopien zu erhalten
+          url: "/aix/concept_other_ways_to_getsnapshot_copynames.html"
+      - title: Umbenennen von Snapshot Kopien
+        url: "/aix/concept_snapshot_copy_rename.html"
+        entries:
+        - title: Befehl zum Umbenennen einer Snapshot Kopie
+          url: "/aix/concept_command_to_use_torename_a_snapshotcopy.html"
+        - title: Umbenennen einer Snapshot Kopie, die sich über Storage-Systeme oder
+            Volumes erstreckt
+          url: "/aix/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html"
+        - title: Richtlinien zum Umbenennen von Snapshot Kopien
+          url: "/aix/concept_guidelines_forrenaming_snapshotcopies.html"
+        - title: Der Name einer Snapshot Kopie wird geändert
+          url: "/aix/task_changing_asnapshot_copyname.html"
+      - title: Wiederherstellen einer Snapshot Kopie
+        url: "/aix/concept_restoring_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Wiederherstellen von Snapshot Kopien
+          url: "/aix/concept_command_to_use_torestore_snapshotcopies.html"
+        - title: Wiederherstellen von Snapshot Kopien auf einem Ziel-Storage-System
+          url: "/aix/concept_restoring_snapshotcopies_ona_destination_storagesystem.html"
+          entries:
+          - title: Wiederherstellung mehrerer Speichereinheiten
+            url: "/aix/concept_restoring_multiple_storage_entities.html"
+        - title: Überlegungen beim Wiederherstellen einer Snapshot Kopie
+          url: "/aix/concept_considerations_forrestoring_asnapshot_copy.html"
+        - title: Zur Verwendung des Befehls SnapDrive Snap Restore erforderliche Informationen
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html"
+        - title: Wiederherstellen einer Snapshot Kopie
+          url: "/aix/task_restoring_asnapshot_copy.html"
+        - title: Wiederherstellen einer Snapshot Kopie von einem anderen Host
+          url: "/aix/concept_restoring_asnapshot_copy_froma_different_host.html"
+        - title: Volume-basierte SnapRestore
+          url: "/aix/concept_volume_based_snaprestore.html"
+          entries:
+          - title: Was ist das Volume-basierte SnapRestore
+            url: "/aix/concept_what_volume_based_snaprestore_is.html"
+          - title: Zu beachten ist bei der Verwendung von Volume-basiertem SnapRestore
+            url: "/aix/concept_considerations_for_using_volume_based_snaprestore.html"
+          - title: Obligatorische Überprüfungen für Volume-basierte SnapRestore
+            url: "/aix/concept_mandatory_checks_for_volume_based_snaprestore.html"
+          - title: Prüfungen, die vom Benutzer außer Kraft gesetzt werden können
+            url: "/aix/concept_checks_that_can_be_overridden_by_the_user.html"
+          - title: Volume-basierter SnapRestore-Befehl
+            url: "/aix/concept_volume_based_snaprestore_command.html"
+          - title: Informationen über LUNs, die lokalen oder Remote-Hosts zugeordnet
+              sind
+            url: "/aix/concept_information_about_luns_mapped_to_local_or_remote_hosts.html"
+          - title: Hosten Sie filepec-Informationen für ein bestimmtes Volume
+            url: "/aix/concept_host_filespec_information_for_a_particular_volume.html"
+          - title: Volume-basierte SnapRestore zur Speicherplatzreservierung
+            url: "/aix/concept_volume_based_snaprestore_for_space_reservation.html"
+      - title: Verbindung mit einer Snapshot Kopie wird hergestellt
+        url: "/aix/concept_connecting_to_asnapshot_copy.html"
+        entries:
+        - title: Funktionsweise des SnapDrive Snap connect -Befehls
+          url: "/aix/concept_how_the_snapdrivesnap_connect_command_works.html"
+        - title: Verbinden von Snapshot Kopien auf gespiegelten Speichersystemen
+          url: "/aix/concept_connectingsnapshot_copies_onmirrored_storagesystems.html"
+          entries:
+          - title: Verbinden mehrerer Speichereinheiten
+            url: "/aix/concept_connecting_multiple_storage_entities.html"
+        - title: Snapshot Verbindung und Snapshot Wiederherstellung
+          url: "/aix/concept_snapshot_connectand_snapshotrestore_operations.html"
+        - title: Richtlinien zum Verbinden von Snapshot Kopien
+          url: "/aix/concept_guidelines_forconnectingsnapshot_copies.html"
+        - title: Zur Verwendung des SnapDrive Snap connect -Befehls erforderliche
+            Informationen
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapconnect_command.html"
+        - title: Verbindung mit einer Snapshot Kopie, die LUNs enthält, wird hergestellt
+          url: "/aix/task_connecting_to_asnapshot_copy_thatcontains_luns.html"
+        - title: Verbindung mit einer Snapshot Kopie von anderen Storage-Einheiten
+            als LUNs
+          url: "/aix/task_connecting_to_asnapshot_copy_ofstorage_entitiesother_than_luns.html"
+        - title: Verbindung mit Snapshot Kopien von anderen Shared Storage-Einheiten
+            als LUNs
+          url: "/aix/task_connecting_tosnapshot_copies_ofshared_storageentities_other_thanluns.html"
+      - title: Durch das Aufteilen eines Volume-Klons oder eines LUN-Klons
+        url: "/aix/concept_splitting_the_volume_or_lun_clone_operations.html"
+        entries:
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines Volume-Klons
+          url: "/aix/task_estimating_the_storage_space_to_split_a_volume_clone.html"
+        - title: Schätzung des Speicherplatzes für die Aufteilung eines LUN-Klons
+          url: "/aix/task_estimating_the_storage_space_to_split_a_lun_clone.html"
+        - title: Schätzung des Speicherplatzes mit einer Snapshot-Kopie
+          url: "/aix/task_estimating_the_storage_space_using_a_snapshot_copy.html"
+        - title: Starten der Trennung des Volume-Klons oder des LUN-Klons
+          url: "/aix/task_starting_the_volume_or_lun_clone_split_start.html"
+        - title: Anzeigen des Status eines Volume-Klons oder einer LUN-Klonabteilung
+          url: "/aix/task_verifying_the_status_of_clone_split.html"
+        - title: Beenden des Volume-Klons oder des LUN-Klonabtrennens
+          url: "/aix/task_stopping_the_clone_and_lun_clone_split.html"
+        - title: Anzeigen des Ergebnisses eines Klonabteilvorgangs unter Verwendung
+            von Job-ID oder Dateispezifikation
+          url: "/aix/task_viewing_the_result_of_a_clone_split_using_filespec.html"
+      - title: Löschen einer Snapshot Kopie
+        url: "/aix/concept_deleting_a_snapshot_copy.html"
+        entries:
+        - title: Befehl zum Löschen von Snapshot Kopien
+          url: "/aix/concept_command_to_use_todelete_snapshotcopies.html"
+        - title: Gründe für das Löschen von Snapshot Kopien
+          url: "/aix/concept_reasons_to_deletesnapshotcopies.html"
+        - title: Richtlinien zum Löschen von Snapshot Kopien
+          url: "/aix/concept_guidelines_fordeleting_snapshotcopies.html"
+        - title: Für die Verwendung des Befehls SnapDrive Snap delete sind Informationen
+            erforderlich
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html"
+        - title: Löschen einer Snapshot Kopie
+          url: "/aix/task_deleting_a_snapshotcopy.html"
+      - title: Trennen einer Snapshot Kopie
+        url: "/aix/concept_disconnecting_a_snapshot_copy.html"
+        entries:
+        - title: Trennen der Verbindung mit dem Snapshot
+          url: "/aix/concept_using_the_snapshotdisconnectoperation.html"
+        - title: Richtlinien zum Trennen von Snapshot Kopien
+          url: "/aix/concept_guidelines_fordisconnectingsnapshot_copies.html"
+          entries:
+          - title: Richtlinien zum Trennen von Snapshot Kopien für NFS Einheiten
+            url: "/aix/concept_guidelines_fordisconnectingsnapshot_copies_for_nfs_entities.html"
+        - title: Für die Verwendung des SnapDrive Snap Disconnect -Befehls sind Informationen
+            erforderlich
+          url: "/aix/concept_informationrequired_forusing_the_snapdrive_snapdisconnect_command.html"
+        - title: Verbindung der Snapshot Kopie mit LUNs und ohne Speichereinheiten
+            wird getrennt
+          url: "/aix/task_disconnectingsnapshot_copy_withluns_and_nostorage_entities.html"
+        - title: Verbindung zwischen Snapshot Kopien und Storage-Einheiten wird getrennt
+          url: "/aix/task_disconnectingsnapshot_copy_withstorage_entities.html"
+        - title: Trennung von Snapshot Kopien mit gemeinsam genutzten Storage-Einheiten
+          url: "/aix/task_disconnectingsnapshot_copieswith_shared_storageentities.html"
+    - title: Tool zur Datenerfassung
+      url: "/aix/concept_data_collection_utility.html"
+      entries:
+      - title: Über das Dienstprogramm zur Datenerfassung
+        url: "/aix/concept_about_the_data_collection_utility.html"
+      - title: Aufgaben durchgeführt von snapdrive.dc
+        url: "/aix/concept_tasks_performed_by_snapdrive_dc.html"
+      - title: Ausführen des Dienstprogramms zur Datenerfassung
+        url: "/aix/concept_executing_the_data_collection_utility.html"
+      - title: Beispiele für die Verwendung von snapdrive.dc
+        url: "/aix/reference_examples_of_using_snapdrive_dc.html"
+    - title: Fehlerbehebung
+      url: "/aix/concept_troubleshooting.html"
+      entries:
+      - title: Allgemeines zu Fehlermeldungen
+        url: "/aix/concept_understanding_error_messages.html"
+        entries:
+        - title: Fehlermeldungs-Speicherorte
+          url: "/aix/concept_error_message_locations.html"
+        - title: Fehlermeldformat
+          url: "/aix/concept_error_message_format.html"
+          entries:
+          - title: Beispielfehlermeldung
+            url: "/aix/reference_sample_error_message.html"
+      - title: Allgemeine Fehlermeldungen
+        url: "/aix/concept_common_error_messages.html"
+        entries:
+        - title: Die Beschränkungen für offene Dateien werden vom Betriebssystem begrenzt
+          url: "/aix/concept_operating_system_limits_on_open_files.html"
+        - title: Das Löschen von LUNs und Klonen belassen veraltete Geräte in UNIX
+          url: "/aix/concept_stale_devices_in_unix.html"
+        - title: Fehlermeldwerte
+          url: "/aix/reference_error_message_values.html"
+      - title: Der Befehl zum Erstellen von SnapDrive Storage schlägt fehl, wenn mehrere
+          SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist
+        url: "/aix/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html"
+      - title: Wenn ein Volume auf dem Vserver gelöscht wird, ohne das Volume auf
+          dem Host-System zu mounten, zeigt der Befehl SnapDrive Storage show den
+          falschen Pfad an
+        url: "/aix/concept_snapdrive_storage_show_command_returns_incorrect_path_if_volume_deleted_without_unmount.html"
+      - title: Die Snap-Wiederherstellung schlägt fehl, wenn die nfsv3- und nfsv4-Versionen
+          im Host und Speichersystem aktiviert sind
+        url: "/aix/concept_snap_restore_operation_fails_nfsv3_and_nfsv4_versions_enabled_in_host_and_storage_system.html"
+      - title: Die Verbindung mit Snap trennen kann das geklonte Volume nicht löschen
+        url: "/aix/task_recieving_error_does_not_look_snapdrive_generated.html"
+      - title: SnapDrive für UNIX meldet einen Fehler, wenn iSCSI nicht ausgeführt
+          wird
+        url: "/aix/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html"
+      - title: Diskrepanz in der Fehlermeldung Fehlercode
+        url: "/aix/concept_discrepancy_in_the_error_code_message.html"
+      - title: Befehle werden blockiert angezeigt
+        url: "/aix/concept_commands_appear_blocked_commands_appear_blocked.html"
+      - title: Während SnapRestore wird die Clustering-Meldung angezeigt
+        url: "/aix/concept_clustering_message_appears_during_snap.html"
+      - title: Standard-Werte für den Exit-Status
+        url: "/aix/concept_standard_exit_status_values.html"
+        entries:
+        - title: Allgemeines zu Werten für den Exit-Status von Fehlermeldungen
+          url: "/aix/reference_understanding_exit_status_values_of_error_messages.html"
+        - title: Die Werte für den Exit-Status werden verwendet
+          url: "/aix/reference_using_exit_status_values.html"
+        - title: Skriptbeispiel
+          url: "/aix/reference_script_example.html"
+        - title: Statuswerte beenden
+          url: "/aix/reference_exit_status_values.html"
+      - title: Die Volume-basierte SnapRestore-Prüfung schlägt fehl
+        url: "/aix/concept_volume_based_snaprestore_check_fails.html"
+      - title: Das Erstellen und Löschen von Snapshots schlägt fehl
+        url: "/aix/concept_snapshot_create_and_delete_operation_fails.html"
+      - title: Eine Snapshot Kopie kann nicht erstellt werden
+        url: "/aix/concept_unable_to_create_a_snapshot_copy.html"
+      - title: Es kann keine Snapshot Kopie wiederhergestellt werden
+        url: "/aix/concept_unable_to_restore_a_snapshot_copy.html"
+      - title: Der Daemon kann nicht neu gestartet werden, wenn der Host nicht mit
+          dem Speichersystem kommunizieren kann
+        url: "/aix/concept_unable_to_start_daemon.html"
+      - title: "(AIX) die Unterstützung für MPIO cfmodus ist begrenzt"
+        url: "/aix/concept_aix_mpio_cfmode_support_limited_sdu.html"
+      - title: Der Daemon konnte nicht gestartet werden
+        url: "/aix/concept_unable_to_start_the_daemon.html"
+      - title: Ghost Device Handles in AIX verursachen eine längere Rückgabezeit auf
+          iSCSI-Befehlen
+        url: "/aix/concept_ghost_device_handles_in_aix_cause_longer_return_time_on_iscsi_commands.html"
+      - title: Der Befehl zum Starten des Snapshots schlägt fehl
+        url: "/aix/concept_snapdrived_start_command_fails.html"
+      - title: SnapDrive Befehle führen manchmal zum Mounten oder Aufhängen von Dateisystemen
+          und zum Ändern von Systemdateien
+        url: "/aix/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html"
+      - title: Es kann kein Storage-Stack ausgewählt werden
+        url: "/aix/concept_unable_to_select_a_storage_stack.html"
+      - title: Der Snapdrived-Stopp-Befehl oder der Snapdrived-Start-Befehl hängt
+        url: "/aix/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html"
+      - title: SnapDrive für UNIX-Befehle Anzeigen konnten den Zugriffsfehler nicht
+          überprüfen
+        url: "/aix/concept_snapdrive_for_unix_command_displays_could_not_check_access_error.html"
+      - title: Montage eines FlexVol Volumes schlägt in der NFS-Umgebung fehl
+        url: "/aix/task_mounting_a_flexvol_volume_fails_in_nfs_environment.html"
+      - title: SnapDrive für UNIX interpretiert das Dollarzeichen falsch
+        url: "/aix/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html"
+      - title: Der Befehl zum Erstellen von SnapDrive für UNIX-Speicher schlägt beim
+          Erkennen einiger zugeordneten Geräte fehl
+        url: "/aix/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html"
+      - title: SnapDrive für UNIX-Befehle schlagen mit angepasster LD_LIBRARY_PATH
+          fehl
+        url: "/aix/concept_snapdrive_for_unix_commands_fail_when_there_is_a_customized_ld_library_path.html"
+      - title: SnapDrive Vorgänge schlagen in einer Vielzahl von Subnetzkonfigurationen
+          fehl
+        url: "/aix/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html"
+      - title: Befehle von SnapDrive für UNIX schlagen fehl, wenn Umgebungsvariablen
+          mithilfe einer Command Shell festgelegt werden
+        url: "/aix/reference_snapdrive_for_unix_does_not_accept_environment_variables_set_using_command_shells.html"
+      - title: SnapDrive für UNIX Patches kann nicht standardmäßig auf AIX installiert
+          werden
+        url: "/aix/reference_unable_to_install_snapdrive_for_unix_patches_on_aix_by_default.html"
+      - title: SnapDrive für UNIX löscht nicht automatisch veraltete Geräte in UNIX
+        url: "/aix/reference_snapdrive_for_unix_does_not_automatically_delete_stale_devices_in_unix.html"
+    - title: Befehlsreferenz
+      url: "/aix/concept_command_reference.html"
+      entries:
+      - title: Erfassen der von SnapDrive für UNIX-Befehle benötigten Informationen
+        url: "/aix/concept_collecting_information_needed_by_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Sammeln von Informationen, die durch Befehle benötigt werden
+          url: "/aix/reference_collecting_information_needed_by_commands.html"
+        - title: Allgemeine Hinweise zu den Befehlen
+          url: "/aix/reference_general_notes_about_the_commands.html"
+      - title: Zusammenfassung der Befehle SnapDrive für UNIX
+        url: "/aix/concept_summary_of_the_snapdrive_for_unix_commands.html"
+        entries:
+        - title: Befehlsübersicht
+          url: "/aix/reference_command_summary.html"
+          entries:
+          - title: Zeilen für Konfigurationsbefehle
+            url: "/aix/reference_configuration_command_lines.html"
+          - title: Befehlszeilen für die Storage-Bereitstellung
+            url: "/aix/reference_storage_provisioning_command_lines.html"
+          - title: Host-seitige Befehlszeile
+            url: "/aix/reference_host_side_command_lines.html"
+          - title: Befehlszeilen der Snapshot Operation
+            url: "/aix/reference_snapshot_operation_command_lines.html"
+        - title: SnapDrive for UNIX-Optionen, Schlüsselwörter und Argumente
+          url: "/aix/concept_snapdrive_for_unix_options_keywords_and_arguments.html"
+          entries:
+          - title: Befehlszeilenoptionen
+            url: "/aix/reference_command_line_options.html"
+          - title: Regeln für Schlüsselwörter
+            url: "/aix/reference_rules_for_keywords.html"
+          - title: Befehlszeilenwörter
+            url: "/aix/reference_command_line_keywords.html"
+          - title: Befehlszeilenargumente
+            url: "/aix/reference_command_line_arguments.html"
+  - title: Rechtliche Hinweise
+    url: "/reference_legal_notices.html"

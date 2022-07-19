@@ -1,0 +1,38 @@
+---
+permalink: solaris/concept_storageprovisioning_withsnapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, operation 
+summary: 'SnapDrive für UNIX bietet umfassendes Storage Management. Sie können Storage von einem Host auf ein Storage-System bereitstellen und diesen Storage mit oder ohne den Host Logical Volume Manager \ (LVM\) managen.' 
+---
+= Storage-Vorgänge in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet umfassendes Storage Management. Sie können Storage von einem Host auf ein Storage-System bereitstellen und diesen Storage mit oder ohne Verwendung des Host Logical Volume Managers (LVM) managen.
+
+SnapDrive für UNIX ermöglicht Ihnen die folgenden Speichervorgänge:
+
+* Erstellen Sie den Storage, indem Sie LUNs, Dateisysteme, logische Volumes und Festplattengruppen erstellen.
+* Zeigt Informationen zum Speicher an.
+* Stellen Sie eine Verbindung zum Speicher her.
+* Ändern der Speichergröße
+* Trennen Sie die Verbindung zum Speicher.
+* Löschen Sie den Speicher.
+
+
+Wenn Sie einen Speicher mit erstellen `snapdrive storage create` Der Befehl SnapDrive für UNIX führt automatisch alle Aufgaben aus, die zum Einrichten von LUNs erforderlich sind. Außerdem werden der Host vorbereitet, die Erkennungszuordnung durchgeführt und eine Verbindung zu den von Ihnen erstellten LUNs hergestellt. Sie können das verwenden `snapdrive storage show` Befehl zum Anzeigen von Informationen über die von Ihnen erstellten NetApp LUNs, Festplattengruppen, Host Volumes, Filesysteme oder NFS Verzeichnisbäume.
+
+Sie können das verwenden `snapdrive storage connect` Befehl, um den Speicher einem neuen Speicherort zuzuordnen. Mit diesem Befehl können Sie von einem anderen Host aus auf den vorhandenen Speicher zugreifen, als den, der zum Erstellen verwendet wird. Der `snapdrive storage connect` Der Befehl ermöglicht es Ihnen, vorhandene LUNs, Dateisysteme, Festplattengruppen und logische Volumes auf einem neuen Host zugänglich zu machen. Dies könnte nützlich sein, wenn Sie ein Backup einer Speichereinheit von dem neuen Host auf einem anderen Host erstellen möchten.
+
+Verwenden der `snapdrive storage resize` Befehl, Sie können die Größe Ihres Storage mit folgenden Methoden erhöhen:
+
+* Geben Sie die Zielgröße an, die die Hosteinheit erreichen soll
+* Geben Sie eine festgelegte Anzahl von Bytes ein, um die der Speicher erhöht werden soll
+
+
+Wenn der Storage nicht mehr dem aktuellen Speicherort zugeordnet werden soll, können Sie den verwenden `snapdrive storage disconnect` Befehl. Mit diesem Befehl werden die Zuordnungen von einem oder mehreren Host-Standorten zu den LUNs entfernt, die den Speicher für diesen Standort erstellen.
+
+Wenn Sie den Speicher löschen möchten, können Sie den verwenden `snapdrive storage delete` Befehl. SnapDrive für UNIX löscht alle Host-seitigen Einheiten, die Sie angeben, sowie alle ihre zugrunde liegenden Einheiten und die ihnen zugeordneten LUNs.

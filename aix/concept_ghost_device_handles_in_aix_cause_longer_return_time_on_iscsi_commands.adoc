@@ -1,0 +1,22 @@
+---
+permalink: aix/concept_ghost_device_handles_in_aix_cause_longer_return_time_on_iscsi_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, ghost, device, aix, handle, iscsi, command, return 
+summary: 'Das Abfragen von AIX-Geräten über iSCSI oder FC mit Ghost Device-Handles \ (Geräte-Handles in einem definierten oder fehlgeschlagenen Status\) kann dazu führen, dass SCSI-Befehle auf das AIX-Standardzeitlimit von ca. 30 Sekunden warten.' 
+---
+= Ghost Device Handles in AIX verursachen eine längere Rückgabezeit auf iSCSI-Befehlen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Abfragen von AIX-Geräten über iSCSI oder FC mit Ghost Device Handles (Geräte Handles in einem definierten oder fehlerhaften Status) kann dazu führen, dass SCSI-Befehle auf das AIX-Standardzeitlimit von ca. 30 Sekunden warten.
+
+Sie können dieses Problem sehen, nachdem Sie ein AIX-System von FC zu Verwendung von iSCSI gewechselt haben, wenn FC-Kindergeräte-Handles nicht bereinigt werden, oder ein FC-HBA nicht an einen Switch angeschlossen ist.
+
+*Workaround:*
+
+* Wenn der Fibre Channel HBA nicht an einen Switch angeschlossen ist, installieren Sie ein Fibre Channel IOA Wrap Plug in alle Fibre Channel-Initiatoren, die nicht mit einem Fibre Channel Switch verbunden sind.
+* Wenn der Fibre Channel-HBA an einen Switch angeschlossen ist, jedoch als untergeordnete Geräte fehlerhafte oder definierte Gerätegriffe ausgefallen sind, entfernen Sie die Griffe für veraltete Geistergeräte mit dem `rmdev` Befehl.
+

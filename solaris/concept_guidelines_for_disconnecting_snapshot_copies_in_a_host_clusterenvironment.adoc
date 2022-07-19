@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_guidelines_for_disconnecting_snapshot_copies_in_a_host_clusterenvironment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy, host, cluster 
+summary: Während das Trennen einer Snapshot Kopie für eine NFS Einheit, trennt SnapDrive für UNIX das Dateisystem, entfernt den Mount-Eintrag im Dateisystem, entfernt den Mountpoint und so weiter. 
+---
+= Richtlinien zum Trennen von Snapshot Kopien in einer Host Cluster Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Während das Trennen einer Snapshot Kopie für eine NFS Einheit, trennt SnapDrive für UNIX das Dateisystem, entfernt den Mount-Eintrag im Dateisystem, entfernt den Mountpoint und so weiter.
+
+* Der `snapdrive snap disconnect` Der Befehl kann von jedem Node im Host-Cluster ausgeführt werden.
+* Damit die Verbindung zum Snapshot erfolgreich sein kann, sollte eine der folgenden Aktionen wahr sein:
++
+** Die Speichereinheiten sollten von allen Nodes im Host-Cluster gemeinsam genutzt werden.
+** Die LUNs sollten allen Nodes im Host-Cluster zugeordnet sein.
+
+
+* Sie können eine Speichereinheit mit dem von einem bestimmten Knoten trennen `-devicetype dedicated` Oder im `shared` Option. Wenn Sie eine Speichereinheit trennen, die sich in einem dedizierten Modus befindet, können Sie es auslassen `-devicetype` Option über die Befehlssyntax, da der Standardwert dediziert ist.
+* Der `snapdrive snap disconnect` Befehl gibt einen Fehler aus, wenn eine gemeinsam genutzte Storage-Einheit oder LUN mit dem getrennt wird `dedicated` Option oder wenn eine dedizierte Speichereinheit oder LUN mit der Option gemeinsam genutzt wird.
+* SnapDrive für UNIX führt die aus `snapdrive snap disconnect` Befehl auf dem Master-Knoten. Er zerstört die Storage-Einheiten, trennt die LUNs auf allen nicht-Master-Nodes und trennt dann die Verbindung der LUNs vom Master-Node im Host-Cluster. Wenn ein Fehler auftritt, schlägt die Trennung der Snapshot-Verbindung fehl.
+

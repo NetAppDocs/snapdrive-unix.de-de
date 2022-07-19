@@ -1,0 +1,28 @@
+---
+permalink: solaris/task_disconnectingsnapshot_copieswith_shared_storageentities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, snapshot, copy, shared, storage 
+summary: Sie können den SnapDrive Snap Trennen Befehl verwenden, um eine Snapshot Kopie zu trennen, die gemeinsam genutzte Storage-Einheiten enthält. 
+---
+= Trennung von Snapshot Kopien mit gemeinsam genutzten Storage-Einheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive snap disconnect` Befehl zum Trennen einer Snapshot Kopie, die Shared Storage Entitäten enthält.
+
+.Schritte
+. Geben Sie die folgende Befehlssyntax ein:
++
+`*snapdrive snap disconnect {-dg | -fs} _file_spec_ [_file_spec..._] {-dg | -fs} _file_spec_ [_file_spec..._]...] _long_snap_name_ [-full] [-devicetype shared] [-fstype _type_] [-vmtype _type_] [-split]*`
+
+
+
+In diesem Beispiel wird die Verbindung zum gemeinsamen Dateisystem getrennt:
+
+[listing]
+----
+# snapdrive snap disconnect -fs /mnt/oracle
+----

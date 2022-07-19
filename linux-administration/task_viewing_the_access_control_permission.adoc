@@ -1,0 +1,76 @@
+---
+permalink: linux-administration/task_viewing_the_access_control_permission.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, permission, config, command 
+summary: Sie können die Berechtigungen zur Zugriffssteuerung anzeigen, indem Sie den Befehl SnapDrive config Access show ausführen. 
+---
+= Zugriffsberechtigung anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Zugriffskontrollberechtigungen anzeigen, indem Sie das ausführen `snapdrive config access show` Befehl.
+
+.Schritte
+. Führen Sie die aus `snapdrive config access show` Befehl.
++
+Dieser Befehl weist das folgende Format auf: `snapdrive config access {show | list} filername`
+
++
+Sie können die gleichen Parameter verwenden, unabhängig davon, ob Sie den eingeben `show` Oder `list` Version des Befehls.
+
++
+Diese Befehlszeile überprüft den Toaster des Speichersystems, um festzustellen, welche Berechtigungen der Host hat. Basierend auf der Ausgabe sind die Berechtigungen für den Host auf diesem Speichersystem SNAP ALL.
+
++
+[listing]
+----
+# snapdrive config access show toaster
+This host has the following access permission to filer, toaster:
+SNAP ALL
+Commands allowed:
+snap create
+snap restore
+snap delete
+snap rename
+#
+----
++
+In diesem Beispiel befindet sich die Berechtigungsdatei nicht auf dem Speichersystem, daher überprüft SnapDrive für UNIX die Variable `_all-access-if-rbac-unspecified_` Im `snapdrive.conf` Datei, um zu bestimmen, welche Berechtigungen der Host besitzt. Diese Variable ist auf festgelegt `on`, Das entspricht der Erstellung einer Berechtigungsdatei mit der Zugriffsebene für ALLE ZUGRIFFE eingestellt ist.
+
++
+[listing]
+----
+# snapdrive config access list toaster
+This host has the following access permission to filer, toaster:
+ALL ACCESS
+Commands allowed:
+snap create
+snap restore
+snap delete
+snap rename
+storage create
+storage resize
+snap connect
+storage connect
+storage delete
+snap disconnect
+storage disconnect
+clone split estimate
+clone split start
+#
+----
++
+Dieses Beispiel zeigt die Art der Meldung, die Sie erhalten, wenn sich keine Berechtigungsdatei auf dem Speichersystem Toaster befindet, und die Variable `_all-access-if-rbac-unspecified_` Im `snapdrive.conf` Datei ist auf festgelegt `off`.
+
++
+[listing]
+----
+# snapdrive config access list toaster
+Unable to read the access permission file on filer, toaster. Verify that the
+file is present.
+Granting no permissions to filer, toaster.
+----
+

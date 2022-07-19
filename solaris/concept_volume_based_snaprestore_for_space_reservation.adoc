@@ -1,0 +1,74 @@
+---
+permalink: solaris/concept_volume_based_snaprestore_for_space_reservation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, colume, snaprestore, space, reservation 
+summary: Für die Platzreservierung mit Volumen-basierter Snap Reserve müssen Sie die Option mit platzreservierungen-Volume-enabled in der snapdrive.conf Datei einstellen. 
+---
+= Volume-basierte SnapRestore zur Speicherplatzreservierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für Platzreservierung mit volumenbasierter Snap Reserve müssen Sie einstellen `_space-reservations-volume-enabled_` Wählen Sie im `snapdrive.conf` Datei:
+
+Der `_space-reservations-volume-enabled_` Option wird verwendet, um die Speicherplatzgarantierichtlinie für das Volume festzulegen und kann die folgenden drei Werte übernehmen.
+
+* *Snapshot*: Dies ist der Standardwert. Die Speicherplatzzusagen auf dem Volume werden nicht geändert.
+* *Volumen*: Platzgarantie auf Volumen ist auf Volumenniveau.
+* *Keine*: Platzgarantie ist als keine festgelegt.
+
+
+Folgende Tabelle beschreibt das Verhalten der Volume-basierten Snap-Reserve für die Speicherplatzreservierung.
+
+|===
+| Keine CLI-Option für Speicherplatzreserve verwendet; `-vbsr execute` Angegeben ist | Space-reservations-Volume-enabled= | Ergebnis 
+
+
+ a| 
+Keine
+ a| 
+snapshot
+ a| 
+Die Speicherplatzzusagen auf dem Volume werden nicht geändert.
+
+
+
+ a| 
+Keine
+ a| 
+Keine
+ a| 
+Es wird versucht, die Speicherplatzgarantie für die Volumes auf „`none`“ festzulegen.
+
+
+
+ a| 
+`-reserve`
+ a| 
+Konfigurationswert wird übergangen
+ a| 
+Versuch, die Speicherplatzgarantie für Volumes als „Volume“ festzulegen
+
+
+
+ a| 
+`-noreserve`
+ a| 
+Konfigurationswert wird übergangen
+ a| 
+Versuch, Platzgarantie für Volumes auf „keine“ festzulegen
+
+
+
+ a| 
+Keine
+ a| 
+Datenmenge
+ a| 
+Versuch, die Speicherplatzgarantie für Volumes als „Volume“ festzulegen
+
+|===
+
+NOTE: `-vbsr preview` Überprüft keine der Optionen für die Reservierung von Speicherplatz.

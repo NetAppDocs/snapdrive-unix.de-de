@@ -1,0 +1,46 @@
+---
+permalink: aix/task_restoring_asnapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: Sie können eine Snapshot Kopie mit dem SnapDrive Snap Restore Befehl wiederherstellen wiederherstellen. Der Restore-Vorgang kann je nach Typ und Menge der wiederherzustellenden Daten mehrere Minuten dauern. 
+---
+= Wiederherstellen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot-Kopie mit wiederherstellen `snapdrive snap restore` Befehl. Der Restore-Vorgang kann je nach Typ und Menge der wiederherzustellenden Daten mehrere Minuten dauern.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um eine Snapshot Kopie wiederherzustellen:
++
+`*snapdrive snap restore -snapname _snap_name_ {-lun |-dg |-fs | - hostvol |-file }file_spec [file_spec...] [{ -lun | -dg | -fs |-hostvol |-file } _file_spec_ [_file_spec_ ...] [-force [-noprompt]] [-mntopts _options_]][{-reserve |-noreserve}]*`
+
+
+
+SnapDrive für UNIX ersetzt die Inhalte der LUNs, die Sie im angeben `snapdrive snap restore` Befehlszeile mit dem Inhalt der LUNs in der von Ihnen angegebenen Snapshot Kopie. Dieser Vorgang kann mehrere Minuten dauern. Nach Abschluss des Vorgangs zeigt SnapDrive für UNIX eine Meldung wie die folgende an: `snap restore <filespec list> succeeded`
+
+Im folgenden Beispiel befindet sich Dateisystem 1 (fs1) auf Speichersystem 1, und Dateisystem 2 (fs2) befindet sich auf Speichersystem 1 und auch auf Speichersystem 2, das das Partnerspeichersystem ist. Das Filesystem 3 (fs3) befindet sich auf Storage-Systemen von Partnern 1, Storage-System 2 und Storage-system3, die nicht zum HA-Paar gehören. Ein zusätzliches Dateisystem fs4 befindet sich vollständig auf dem Speichersystem 4.
+
+Mit dem folgenden Befehl wird eine Snapshot Kopie von erstellt `fs1`, `fs2`, `fs3`Und `fs4`:
+
+[listing]
+----
+# snapdrive snap create -fs /mnt/fs1 /mnt/fs2 /mnt/fs3 /mnt/fs4
+-snapname fs_all_snap
+----
+Mit dem nächsten Befehl werden fs1 und fs2 auf dem Zielspeichersystem wiederhergestellt. Sowohl fs1 als auch fs2 befinden sich auf einem HA-Paar, so dass Sie sie mit einem Befehl wiederherstellen können:
+
+[listing]
+----
+# snapdrive snap restore -fs /mnt/fs1 /mt/fs2 -snapname fs_all_snap
+----
+Mit dem folgenden Befehl wird fs4 wiederhergestellt:
+
+[listing]
+----
+snapdrive snap restore -fs /mnt/fs4 -snapname fs_all_snap
+----
+SnapDrive für UNIX kann fs3 nicht auf dem Ziel-Storage-System wiederherstellen, da sich dieses Filesystem auf Storage-System1, Storage-System 2 und Storage-System 3 befindet.

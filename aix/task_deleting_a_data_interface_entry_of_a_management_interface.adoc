@@ -1,0 +1,26 @@
+---
+permalink: aix/task_deleting_a_data_interface_entry_of_a_management_interface.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, data, interface, management 
+summary: Sie können einen Eintrag der Datenschnittstelle löschen, der einer bestimmten Managementoberfläche in einer NFS-Umgebung zugeordnet ist, indem Sie den SnapDrive config delete -mgmtpath Befehl verwenden. 
+---
+= Löschen eines Datenschnittstelleneintrags für eine Managementoberfläche
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Eintrag für eine Datenschnittstelle löschen, der einer bestimmten Managementoberfläche in einer NFS-Umgebung zugeordnet ist, indem Sie die verwenden `snapdrive config delete -mgmtpath` Befehl.
+
+. Geben Sie an der CLI den folgenden Befehl ein:
++
+`*snapdrive config delete -mgmtpath _data_interface_*`
+
++
+[listing]
+----
+#snapdrive config delete –mgmtpath f3050-197-91
+Deleted configuration for appliance: f3050-197-91
+----
+

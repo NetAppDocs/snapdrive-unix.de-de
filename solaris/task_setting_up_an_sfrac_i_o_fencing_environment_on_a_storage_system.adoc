@@ -1,0 +1,58 @@
+---
+permalink: solaris/task_setting_up_an_sfrac_i_o_fencing_environment_on_a_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, sfrac, fencing, environment, storage 
+summary: SnapDrive für UNIX bietet Optionen zur Storage-Provisionierung und zum Snapshot Management, um Cluster-übergreifende Shared und Node-lokale Festplattengruppen und Filesysteme in einer SFRAC-Umgebung zu managen. 
+---
+= Einrichtung einer SFRAC-I/O-Zaunsumgebung auf einem Storage-System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet Optionen zur Storage-Provisionierung und zum Snapshot Management, um Cluster-übergreifende Shared und Node-lokale Festplattengruppen und Filesysteme in einer SFRAC-Umgebung zu managen.
+
+.Schritte
+. Einrichtung `rsh` Oder `ssh` Manuelle Verwendung der Access-without-password-prompt für den Root-Benutzer auf allen Host-Cluster-Knoten.
++
+Eine Anleitung zur Einrichtung finden Sie im Installationshandbuch für den Veritas Cluster Server für Solaris_.
+
+. Installieren Sie SnapDrive für UNIX auf allen Knoten im Host-Cluster.
++
+Falls verschiedene Versionen von SnapDrive für UNIX auf verschiedenen Knoten installiert sind, schlägt der Betrieb von SnapDrive für UNIX fehl.
+
+. Überprüfen Sie die FC-Konnektivität zwischen den Storage-Systemen.
++
+Weitere Informationen zu den Hardwareanforderungen für Hosts finden Sie im SFRAC _Release Notes_.
+
++
+
+NOTE: Der `/opt/NTAPsnapdrive/snapdrive.conf` Die Datei auf allen Knoten muss über den verfügen `default-transport` Konfigurationsvariable auf FCP gesetzt.
+
+. Legen Sie einen Wert für das fest `_secure-communication-among-cluster-nodes_` Konfigurationsvariable, um sicherzustellen, dass der `rsh` Oder `ssh` Access-ohne Passwort-Eingabeaufforderung für den Root-Benutzer ist für alle Knoten im Cluster konfiguriert.
++
+Dieser Wert ist erforderlich, da, wenn Sie die SnapDrive for UNIX Befehle von einem beliebigen Node (Master oder nicht-Master) im Host-Cluster aus initiieren, SnapDrive für UNIX Vorgänge auf anderen Nodes im Host-Cluster durchführen.
+
+. Überprüfen Sie die Geräteerkennung auf den Host-Cluster-Nodes, indem Sie auf jedem Node im Host-Cluster den folgenden Befehl ausführen:
++
+`*snapdrive storage create -lun _long_lun_name_ [_lun_name..._] -lunsize size [{_-reserve_ | _-noreserve_}] [_-igroup ig_name_ [_ig_name ..._]]*`
+
++
+[listing]
+----
+
+	# snapdrive storage create -lun f270-197-109:/vol/vol2/luntest -lunsize 20m
+
+		LUN f270-197-109:/vol/vol2/luntest ... created
+
+		mapping new lun(s) ... done
+		discovering new lun(s) ... done
+
+		LUN to device file mappings:
+	-f270-197-109:/vol/vol2/luntest => /dev/vx/dmp/c5t0d6s2
+
+	# snapdrive storage delete -lun f270-197-109:/vol/vol2/luntest -lunsize 20m
+	- LUN f270-197-109:/vol/vol2/luntest ... deleted
+----
+

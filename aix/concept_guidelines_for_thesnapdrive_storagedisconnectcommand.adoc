@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_guidelines_for_thesnapdrive_storagedisconnectcommand.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, storage, disconnect, command 
+summary: Befolgen Sie bei Verwendung des Befehls SnapDrive Storage Disconnect die folgenden Richtlinien. 
+---
+= Richtlinien für den SnapDrive Storage Trennen Befehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Befolgen Sie diese Richtlinien, wenn Sie die verwenden `snapdrive storage disconnect` Befehl:
+
+* Wenn Sie ein Dateisystem trennen, entfernt SnapDrive für UNIX immer den Mountpoint.
+* Wenn Sie den verwenden `-lun` Option, um den Namen einer LUN anzugeben, die Mitglied einer Host-Laufwerksgruppe oder eines Dateisystems ist, die `snapdrive storage disconnect` Befehl schlägt fehl.
+* Wenn Sie verwenden `-lun` Option, um den Namen der LUN anzugeben, die nicht durch Multipathing-Software auf dem Host erkannt wird, im `snapdrive storage disconnect` Befehl schlägt fehl.
+

@@ -1,0 +1,53 @@
+---
+permalink: solaris/task_enabling_and_disabling_log_files.html 
+sidebar: sidebar 
+keywords: snap, snapshot, enable, disable, log, file 
+summary: Wenn Sie eine Protokolldatei aktivieren möchten, geben Sie einen Dateinamen als den Wert im Namenspaar der Protokolldatei an, die Sie aktivieren möchten. Wenn Sie eine Datei deaktivieren möchten, geben Sie keinen Wert für den Parameter Protokolldateiname ein. 
+---
+= Aktivieren und Deaktivieren von Protokolldateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine Protokolldatei aktivieren möchten, geben Sie einen Dateinamen als den Wert im Namenspaar der Protokolldatei an, die Sie aktivieren möchten. Wenn Sie eine Datei deaktivieren möchten, geben Sie keinen Wert für den Parameter Protokolldateiname ein.
+
+Sie müssen sich als Root-Benutzer angemeldet haben.
+
+.Schritte
+. Öffnen Sie das `snapdrive.conf` Datei in einem Texteditor.
+. Wählen Sie die entsprechende Option, um eine Protokolldatei zu aktivieren oder zu deaktivieren.
++
+|===
+| Ihr Ziel ist | Dann... 
+
+
+ a| 
+*Aktivieren Sie eine Protokolldatei*
+ a| 
+Geben Sie einen Dateinamen als Wert im Name-Wert-Paar der Protokolldatei an, die Sie aktivieren möchten. SnapDrive für UNIX schreibt nur Log-Dateien, wenn der Name einer Datei zum Schreiben vorhanden ist. Die Standardnamen für die Protokolldateien lauten wie folgt:
+
+** Prüfprotokoll: `sd-audit.log`
+** Wiederherstellungsprotokoll: `sd-recovery.log`
+** Trace-Protokoll: `sd-trace.log`
+
+
+
+NOTE: Der Pfad zu diesen Dateien kann je nach Ihrem Host-Betriebssystem variieren.
+
+
+
+ a| 
+*Eine Protokolldatei* deaktivieren
+ a| 
+Geben Sie keinen Wert für den Parameter für den Namen der Protokolldatei ein. Wenn Sie keinen Wert angeben, gibt es keinen Dateinamen, dem SnapDrive für UNIX die Protokollinformationen schreiben kann.
+
+*Beispiel* in diesem Beispiel wird die Logdatei deaktiviert. `audit-log-file=""`
+
+|===
+. Speichern Sie die `snapdrive.conf` Datei, nachdem Sie alle Änderungen vorgenommen haben.
++
+SnapDrive für UNIX prüft diese Datei automatisch jedes Mal, wenn sie startet. Sie müssen den SnapDrive for UNIX Daemon neu starten, damit die Änderungen wirksam werden.
+
+

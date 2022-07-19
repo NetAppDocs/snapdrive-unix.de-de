@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_the_storagedisconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, disconnect, command 
+summary: Durch die Trennung des Storage werden die LUNs, bzw. die LUNs und Storage-Einheiten entfernt, die dem Host über den Befehl SnapDrive Storage create oder SnapDrive Storage connect zugeordnet wurden. 
+---
+= Befehl zum Trennen der Speicherverbindung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `storage disconnect` Der Vorgang entfernt die LUNs oder die LUNs und Speichereinheiten, die dem Host über zugeordnet wurden `snapdrive storage create` Oder `snapdrive storage connect` Befehl.
+
+Verwenden Sie die `snapdrive storage disconnect` Befehl zum Trennen:
+
+* LUNs
+* Ein direkt auf einer LUN erstelltes Dateisystem
+* Auf LUNs erstellte Festplattengruppen, Host Volumes und Filesysteme
+
+
+Wenn SnapDrive für UNIX die LUN-Zuordnungen entfernt, wird die Laufwerksgruppe oder Dateisysteme, die in den LUNs enthalten sind, exportiert. Diese Aktion, die die Festplatte und das Dateisystem als exportiert markiert, ist die einzige Änderung, die die Verbindung der Zuordnungen zum Inhalt der LUNs hat.

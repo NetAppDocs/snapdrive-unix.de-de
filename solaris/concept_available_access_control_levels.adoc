@@ -1,0 +1,28 @@
+---
+permalink: solaris/concept_available_access_control_levels.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, level 
+summary: SnapDrive für UNIX bietet Benutzern verschiedene Zugriffskontrollebenen. Diese Zugriffsebenen beziehen sich auf die Snapshot Kopien und die Storage-Systemvorgänge. 
+---
+= Verfügbare Zugriffssteuerungsstufen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet Benutzern verschiedene Zugriffskontrollebenen. Diese Zugriffsebenen beziehen sich auf die Snapshot Kopien und die Storage-Systemvorgänge.
+
+Sie können die folgenden Zugriffsebenen festlegen:
+
+* KEINE – der Host hat keinen Zugriff auf das Speichersystem.
+* SNAP ERSTELLEN – der Host kann Snapshot Kopien erstellen.
+* SNAP USE – der Host kann Snapshot Kopien löschen und umbenennen.
+* SNAP ALL – der Host kann Snapshot Kopien erstellen, wiederherstellen, löschen und umbenennen.
+* STORAGE CREATE DELETE - der Host kann Speicher erstellen, anpassen und löschen.
+* STORAGE-NUTZUNG – der Host kann eine Verbindung zum Storage herstellen und die Verbindung trennen. Außerdem lassen sich Aufteilungen von Klonen und Split beginnen auf dem Storage.
+* GESAMTER STORAGE – der Host kann Storage erstellen, löschen, verbinden und trennen. Außerdem kann er die Klonteilschätzung und den Start der Klonteilteilung auf dem Storage vornehmen.
+* ZUGRIFF – der Host hat Zugriff auf alle zuvor genannten SnapDrive für UNIX-Vorgänge.
+
+
+Jede Ebene ist klar. Wenn Sie nur für bestimmte Vorgänge die Berechtigung angeben, kann SnapDrive für UNIX nur die Vorgänge ausführen. Wenn Sie BEISPIELSWEISE SPEICHER VERWENDEN angeben, kann der Host SnapDrive für UNIX zum Verbinden und Trennen von Speicher verwenden. Andere Vorgänge, die durch Zugriffskontrollberechtigungen geregelt sind, können jedoch nicht ausgeführt werden.

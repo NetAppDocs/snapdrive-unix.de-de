@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_application_consistentsnapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, application, snapshot, copy 
+summary: Um eine applikationskonsistente Snapshot-Kopie zu erstellen, sollten Sie die Applikation vor dem Snapshot-Vorgang anhalten. 
+---
+= Applikationskonsistente Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um eine applikationskonsistente Snapshot-Kopie zu erstellen, sollten Sie die Applikation vor dem Snapshot-Vorgang anhalten.
+
+Um sicherzustellen, dass eine Snapshot Kopie applikationskonsistent ist, müssen Sie möglicherweise die erforderlichen Schritte ausführen, um die Applikation vor dem Erstellen der Snapshot Kopie stillzulegen. Beachten Sie, dass die Hot Backup-Funktionen von Datenbanken von den vom DBMS verwendeten Methoden abhängen und dass Sie die I/O nicht immer mit Datenbankdateien stilllegen.
+
+Wenn die Applikation ihre Transaktionen und Daten im Storage-System nicht abgeschlossen hat, ist die resultierende Snapshot Kopie möglicherweise nicht applikationskonsistent.
+
+
+NOTE: Wenn Ihre Applikation nach einer absturzkonsistenten Snapshot-Kopie wiederherstellen kann, muss sie nicht angehalten werden. Lesen Sie die Dokumentation für Ihre Anwendung. Weitere Informationen über das Erstellen applikationskonsistenter Snapshot-Kopien
+
+Sie sollten eine neue Snapshot Kopie erstellen, wenn Sie eine Host Volume-, LUN- oder NFS-Verzeichnisstruktur hinzufügen oder entfernen oder die Größe von Host-Volumes oder Dateisystemen ändern. Dadurch wird sichergestellt, dass Sie über eine konsistente Kopie der neu konfigurierten Laufwerksgruppe verfügen, die Sie verwenden können, wenn Sie die Laufwerksgruppe wiederherstellen müssen.

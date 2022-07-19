@@ -1,0 +1,20 @@
+---
+permalink: solaris/task_hosts_preparation_for_adding_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, preparation, add, lun 
+summary: Sie müssen den Host für das Hinzufügen von LUNs vorbereiten. 
+---
+= Host-Vorbereitung für das Hinzufügen von LUNs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den Host für das Hinzufügen von LUNs vorbereiten.
+
+*Verwandte Informationen*
+
+xref:concept_guest_os_preparation_for_installing_sdu.adoc[Vorbereitung des Gastbetriebssystems für die Installation von SnapDrive für UNIX]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[VMware VMotion-Unterstützung in SnapDrive für UNIX]

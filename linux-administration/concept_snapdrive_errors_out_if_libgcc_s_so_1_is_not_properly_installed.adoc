@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_snapdrive_errors_out_if_libgcc_s_so_1_is_not_properly_installed.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, install, red, enterprise, oracle 
+summary: SnapDrive for UNIX Fehler out if the /lib/libgcc_s.so.1 path is not installed on 64-Bit Red hat Enterprise Linux 4 and Oracle Enterprise Linux 4 Hosts. 
+---
+= SnapDrive-Fehler aus, wenn libgcc_s.so.1 nicht installiert ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX Fehler heraus, wenn der `/lib/libgcc_s.so.1path` Ist nicht auf 64-Bit-Hosts von Red hat Enterprise Linux 4 und Oracle Enterprise Linux 4 installiert.
+
+Wenn der Pfad `/lib/libgcc_s.so.1` Ist nicht auf einem 64-Bit Red hat Enterprise Linux 4- und Oracle Enterprise Linux 4-Server installiert, zeigt SnapDrive für UNIX die folgende Fehlermeldung an:
+
+[listing]
+----
+libgcc_s.so.1 must be installed for pthread_cancel to work
+----

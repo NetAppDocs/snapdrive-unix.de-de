@@ -1,0 +1,33 @@
+---
+permalink: linux-administration/concept_considerations_forstorage_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, operations, commands 
+summary: Sie müssen bei den verschiedenen Storage-Befehlen ein paar Überlegungen ins Hinterkopf behalten. 
+---
+= Überlegungen zum Storage-Betrieb
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen bei den verschiedenen Storage-Befehlen ein paar Überlegungen ins Hinterkopf behalten.
+
+* Der Support ist für Volume-Gruppen eingeschränkt, die mehrere Storage System Volumes oder mehrere Storage-Systeme umfassen. Sie können das nicht verwenden `snapdrive storage create` Befehl zum Erstellen von Volume-Gruppen, die sich über mehrere Storage-Systeme erstrecken
++
+In diesem Fall unterstützt SnapDrive für UNIX die folgenden Schlüsselbefehle:
+
++
+** `snapdrive snap create`
+** `snapdrive snap restore`
+** `snapdrive snap connect`
+** `snapdrive snap disconnect`
+
+
+* Der `snapdrive storage resize` Befehl funktioniert nicht mit LUNs, die direkt dem Host zugeordnet sind, oder mit den Dateisystemen, die sie enthalten.
+* SnapDrive für UNIX bietet keine Optionen zur Steuerung der Formatierung von Host Volumes, die sie erstellt. SnapDrive für UNIX erstellt nur verkettete Host Volumes. Auf Host-Volumes anderer Formate (z. B. Stripes Volumes), die mit anderen Applikationen erstellt wurden, funktioniert sie korrekt.
+* Sie können keinen Teil einer Laufwerksgruppe wiederherstellen. SnapDrive für UNIX sichert und stellt nur ganze Festplattengruppen wieder her.
+
+
+
+NOTE: Die SnapDrive-Vorgänge wurden von einem nicht-Linux-Betriebssystem zu einem Linux-Betriebssystem durchgeführt, sogar mit dem ``-mntopts` Command für NFS schlägt in allen Versionen vor Red hat Enterprise Linux 6 fehl.

@@ -1,0 +1,40 @@
+---
+permalink: linux-administration/reference_snapdrive_for_unix_operations_fails_improper_multipath_settings_aliased_devices_used.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, unix, fail, multipath, settings, device, error, sdu, rhel, command 
+summary: Wenn Sie den Befehl Storage show oder Snap create in RHEL 5.11 ausführen, wird mit dem Befehl die folgende Fehlermeldung angezeigt. Statusaufruf zum SDU-Daemon fehlgeschlagen und im SLES11SP3-Host mit der Option –nolvm, wenn die Host-LVM nicht beteiligt ist. 
+---
+= SnapDrive für UNIX schlägt aufgrund unsachgemäßer Multipath-Einstellungen bei der Verwendung von Aliased-Geräten fehl.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie den ausführen `storage show` Oder `snap create` Befehl in RHEL 5.11 zeigt der Befehl die folgende Fehlermeldung an:
+
+`Status call to SDU daemon failed and in SLES11SP3 host with --nolvm option when the host LVM is not involved.`
+
+* *`snapdrive storage show -all` Der Befehl zeigt den richtigen Alias-Namen* nicht an
++
+SnapDrive für UNIX zeigt nicht den richtigen Aliasnamen für die Mapper-Geräte an. Dieses Problem tritt auf, wenn multipaths{ } Abschnitt nicht richtig in der ist `multipath.conf` Datei:
+
+* *Workaround*
++
+Sie müssen sicherstellen, dass Schließer in den Multipath-Einstellungen eingegeben werden.
+
+* *SnapDrive-Vorgänge schlagen mit dem folgenden Fehler fehl, wenn die Alias-Namen für die Mapper-Geräte* festgelegt wurden
++
+[listing]
+----
+Snapdrive could not import /dev/mapper/lvm_fs_SdDg:   device-mapper: resume ioctl failed: Invalid argument
+  Unable to resume lvm_fs_SdDg-lvm_fs_SdHv (252:4)   1 logical volume(s) in volume group "lvm_fs_SdDg" now active”
+----
++
+Dieses Problem tritt auf, wenn die Zuordnung des Alias-Namens zu den Geräten nicht richtig ist.
+
+* *Workaround*
++
+Performance `multipath-ll` Stellen Sie sicher, dass die Alias-Namenszuweisung mit den Geräten ordnungsgemäß ist, und führen Sie dann die SnapDrive für UNIX-Vorgänge aus.
+
+

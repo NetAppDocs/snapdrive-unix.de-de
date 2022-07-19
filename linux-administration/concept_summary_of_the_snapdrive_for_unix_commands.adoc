@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_summary_of_the_snapdrive_for_unix_commands.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, summary, command, management, storage 
+summary: Die Befehle SnapDrive für UNIX werden für Konfiguration, Storage-Provisionierung, Host-seitiges Management und Snapshot Betrieb verwendet. 
+---
+= Zusammenfassung der Befehle SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Befehle SnapDrive für UNIX werden für Konfiguration, Storage-Provisionierung, Host-seitiges Management und Snapshot Betrieb verwendet.

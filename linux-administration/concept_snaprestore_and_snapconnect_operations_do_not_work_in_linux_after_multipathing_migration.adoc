@@ -1,0 +1,33 @@
+---
+permalink: linux-administration/concept_snaprestore_and_snapconnect_operations_do_not_work_in_linux_after_multipathing_migration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snaprestore, snapconnect, migration, multipathing, operations 
+summary: Die Vorgänge SnapRestore und SnapConnect funktionieren nicht, wenn der Multipathing-Typ migriert wird. 
+---
+= SnapRestore- und Snapconnect-Vorgänge funktionieren nach der Migration des Multipathing-Typs nicht in Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Vorgänge SnapRestore und SnapConnect funktionieren nicht, wenn der Multipathing-Typ migriert wird.
+
+Wenn Sie einen vorhandenen Multipathing-Typ als festgelegt haben `_None_`, Und später neigen Sie dazu, den Multipathing-Typ als zu ändern `_NativeMPIO_`, Wenn Sie Snapconnect und SnapRestore Vorgänge für die vorhandenen Snapshot Kopien ausführen, wird möglicherweise eine Fehlermeldung als angezeigt `"Unable to find multipathing software linuxnull as present in the snapshot"`.
+
+Beispiel für den SnapRestore-Betrieb
+
+[listing]
+----
+snapdrive snap restore -fs /mnt/tstmp -snapname withoutmpio
+0002-105 Command error: Unable to find multipathing software linuxnull as present in the snapshot
+----
+Beispiel für den Snapconnect-Betrieb
+
+[listing]
+----
+snapdrive snap connect -fs /mnt/tstmp -snapname
+f3020-225-54:/vol/vol1:withoutmpio -autorename
+0002-105 Command error: Unable to find multipathing software
+linuxnull as present in the snapshot
+----

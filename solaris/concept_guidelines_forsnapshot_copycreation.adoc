@@ -1,0 +1,36 @@
+---
+permalink: solaris/concept_guidelines_forsnapshot_copycreation.html 
+sidebar: sidebar 
+keywords: snap, snapshot, snapdrive, copy, create 
+summary: Beachten Sie Folgendes bei der Erstellung von Snapshot Kopien mit SnapDrive für UNIX. Sie können pro Volume maximal 255 Snapshot Kopien aufbewahren. SnapDrive für UNIX unterstützt nur die erstellten Snapshot Kopien, Sie können keine Snapshot-Kopien von Root-Festplattengruppen erstellen und Geräte booten bzw. Swap-Gerät booten. SnapDrive für UNIX benötigt einen Frostvorgang, um die Crash-Konsistenz aufrechtzuerhalten. 
+---
+= Richtlinien für das Erstellen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Berücksichtigen Sie beim Erstellen von Snapshot Kopien mit SnapDrive für UNIX Folgendes: Sie können pro Volume maximal 255 Snapshot Kopien aufbewahren. SnapDrive für UNIX unterstützt nur die erstellten Snapshot Kopien, Sie können keine Snapshot-Kopien von Root-Festplattengruppen erstellen und Geräte booten bzw. Swap-Gerät booten. SnapDrive für UNIX benötigt einen Frostvorgang, um die Crash-Konsistenz aufrechtzuerhalten.
+
+Beachten Sie die folgenden Richtlinien, wenn Sie Befehle eingeben, die Snapshot Kopien erstellen:
+
+* Pro Storage-System-Volume können maximal 255 Snapshot Kopien aufbewahrt werden. Dieses Limit wird vom Speichersystem festgelegt. Die Gesamtzahl kann variieren, je nachdem, ob andere Tools die Snapshot Kopien verwenden.
++
+Wenn die Anzahl der Snapshot Kopien die Obergrenze erreicht hat, schlägt der Erstellungsvorgang des Snapshot fehl. Bevor Sie SnapDrive für UNIX verwenden können, müssen Sie einige der alten Snapshot Kopien löschen.
+
+* SnapDrive für UNIX unterstützt keine Snapshot Kopien, die nicht erstellt werden. Beispielsweise unterstützt sie keine Snapshot Kopien, die über die Storage-System-Konsole erstellt werden, da diese Praxis zu Inkonsistenzen im Filesystem führen kann.
+* Sie können SnapDrive für UNIX nicht zum Erstellen von Snapshot Kopien der folgenden Elemente verwenden:
++
+** Root-Festplattengruppen
++
+Der Vorgang zum Erstellen des Snapshots schlägt fehl, wenn Sie versuchen, eine Snapshot-Kopie einer Root-Festplattengruppe für eine LVM zu erstellen.
+
+** Boot-Gerät oder Swap-Gerät
++
+SnapDrive für UNIX erstellt keine Snapshot Kopie eines System-Boot-Geräts oder eines System-Swap-Geräts.
+
+
+
+* Wenn eine Snapshot Kopie mehrere Storage-Systeme oder Storage-System-Volumes umfasst, muss SnapDrive für UNIX einen Sperrvorgang durchführen, um die Absturzkonsistenz zu gewährleisten. Informationen zum Erstellen von Snapshot-Kopien für Konfigurationen, für die kein Frostvorgang bereitgestellt wird.
+

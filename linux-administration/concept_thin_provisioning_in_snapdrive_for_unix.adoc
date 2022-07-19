@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_thin_provisioning_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, thin, provisioning, host, storage 
+summary: Die Thin Provisioning-Funktion von SnapDrive für UNIX ermöglicht es dem Benutzer, mehr Speicherplatz für die Hosts zu haben, als tatsächlich auf dem Storage-System verfügbar ist. 
+---
+= Thin Provisioning in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Thin Provisioning-Funktion von SnapDrive für UNIX ermöglicht es dem Benutzer, mehr Speicherplatz für die Hosts zu haben, als tatsächlich auf dem Storage-System verfügbar ist.
+
+Innerhalb von SnapDrive für UNIX können Sie den Wert der fraktionalen Reserve nicht festlegen. Data ONTAP Funktionen wie Autodelete und Autosize werden nicht integriert. Diese Data ONTAP Funktionen können sicher in Verbindung mit SnapDrive für UNIX genutzt werden. SnapDrive für UNIX sorgt jedoch nicht für ein Bewusstsein bei Autodelete- oder Autosize-Ereignissen.
+
+*Verwandte Informationen*
+
+http://www.netapp.com/us/media/tr-3483.pdf["Technischer Bericht von NetApp 3483: Thin Provisioning in a NetApp SAN or IP SAN Enterprise Environment"]

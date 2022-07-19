@@ -1,0 +1,31 @@
+---
+permalink: solaris/concept_guidelines_for_connecting_snapshot_copies_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guideline, connect, copy, host, cluster, snapshot 
+summary: Sie können eine Snapshot Kopie von jedem beliebigen Node in einem Host Cluster verbinden. Befolgen Sie beim Herstellen einer Snapshot Kopie die Richtlinien. 
+---
+= Richtlinien zum Verbinden von Snapshot Kopien in einer Host-Cluster-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie von jedem beliebigen Node in einem Host Cluster verbinden. Befolgen Sie beim Herstellen einer Snapshot Kopie die Richtlinien.
+
+* Der `snapdrive snapshot connect` Der Befehl kann von jedem Node im Host-Cluster ausgeführt werden. Wenn Sie den initiieren `snapdrive snap connect` Befehl mit dem `-devicetype shared` Option von einem beliebigen nicht-Master-Node im Host-Cluster wird der Befehl an den Master-Node gesendet und ausgeführt. Um dies zu erreichen, stellen Sie sicher, dass die `rsh` Oder `ssh` Der Zugriff ohne Passwort ist auf allen Host-Cluster-Nodes zulässig.
+* Die in diesem Vorgang angegebenen mehrere Dateisysteme und Datenträgergruppen sollten den gleichen Gerätetyp haben, d. h. entweder alle gemeinsam genutzt werden oder alle dediziert sein.
+* Der `snapdrive snap connect` Der Befehl mit NFS oder Storage-Einheiten auf RAW LUNs wird nicht unterstützt.
+* Der `-igroup` Option wird von unterstützt `-devicetype` Dedizierte Option und nicht mit dem `-devicetype` Gemeinsame Nutzung im `snapdrive snap connect` Befehl.
+* SnapDrive für UNIX führt die aus `snapdrive snap connect` Befehl auf dem Master-Knoten. Vor dem Erstellen der Shared Storage-Einheiten wird die LUN auf dem Master Node erstellt und zugeordnet und anschließend die LUNs auf allen nicht-Master-Nodes zugeordnet. Erstellt und verwaltet die Initiatorgruppen auch für alle Nodes im Host-Cluster. Wenn während dieser Sequenz eine Fehlermeldung angezeigt wird, schlägt die Snapshot Verbindung fehl.
+* Der `snapdrive snap connect` Mit dem Befehl können die folgenden Speichereinheiten verbunden werden:
++
+** Ein freigegebenes Dateisystem oder eine Laufwerksgruppe, die sich bereits im freigegebenen oder dedizierten Modus des Host-Clusters befindet.
+** Ein dediziertes Dateisystem oder eine dedizierte Laufwerksgruppe zu einem einzelnen Knoten im Host-Cluster, selbst wenn das Dateisystem oder die Laufwerksgruppe bereits in einem freigegebenen Modus im Host-Cluster vorhanden ist.
+** Snapshot Kopie eines Filesystems oder einer Festplattengruppe, die auf einem Node außerhalb des Host-Clusters erstellt wird.
+
+
+* Ein dediziertes Filesystem oder eine Laufwerksgruppe, die bereits in einem nicht-Master-Node vorhanden ist, kann im Host-Cluster ohne den nicht erneut in einem freigegebenen Modus verbunden werden `-destdg` Option für eine Laufwerksgruppe und die `-autorename` Option für ein Dateisystem.
+
+
+Das heißt, wenn ein Filesystem bereits in einem der nicht-Master-Nodes im Host-Cluster im dedizierten Modus vorhanden ist, müssen Sie das angeben `snapdrive snap connect` Befehl mit dem `-destdg` Und `-autorename` Optionen oder geben Sie explizit das Zieldateisystem im Befehl an.

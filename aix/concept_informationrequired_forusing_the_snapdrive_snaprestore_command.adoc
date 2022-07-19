@@ -1,0 +1,149 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snaprestore_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, command, information, required 
+summary: Zum Wiederherstellen einer Snapshot Kopie bestimmen Sie, welche Storage-Einheit Sie wiederherstellen möchten, geben Sie den Namen der Snapshot Kopie usw. an. 
+---
+= Zur Verwendung des Befehls SnapDrive Snap Restore erforderliche Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Wiederherstellen einer Snapshot Kopie bestimmen Sie, welche Storage-Einheit Sie wiederherstellen möchten, geben Sie den Namen der Snapshot Kopie usw. an.
+
+In der folgenden Tabelle finden Sie die Informationen, die Sie bei der Verwendung des angeben müssen `snapdrive snap restore` Befehl.
+
+|===
+| Anforderung/Option | Argument 
+
+
+ a| 
+Legen Sie den Typ der Speichereinheit fest, die Sie wiederherstellen möchten, und geben Sie den Namen der Einheit mit dem entsprechenden Argument ein.
+
+* Wenn Sie ein Host-Volume oder ein Dateisystem angeben, das wiederhergestellt werden soll, wird das angegebene Argument in die Laufwerksgruppe, die es enthält, übersetzt. SnapDrive für UNIX stellt dann die gesamte Festplattengruppe wieder her. SnapDrive für UNIX hängt alle Dateisysteme in den Host-Volumes in diesen Plattengruppen ein und erstellt eine Snapshot-Kopie aller Storage-System-Volumes mit LUNs in diesen Plattengruppen.
+* Wenn Sie eine Dateispezifikation angeben, die ein NFS-Bereitstellungspunkt ist, wird das Argument in eine Verzeichnisstruktur übersetzt. SnapDrive für UNIX stellt nur die Baumstruktur oder Datei des NFS-Verzeichnisses wieder her. Innerhalb der Verzeichnisstruktur löscht SnapDrive für UNIX alle neuen NFS-Dateien oder Verzeichnisse, die Sie nach dem Erstellen der Snapshot Kopie erstellt haben. Dadurch wird sichergestellt, dass der Status des wiederhergestellten Verzeichnisbaums der gleiche ist wie beim Erstellen der Snapshot-Kopie des Baums.
+* Wenn Sie eine LUN wiederherstellen, stellt SnapDrive für UNIX die von Ihnen angegebene LUN wieder her.
+* Wenn Sie ein direkt auf einer LUN erstelltes Dateisystem wiederherstellen, stellt SnapDrive für UNIX die LUN und das Dateisystem wieder her.
+* Wenn die Snapshot Kopie Storage-Einheiten enthält, die mehrere Storage System-Volumes umfassen, können Sie jede Entitäten in dieser Snapshot Kopie wiederherstellen.
+
+
+
+
+ a| 
+LUN (`-lun _file_spec_`)
+ a| 
+_Name der LUN. Sie müssen den Namen des Speichersystems, des Volumes und der LUN angeben._
+
+
+
+ a| 
+Festplattengruppe (`-dg _file_spec_ c`) Oder Volume-Gruppe (`-vg _file_spec_` )
+ a| 
+_Name der Festplatte oder Volume-Gruppe_
+
+
+
+ a| 
+File-System (`-fs _file_spec_` )
+ a| 
+_Name des Dateisystems_
+
+
+
+ a| 
+Datei (`-file _file_spec_` )
+ a| 
+_Name der NFS Datei_
+
+
+
+ a| 
+Host Volume (`-hostvol _file_spec_` ) Oder logisches Volumen (`-lvol _file_spec_` )
+ a| 
+_Name des Host oder logischen Volumes. Sie müssen sowohl das angeforderte Volume als auch die Laufwerksgruppe angeben, die es enthält; z. B. - hostvol dg3/act_Volume._
+
+
+
+ a| 
+Geben Sie den Namen für die Snapshot Kopie an. Wenn einer der `_file_spec_` Argumente, die Sie an der Eingabeaufforderung angeben, sind derzeit auf dem lokalen Host vorhanden, Sie können eine kurze Form des Namens der Snapshot Kopie verwenden.
+
+Wenn keine der `_file_spec_` Argumente sind auf dem Host vorhanden. Sie müssen einen langen Namen der Snapshot-Kopie verwenden, wobei Sie den Namen des Storage-Systems, des Volumes und des Namens der Snapshot-Kopie eingeben. Wenn Sie für die Snapshot Kopie einen langen Namen verwenden und der Pfadname nicht mit den Informationen zum Storage-System und/oder Storage-Volume an der Eingabeaufforderung übereinstimmt, schlägt SnapDrive für UNIX fehl. Nachfolgend das Beispiel eines langen Namens für Snapshot-Kopien: `big_filer:/vol/account_vol:snap_20031115`
+
+Manchmal wird der mit dem gelieferte Wert angegeben `_file_spec_` Auf dem Host ist möglicherweise kein Argument vorhanden. Wenn Sie beispielsweise ein Dateisystem abgehängt oder eine Laufwerksgruppe durch den Export, das Exportieren oder das Zerstören entfernt haben, könnte dieses Dateisystem oder die Laufwerksgruppe immer noch ein Wert für das sein `_file_spec_` Argument: Es würde jedoch als nicht existent angesehen werden. SnapDrive für UNIX kann Snapshot Kopien für einen solchen Einsatz wiederherstellen `_file_spec_`, Aber Sie müssen den Namen der langen Snapshot Kopie verwenden.
+
+Wenn Sie Snapshot Kopien wiederherstellen, die über mehrere Storage-Systeme und Volumes hinweg gelten und keine enthalten `_file_spec_` Argument, SnapDrive für UNIX erlaubt eine Inkonsistenz in der Kommandozeile. Vorhandene Systeme werden nicht zugelassen `_file_spec_` Argumente. Wenn Sie nur eine Storage-Einheit aus einer Snapshot Kopie eines mehreren Storage-Systems wiederherstellen möchten, muss die von Ihnen angegebene Snapshot Kopie sich nicht auf demselben Storage-System wie das Storage-System mit der Storage-Einheit befinden.
+
+Die kurze Form des Namens für dieselbe Snapshot-Kopie würde den Namen des Storage-Systems und des Storage-System-Volumes weglassen, sodass es als angezeigt wird: `_snap_20031115_`
+
+
+
+ a| 
+Der Name der Snapshot Kopie (`-snapname`)
+ a| 
+`_snap_name_`
+
+
+
+ a| 
+Es kann entweder ein Kurzname sein, wie z. B. `_mysnap1_`, Oder einen langen Namen mit dem Namen des Storage-Systems, des Volumes und der Snapshot Kopie.
+
+Im Allgemeinen empfiehlt NetApp, den Kurznamen zu verwenden. Wenn der `_file_spec_` Argument ist nicht vorhanden: Das heißt, es existiert nicht mehr auf dem Host; siehe Erklärung des `_file_spec_` Argument: Dann müssen Sie den langen Namen für die Snapshot Kopie verwenden.
+
+
+
+ a| 
+`-reserve | -noreserve`
+ a| 
+
+
+
+ a| 
+Optional: Falls Sie möchten, dass SnapDrive für UNIX beim Wiederherstellen der Snapshot Kopie eine Speicherplatzreservierung erstellt.
+
+
+
+ a| 
+`-force`
+ a| 
+~
+
+
+
+ a| 
+`-noprompt`
+ a| 
+~
+
+
+
+ a| 
+Optional: Entscheiden Sie, ob Sie eine vorhandene Snapshot Kopie überschreiben möchten. Ohne diese Option stoppt dieser Vorgang, wenn Sie den Namen einer vorhandenen Snapshot Kopie angeben. Wenn Sie diese Option angeben und den Namen einer vorhandenen Snapshot Kopie angeben, werden Sie aufgefordert, zu bestätigen, dass Sie die Snapshot Kopie überschreiben möchten. Um zu verhindern, dass SnapDrive für UNIX die Eingabeaufforderung anzeigt, fügen Sie den ein `-noprompt` Optionen ebenfalls. (Sie müssen immer die einschließen `-force` Option, wenn Sie die Option -noprompt verwenden möchten.)
+
+Sie müssen das einschließen `-force` Option an der Eingabeaufforderung, wenn Sie versuchen, eine Laufwerksgruppe wiederherzustellen, in der sich die Konfiguration seit der letzten Snapshot-Kopie geändert hat. Wenn Sie beispielsweise geändert haben, wie Daten auf den Festplatten verteilt werden, seit Sie eine Snapshot Kopie erstellt haben, müssen Sie die einschließen `-force` Option. Ohne die `-force` Option, dieser Vorgang schlägt fehl. Mit dieser Option bestätigen Sie, dass Sie den Vorgang fortsetzen möchten, es sei denn, Sie fügen die ein `-noprompt` Entsprechende Option.
+
+
+NOTE: Wenn Sie eine LUN hinzugefügt oder gelöscht haben, schlägt der Wiederherstellungsvorgang fehl, auch wenn Sie die einschließen `-force` Option.
+
+
+
+ a| 
+`mntopts`
+ a| 
+~
+
+
+
+ a| 
+*Optional:* Wenn Sie ein Dateisystem erstellen, können Sie folgende Optionen festlegen:
+
+* Nutzung `-mntopts` So legen Sie Optionen fest, die an den Befehl Host Mount übergeben werden sollen (z. B. zum Festlegen des Protokollierungsverhaltens des Host-Systems). Die von Ihnen angegebenen Optionen werden in der Host-Dateisystemtabelle gespeichert. Die zulässigen Optionen hängen vom Typ des Host-Dateisystems ab.
+* Der `_-mntopts_` Argument ist ein Dateisystem `-type` Option, die mit dem Befehl Mount angegeben wird `-o` Flagge. Fügen Sie die -o-Flagge nicht in das ein `_-mntopts_` Argument: Zum Beispiel passiert die Sequenz -mntopts tmplog den String `-o tmplog` Bis zum `mount` Befehl, und fügt den Text tmplog auf eine neue Kommandozeile ein.
++
+
+NOTE: Wenn Sie eine ungültige übergeben `_-mntopts_` Optionen für Storage- und Snap-Vorgänge. SnapDrive für UNIX validiert diese ungültigen Mount-Optionen nicht.
+
+
+
+|===

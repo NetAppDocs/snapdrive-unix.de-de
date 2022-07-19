@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_multiple_operations_manager_servers.html 
+sidebar: sidebar 
+keywords: manager, console, server, operations,configuration 
+summary: SnapDrive für UNIX unterstützt mehrere Operations Manager Konsolenserver. Diese Funktion ist erforderlich, wenn mehrere Speichersysteme von mehr als einem Operations Manager-Konsolenserver verwaltet werden. SnapDrive für UNIX kontaktiert die Operations Manager Konsolenserver in derselben Reihenfolge, in der die Operations Manager Konsolenserver in SnapDrive für UNIX konfiguriert sind. Sie können den Befehl SnapDrive config list ausführen, um die Konfigurationsreihenfolge zu erhalten. 
+---
+= Mehrere Operations Manager Konsolen-Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt mehrere Operations Manager Konsolenserver. Diese Funktion ist erforderlich, wenn mehrere Speichersysteme von mehr als einem Operations Manager-Konsolenserver verwaltet werden. SnapDrive für UNIX kontaktiert die Operations Manager Konsolenserver in derselben Reihenfolge, in der die Operations Manager Konsolenserver in SnapDrive für UNIX konfiguriert sind. Sie können die ausführen `snapdrive config list` Befehl zum Abrufen der Konfigurationsreihenfolge.
+
+Das folgende Beispiel zeigt die Ausgabe für mehrere Operations Manager Konsolenserver:
+
+[listing]
+----
+# snapdrive config list
+username    appliance name     appliance type
+---------------------------------------------
+root        storage_array1     StorageSystem
+root        storage_array2     StorageSystem
+sd-admin    ops_mngr_server1   DFM
+sd-admin    ops_mngr_server2   DFM
+----
+Im vorhergehenden Beispiel wird Storage_array1 über OPS_mngr_server1 verwaltet und Storage_array2 wird über OPS_mngr_server2 verwaltet. In diesem Beispiel wurde zuerst der SnapDrive für UNIX-Kontakt OPS_mngr_server1 verwendet. Wenn OPS_mngr_server1 den Zugriff nicht bestimmen kann, verwendet SnapDrive für UNIX-Kontakte OPS_mngr_server2.
+
+SnapDrive für UNIX kontaktiert nur unter den folgenden Bedingungen die zweite Operations Manager-Konsole:
+
+* Wenn die erste Operations Manager-Konsole den Zugriff nicht bestimmen kann. Dieser Fall kann eintreten, weil die erste Operations Manager Konsole das Storage-System nicht verwaltet.
+* Wenn die erste Operations Manager-Konsole ausfällt.
+

@@ -1,0 +1,74 @@
+---
+permalink: aix/concept_connecting_to_multiple_filespecs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, multiple, filspec 
+summary: Sie können eine Verbindung zu mehreren Datentecs herstellen, die sich in einem Volume befinden. Im folgenden Beispiel wird beschrieben, wie Sie diesen Vorgang abschließen können. 
+---
+= Verbindung mit mehreren Dateipecs wird hergestellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Verbindung zu mehreren Datentecs herstellen, die sich in einem Volume befinden. Im folgenden Beispiel wird beschrieben, wie Sie diesen Vorgang abschließen können.
+
+Für die Erstellung von eingeschränktem FlexClone müssen Sie die festlegen `san-clone-method=unrestricted` Im `snapdrive.conf` Datei oder Geben `-clone unrestricted` Bevor Sie eine Verbindung zu mehreren Dateiepec herstellen können. In diesem Beispiel werden die Ergebnisse angezeigt, wenn Sie eine Verbindung zu mehreren Dateiepec herstellen möchten `/mnt/fs_1` Und `/mnt/fs_2` In Snap1, die sich im Volume vol1 befinden.
+
+Das Layout von /mnt/fs_1 und /mnt/fs_2 wird im folgenden angegeben:
+
+[listing]
+----
+ # snapdrive storage show -fs /mnt/fs_1 /mnt/fs_2 -capabilities
+raw device: /dev/sdc1   mount point: /mnt/fs_1 (persistent) fstype jfs2
+allowed operations: all
+
+device filename      adapter     path     size    proto   state     clone     lun path           backing snapshot
+----------------     -------     ----    ------   -----   -----    -------  ----------------     ----------------
+/dev/sdc                -         P       100m    iscsi   online      No    homer:/vol/vol1/lun1        -
+
+raw device: /dev/sdo1   mount point: /mnt/fs_2 (persistent) fstype jfs2
+allowed operations: all
+
+device filename     adapter path    size     proto   state   clone    lun path               backing snapshot
+----------------    ------- ----    ----    -------  -----   -----    --------               ----------------
+/dev/sdo               -     P      100m     iscsi   online   No      homer:/vol/vol1/lun2        -
+----
+Hier hat der Benutzer Snapshot Snap2 verwendet, das Anwendungs-konsistente Snapshots von enthält `/mnt/fs1` Und `/mnt/fs2` Für Snap Connect.
+
+[listing]
+----
+ # snapdrive snap connect -fs /mnt/fs_1 -fs /mnt/fs_2 -snapname homer:/vol/vol1:snap2 -autorename -clone unrestricted
+
+ connecting /mnt/fs_1:
+        creating unrestricted volume clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot ... success
+
+        mapping new lun(s) ... done
+
+ connecting /mnt/fs_2:
+
+        mapping new lun(s) ... done
+        discovering new lun(s) ... done
+Successfully connected to snapshot homer:/vol/vol1:snap2
+        file system: /mnt/fs_1_0
+        file system: /mnt/fs_2_0
+----
+Hier hat SnapDrive für UNIX einen einzigen uneingeschränkten FlexClone erstellt `Snapdrive_vol1_0_volume_clone_from_snap2_Snapshot` Von Snapshot Snap2. Dies wird dann mit LUN testlun1 und testlun2 verbunden, um ein geklontes Host-Dateisystem zu erstellen `/mnt/fs1_0` Und `/mnt/fs2_0` Jeweils.
+
+[listing]
+----
+# snapdrive storage show -fs /mnt/fs_1_0 /mnt/fs_2_0 -capabilities
+raw device: /dev/sde1   mount point: /mnt/fs_1_0 (persistent) fstype jfs2
+allowed operations: all
+
+device filename      adapter   path  size    proto   state   clone      lun path                                                         backing snapshot
+----------------      -------  ----  ----    -----   -----   -----       --------                                                        ----------------
+/dev/sde                 -      P    100m    iscsi   online  flex-clone  homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun1   vol1:snap2
+
+raw device: /dev/sdac1  mount point: /mnt/fs_2_0 (persistent) fstype jfs2
+allowed operations: all
+
+device filename      adapter  path    size    proto   state   clone      lun path                                                            backing snapshot
+----------------      -------  ----    ----    -----   -----   -----      --------                                                           ----------------
+/dev/sdac                 -     P      100m    iscsi   online  flex-clone homer:/vol/Snapdrive_vol1_volume_clone_from_snap2_snapshot/lun2     vol1:snap2
+----

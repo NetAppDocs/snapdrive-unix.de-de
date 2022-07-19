@@ -1,0 +1,30 @@
+---
+permalink: aix/task_creating_lunswithout_hostentities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, host, create 
+summary: Sie können SnapDrive für UNIX Befehle verwenden, um Storage bereitzustellen, indem Sie eine LUN auf dem Storage-System erstellen. 
+---
+= Erstellen von LUNs ohne Host-Einheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können SnapDrive für UNIX Befehle verwenden, um Storage bereitzustellen, indem Sie eine LUN auf dem Storage-System erstellen.
+
+.Schritte
+. Geben Sie an der Befehlszeilenschnittstelle den folgenden Befehl ein:
++
+`*snapdrive storage create -lun _long_lun_name_ -lunsize _[lun_name ...]_ -lunsize__size__ [{-reserve | -noreserve}] -igroup ig_name [ig_name ...]]_ig_name [ig_name ...]]_*`
+
++
+SnapDrive für UNIX erstellt die LUNs, die Sie angeben.
+
+
+
+
+
+== Beispiel: Erstellen von drei 10 GB LUNs auf einem Storage-System
+
+`snapdrive storage create -lun acctfiler:/vol/vol1/lunA lunB lunC - lunsize 10g`

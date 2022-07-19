@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_guidelines_for_storage_connection_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, host, cluster 
+summary: Vor Verwendung des SnapDrive Storage Connect-Befehls in einer Host-Cluster-Umgebung müssen Sie einige Richtlinien befolgen. 
+---
+= Richtlinien für die Storage-Verbindung in einer Host-Cluster-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einige Richtlinien befolgen, bevor Sie die verwenden `snapdrive storage connect` Befehl in einer Host-Cluster-Umgebung.
+
+* Wenn der Host-Cluster-Konfiguration ein neuer Knoten hinzugefügt wird, der eine freigegebene Laufwerksgruppe oder ein Dateisystem verwendet, verwenden Sie die `snapdrive storage connect -devicetype shared` Befehl. Sie können den SnapDrive Storage Connect-Vorgang von einem beliebigen Node im Host-Cluster aus ausführen.
+* Damit eine Speicherverbindung erfolgreich ist, sollte Folgendes nicht passieren:
++
+** Die Speichereinheiten sollten auf keinem Node im Host-Cluster vorhanden sein.
+** Die LUNs sollten keinem Node im Host-Cluster zugeordnet sein.
+
+
+* Sie können auf einem bestimmten Node eine Verbindung mit einer Storage-Einheit herstellen, indem Sie das verwenden `-devicetype dedicated` Option oder durch Auslassen des `-devicetype` Option in der Befehlssyntax, da der Standardwert dediziert ist.
+* Host-Cluster-weite Speicherverbindung des Dateisystems wird auf Festplattengruppen unterstützt, die Veritas Volume Manager mit Veritas Dateisystem (VxFS) verwenden. Dieser Vorgang unterstützt bei RAW-LUNs nicht, das heißt, der `-nolvm` Option wird nicht unterstützt.
+* Der `-igroup` Die Option wird in nicht unterstützt `snapdrive storage connect` Befehl.
+* Die Speicherverbindung schlägt fehl, wenn eine der folgenden Optionen zutrifft:
++
+** Wenn während des Verbindungsvorgangs einer Speichereinheit ein Fehler auftritt. SnapDrive für UNIX führt diesen Vorgang vom Master-Knoten in einem Host-Cluster aus. Vor dem Erstellen der Shared Storage-Einheiten erstellt er LUNs, ordnet die LUNs dem Master-Node zu und ordnet sie anschließend allen nicht Master-Nodes zu. SnapDrive für UNIX erstellt und verwaltet die Initiatorgruppen für alle Nodes intern.
+** Wenn ein Node im Host-Cluster vor dem Start von Clustered Volume Manager (CVM) heruntergefahren und neu gestartet wird, sollte die von den LUNs verwendete gemeinsame Festplattengruppe auf dem Node erkannt werden. Standardmäßig sind die LUNs sichtbar, wenn die FC-Port-Adresse nicht geändert wird. Andernfalls müssen die LUNs mit dem zugeordnet werden `snapdrive storage connect` Befehl.
+
+
+* Sie können den Vorgang zur Verbindung von gemeinsam genutztem Storage mit Speichereinheiten auf einer LUN durchführen, die mit dedizierten Daten von Speichereinheiten erstellt und anschließend getrennt wird, nur wenn die Speichereinheiten nicht auf einem Host-Cluster-Node vorhanden sind.
+* Sie können den dedizierten Vorgang zur Verbindung von Storage mit Storage-Einheiten auf einer LUN mit Metadaten mit gemeinsam genutzten Storage-Einheiten durchführen, nur wenn der aktuelle Node nicht zum Host-Cluster gehört oder die Speichereinheiten nicht auf dem Host-Cluster vorhanden sind.
+

@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/concept_command_to_use_todisplay_availablestorage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, display, storage, directory, file 
+summary: In der SnapDrive-Speichershow oder in der SnapDrive-Speicherliste werden LUNs oder NFS-Verzeichnisbäume angezeigt, die einer oder mehreren Speichereinheiten zugrunde liegen. Mit dem befehl SnapDrive Storage show können Sie die Informationen in einer Snapshot-Kopie einer Laufwerksgruppe, eines Host-Volumes, eines Dateisystems oder eines NFS-Verzeichnisbaums erhalten. 
+---
+= Befehl zum Anzeigen von verfügbarem Speicher
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `snapdrive storage show` Oder `snapdrive storage list` Zeigen Sie LUNs oder NFS-Verzeichnisbäume an, die einer oder mehreren Speichereinheiten zugrunde liegen. Sie können das verwenden `snapdrive storage show` Befehl, um zu erfahren, was sich in einer Snapshot Kopie einer Laufwerksgruppe, eines Host-Volumes, eines Dateisystems oder eines NFS-Verzeichnisbaums befindet.
+
+Sie können mit diesen Befehlen die folgenden Informationen anzeigen:
+
+* LUNs sind für bestimmte Storage-Systeme oder Storage-System-Volumes verfügbar
+* LUNs, die mit Dateisystemen, Host-Volumes oder Festplattengruppen verknüpft sind
+* NFS-Mount-Punkte und Verzeichnisbäume
+* LUNs, die einem bestimmten Host bekannt sind, und alle LVM-Einheiten, die die LUNs enthalten
+* Geräte, die einem bestimmten Host bekannt sind
+* Ressourcen auf den gemeinsam genutzten und dedizierten Hosts
+
+
+
+NOTE: Sie können beides verwenden `snapdrive storage show` Oder `snapdrive storage list` An der Kommandozeile.

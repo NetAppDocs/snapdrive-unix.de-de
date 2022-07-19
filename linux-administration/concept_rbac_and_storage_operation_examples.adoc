@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_rbac_and_storage_operation_examples.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rbac, storage, operation, example, access, authorization 
+summary: Dank der rollenbasierten Zugriffssteuerung können Storage-Vorgänge abhängig von den Ihnen zugewiesenen Funktionen durchgeführt werden. Sie erhalten eine Fehlermeldung, wenn Sie nicht über die richtigen Funktionen für den Speichervorgang verfügen. 
+---
+= Beispiele für RBAC und Storage-Vorgänge
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dank der rollenbasierten Zugriffssteuerung können Storage-Vorgänge abhängig von den Ihnen zugewiesenen Funktionen durchgeführt werden. Sie erhalten eine Fehlermeldung, wenn Sie nicht über die richtigen Funktionen für den Speichervorgang verfügen.

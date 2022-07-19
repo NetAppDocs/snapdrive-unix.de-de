@@ -1,0 +1,33 @@
+---
+permalink: solaris/task_specifying_login_information_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, information, vserver, specify 
+summary: Sie müssen die Benutzeranmeldedaten für den Vserver angeben. Je nachdem, was Sie beim Einrichten des Vserver angegeben haben, muss jeder Vserver den konfigurierten Vserver Benutzernamen verwenden. Wenn sich Ihr Vserver Name ändert, müssen Sie sicherstellen, dass der neue Vserver Name in SnapDrive für UNIX konfiguriert ist. 
+---
+= Festlegen von Anmeldeinformationen für den Vserver
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Benutzeranmeldedaten für den Vserver angeben. Je nachdem, was Sie beim Einrichten des Vserver angegeben haben, muss jeder Vserver den konfigurierten Vserver Benutzernamen verwenden. Wenn sich Ihr Vserver Name ändert, müssen Sie sicherstellen, dass der neue Vserver Name in SnapDrive für UNIX konfiguriert ist.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config set _user_name filername_ [_filername..._]*`
+
++
+** `_user_name_` Ist der Benutzername, der beim ersten Einrichten für den Vserver angegeben wurde. Der Standardbenutzer ist vsadmin. Filername ist der Vserver Name.
+** `_filer_name_` Ermöglicht Ihnen die Eingabe mehrerer Vserver auf einer Kommandozeile, wenn alle Benutzer denselben Benutzernamen oder dasselbe Passwort haben. Sie müssen mindestens einen Vserver Namen eingeben.
++
+[listing]
+----
+# snapdrive config set vsadmin clstr-vs2
+Password for vsadmin:
+Retype password:
+----
+
+
+

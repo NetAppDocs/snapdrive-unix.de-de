@@ -1,0 +1,156 @@
+---
+permalink: linux-administration/task_steps_to_cleanup_the_mapped_rdm_luns_in_the_guest_os_or_esx_server.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rdm, lun, esx, server, clean 
+summary: Sie müssen die RDM LUNs im Gastbetriebssystem sowie auch auf ESX-Server bereinigen. 
+---
+= Bereinigung der zugeordneten RDM LUNs im Gastbetriebssystem und ESX-Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die RDM LUNs im Gastbetriebssystem sowie auch auf ESX-Server bereinigen.
+
+
+
+== Bereinigung der zugeordneten RDM LUNs im Gastbetriebssystem
+
+[role="lead"]
+Die folgenden Schritte müssen im Gastbetriebssystem ausgeführt werden.
+
+.Schritte
+. Wählen Sie im Navigationsbereich *vCenter* die virtuelle Maschine aus, in der die RDM-Zuordnung erfolgt ist.
+. Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine, und schalten Sie Ihr Gastbetriebssystem aus.
+. Klicken Sie mit der rechten Maustaste auf die virtuelle Maschine und wählen Sie *Einstellungen bearbeiten*.
++
+Das Dialogfeld *Virtual Machine Properties* wird angezeigt.
+
+. Wählen Sie im Dialogfeld *Virtual Machine Properties* die Registerkarte *Hardware* aus.
++
+Sie finden den gesamten RDM zugeordneten Eintrag als RAW LUN für jeden RDM Eintrag.
+
+. Wählen Sie den RDM-Eintrag und klicken Sie auf *Entfernen*.
++
+Die *Removal Options* wird im rechten Fenster angezeigt.
+
+. Wählen Sie unter *Removal Options* *von virtueller Maschine entfernen und löschen Sie Dateien von der Festplatte*.
+. Klicken Sie auf *OK*.
++
+Alle RDM-zugeordneten Einträge werden vom Gastbetriebssystem entfernt.
+
++
+Nachdem Sie RDM LUN-Einträge aus dem Gastbetriebssystem entfernt haben, müssen Sie sie vom ESX-Server entfernen.
+
+
+
+
+
+== Bereinigungen der zugeordneten RDM LUNs auf dem ESX-Server
+
+[role="lead"]
+Die folgenden Schritte müssen nur vom ESX-Server-Administrator ausgeführt werden, um alle RDM-LUN-Einträge im ESX-Server vollständig zu bereinigen.
+
+Schalten Sie die virtuelle Maschine aus, bevor Sie das Verzeichnis der virtuellen Maschine bearbeiten.
+
+.Schritte
+. Wechseln Sie zum Verzeichnis der virtuellen Maschine.
+. Wechseln Sie in das Verzeichnis `cd /vmfs/volumes/Data store path`.
++
+[listing]
+----
+# ls -l
+total 1024
+drwxr-xr-t 1 root root 1540 Apr 19 23:54 4bc702de-fa7ec190-992b-001a6496f353
+lrwxr-xr-x 1 root root   35 May 11 07:56 local_storage (1) -> 4bc702de-fa7ec190-992b-001a6496f353
+----
++
+Alle Dateien und Verzeichnisse sind hier aufgeführt.
+
+. Wählen Sie den entsprechenden Datenspeicher aus, in dem sich die Virtual Machines befinden.
+. Ändern Sie das Verzeichnis in den Datenspeicher.
++
+Das Verzeichnis der virtuellen Maschine wird hier angezeigt.
+
+. Ändern Sie das Verzeichnis zu einer virtuellen Maschine, in der Sie die RDM LUN-Zuordnung bereinigen möchten.
++
+Alle Dateien sind im Verzeichnis der Virtual Machines aufgeführt.
+
+. Alle löschen `vmdk` Dateien, die SMVI-String eingebettet sind. Alternativ können Sie auch die identifizieren `vmdk` Datei mit dem LUN-Namen.
++
+Alternativ können Sie auch die identifizieren `vmdk` Datei mit dem LUN-Namen.
+
++
+Wenn Sie eine haben `vmdk` Datei des LUN-Namens als `_rdm1_`, Nur löschen `_rhel4u8-141-232_SMVI_vol_esx3u5_rdm1-rdmp.vmdk_` Und `_rhel4u8-141-232_SMVI_vol_esx3u5_rdm1.vmdk_` Dateien:
+
++
+Löschen `_vmlnx5U4-197-23_SMVI_10.72.197.93_C4koV4XzK2HT_22-rdmp.vmdk_` Und `_vmlnx5U4-197-23_SMVI_10.72.197.93_C4koV4XzK2HT_22.vmdk vmlnx5U4-197-23_SMVI_10.72.197.93_C4koV4YG4NuD_53-rdmp.vmdk_` Dateien:
+
+. Entfernen Sie die `vmdk` Dateieinträge aus der Konfigurationsdatei der virtuellen Maschine (`vmx`) Auch.
++
+Nachfolgend ein Beispiel zum Entfernen `vmdk` Dateieinträge aus dem `vmx` Datei:
+
++
+|===
+| *Name* | *Beschreibung* 
+
+
+ a| 
+`_rhel4u8-141-232_`
+ a| 
+Name der virtuellen Maschine
+
+
+
+ a| 
+`_SMVI_`
+ a| 
+Zeigt an, dass diese VMDK-Datei von SnapManager für den virtuellen Infrastrukturserver erstellt wird
+
+
+
+ a| 
+`_vol_esx3u5_`
+ a| 
+Name des Volumes, in dem die LUN erstellt wird
+
+
+
+ a| 
+`_rdm1_`
+ a| 
+Der Name der LUN
+
+
+
+ a| 
+`_rdmp_`
+ a| 
+Bedeutet, dass es sich hierbei um eine physisch kompatible RDM LUN handelt
+
+
+
+ a| 
+`_vmdk_`
+ a| 
+Datenträgerdatei Der Virtuellen Maschine
+
+|===
++
+[listing]
+----
+[root@ rhel4u8-141-232]# vi rhel4u8-141-232.vmx
+		:
+		:
+scsi3:1.fileName = "rhel4u8-141-232_SMVI__vol_esx3u5_rdm1.vmdk"
+scsi3:1.mode = "independent-persistent"
+scsi3:1.ctkEnabled = "FALSE"
+scsi3:1.deviceType = "scsi-hardDisk"
+scsi3:1.present = "TRUE"
+scsi3:1.redo = ""
+----
+. Löschen Sie die Einträge wie im vorhergehenden Beispiel angegeben, einschließlich Anführungszeichen und Kommas mit Ausnahme des `_scsi3:1.present_` Eintrag, zu dem Sie wechseln sollten `_FALSE_` Von `_TRUE_`.
+. Speichern und beenden Sie die Datei.
+. Schalten Sie die virtuelle Maschine ein.
+

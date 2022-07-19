@@ -1,0 +1,36 @@
+---
+permalink: solaris/concept_how_to_manage_snapshot_copies_of_lvm_vxvm_raw_devices_and_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, vxvm, raw, nfs, device, copy 
+summary: Sie können SnapDrive Befehle verwenden, um Snapshot Kopien von VxVM, RAW-Geräten und NFS-Einheiten zu erstellen, wiederherzustellen und zu verwalten. 
+---
+= Wie man Snapshot Kopien von VxVM, RAW-Geräten und NFS-Einheiten verwaltet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können SnapDrive Befehle verwenden, um Snapshot Kopien von VxVM, RAW-Geräten und NFS-Einheiten zu erstellen, wiederherzustellen und zu verwalten.
+
+Sie müssen die Befehle auf dem Host ausführen, um Snapshot Kopien von Storage-Einheiten zu erstellen, wiederherzustellen und zu managen.
+
+* Volume Manager-Einheiten
++
+Die Volume-Manager-Einheiten sind Festplattengruppen mit Host-Volumes und Dateisystemen, die Sie mit dem Host Volume Manager erstellt haben.
+
+* Roheinheiten
++
+Bei den RAW-Einheiten handelt es sich entweder um LUNs oder LUNs, die Dateisysteme enthalten, ohne Volumes oder Festplattengruppen zu erstellen. Sie werden direkt dem Host zugeordnet.
+
+* NFS Einheiten
++
+Bei den NFS-Entitäten handelt es sich um NFS-Dateien und Verzeichnisbäume.
+
++
+
+NOTE: Host-Cluster-Systeme unterstützen keine NFS-Einheiten.
+
+
+
+Die von Ihnen erstellte Snapshot Kopie kann auf mehreren Storage-Systemen und Storage-System-Volumes bestehen. SnapDrive überprüft die Lese- oder Schreibberechtigung für die Storage-Einheiten in der Snapshot Kopie, um sicherzustellen, dass alle Daten der Snapshot Kopie absturzkonsistent sind. SnapDrive erstellt keine Snapshot Kopie, es sei denn, die Daten sind absturzkonsistent.

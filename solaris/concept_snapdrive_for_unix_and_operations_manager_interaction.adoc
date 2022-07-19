@@ -1,0 +1,33 @@
+---
+permalink: solaris/concept_snapdrive_for_unix_and_operations_manager_interaction.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, manager, console, operations 
+summary: 'Die Nutzung rollenbasierter Zugriffssteuerung \(RBAC\) hängt von der Operations Manager Konsoleninfrastruktur ab. Der Administrator der Operations Manager-Konsole muss Benutzernamen für SnapDrive für die Verwendung von UNIX erstellen. Alle Storage-Betriebsanfragen werden zuerst an die Operations Manager Konsole gesendet, um eine Zugriffsprüfung zu ermöglichen. Nachdem die Operations Manager Konsole einen Storage-Vorgang von einem bestimmten SnapDrive Benutzer überprüft hat, wird der Vorgang abgeschlossen.' 
+---
+= Interaktion von SnapDrive für UNIX und der Operations Manager Konsole
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Nutzung rollenbasierter Zugriffssteuerung (Role Based Access Control, RBAC) hängt von der Operations Manager Konsoleninfrastruktur ab. Der Administrator der Operations Manager-Konsole muss Benutzernamen für SnapDrive für die Verwendung von UNIX erstellen. Alle Storage-Betriebsanfragen werden zuerst an die Operations Manager Konsole gesendet, um eine Zugriffsprüfung zu ermöglichen. Nachdem die Operations Manager Konsole einen Storage-Vorgang von einem bestimmten SnapDrive Benutzer überprüft hat, wird der Vorgang abgeschlossen.
+
+Im folgenden Diagramm sind die gesamten RBAC-Funktionen für Storage-Vorgänge dargestellt.
+
+image::../media/sdu_rbac_process_01_solaris.gif[sdu rbac Prozess 01 solaris]
+
+. Operations Manager-Konsolenadministrator fügt sd-Admin-Benutzer auf der Operations Manager-Konsole hinzu.
+. Operations Manager Console Administrator erstellt sd-Hostname-Benutzer auf dem Speichersystem.
+. Der Administrator der Operations Manager-Konsole sendet Anmeldeinformationen für sd-Admin und sd-Hostname an SnapDrive für UNIX-Administratoren.
+. Der SnapDrive-Administrator konfiguriert SnapDrive mit den erhaltenen Benutzeranmeldeinformationen.
+. Die Operations Manager-Konsole führt eine Zugriffsprüfung für SnapDrive für UNIX mithilfe der vom SnapDrive-Administrator hinzugefügten Benutzeranmeldeinformationen durch.
+. Nach der Authentifizierung des SnapDrive-Benutzers kann der Benutzer eine Verbindung zum Speichersystem herstellen.
+
+
+Wenn ein SnapDrive-Benutzer einige Speicheroperationen durchführen möchte, gibt der Benutzer den entsprechenden Befehl an der Kommandozeile aus. Die Anforderung wird an die Operations Manager Konsole gesendet, um eine Zugriffsprüfung zu ermöglichen. Die Operations Manager-Konsole überprüft, ob der angeforderte Benutzer über die entsprechenden Berechtigungen zum Durchführen des SnapDrive-Vorgangs verfügt. Das Ergebnis der Zugriffsüberprüfung wird an SnapDrive zurückgegeben. Je nach Ergebnis darf der Benutzer die Speichervorgänge auf dem Storage-System ausführen.
+
+Wenn der Benutzer nach der Zugriffsprüfung verifiziert wird, stellt der Benutzer eine Verbindung zum Speichersystem als sd-Hostname her.
+
+
+NOTE: sd-Hostname und sd-Admin sind die empfohlenen Benutzernamen. Sie können SnapDrive für UNIX mit anderen Benutzernamen konfigurieren.

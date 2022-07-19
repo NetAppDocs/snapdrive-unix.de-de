@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_login_information_for_vserver.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, vserver, security 
+summary: Dank Benutzername und Passwort kann SnapDrive für UNIX auf den Vserver zugreifen. Es bietet auch Sicherheit, da Sie zusätzlich zu der Anmeldung als vsadmin, müssen Sie SnapDrive für UNIX ausführen und geben Sie den richtigen Benutzernamen und das richtige Passwort, wenn Sie dazu aufgefordert werden. 
+---
+= Login-Informationen für den Vserver
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dank Benutzername und Passwort kann SnapDrive für UNIX auf den Vserver zugreifen. Es bietet auch Sicherheit, da Sie zusätzlich zu der Anmeldung als vsadmin, müssen Sie SnapDrive für UNIX ausführen und geben Sie den richtigen Benutzernamen und das richtige Passwort, wenn Sie dazu aufgefordert werden.

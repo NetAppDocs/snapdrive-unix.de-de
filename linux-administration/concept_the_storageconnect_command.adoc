@@ -1,0 +1,23 @@
+---
+permalink: linux-administration/concept_the_storageconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, command, host, lun 
+summary: Der befehl SnapDrive Storage connect verbindet Speichereinheiten mit dem Host. Mit diesem Befehl können Sie LUNs und Speichereinheiten mit dem Host verbinden 
+---
+= Der Befehl Storage connect
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `snapdrive storage connect` Befehl verbindet Speichereinheiten mit dem Host. Mit diesem Befehl können Sie LUNs und Speichereinheiten mit dem Host verbinden
+
+Verwenden Sie die `snapdrive storage connect` Befehl zum Herstellen einer Verbindung mit:
+
+* LUNs
+* Ein direkt auf einer LUN erstelltes Dateisystem
+* Auf LUNs erstellte Festplattengruppen, Host Volumes und Filesysteme
+
+
+Wenn Sie das eingeben `snapdrive storage connect` Befehl zum Verbinden von LUNs mit dem Host führt SnapDrive für UNIX die notwendige Erkennung und Zuordnung durch. Der Inhalt der LUN wird nicht geändert.

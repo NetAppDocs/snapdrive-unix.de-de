@@ -1,0 +1,27 @@
+---
+permalink: aix/concept_methods_fordisconnectingstorage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, method, disconnect, storage 
+summary: Damit die Verbindung zum Storage leichter getrennt werden kann, bietet SnapDrive für UNIX verschiedene Formate für den SnapDrive Storage Trennen Befehl. 
+---
+= Methoden zum Trennen der Speicherung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Trennung des Storage zu vereinfachen, bietet SnapDrive für UNIX verschiedene Formate für die `snapdrive storage disconnect` Befehl.
+
+Dies liegt daran, dass die Trennvorgänge in die folgenden allgemeinen Kategorien fallen:
+
+* Geben Sie die LUNs an, die Sie vom Host trennen möchten.
+* Angeben eines Dateisystems, das direkt auf einer LUN erstellt wird, die Sie vom Host trennen möchten.
++
+SnapDrive für UNIX trennt die Verbindung zwischen Dateisystem und LUN.
+
+* Festlegen einer Laufwerksgruppe, eines Host-Volume oder eines Dateisystems, das sich auf LUNs befindet, die vom Host getrennt werden sollen.
++
+SnapDrive für UNIX trennt die Verbindung aller LUNs, die dieser Einheit zugeordnet sind, und entfernt auch Zuordnungen für das Dateisystem, das Host-Volume und die Laufwerksgruppe, aus der Sie die Einheit getrennt haben.
+
+

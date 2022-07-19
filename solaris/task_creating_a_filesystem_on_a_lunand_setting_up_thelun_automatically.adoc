@@ -1,0 +1,62 @@
+---
+permalink: solaris/task_creating_a_filesystem_on_a_lunand_setting_up_thelun_automatically.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, file, lun, system 
+summary: Sie können ein Dateisystem auf einer LUN mit SnapDrive für UNIX erstellen. SnapDrive für UNIX erstellt automatisch die zugehörige LUN. 
+---
+= Erstellen eines Dateisystems auf einer LUN und automatische Einrichtung der LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Dateisystem auf einer LUN mit SnapDrive für UNIX erstellen. SnapDrive für UNIX erstellt automatisch die zugehörige LUN.
+
+.Schritte
+. Geben Sie an der Befehlszeile den folgenden Befehl ein:
++
+`*snapdrive storage create -fs _file_spec_ -nolvm [-fstype type] [-fsopts options] [-mntopts options] [-nopersist] -filervol _long_filer_path_ -lunsize _size_ [-igroup _ig_name[ig_name ...]]_ [{-reserve | -noreserve }]*`
+
++
+SnapDrive für UNIX erstellt das Dateisystem, das Sie angeben und erstellt eine LUN für sie auf dem von Ihnen angegebenen Speichersystem. Er führt alle Aufgaben aus, die mit der Vorbereitung und Ermittlung des Hosts für die LUNs verbunden sind, sowie das Zuordnen und Verbinden der LUNs mit der Host-Einheit.
+
+
+
+
+
+== Beispiele:
+
+*Erstellen eines 100-MB-Dateisystems direkt auf einem LUN:*
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/acct1 -filervol acctfiler:/vol/vol1 -lunsize 100m -nolvm
+----
+*Erstellen eines Dateisystems auf einer RAW LUN ohne Volume Manager:*
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/vxfs2 -fstype vxfs -lun
+snoopy:/vol/vol1/lunVxvm2 -lunsize 50m -nolvm
+LUN snoopy:/vol/vol1/lunVxvm2 ... created
+mapping new lun(s) ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- snoopy:/vol/vol1/lunVxvm2 => /dev/vx/dmp/Disk_1
+file system /mnt/vxfs2 created
+----
+*Erstellen eines Dateisystems auf einem RDM LUN ohne Volume-Manager:*
+
+[listing]
+----
+# snapdrive storage create -fs /mnt/vxfs2 -fstype vxfs -lun
+snoopy:/vol/vol1/lunVxvm2 -lunsize 50m -nolvm
+LUN snoopy:/vol/vol1/lunVxvm2 ... created
+mapping new lun(s) ... done
+exporting new lun(s) ... done
+discovering new lun(s) ... done
+LUN to device file mappings:
+- snoopy:/vol/vol1/lunVxvm2 => /dev/vx/dmp/Disk_1
+file system /mnt/vxfs2 created
+----

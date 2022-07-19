@@ -1,0 +1,62 @@
+---
+permalink: linux-administration/task_estimating_the_storage_space_to_split_a_volume_clone.html 
+sidebar: sidebar 
+keywords: clone, split, snap, snapdrive, volume, estimate 
+summary: 'Die Schätzung für die Teilung von Klonen hilft Ihnen, den erforderlichen Speicherplatz \ (in MB\) zu schätzen, um einen Volume-Klon zu teilen. Je nach der von SnapDrive für UNIX bereitgestellten Schätzung für die Klontrennung können Sie die Verfügbarkeit bestimmen, um einen Volume-Klon zu teilen.' 
+---
+= Schätzung des Speicherplatzes für die Aufteilung eines Volume-Klons
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Schätzung für die Aufteilung des Klons hilft Ihnen, den erforderlichen Speicherplatz (in MB) zu schätzen, um einen Volume-Klon aufzuteilen. Je nach der von SnapDrive für UNIX bereitgestellten Schätzung für die Klontrennung können Sie die Verfügbarkeit bestimmen, um einen Volume-Klon zu teilen.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um den erforderlichen Speicherplatz zum Teilen eines Volume-Klons zu schätzen.
++
+`*snapdrive clone split estimate [-lun] _long_lun_name_ [long___lun_name__...] | [{-dg | -vg | -fs | -hostvol | -lvol} _file_spe_ [_file_spec_...]] | [-snapname _long_snap_name_] {-volclone|-lunclone}] [-v | -verbose] [-dump | -dumpall]*`
+
++
+Mit diesem Vorgang werden die folgenden Informationen angezeigt:
+
++
+** Ressourcenname
+** Container: Aggregat für einen FlexClone
+** Erforderlicher Speicherplatz: Platz, der für die Aufteilung des Volume-Klons erforderlich ist
+** Verfügbarer Platz - verfügbarer Platz auf dem Container
+** Speicherstatus: Gibt die Platzverfügbarkeit für eine Aufteilung des Volume-Klons an
+** Owned Space: Speicherplatz, der vom Volume-Klon belegt wird
+** Gemeinsam genutzter Speicherplatz: Speicherplatz, der vom Volume-Klon zusammen mit dem übergeordneten Volume belegt wird
+
+
++
+Der `Owned Space` Und `Shared Space` Wird angezeigt, wenn Sie verwenden `-verbose` Option.
+
+
+
+Im folgenden Beispiel wird der Speicherplatz zum Aufteilen eines Volume-Klons geschätzt.
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -fs /mnt/my_mnt2
+Resource     Container  Required Available  Storage
+                        Space(MB) Space(MB) Status
+/mnt/my_mnt1  f3050-220  400      61500    AVAILABLE
+              -111:aggr0
+/mnt/my_mnt2  f3050-220  3292     1129     NOT AVAILABLE
+              -112:aggr1
+----
+SnapDrive für UNIX bestimmt bei jeder Spezifikation den erforderlichen Speicherplatz, der im Storage-System zum Teilen eines Volume-Klons verfügbar ist. Hier, der `/mnt/my_mnt1` Die Dateispezifikation verfügt über den erforderlichen Speicherplatz zum Aufteilen, und daher wird der Speicherstatus als VERFÜGBAR angezeigt. Dagegen der `/mnt/my_mnt2` Die Dateispezifikation verfügt nicht über den erforderlichen Speicherplatz zum Teilen, sodass der Speicherstatus als NICHT VERFÜGBAR angezeigt wird.
+
+Im Folgenden finden Sie ein Beispiel für die Verwendung von `-verbose` Option. Alternativ können Sie auch verwenden `-v` Option.
+
+[listing]
+----
+# snapdrive clone split estimate -fs /mnt/my_mnt1 -verbose
+Resource    Container Owned    Shared   Required Available Storage
+                      Space(MB)Space(MB)Space(MB)Space(MB) Status
+/mnt/my_mnt1 f3050-220 32365  403      403     55875 AVAILABLE
+             -111:aggr0
+----

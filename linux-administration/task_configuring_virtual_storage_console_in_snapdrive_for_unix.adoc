@@ -1,0 +1,42 @@
+---
+permalink: linux-administration/task_configuring_virtual_storage_console_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configure, storage, virtual, console 
+summary: Sie müssen die virtuelle Speicherkonsole konfigurieren, um auf das Speichersystem zugreifen zu können, und die dem Speichersystem zugewiesenen Anmeldenamen und Passwörter verwenden. 
+---
+= Konfiguration der Virtual Storage Console für SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die virtuelle Speicherkonsole konfigurieren, um auf das Speichersystem zugreifen zu können, und die dem Speichersystem zugewiesenen Anmeldenamen und Passwörter verwenden.
+
+Stellen Sie sicher, dass Virtual Storage Console in dem Windows-System installiert ist, auf dem sich VMware vCenter befindet.
+
+. Klicken Sie in der *vCenter Home*-Ansicht unter *Lösungen und Anwendungen* auf *NetApp* im Bildschirm *NetApp Virtual Console*.
+. Klicken Sie auf *Backup und Recovery* und dann auf *Setup*, um die Einträge des Speichersystems anzuzeigen.
+. Wenn keine Einträge im Speichersystem vorhanden sind, klicken Sie auf *Hinzufügen*, um das erforderliche Speichersystem in der virtuellen Speicherkonsole hinzuzufügen.
++
+Das Dialogfeld *Speichersystem hinzufügen* wird angezeigt.
+
+. Geben Sie im Fenster *Speichersystem hinzufügen* die IP-Adresse, den Benutzernamen und das Kennwort des Speichersystems ein. Klicken Sie dann auf *OK*.
++
+Das Speichersystem ist nun bereit, mit der virtuellen Speicherkonsole zu kommunizieren.
+
+
+
+*Verwandte Informationen*
+
+xref:task_verifying_virtual_storage_console.adoc[Überprüfen der Anmeldeinformationen für die Virtual Storage Console]
+
+xref:task_deleting_a_user_login_for_a_virtual_storage_console.adoc[Löschen einer Benutzeranmeldung für eine virtuelle Speicherkonsole]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[VMware VMotion-Unterstützung in SnapDrive für UNIX]
+
+xref:concept_configuration_options_and_their_default_values.adoc[Konfigurationsoptionen und ihre Standardwerte]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[Überlegungen bei der Bereitstellung von RDM LUNs]
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[Grenzen von RDM LUNs, die von SnapDrive gemanagt werden]

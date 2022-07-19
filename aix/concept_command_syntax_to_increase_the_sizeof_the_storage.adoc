@@ -1,0 +1,30 @@
+---
+permalink: aix/concept_command_syntax_to_increase_the_sizeof_the_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, syntax, increase, size, storage 
+summary: Um die Größe des Speichers zu erhöhen, sollten Sie die richtige Syntax kennen, die verwendet werden soll. 
+---
+= Befehlssyntax für, um die Größe des Speichers zu erhöhen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Größe des Speichers zu erhöhen, sollten Sie die richtige Syntax kennen, die verwendet werden soll.
+
+`*snapdrive storage resize -dg _file_spec_ { -growby | -growto } size [-addlun [-igroup _ig_name_ [_ig_name_ ...]]] [{ -reserve | - noreserve}]] [-fstype _type_] [-vmtype _type_]*`
+
+[NOTE]
+====
+Sie können das nicht verwenden `snapdrive storage resize` Befehl zum Reduzieren der Größe einer Entität. Mit diesem Befehl können Sie die Größe nur erhöhen.
+
+Der `snapdrive storage resize` Der Befehl unterstützt nicht direkt auf logischen Volumes oder Dateisystemen. Beispielsweise können Sie den nicht verwenden `snapdrive storage resize` Befehl zum Ändern der Größe eines Dateisystems auf einer LUN.
+
+*Ergebnis*: Dieser Befehl erhöht die Größe der Speichereinheit (logisches Volume oder Datenträgergruppe) um einen der folgenden Elemente:
+
+* Byte wird zum Speicher hinzugefügt (`-growby`).
+* Vergrößern der Größe auf die angegebene Byte-Größe (`-growto`).
+
+
+====

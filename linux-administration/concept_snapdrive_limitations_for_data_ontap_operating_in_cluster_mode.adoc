@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/concept_snapdrive_limitations_for_data_ontap_operating_in_cluster_mode.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, clustered, ontap, limitations, operations 
+summary: Einige Funktionen und Vorgänge von SnapDrive werden für Clustered Data ONTAP nicht unterstützt. 
+---
+= SnapDrive Limitierungen für Clustered Data ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einige Funktionen und Vorgänge von SnapDrive werden für Clustered Data ONTAP nicht unterstützt.
+
+* Storage-Bereitstellung und Snapshot-Management-Vorgänge werden im Root-Volume des vServers nicht unterstützt.
+* Vorgänge bei Dateispezifikation oder LUNs, die Data ONTAP im 7-Mode und Storage-Systemen mit Clustered Data ONTAP umfassen, werden nicht unterstützt.
+* Die symbolischen Links, die sich in einem Bereitstellungspunkt befinden, werden nicht unterstützt.
+* Aggregate, die Vserver Volumes enthalten, müssen der Aggregatliste des Vservers zugewiesen werden, um den Vserver zu konfigurieren und SnapDrive Vorgänge auszuführen.
+* SnapDrive für UNIX unterstützt keine Migration der Vserver, da es nicht von Clustered Data ONTAP unterstützt wird.
+* Snap-Connect-Funktion mit dem `-readonly` Option hängt nur die an `.snapshot` Verzeichnis auf dem Host und erstellt kein Klon-Volume.
++
+In Clustered Data ONTAP wird die Exportrichtlinie nur auf Volume-Ebene und nicht auf Verzeichnisebene definiert. Deshalb, das `.snapshot` Das Verzeichnis kann nicht auf den sekundären Host exportiert werden (der Host, der nicht über die Exportberechtigung auf dem übergeordneten Volume verfügt).
+
+* SnapDrive für UNIX unterstützt nicht Volume-basierte SnapRestore (VBSR) Vorgänge aus einer Snapshot Kopie, die vor der Basis-Snapshot Kopie erstellt wurde, wenn sich das Volume in einem SnapMirror oder SnapVault Vorgang befindet.
+* SnapDrive für UNIX unterstützt das nicht `snapdelete` Der Vorgang der vor dem SnapVault Update erstellten Snapshot Kopie, wenn sich das Volume in der SnapVault-Beziehung (XDP) befindet.
+

@@ -1,0 +1,24 @@
+---
+permalink: linux-administration/concept_considerations_for_supporting_vfiler_unit.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, vfiler, support, issues, unit 
+summary: 'SnapDrive für UNIX unterstützt SnapDrive Operationen auf einer vFiler Einheit, die auf einem FlexVol Volume erstellt wurde. SnapDrive für UNIX unterstützt jedoch keine vFiler Einheiten, wenn Sie Fibre Channel \(FC\) verwenden.' 
+---
+= Support-Probleme bei der vFiler Einheit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt SnapDrive Operationen auf einer vFiler Einheit, die auf einem FlexVol Volume erstellt wurde. SnapDrive für UNIX unterstützt jedoch keine vFiler Einheiten, wenn Sie Fibre Channel (FC) verwenden.
+
+Beachten Sie einige Überlegungen in Bezug auf SnapDrive für UNIX, die vFiler Einheiten unterstützen:
+
+* SnapDrive Vorgänge werden auf einer auf einem qtree erstellten vFiler Einheit nicht unterstützt.
++
+Diese Vorgänge sind zulässig, wenn die Einheit vFiler Eigentümer des gesamten Storage Volume ist.
+
+* Wenn Sie SnapDrive zur Unterstützung von vFiler Einheiten konfigurieren, müssen Sie sicherstellen, dass Management und Datenpfade nicht für eine Schnittstelle zu vFiler0 konfiguriert sind.
+* In Data ONTAP 7-Mode müssen Sie sicherstellen, dass die Data ONTAP-Konfigurationsvariable `vfiler.vol_clone_zapi_allow` Ist auf festgelegt `on` So stellen Sie eine Verbindung zu einer Snapshot Kopie für ein Volume oder eine LUN in einer vFiler Einheit her.
+

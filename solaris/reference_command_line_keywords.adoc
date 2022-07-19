@@ -1,0 +1,146 @@
+---
+permalink: solaris/reference_command_line_keywords.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, line, keywords 
+summary: Der SnapDrive für UNIX verwendet Stichwörter, um den Namen der Host-Festplattengruppe, der Zielgruppe, des Volumes oder FlexClone, der NFS-Datei, anzugeben. Das Storage-System usw. 
+---
+= Befehlszeilenwörter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der SnapDrive für UNIX verwendet Stichwörter, um den Namen der Host-Festplattengruppe, der Zielgruppe, des Volumes oder FlexClone, der NFS-Datei, anzugeben. Das Storage-System usw.
+
+Hier sind die Schlüsselwörter, die Sie mit den SnapDrive for UNIX Befehlen verwenden können. Sie verwenden sie, um die Ziele der SnapDrive für UNIX-Vorgänge anzugeben. Diese Schlüsselwörter können ein oder mehrere Argumente nehmen.
+
+
+NOTE: Einige LVMs beziehen sich auf Festplattengruppen. Einige beziehen sich auf Volume-Gruppen. In SnapDrive for UNIX werden diese Begriffe als Synonyme behandelt. Darüber hinaus beziehen sich einige LVMs auf logische Volumes und einige beziehen sich auf Volumes. SnapDrive für UNIX behandelt den Begriff Host Volume (das erstellt wurde, um zu vermeiden, dass logische Host-Volumes mit Storage-System-Volumes verwirrend sind) und den Begriff logisches Volume als Synonym zu verwenden.
+
+|===
+| Stichwort | Argument, das mit diesem Schlüsselwort verwendet wird 
+
+
+ a| 
+`-dg` (Gleichbedeutend mit `-vg`)
+ a| 
+Der Name der Host-Laufwerksgruppe. Sie können den Namen einer Laufwerksgruppe oder einer Volume-Gruppe mit dieser Option eingeben.
+
+
+
+ a| 
+`-destdg`
+
+`-desthv`
+
+`-destlv`
+
+`-destvg`
+ a| 
+Der Zielgruppe oder des Volume.
+
+
+
+ a| 
+`-destfv`
+ a| 
+Der Name des FlexClone Volume, der in der Befehlszeile für Volume-Klone angegeben wurde, die von SnapDrive für UNIX während der Verbindung zum NFS Snapshot erstellt wurden.
+
+
+NOTE: Dieses Argument unterstützt nur NFS-Volumes, nicht NFS-Verzeichnisse.
+
+
+
+ a| 
+`-file`
+ a| 
+Der Name einer NFS-Datei.
+
+
+
+ a| 
+`-filer`
+ a| 
+Der Name eines Storage-Systems.
+
+
+
+ a| 
+`-filervol`
+ a| 
+Der Name des Storage-Systems und ein Volume darauf.
+
+
+
+ a| 
+`-fs`
+ a| 
+Der Name eines Dateisystems auf dem Host. Der verwendete Name ist das Verzeichnis, in dem das Dateisystem derzeit angehängt ist oder gemountet werden soll (der Mountpoint).
+
+
+
+ a| 
+`-hostvol` Oder `-lvol`
+ a| 
+Der Name des Host-Volumes, einschließlich der Laufwerksgruppe, die ihn enthält. Beispielsweise können Sie eingeben `large_vg/accounting_lvol`.
+
+
+
+ a| 
+`-igroup`
+ a| 
+Der Name einer Initiatorgruppe.
+
+NetApp empfiehlt Ihnen nachdrücklich, die Standardigroup zu verwenden, die SnapDrive für UNIX erstellt, statt eine Initiatorgruppe auf dem Ziel-Storage-System anzugeben. Die Standardigroup ist hostname_Protocol_sdig.
+
+* `_hostname_` Ist der lokale Name (nicht für die Domäne qualifiziert) des aktuellen Hosts.
+* `_protocol_` Ist auch so `FCP` Oder `iSCSI`, Abhängig vom Protokoll, das der Host verwendet.
+
+
+Wenn die iGroup hostname_Protocol_sdig nicht vorhanden ist, erstellt SnapDrive für UNIX diese und platziert alle Initiatoren für den Host darin.
+
+Wenn die LUN vorhanden ist und die korrekten Initiatoren enthält, verwendet SnapDrive für UNIX die vorhandene Initiatorgruppe.
+
+Wenn die Initiatorgruppe vorhanden ist, die Initiatoren für diesen Host jedoch nicht enthalten, erstellt SnapDrive für UNIX eine neue Initiatorgruppe mit einem anderen Namen und verwendet diese Initiatorgruppe im aktuellen Vorgang. Um zu vermeiden, denselben Namen zu verwenden, enthält SnapDrive für UNIX beim Erstellen des neuen Namens eine eindeutige Nummer. In diesem Fall lautet das Namensformat „hostname-number_Protocol_sdig“.
+
+Wenn Sie Ihren eigenen Initiatorgruppennamen angeben, wird der Inhalt der Initiatorgruppe von SnapDrive für UNIX nicht validiert. Das liegt daran, dass nicht immer bestimmt werden kann, welche der Host entsprechenden Initiatorgruppen auf dem Speichersystem vorhanden sind.
+
+Alle Befehle, die diese Option zum Angeben von Initiatorgruppen ausführen, können sie nicht mit gemeinsam genutzten Festplattengruppen und Dateisystemen akzeptieren. Diese Option ist nur für lokale Ressourcen zulässig.
+
+Wenn Sie aktiviert haben `-devicetype` Freigegebener Option, dann kann diese Option nicht verwendet werden, weil `-igroup` Die Option gilt nur für lokale und nicht für gemeinsam genutzte Ressourcen. Einzelheiten zur Angabe von Initiatorgruppen finden Sie auf der man-Seite „SnapDrive für UNIX“.
+
+Der Befehl SnapDrive for UNIX schlägt fehl, wenn ausländische igroups in der Befehlszeile beteiligt sind. Stellen Sie sicher, dass alle in der Befehlszeile angegebenen Initiatorgruppen Initiatoren vom lokalen Host enthalten.
+
+
+
+ a| 
+`-lun`
+ a| 
+Der Name einer LUN auf einem Storage-System. Für den ersten LUN-Namen, den Sie mit diesem Schlüsselwort angeben, müssen Sie den vollständigen Pfadnamen (Storage-Systemname, Volume-Name und LUN-Name) eingeben. Bei zusätzlichen LUN-Namen können Sie entweder nur die Namen innerhalb ihres Volumes angeben (wenn das Volume unverändert bleibt), oder einen Pfad zur Angabe eines neuen Speichersystemnamens oder eines neuen Volume-Namens (wenn Sie nur Volumes wechseln möchten).
+
+
+NOTE: In A `snapdrive snap connect` Befehl, das `_lun_name_` Sollten im enthalten sein `lun_name` Oder `tree_name/lun_name` Formatieren.
+
+
+
+ a| 
+`-lvol` Oder `- hostvol`
+ a| 
+Der Name des logischen Volumes einschließlich der Volume-Gruppe, die ihn enthält. Beispielsweise können Sie eingeben `large_vg/accounting_lvol` Als Name des logischen Volumes.
+
+
+
+ a| 
+`-snapname`
+ a| 
+Der Name einer Snapshot Kopie.
+
+
+
+ a| 
+`-vg` Oder `-dg`
+ a| 
+Der Name der Volume-Gruppe. Sie können den Namen einer Laufwerksgruppe oder einer Volume-Gruppe mit dieser Option eingeben.
+
+|===

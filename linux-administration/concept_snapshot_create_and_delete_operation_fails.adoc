@@ -1,0 +1,115 @@
+---
+permalink: linux-administration/concept_snapshot_create_and_delete_operation_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, create, delete, fail, remove, lun 
+summary: Da die LUNs ausgelastet sind, können Snapshot Kopien auf dem Storage-System nicht entfernt werden, da die LUNs ausgelastet sind. 
+---
+= Das Erstellen und Löschen von Snapshots schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Da die LUNs ausgelastet sind, können Snapshot Kopien auf dem Storage-System nicht entfernt werden, da die LUNs ausgelastet sind.
+
+Die folgende Fehlermeldung wird angezeigt:
+
+[listing]
+----
+0001-124 Admin error: Failed to remove snapshot <snap-name> on
+filer <filer-name>: LUN clone
+----
+Möglicherweise tritt dieser Fehler auf und kann möglicherweise keine Snapshot Kopie direkt löschen, wenn:
+
+* Eine Festplattengruppe umfasst mehrere Storage-Systeme.
+* Die folgenden SnapDrive-Befehle werden in einer Schleife für mehr als 50 Iterationen ausgeführt (die Anzahl der Iterationen hängt vom Host-Betriebssystem ab):
++
+** `snapdrive storage create`
+** `snapdrive snap create`
+** `snapdrive storage delete`
+** `snapdrive snap restore`
+** `snapdrive snap connect`
+** `snapdrive storage delete`
+** `snapdrive snap delete`
+
+
+
+
+An diesem Punkt wird der Status der Snapshot Kopie im Storage-System angezeigt `*LUNs-Busy*`, Und dieser Status verlängert sich für ein paar Stunden.
+
+
+
+== Behelfslösung
+
+|===
+| *Wenn...* | *Dann*... 
+
+
+ a| 
+In einer Snapshot Kopie sind geklonte LUNs vorhanden, die nicht mit einem Host verbunden sind.
+ a| 
+Sie können eine der folgenden Aktionen ausführen, um die Snapshot Kopie zu löschen:
+
+* Teilen Sie die geklonten LUNs aus dem Storage-System mit auf `filer split clone` Befehl.
+* Löschen Sie die geklonten LUNs.
+
+
+
+
+ a| 
+In einer Snapshot Kopie sind geklonte LUNs vorhanden, die nicht mit einem Host verbunden sind.
+ a| 
+Führen Sie folgende Schritte aus:
+
+. Trennen Sie die geklonten LUNs mit dem vom Host `snapdrive snap disconnect` Befehl.
+. Löschen Sie die geklonten LUNs.
+. Löschen Sie die Snapshot Kopie.
+
+
+
+
+ a| 
+Es gibt eine der folgenden Optionen:
+
+* Geklonte LUNs in einer Snapshot Kopie, die auch in anderen Snapshot Kopien vorhanden ist
+* Backup geklonter LUNs
+
+ a| 
+Führen Sie folgende Schritte aus:
+
+. Führen Sie den folgenden Befehl in der Eingabeaufforderung des Speichersystems aus: `lun snap usage -s <volumename>< snap-name>`
++
+Hier wird der Name der Snapshot Kopien aufgeführt, die die Snapshot Kopien der geklonten LUNs enthalten, wie im folgenden Beispiel dargestellt:
+
++
+[listing]
+----
+tonic*> lun snap usage vol1
+james_lun (filer view)
+mpiotest2:
+LUN:
+/vol/vol1/.snapshot/mpiotest2/d
+hilip_0
+Backed By:
+/vol/vol1/.snapshot/dhilip_lun/
+james
+----
+. Löschen Sie die Snapshot Kopien aus dem Storage-System in derselben Reihenfolge, in der sie in der Ausgabe des lun Snap Usage-Befehls aufgeführt sind, wie im folgenden Beispiel dargestellt.
++
+`snap delete vol1 mpiotest2`
+
++
+
+NOTE: Vergewissern Sie sich, dass die erstellte Snapshot Kopie nicht von einem anderen Host verwendet wird. Wenn auf sie zugegriffen wird, können Sie sie nicht löschen.
+
+
+
+
+
+ a| 
+Es sind keine geklonten LUNs vorhanden
+ a| 
+Warten Sie, bis der `LUNs-Busy` Der Status der Snapshot Kopie im Storage-System wird ausgeblendet.
+
+|===

@@ -1,0 +1,20 @@
+---
+permalink: aix/concept_snapdrive_operations_fail_in_multiple_subnet_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fail, subnet, configuration, multiple 
+summary: 'SnapDrive-Vorgänge schlagen in mehreren Subnetz-Konfigurationen fehl, wenn der Zugriff auf das Internet Control Message Protocol \(ICMP\) deaktiviert ist oder wenn die ICMP-Pakete zwischen dem Host und dem Speichersystemnetzwerk fallengelassen werden.' 
+---
+= SnapDrive Vorgänge schlagen in einer Vielzahl von Subnetzkonfigurationen fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive-Vorgänge schlagen in mehreren Subnetz-Konfigurationen fehl, wenn der Zugriff auf das Internet Control Message Protocol (ICMP) deaktiviert ist oder wenn die ICMP-Pakete zwischen dem Host und dem Storage-System-Netzwerk fallengelassen werden.
+
+
+
+== Behelfslösung
+
+Stellen Sie das sicher `_enable-ping-to-check-filer-reachability_` Ist auf festgelegt `off`.

@@ -1,0 +1,25 @@
+---
+permalink: linux-administration/concept_limitations_of_luns_managed_by_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, limitations, lun 
+summary: Bei der Arbeit mit SnapDrive müssen Sie die Einschränkungen beachten, die mit LUNs verbunden sind. 
+---
+= Einschränkungen von von LUNs, die von SnapDrive gemanagt werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei der Arbeit mit SnapDrive müssen Sie die Einschränkungen beachten, die mit LUNs verbunden sind.
+
+* Eine von SnapDrive gemanagte LUN kann nicht entweder als Boot Disk oder als Systemfestplatte verwendet werden.
+* Die Linux-Hosts verfügen über eine Betriebssystembeschränkung bei der Anzahl der LUNs, die Sie erstellen können.
++
+Sie können die ausführen `snapdrive config check luns` Befehl, wenn Sie die LUNs auf diesen Hosts erstellen. Mit diesem Befehl können Sie festlegen, wie viele LUNs Sie erstellen können.
+
+* SnapDrive unterstützt den Doppelpunkt (:) in langen Formen der Namen für LUNs und Snapshot-Kopien nicht.
++
+Das Doppelpunkt ist zwischen den Komponenten einer langen Snapshot Kopie oder zwischen dem Namen des Storage-Systems und dem Namen eines Storage-System-Volumes einer LUN zulässig. Beispiel: `toaster:/vol/vol1:snap1` Ist ein typischer langer Snapshot-Name, während `toaster:/vol/vol1/lunA` Ist ein typischer langer LUN-Name.
+
+

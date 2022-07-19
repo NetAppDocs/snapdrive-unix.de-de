@@ -1,0 +1,19 @@
+---
+permalink: solaris/concept_snapdrived_stop_or_snapdrived_start_command_hangs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, stop, start, command, hang 
+summary: Der Snapdrived-Start-Befehl oder der Snapdrived-Start-Befehl hängt möglicherweise in einigen Fällen. 
+---
+= Der Snapdrived-Stopp-Befehl oder der Snapdrived-Start-Befehl hängt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+`snapdrived stop` Oder `snapdrived start` Befehl hängt möglicherweise in einigen Fällen ab.
+
+Um dieses Problem zu beheben, führen Sie den aus `snapdrived status` Um zu überprüfen, wie viele Befehle ausgeführt werden und zu welchem Zeitpunkt sie gestartet haben. `snapdrived stop` Befehl wartet auf alle Befehle, die ausgeführt werden. Wenn Sie glauben, dass jeder Befehl hängt, Problem `snapdrived -force stop` Oder `snapdrived -force restart` Befehl.
+
+
+IMPORTANT: Der `-force` Option beendet alle laufenden Befehle und Daemon stoppt. Dies kann Nebenwirkungen auf den Systemzustand haben, wie z. B. veraltete Geräteeinträge und zukünftige Daemon-Starts.

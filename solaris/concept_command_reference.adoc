@@ -1,0 +1,14 @@
+---
+permalink: solaris/concept_command_reference.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, refernce 
+summary: SnapDrive für UNIX unterstützt verschiedene Befehle. Mit diesen Befehlsreferenzen erfahren Sie mehr über die Befehle, ihre Optionen, Schlüsselwörter und Argumente. 
+---
+= Befehlsreferenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt verschiedene Befehle. Mit diesen Befehlsreferenzen erfahren Sie mehr über die Befehle, ihre Optionen, Schlüsselwörter und Argumente.

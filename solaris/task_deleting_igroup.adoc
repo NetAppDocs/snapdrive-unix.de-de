@@ -1,0 +1,30 @@
+---
+permalink: solaris/task_deleting_igroup.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, igroup, command 
+summary: Sie können alle für ein Storage-System konfigurierten Initiatorgruppen löschen, die jedoch nicht mehr erforderlich sind. 
+---
+= Löschen einer Initiatorgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können alle für ein Storage-System konfigurierten Initiatorgruppen löschen, die jedoch nicht mehr erforderlich sind.
+
+.Schritte
+. Geben Sie den folgenden Befehl für den Host ein:
++
+`*snapdrive igroup delete _filer_name_*`
+
++
+[listing]
+----
+snapdrive igroup delete toaster
+Deleted igroup configuration for appliance: toaster
+----
++
+Die Initiatorgruppe `ig` Die für den Toaster des Speichersystems konfiguriert ist wurde erfolgreich entfernt.
+
+

@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_restoring_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy 
+summary: Sie können eine Snapshot Kopie einer einzelnen Storage-Einheit oder mehrerer Storage-Einheiten wiederherstellen. 
+---
+= Wiederherstellen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie einer einzelnen Storage-Einheit oder mehrerer Storage-Einheiten wiederherstellen.

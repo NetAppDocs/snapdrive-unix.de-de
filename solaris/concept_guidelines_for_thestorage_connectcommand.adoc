@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_guidelines_for_thestorage_connectcommand.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, command 
+summary: Befolgen Sie einige Richtlinien, um den SnapDrive Storage Connect-Befehl zu verwenden. 
+---
+= Richtlinien für den Befehl Storage connect
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einige Richtlinien befolgen, um die zu verwenden `snapdrive storage connect` Befehl.
+
+Speicher, der LVM-Einheiten umfasst, hat spezielle Anforderungen. Um die zu verwenden `snapdrive storage connect` Befehl zum Verbinden von LVM-Einheiten müssen Sie den Speicher so erstellen, dass jede Einheit in der Speicherhierarchie genau eine Instanz der nächsten Einheit hat. Beispielsweise können Sie die verwenden `snapdrive storage connect` Befehl zum Verbinden einer Speicherhierarchie mit einer Festplattengruppe (dg1) mit einem Host-Volume (hostvol1) und einem Dateisystem (fs1). Sie können jedoch das nicht verwenden `snapdrive storage connect` Befehl zum Verbinden einer Hierarchie mit einer Laufwerksgruppe (dg1) mit zwei Host-Volumes (hostvol1 und hostvol2) und zwei Dateisystemen (fs1 und fs2).

@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_guidelines_for_restoring_a_snapshot_copy_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, host, restore 
+summary: Befolgen Sie die Richtlinien beim Wiederherstellen einer Snapshot Kopie. 
+---
+= Richtlinien zum Wiederherstellen einer Snapshot Kopie in einer Host-Cluster-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Befolgen Sie die Richtlinien beim Wiederherstellen einer Snapshot Kopie.
+
+* Der `snapdrive snapshot restore` Der Befehl kann von jedem Node im Host-Cluster ausgeführt werden.
+* Das Dateisystem oder die Festplattengruppen müssen von allen Nodes im Host-Cluster gemeinsam genutzt werden, sofern sie live sind.
+* Die Snapshot Wiederherstellung auf einem gemeinsam genutzten Filesystem oder einer Laufwerksgruppe schlägt fehl, wenn eine der LUNs einem Node außerhalb des Host-Clusters zugeordnet ist. Stellen Sie sicher, dass keine der freigegebenen LUNs einem Node außerhalb des Host-Clusters zugeordnet sind.
+* Der Vorgang zum Erstellen eines Snapshot kann auf einem dedizierten Filesystem oder einer Laufwerksgruppe ausgeführt werden. Um die Snapshot Kopie jedoch in einem freigegebenen Modus wiederherzustellen, müssen Sie sicherstellen, dass das Filesystem oder die Festplattengruppe auf einem Node im Host-Cluster nicht im dedizierten Modus vorhanden ist. Anderenfalls gibt Ihnen SnapDrive für UNIX einen Fehler.
+* Wenn im Host-Cluster kein Dateisystem oder eine Laufwerksgruppe vorhanden ist, erstellt SnapDrive für UNIX die LUNs aus der Snapshot Kopie, ordnet sie allen Knoten im Host-Cluster zu und aktiviert die Festplattengruppe und das Dateisystem. Nach der Zuordnung der LUNs zu allen Nodes im Host-Cluster aktualisiert Veritas Cluster Volume Manager die LUN-Informationen zwischen allen Nodes im Host-Cluster. Wenn versucht wird, vor dem Aktualisieren der LUNs-Informationen unter den CVM-Instanzen in Cluster-Nodes die Aktivierung der Festplattengruppe zu versuchen, schlägt der Snapshot-Wiederherstellungsvorgang möglicherweise fehl. Für die CVM-Aktualisierung müssen Sie die erneut ausgeben `snapdrive snap restore` Befehl.
+* Eine auf einem Node außerhalb eines Host-Clusters erstellte Snapshot Kopie kann nur wiederhergestellt und im Cluster gemeinsam genutzt werden, wenn folgender lautet:
++
+** Das Dateisystem oder die Laufwerksgruppe ist auf einem Knoten im Hostcluster nicht im dedizierten Modus vorhanden.
+** Die LUNs sind für den Node außerhalb des Host-Clusters unsichtbar.
+
+
+* Es ist nicht möglich, Snapshot-Kopien in einem Snapshot-Restore-Vorgang auf gemeinsam genutzten und dedizierten Systemen wiederherzustellen.
+* Wenn der `snapdrive snap restore` Befehl wird mit dem ausgegeben `-devicetype` Dedizierte Option oder ohne ein `-devicetype` Die Option, die auf einer freigegebenen Laufwerksgruppe oder einem Dateisystem angegeben ist, gibt an, dass SnapDrive für UNIX die mit mehreren Nodes verbundenen LUNs wiederhergestellt ist.
+* Wenn die Konfiguration der Festplattengruppe zwischen der Erstellung von Snapshot-Kopien und der Wiederherstellung von Snapshot-Kopien geändert wird, gibt SnapDrive für UNIX Warnungen aus, dass die Konfiguration geändert wird.
+

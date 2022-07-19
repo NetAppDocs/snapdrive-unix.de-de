@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_support_for_datamotion_for_vfiler.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, vfiler, netappdatamotion 
+summary: SnapDrive für UNIX unterstützt DataMotion für vFiler. Wenn Sie DataMotion für vFiler ausführen, könnten wenige SnapDrive für UNIX Vorgänge in der Umstellungsphase möglicherweise fehlschlagen. 
+---
+= Unterstützung von NetAppDataMotion für vFiler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt DataMotion für vFiler. Wenn Sie DataMotion für vFiler ausführen, könnten wenige SnapDrive für UNIX Vorgänge in der Umstellungsphase möglicherweise fehlschlagen.
+
+
+NOTE: Wenn der Betrieb von SnapDrive für UNIX während der Umstellungsphase von vFiler fehlschlägt, müssen Sie nach Abschluss der Vorgänge von DataMotion für vFiler die Vorgänge SnapDrive für UNIX ausführen.
+
+Sie müssen die einstellen `_datamotion-cutover-wait_` Variable im `snapdrive.conf` Datei zum Ausführen von SnapDrive für UNIX Vorgängen
+
+
+NOTE: Wenn Sie eine Volume-basierte ausführen `snap restore` Befehl während der Umstellungsphase einer vFiler-Migration schlägt möglicherweise der Snap Restore-Vorgang fehl. Nach Abschluss der Migration und Verfügbarkeit des vFiler am Ziel-Volume wird die LUN durch Ausführung eines Volume-basierten Snap Restore-Vorgangs offline geschaltet. Sie müssen die LUNs manuell wieder in den Online-Modus versetzen.

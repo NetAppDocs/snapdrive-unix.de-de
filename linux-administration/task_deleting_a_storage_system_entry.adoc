@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/task_deleting_a_storage_system_entry.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, storage, host, map 
+summary: Sie können die Zuordnungsinformationen des Speichersystems vom Hostsystem löschen. 
+---
+= Löschen der Zuordnungsinformationen des Speichersystems vom Hostsystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Zuordnungsinformationen des Speichersystems vom Hostsystem löschen.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config migrate delete _new_storage_system_name_ [_new_storage_system_name..._]*`
+
++
+** `_new_storage_system_name_` Ist der Name des neuen Storage-Systems.
+** `_[new_storage_system_name...]_` Definiert, dass Sie mehrere Storage-Systemnamen auf einer Kommandozeile löschen können.
++
+[listing]
+----
+snapdrive config migrate delete roaster
+Deleted entry for appliance: roaster
+----
+
+
+

@@ -1,0 +1,18 @@
+---
+permalink: linux-administration/concept_what_snapshot_operations_are_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, ontap, image, host, storage, data, unix 
+summary: 'Mit SnapDrive für UNIX können Sie mithilfe der Data ONTAP Snapshot Technologie ein Image \(Snapshot Kopie\) von Hostdaten erstellen, die auf einem Storage-System gespeichert sind.' 
+---
+= Welche Snapshot Vorgänge gibt es in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie mithilfe der Data ONTAP Snapshot Technologie ein Image (Snapshot Kopie) von Hostdaten erstellen, die auf einem Storage-System gespeichert sind.
+
+Diese Snapshot Kopie liefert Ihnen eine Kopie dieser Daten, die Sie später wiederherstellen können. Die Daten in der Snapshot Kopie können auf einem Storage-System vorhanden sein oder mehrere Storage-Systeme und ihre Volumes umfassen. Diese Storage-Systeme können als HA-Paar- oder Node-lokale Filesysteme oder Festplattengruppen oder LUNs in einer Host-Cluster-Umgebung eingesetzt werden. Auf einem nicht-geclusterten UNIX Host mit installiertem SnapDrive für UNIX können Sie eine Snapshot Kopie einer oder mehrerer Volume-Gruppen auf einem Storage-System erstellen.
+
+Die Snapshot Kopie kann Filesysteme, logische Volumes, Festplattengruppen, LUNs und NFS Verzeichnisbäume enthalten. Nachdem Sie eine Snapshot Kopie erstellt haben, können Sie sie umbenennen, wiederherstellen oder löschen. Sie können auch eine Verbindung zu einem anderen Standort auf demselben Host oder zu einem anderen Host herstellen. Nach der Verbindung können Sie den Inhalt der Snapshot Kopie anzeigen und ändern oder die Snapshot Kopie trennen. Darüber hinaus können Sie mit SnapDrive für UNIX Informationen über die von Ihnen erstellte Snapshot Kopie anzeigen. Auf einem geclusterten UNIX Host mit installiertem SnapDrive für UNIX können Sie Snapshot Vorgänge auf den Host-Cluster Nodes ausführen, die Plattengruppen und Dateisysteme umfassen. Die Snapshot Vorgänge umfassen Erstellen, Umbenennen, Wiederherstellen, Verbinden, Trennen, Anzeigen und Löschen.

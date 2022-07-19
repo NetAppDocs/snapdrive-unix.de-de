@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_data_collection_utility.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, data, collection, utility 
+summary: Das SnapDrive Tool zur Datenerfassung ist ein Tool zur Fehlerbehebung, das Informationen zur Diagnose der Probleme sammelt. 
+---
+= Tool zur Datenerfassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapDrive Tool zur Datenerfassung ist ein Tool zur Fehlerbehebung, das Informationen zur Diagnose der Probleme sammelt.
+
+SnapDrive für UNIX bietet ein Datenerfassungs-Dienstprogramm (snapdrive.dc), das Diagnosedaten zu SnapDrive für UNIX, SnapDrive Configuration Checker und Ihrem System-Setup erfasst.

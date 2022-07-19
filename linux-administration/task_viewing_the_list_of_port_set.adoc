@@ -1,0 +1,29 @@
+---
+permalink: linux-administration/task_viewing_the_list_of_port_set.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, port, set, portset, configure 
+summary: Mit dem befehl SnapDrive Portset list können Sie alle Portsätze anzeigen, die in SnapDrive auf dem Host konfiguriert sind. 
+---
+= Anzeigen der Liste des PortSatzes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können das verwenden `snapdrive portset list` Befehl zum Anzeigen aller Portsätze, die in SnapDrive auf dem Host konfiguriert sind.
+
+.Schritte
+. Geben Sie auf dem Host-System den folgenden Befehl ein:
++
+`*snapdrive portset list*`
+
++
+[listing]
+----
+snapdrive portset list
+appliance name   Portset name
+-----------------------------
+vs91        ps2
+----
+

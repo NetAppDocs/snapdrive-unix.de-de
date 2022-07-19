@@ -1,0 +1,20 @@
+---
+permalink: solaris/concept_crash_consistent_snapshot_copies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, crash, consistent 
+summary: Möglicherweise müssen Sie absturzkonsistente Snapshot-Kopien Ihres Filesystems oder der Festplattengruppen erstellen. SnapDrive für UNIX erstellt Snapshot Kopien, die das Image aller in der Einheit angegebenen Storage-System-Volumes enthalten. 
+---
+= Absturzkonsistente Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie absturzkonsistente Snapshot-Kopien Ihres Filesystems oder der Festplattengruppen erstellen. SnapDrive für UNIX erstellt Snapshot Kopien, die das Image aller in der Einheit angegebenen Storage-System-Volumes enthalten.
+
+Wenn Sie eine Snapshot Kopie einer Storage-Einheit, z. B. eines Filesystems oder einer Festplattengruppe, erstellen SnapDrive für UNIX eine Snapshot Kopie, die das Image aller Storage-System-Volumes enthält, die die Einheit enthalten, die Sie mit einer angegeben haben `file_spec` Argument: Der `file_spec` Argument gibt die Storage-Einheit an, z. B. die Filesystem-, LUN- oder NFS-Verzeichnisstruktur, die SnapDrive für UNIX zum Erstellen der Snapshot Kopie verwendet.
+
+SnapDrive für UNIX stellt konsistente Storage-Komponenten zusammen, die die in der Snapshot Kopie angeforderte Einheit bilden. Das bedeutet, dass LUNs oder Verzeichnisse außerhalb der von angegebenen verwendet werden `snapdrive snap create` Befehl `file_spec` Das Argument verfügt möglicherweise nicht über konsistente Images in der Snapshot Kopie. Mit SnapDrive für UNIX können Sie nur die vom angegebenen Einheiten wiederherstellen `file_spec` Konsistentes Argument in der Snapshot Kopie.
+
+Snapshot Kopien von Einheiten, die auf einem einzelnen Storage-System-Volume enthalten sind, sind immer absturzkonsistent. SnapDrive für UNIX unternimmt spezielle Schritte, um sicherzustellen, dass Snapshot Kopien, die mehrere Storage-Systeme oder Storage-System-Volumes umfassen, ebenfalls absturzkonsistent sind. Die Methode, die SnapDrive für UNIX zur Gewährleistung der Absturzkonsistenz verwendet, hängt von der verwendeten Data ONTAP Version ab, in der sich die Storage-Einheiten in Ihrer Snapshot Kopie befinden.

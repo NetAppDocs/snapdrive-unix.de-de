@@ -1,0 +1,20 @@
+---
+permalink: linux-administration/concept_autodetection_does_not_work_with_mpio_setup_for_an_fs_created_over_a_raw_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, autodetection, lun, mpio 
+summary: Autodetection funktioniert nicht mit dem Dateisystem auf RAW-LUN auf einem Linux MPIO Setup mit SnapDrive für UNIX. 
+---
+= Autodetection funktioniert nicht mit MPIO Setup für ein FS, das über eine RAW-LUN erstellt wurde
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Autodetection funktioniert nicht mit dem Dateisystem auf RAW-LUN auf einem Linux MPIO Setup mit SnapDrive für UNIX.
+
+
+
+== Behelfslösung
+
+Verwenden Sie die Option `-fs` Bei allen SnapDrive-Vorgängen.

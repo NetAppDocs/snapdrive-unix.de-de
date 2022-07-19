@@ -1,0 +1,74 @@
+---
+permalink: aix/concept_managing_snapshot_copy_using_a_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, wizard, manage 
+summary: Mit einem Assistenten können Sie Snapshot Kopien verwalten. Dieser Assistent führt Sie durch eine Reihe von Fragen und hilft Ihnen, Snap connect, Snap Restore und Snap trennen Operationen durchzuführen. 
+---
+= Verwalten von Snapshot Kopien mit einem Assistenten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit einem Assistenten können Sie Snapshot Kopien verwalten. Dieser Assistent führt Sie durch eine Reihe von Fragen und hilft Ihnen, Snap connect, Snap Restore und Snap trennen Operationen durchzuführen.
+
+Sie können den Assistenten mit dem ausführen `snapdrive snap wizard` Befehl.
+
+In der folgenden Tabelle sind die verschiedenen Operationen und die entsprechenden Befehle aufgeführt, mit denen der Assistent ausgeführt werden kann. Führen Sie nach dem Starten des Assistenten die Schritte im Anwendungsfenster aus.
+
+|===
+| Betrieb | Befehl 
+
+
+ a| 
+Snapshot wiederherstellen
+ a| 
+`snapdrive snap wizard restore`
+
+
+
+ a| 
+Snapshot verbinden
+ a| 
+`snapdrive snap wizard connect`
+
+
+
+ a| 
+Snapshot Verbindungsvorgang für Filesystem und Storage-System-Volume
+
+
+
+ a| 
+Snapshot für Festplattengruppe verbinden
+
+
+
+ a| 
+Snapshot trennen für LUN
+ a| 
+`snapdrive snap wizard disconnect`
+
+
+
+ a| 
+Trennen der Snapshots für eine Festplattengruppe
+
+
+
+ a| 
+Snapshot trennt die Verbindung für das Host Volume
+
+
+
+ a| 
+Trennen der Snapshots für das Dateisystem
+
+|===
+*Einschränkungen:* in SnapDrive für UNIX 4.1 und höher, die `snapdrive snap wizard` Befehl weist die folgenden Einschränkungen auf:
+
+* Volume-basierte SnapRestore wird von nicht unterstützt `snap wizard restore` Befehl.
+* FlexClone® Volume wird mit dem nicht unterstützt `snap wizard connect` Befehl.
+* Vorgänge bei Spezifikationen, die nicht zu reagieren sind, werden von nicht unterstützt `snap wizard` Befehle.
+

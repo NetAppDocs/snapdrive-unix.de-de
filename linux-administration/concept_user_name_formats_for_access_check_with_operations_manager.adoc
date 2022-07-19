@@ -1,0 +1,21 @@
+---
+permalink: linux-administration/concept_user_name_formats_for_access_check_with_operations_manager.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, user, name, manger, access, check, operations, nis, network, information 
+summary: 'SnapDrive für UNIX verwendet die Benutzernamenformate zur Durchführung von Zugriffsprüfungen über die Operations Manager Konsole. Diese Formate hängen davon ab, ob Sie ein Network Information System \(NIS\) oder ein lokaler Benutzer sind.' 
+---
+= Formate für Benutzernamen zur Durchführung von Zugriffsprüfungen mithilfe der Operations Manager Konsole
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX verwendet die Benutzernamenformate zur Durchführung von Zugriffsprüfungen über die Operations Manager Konsole. Diese Formate hängen davon ab, ob Sie ein Network Information System (NIS) oder ein lokaler Benutzer sind.
+
+SnapDrive für UNIX verwendet die folgenden Formate, um zu prüfen, ob ein Benutzer zur Ausführung bestimmter Aufgaben berechtigt ist:
+
+* Wenn Sie ein NIS-Benutzer sind, der das ausführt `snapdrive` Befehl, SnapDrive für UNIX verwendet das Format `<nisdomain>\<username>` (Beispiel: `netapp.com\marc`)
+* Wenn Sie ein lokaler Benutzer eines UNIX-Hosts wie lnx197-141 sind, verwendet SnapDrive für UNIX das Format `<hostname>\<username>` Format (z. B. `lnx197-141\john`)
+* Wenn Sie ein Administrator (Root) eines UNIX Hosts sind, behandelt SnapDrive für UNIX den Administrator immer als lokalen Benutzer und verwendet das Format `lnx197-141\root`.
+

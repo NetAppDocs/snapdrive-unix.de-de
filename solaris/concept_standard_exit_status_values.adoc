@@ -1,0 +1,14 @@
+---
+permalink: solaris/concept_standard_exit_status_values.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, standard, exit, status, value 
+summary: Bei den Fehlermeldungen-IDs in SnapDrive für UNIX sind die Werte für den Exit-Status ihnen zugeordnet. Sie können den Wert für den Exit-Status verwenden, um den Erfolg oder den Ausfall eines Befehls SnapDrive für UNIX zu bestimmen. 
+---
+= Standard-Werte für den Exit-Status
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei den Fehlermeldungen-IDs in SnapDrive für UNIX sind die Werte für den Exit-Status ihnen zugeordnet. Sie können den Wert für den Exit-Status verwenden, um den Erfolg oder den Ausfall eines Befehls SnapDrive für UNIX zu bestimmen.

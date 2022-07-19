@@ -1,0 +1,24 @@
+---
+permalink: solaris/reference_examples_of_using_snapdrive_dc.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, example, data, collection, command 
+summary: Dies ist ein Beispiel für den Befehl zur Datenerfassung. 
+---
+= Beispiele für die Verwendung von snapdrive.dc
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dies ist ein Beispiel für den Befehl zur Datenerfassung.
+
+Dieses Beispiel verwendet die Befehlszeilenoptionen, um ein Verzeichnis und einen Namen für die resultierende Datei anzugeben.
+
+[listing]
+----
+# snapdrive.dc -d . -n mysystem
+...
+     Compressed file is ./ntap_snapdrive_mysystem.tar.Z.
+     Please send this file to technical support for analysis.
+----

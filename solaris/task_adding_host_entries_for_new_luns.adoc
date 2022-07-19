@@ -1,0 +1,41 @@
+---
+permalink: solaris/task_adding_host_entries_for_new_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, add, host, lun, entry 
+summary: Mit SnapDrive für UNIX können Sie eine bestimmte Anzahl neuer LUNs erstellen. SnapDrive für UNIX bietet hierfür spezifische Befehle. 
+---
+= Hinzufügen von Hosteinträgen für neue LUNs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie eine bestimmte Anzahl neuer LUNs erstellen. SnapDrive für UNIX bietet hierfür spezifische Befehle.
+
+Stellen Sie sicher, dass der Host bereit ist, eine bestimmte Anzahl neuer LUNs zu erstellen. Diese LUNs befinden sich auf einem Speichersystem, das dem Host zugeordnet ist.
+
+.Schritte
+. `snapdrive config prepare luns -count count [-devicetype shared]`
++
+`-count` Ist die Anzahl der neuen LUNs, für die der Host vorbereitet werden soll. `-devicetype` Gemeinsame Option unterstützt auf Solaris-Plattform mit SFRAC.
+
++
+`-devicetype` Ist der Gerätetyp, der für SnapDrive für UNIX-Vorgänge verwendet wird. Wenn angegeben als `-devicetype shared`, Das `snapdrive config prepare luns` Der Befehl wird auf allen Nodes im Host-Cluster ausgeführt.
+
++
+
+NOTE: In einer SFRAC-Umgebung wird dieser Befehl auf allen Knoten im Host-Cluster ausgeführt.
+
++
+Unter Solaris fügt dieser Befehl der Datei Einträge hinzu `/kernel/drv/sd.conf`, Falls nötig, für jede potenzielle neue LUN, die keinen Eintrag hat. Es generiert außerdem einen Eintrag für jedes SCSI-Ziel, dem das Storage-System zugeordnet ist. Unter Solaris 8 müssen Sie den Host nach dem Hinzufügen neu starten `sd.conf` Einträge. Dieser Befehl zeigt eine Warnung an, wenn ein Neustart erforderlich ist.
+
++
+[NOTE]
+====
+Wenn Sie den manuell bearbeitet haben `/kernel/drv/lpfc.conf` Datei für persistente Bindungen, stellen Sie sicher, dass der Eintrag FC-bind-WWPN nach ist
+
+`# BEGIN: LPUTIL-managed Persistent Bindings.`
+
+====
+

@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_reset_the_snap_reserve_option.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, reset, reserve, option 
+summary: 'Wenn Sie Data ONTAP in einer Fibre Channel \(FC\)- oder Internet Small Computer System Interface \ (iSCSI\)-Umgebung verwenden, sollten Sie die Snap Reserve Option auf null Prozent auf allen Storage System Volumes zurücksetzen, die SnapDrive für UNIX LUNs enthalten.' 
+---
+= Zurücksetzen der Option Snap Reserve
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Data ONTAP in einer FC- (Fibre Channel) oder iSCSI-Umgebung (Internet Small Computer System Interface) verwenden, sollten Sie den zurücksetzen `snap reserve` Option „Null Prozent“ auf allen Storage-System-Volumes, die SnapDrive für UNIX LUNs enthalten
+
+Standardmäßig wird der verwendet `snap reserve` Option für Data ONTAP 7.1.x ist 20 Prozent.

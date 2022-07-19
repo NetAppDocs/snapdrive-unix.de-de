@@ -1,0 +1,16 @@
+---
+permalink: linux-administration/concept_support_for_storage_system_rename.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, support, storage, rename, system, create, copy 
+summary: 'SnapDrive ermöglicht die Umbenennung von Storage-Systemen. Falls eine Snapshot Kopie erstellt und das Storage-System nach dem Erstellen der Kopie umbenannt wird, können Sie mit SnapDrive Snapshot Vorgänge ausführen, sofern Sie alle Clients \(Hosts\) neu authentifiziert haben.' 
+---
+= Unterstützung für Umbenennung des Storage-Systems
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive ermöglicht die Umbenennung von Storage-Systemen. Falls eine Snapshot Kopie erstellt und das Storage-System nach dem Erstellen der Kopie umbenannt wird, können Sie mit SnapDrive Snapshot Vorgänge ausführen, sofern Sie alle Clients (Hosts) neu authentifiziert haben.
+
+Snapshot Vorgänge wie Restore, Verbindung, Trennen, Anzeigen und Löschen funktionieren nur dann im Host-System, wenn Sie Ihre Clients neu authentifizieren. Sie müssen sich erneut authentifizieren, da der Hostname als Teil des Registrierungsschlüssels verwendet wird, um das Passwort zu speichern.

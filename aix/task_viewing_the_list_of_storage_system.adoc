@@ -1,0 +1,29 @@
+---
+permalink: aix/task_viewing_the_list_of_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, view, list, storage, system 
+summary: Sie können alle Speichersysteme anzeigen, indem Sie den SnapDrive config list Befehl im Host-System verwenden. 
+---
+= Anzeigen der Liste der Speichersysteme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit der können Sie alle Speichersysteme anzeigen `snapdrive config list` Befehl im Hostsystem.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`snapdrive config list`
+
++
+[listing]
+----
+snapdrive config list
+username appliance name appliance type
+-----------------------------------------------------
+root      roaster     StorageSystem
+----
+

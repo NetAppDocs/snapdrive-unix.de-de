@@ -1,0 +1,19 @@
+---
+permalink: solaris/concept_access_permissions_on_a_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, permission, storage, system 
+summary: Anhand von Zugriffsberechtigungen kann ein Host bestimmte Snapshot Kopien und Storage-Vorgänge ausführen. Zugriffsberechtigungen haben keine Auswirkung auf die Vorgänge zur Anzeige von SnapDrive-Speicher oder auf die Speicherliste. Mit SnapDrive können Sie die Zugriffsberechtigungen für jeden Host in einer Datei im Speichersystem festlegen. 
+---
+= Greifen Sie auf Berechtigungen auf einem Speichersystem zu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Anhand von Zugriffsberechtigungen kann ein Host bestimmte Snapshot Kopien und Storage-Vorgänge ausführen. Zugriffsberechtigungen haben keine Auswirkung auf die Vorgänge zur Anzeige von SnapDrive-Speicher oder auf die Speicherliste. Mit SnapDrive können Sie die Zugriffsberechtigungen für jeden Host in einer Datei im Speichersystem festlegen.
+
+Sie können auch die Aktion angeben, die SnapDrive ausführen muss, wenn es keine Berechtigungsdatei für einen bestimmten Host findet. Sie können die Aktion angeben, indem Sie den Wert in festlegen `snapdrive.conf` Konfigurationsdatei für `_all-access-if-rbac-unspecified_`. Sie können den Zugriff auf das Speichersystem auch aktivieren oder deaktivieren, indem Sie die Zugriffsberechtigungen ändern.
+
+
+NOTE: In SnapDrive 4.0 für UNIX und höher können Sie Storage-Vorgänge abhängig von den Funktionen der rollenbasierten Zugriffssteuerung durchführen.

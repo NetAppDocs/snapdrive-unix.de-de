@@ -1,0 +1,152 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_storageconnect_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, connect, command, information, required 
+summary: Bei Verwendung des Befehls SnapDrive Storage Connect müssen Sie einige Informationen angeben. Diese Information hilft Ihnen bei der korrekten Verwendung des Befehls. 
+---
+= Zur Verwendung des Befehls SnapDrive Storage connect erforderliche Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt einige Informationen, die Sie angeben müssen, wenn Sie den verwenden `snapdrive storage connect` Befehl. Diese Information hilft Ihnen bei der korrekten Verwendung des Befehls.
+
+|===
+| Anforderungen | Argument 
+
+
+ a| 
+Geben Sie die LUNs, das direkt auf einer LUN erstellte Dateisystem oder die LVM-Einheit an, die Sie mit dem Host verbinden möchten.
+
+* Wenn Sie eine oder mehrere LUNs verbinden, muss das erste Argument den langen Format des LUN-Namens verwenden, der den Namen des Storage-Systems, den Volume-Namen und den Namen der LUN innerhalb des Volume angibt.
++
+Zum Angeben weiterer LUNs können Sie den LUN-Namen allein verwenden, wenn sich die neue LUN auf demselben Storage-System und Volume wie die vorherige LUN befindet. Andernfalls können Sie einen neuen Storage-Systemnamen und einen neuen Volume-Namen (oder nur einen Volume-Namen) angeben, um die vorherigen Werte zu ersetzen.
+
+* Wenn Sie ein direkt auf einer LUN erstelltes Dateisystem verbinden, müssen Sie die lange Form des LUN-Namens enthalten, sowie auch den `-nolvm` Option.
+* Wenn Sie eine LUN mit einer Laufwerksgruppe, einem Host-Volume und einem Dateisystem verbinden, müssen Sie das verwenden `-fs` Und `-hostvol` Optionen zur Angabe des Dateisystems und des Host-Volumes. Das Host-Volume muss den Namen der Laufwerksgruppe enthalten.
+
+
+
+
+ a| 
+EINE LUN (`-lun`)
+ a| 
+`_long_lun_name_`
+
+
+
+ a| 
+Der erste Wert, den Sie mit dem bereitstellen `-lun` Die Option muss den Namen des Storage-Systems, das Volume und den LUN-Namen enthalten. Um mehrere LUNs auf demselben Volume zu verbinden, können Sie relative Pfadnamen für den verwenden `-lun` Option, nachdem Sie die vollständigen Informationen im Namen des ersten Pfads angegeben haben. Wenn SnapDrive für UNIX den relativen Pfadnamen findet, wird die LUN auf demselben Volume wie die vorherige LUN angezeigt. Geben Sie zum Verbinden weiterer LUNs, die sich nicht auf demselben Volume befinden, den vollständigen Namen des Pfads zu jeder LUN ein.
+
+
+
+ a| 
+Weitere LUNs
+ a| 
+`_lun_name_` (Lange oder kurze Form)
+
+
+
+ a| 
+Der `_file_spec_` Gegeben `-fs` Ist der Name des Filesystem-Bereitstellungspunkts beim Verbinden eines direkt auf einer LUN erstellten Dateisystems.
+
+
+
+ a| 
+Ein Dateisystem (`-fs file-spec`)
+ a| 
+`_filesystem_name_`
+
+
+
+ a| 
+So verbinden Sie ein Dateisystem, das auf einer LUN erstellt wird, ohne den Host LVM zu aktivieren.
+
+
+
+ a| 
+`-nolvm`
+ a| 
+
+
+
+ a| 
+So verbinden Sie ein Dateisystem auf einem Host-Volume:
+
+Der `-fs _file_spec_` Und `-hostvol _file_spec_` Sie geben das LVM-Dateisystem, die Laufwerksgruppe und die Hostvolumes an, die Sie mit einem neuen Host verbinden möchten.
+
+Die Speicherhierarchie, die Sie verbinden, muss eine Laufwerksgruppe, ein Host-Volume und ein Dateisystem enthalten. Sie müssen einen Wert für angeben `-fs` Und `-hostvol`. Der `-hostvol` Wert muss den Namen der Laufwerksgruppe enthalten.
+
+
+
+ a| 
+Host Volume (`-hostvol file-spec`)
+ a| 
+`_disk_group_name_` Und `_host_volume_name_`
+
+
+
+ a| 
+Optional: Verwenden Sie den `-nopersist` Option zum Verbinden des Speichers mit einem neuen Speicherort, ohne einen Eintrag in der Host-Dateisystemtabelle zu erstellen. Standardmäßig erstellt der Befehl für die Verbindung von Storage persistente Mounts. Dies bedeutet, dass SnapDrive für UNIX beim Erstellen einer LVM-Speichereinheit auf einem AIX-Host automatisch den Storage erstellt, das Dateisystem einhängt und dann einen Eintrag für das Dateisystem in der Tabelle des Host-Dateisystems platziert.
+
+
+
+ a| 
+`-nopersist`
+ a| 
+~
+
+
+
+ a| 
+*Optional:* Es wird empfohlen, die Standardigroup für Ihren Host zu verwenden, anstatt einen igroup-Namen anzugeben.
+
+
+
+ a| 
+Der Initiatorgruppenname (`-igroup`)
+ a| 
+`_ig_name_`
+
+
+
+ a| 
+`-fstype`
+ a| 
+`_type_`
+
+
+
+ a| 
+`vmtype`
+ a| 
+`_type_`
+
+
+
+ a| 
+*Optional:* gibt den Typ des Dateisystems und Volume Managers an, der für SnapDrive für UNIX-Vorgänge verwendet werden soll.
+
+
+
+ a| 
+`-mntopts`
+ a| 
+~
+
+
+
+ a| 
+*Optional:* Wenn Sie ein Dateisystem erstellen, können Sie folgende Optionen festlegen:
+
+* Nutzung `-mntopts` So legen Sie Optionen fest, die an den Befehl Host Mount übergeben werden sollen (z. B. zum Festlegen des Protokollierungsverhaltens des Host-Systems). Die von Ihnen angegebenen Optionen werden in der Host-Dateisystemtabelle gespeichert. Die zulässigen Optionen hängen vom Typ des Host-Dateisystems ab.
+* Der `_-mntopts_` Argument ist ein Dateisystem `-type` Option, die mit der angegeben wird `mount` Befehl `-o` Flagge. Nehmen Sie das nicht mit ein `-o` Flagge im `_-mntopts_` Argument: Zum Beispiel passiert die Sequenz -mntopts tmplog den String `-o tmplog` Bis zum `mount` Befehl, und fügt den Text tmplog auf eine neue Kommandozeile ein.
++
+
+NOTE: Wenn Sie eine ungültige übergeben `_-mntopts_` Optionen für Storage- und Snap-Vorgänge. SnapDrive für UNIX validiert diese ungültigen Mount-Optionen nicht.
+
+
+
+|===

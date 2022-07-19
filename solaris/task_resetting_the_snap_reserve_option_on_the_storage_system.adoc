@@ -1,0 +1,25 @@
+---
+permalink: solaris/task_resetting_the_snap_reserve_option_on_the_storage_system.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, reset, reserve, option, storage, system 
+summary: 'Wenn Sie Data ONTAP in einer Fibre Channel- oder Internet Small Computer System Interface \ (iSCSI\)-Umgebung verwenden, sollten Sie die Snap Reserve Option auf null Prozent auf dem Speichersystem zurücksetzen, um die Lautstärke zu optimieren.' 
+---
+= Zurücksetzen der Snap Reserve-Option auf dem Speichersystem
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie in einer iSCSI-Umgebung (Fibre Channel) oder Internet Small Computer System Interface (iSCSI) Data ONTAP verwenden, sollten Sie den zurücksetzen `snap reserve` Option zu null Prozent auf dem Storage-System, zur Volume-Optimierung.
+
+.Schritte
+. Greifen Sie entweder auf das Storage-System zu, indem Sie den ausführen `telnet` Befehl über den Host oder von der Speichersystemkonsole aus.
+. Geben Sie den folgenden Befehl ein:
++
+`*snap reserve _vol_name 0_*`
+
++
+`_vol_name_` Ist der Name des Volumes, auf dem Sie das festlegen möchten `snap reserve` Option.
+
+

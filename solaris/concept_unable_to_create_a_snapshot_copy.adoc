@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_unable_to_create_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, create, snapshot, copy 
+summary: Es gibt nur wenige Bedingungen, die die Fähigkeit des SnapDrive Snap create Befehls beeinflussen, eine Snapshot Kopie zu erstellen. 
+---
+= Eine Snapshot Kopie kann nicht erstellt werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt nur wenige Bedingungen, die den betreffen `snapdrive snap create` Die Fähigkeit des Befehls, eine Snapshot Kopie zu erstellen.
+
+* Der `snapdrive snap create` Befehl muss die folgenden Aufgaben ausführen können:
++
+** Fragen Sie alle Festplattengruppen nach einer Liste von LUNs ab.
+** Abfrage aller LUNs über SCSI-Befehle.
+
+
+* Die LUNs in der Festplattengruppe müssen online und der Festplattengruppe zugeordnet sein, bevor Sie die Snapshot Kopie erstellen. Wenn eine der LUNs offline ist oder ihre Zuordnung aufgehoben wird, schlägt der Vorgang zur Erstellung fehl.
++
+Stellen Sie sicher, dass alle LUNs online sind und dem Host zugeordnet sind, bevor Sie versuchen, eine Snapshot Kopie zu erstellen.
+
+* Die Zugriffsberechtigungen erlauben dem Host nicht, eine Snapshot Kopie von Informationen auf diesem Storage-System zu erstellen.
++
+Da es mit LVM-Einträgen arbeitet, müssen Sie außerdem beim Host mit ausreichender Berechtigung angemeldet sein, damit die LVM-Einträge manipuliert werden können.
+
+

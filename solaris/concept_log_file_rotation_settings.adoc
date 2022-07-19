@@ -1,0 +1,48 @@
+---
+permalink: solaris/concept_log_file_rotation_settings.html 
+sidebar: sidebar 
+keywords: snap, snpadrive, log, file, rotation, setting 
+summary: Die Werte, die Sie für die Variable in der snapdrive.conf Datei angeben, beeinflussen die Protokolldateirotation. 
+---
+= Rotationseinstellungen für Protokolldateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Werte, die Sie für die Variable im angeben `snapdrive.conf` Die Datei wirkt sich auf die Rotation der Protokolldatei aus.
+
+Die Werte, die Sie im angeben `snapdrive.conf` Datei Automatische Protokolldateirotationen aktivieren. Sie können diese Werte bei Bedarf ändern, indem Sie die bearbeiten `snapdrive.conf` Variablen. Die folgenden Optionen wirken sich auf die Rotation der Protokolldatei aus:
+
+* `audit-log-max-size`
+* `audit-log-save`
+* `trace-max-size`
+* `trace-log-max-save`
+* `recovery-log-save`
+
+
+Bei automatischer Protokollrotation behält SnapDrive für UNIX alte Log-Dateien bei, bis es die im angegebene Obergrenze erreicht `audit-log-save`, `trace-log-save`, und `recovery-log-save` Variabel. Dann wird die älteste Protokolldatei gelöscht.
+
+SnapDrive für UNIX verfolgt, welche Datei die älteste ist, indem sie der Datei beim Erstellen der Datei die Nummer „0“ zuweist. Jedes Mal, wenn eine neue Datei erstellt wird, erhöht sie um 1 die Nummer, die jeder vorhandenen Protokolldatei zugewiesen wird. Wenn die Nummer einer Protokolldatei den Speicherwert erreicht, löscht SnapDrive für UNIX diese Datei.
+
+*Beispiel:* in diesem Beispiel wird das verwendet `ls` Befehl zum Anzeigen von Informationen über die Protokolldateien auf dem System.
+
+Auf der Grundlage dieser Einstellungen werden die folgenden Informationen in Protokolldateien angezeigt.
+
+[listing]
+----
+# ls -l /var/log/sd*
+-rw-r--r-- 1 root other 12247 Mar 13 13:09 /var/log/sd-audit.log
+-rw-r--r-- 1 root other 20489 Mar 12 16:57 /var/log/sd-audit.log.0
+-rw-r--r-- 1 root other 20536 Mar 12 03:13 /var/log/sd-audit.log.1
+-rw-r--r-- 1 root other 3250 Mar 12 18:38 /var/log/sd-recovery.log.1
+-rw-r--r-- 1 root other 6250 Mar 12 18:36 /var/log/sd-recovery.log.2
+-rw-r--r-- 1 root other 6238 Mar 12 18:33 /var/log/sd-recovery.log.3
+-rw-r--r-- 1 root other 191704 Mar 13 13:09 /var/log/sd-trace.log
+-rw-r--r-- 1 root other 227929 Mar 12 16:57 /var/log/sd-trace.log.0
+-rw-r--r-- 1 root other 213970 Mar 12 15:14 /var/log/sd-trace.log.1
+-rw-r--r-- 1 root other 261697 Mar 12 14:16 /var/log/sd-trace.log.2
+-rw-r--r-- 1 root other 232904 Mar 12 14:15 /var/log/sd-trace.log.3
+-rw-r--r-- 1 root other 206905 Mar 12 14:14 /var/log/sd-trace.log.4
+----

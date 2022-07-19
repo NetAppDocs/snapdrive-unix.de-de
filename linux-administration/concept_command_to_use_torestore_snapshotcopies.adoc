@@ -1,0 +1,28 @@
+---
+permalink: linux-administration/concept_command_to_use_torestore_snapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, snapshot, copy, restore 
+summary: Verwenden Sie den Befehl „SnapDrive Snap Restore“, um eine Snapshot Kopie wiederherzustellen. 
+---
+= Befehl zum Wiederherstellen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie den Befehl `snapdrive snap restore` Zum Wiederherstellen einer Snapshot Kopie.
+
+Der `snapdrive snap restore` Befehl stellt Daten aus der Snapshot Kopie wieder her, die Sie an der Eingabeaufforderung des Storage-Systems angeben. Dieser Vorgang ersetzt den Inhalt des `file_spec` Argumente (z. B. Festplattengruppen, NFS-Dateien, NFS-Verzeichnisbäume, Dateisysteme, die direkt auf LUNs erstellt wurden), die Sie auf der angegeben haben `snapdrive snap restore` Befehl mit dem Inhalt des `file_spec` Argumente, die sich in der angegebenen Snapshot Kopie befinden.
+
+Sie können auch Snapshot-Kopien wiederherstellen, während diese nicht vorhanden sind `file_spec` Argumente. Dies geschieht, wenn der von Ihnen angegebene Wert nicht mehr auf dem Host vorhanden ist, aber beim Erstellen der Snapshot Kopie vorhanden war. Es kann z. B. ein Dateisystem sein, das Sie jetzt abgehängt haben, oder eine Laufwerksgruppe, die Sie entfernt haben.
+
+Normalerweise stellen Sie Snapshot Kopien auf dem Host wieder her, auf dem Sie die Snapshot Kopien erstellt haben (in anderen Worten: Den ursprünglichen Host).
+
+[NOTE]
+====
+* Wenn in einer NFS-Einheit dasselbe Volume auf zwei verschiedenen IPs gemountet wird, können Snap Restore-Vorgänge für diese Volumes gleichzeitig nur für eine Datei-Spezifikation durchgeführt werden.
+* Wenn Sie kein Root-Benutzer sind, sollten Sie von SnapDrive 4.1 für UNIX neben der GlobalSDSnapshot-Funktion auch Storage-Schreibfunktion auf Global haben.
+
+
+====

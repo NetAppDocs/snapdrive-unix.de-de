@@ -1,0 +1,14 @@
+---
+permalink: aix/reference_command_summary.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, summary 
+summary: SnapDrive für UNIX unterstützt die verschiedenen Befehlszeilen, wie z. B. Konfiguration, Storage-Provisionierung, Host-seitiges Management, Und Snapshot Betrieb. 
+---
+= Befehlsübersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt die verschiedenen Befehlszeilen, wie z. B. Konfiguration, Storage-Provisionierung, Host-seitiges Management, Und Snapshot Betrieb.

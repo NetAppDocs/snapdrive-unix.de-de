@@ -1,0 +1,22 @@
+---
+permalink: solaris/task_importing_data_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, import, data, file 
+summary: Sie können die neuesten Support Matrix-Daten herunterladen und das Konfigurationsprüfungstool vor dem Ausführen des Tools aktualisieren, sodass das Tool die neueste unterstützte Konfiguration für SnapDrive für UNIX auflistet. Das Konfigurations-Checker-Tool mit der aktualisierten Datendatei überprüft die von SnapDrive für UNIX unterstützten Konfigurationen und listet alle unterstützten Komponenten im System auf. 
+---
+= Datendateien werden importiert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die neuesten Support Matrix-Daten herunterladen und das Konfigurationsprüfungstool vor dem Ausführen des Tools aktualisieren, sodass das Tool die neueste unterstützte Konfiguration für SnapDrive für UNIX auflistet. Das Konfigurations-Checker-Tool mit der aktualisierten Datendatei überprüft die von SnapDrive für UNIX unterstützten Konfigurationen und listet alle unterstützten Komponenten im System auf.
+
+.Schritte
+. Laden Sie die neueste Datendatei über das ToolChest herunter.
+. Aktuelle Datendatei importieren:
++
+`*sdconfcheck import -file ./confcheck_data.tar.gz*`
+
+

@@ -1,0 +1,39 @@
+---
+permalink: aix/concept_snapdrive_storage_create_command_fails_when_multiple_san_paths_are_present.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, command, san, multipathing, fail 
+summary: Der Befehl zum Erstellen von SnapDrive-Storage schlägt fehl, wenn mehrere SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist. 
+---
+= Der Befehl zum Erstellen von SnapDrive Storage schlägt fehl, wenn mehrere SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der SnapDrive Storage `create` Befehl schlägt fehl, wenn mehrere SAN-Pfade vorhanden sind, Multipathing jedoch deaktiviert ist.
+
+So etwa für zwei iSCSI-LIFs für eine SVM:
+
+[listing]
+----
+[root@scspr0189449001 etc]# iscsiadm --mode session --rescan
+Rescanning session [sid: 1, target: iqn.1992-08.com.netapp:sn.f7335762b23e11e695360050569c153a:vs.3, portal: 10.224.70.253,3260]
+Rescanning session [sid: 2, target: iqn.1992-08.com.netapp:sn.f7335762b23e11e695360050569c153a:vs.3, portal: 10.224.70.254,3260]
+----
+Wenn `multipathing-type` Ist auf festgelegt `none` In der datei snapdrive.conf und dem Multipath-Service ist deaktiviert und der Versuch, eine Storage-Erstellung mit LVM zu versuchen, gibt die folgende Fehlermeldung zurück:
+
+[listing]
+----
+root@scspr0189449001 etc]# snapdrive storage create -fs /mnt/test -lun rgvsim:/vol/asmvol/test -lunsize 500m
+        LUN rgvsim:/vol/asmvol/test ... created
+        mapping new lun(s) ... done
+        discovering new lun(s) ... *failed*
+        Cleaning up ...
+         - LUN rgvsim:/vol/asmvol/test ... deleted
+         0001-422 Admin error: LVM initialization of luns failed:
+        Device /dev/sdb,/dev/sdc not found (or ignored by filtering).
+----
+Dies geschieht, weil die `pvcreate` Der Befehl verwendet die beiden durch Komma getrennten Geräte als einzelnes Gerät `pvcreate /dev/sdb,/dev/sdc` Und ein Gerät mit dem Namen `/dev/sdb,/dev/sdc` Das ist nicht vorhanden.
+
+Wenn mehrere Pfade zum Storage vorhanden sind und LVM verwendet werden muss, muss Multipathing aktiviert sein.

@@ -1,0 +1,14 @@
+---
+permalink: linux-installation-7mode/concept_verifying_supported_configurations_using_configuration_checker_tool.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, host, verify, configuration, check, tool, linux 
+summary: Mit dem Konfigurationsprüfungstool können Sie vor der Verwendung von SnapDrive für UNIX sicherstellen, dass alle erforderlichen Komponenten und korrekten Versionen auf dem Linux-Host verfügbar sind. 
+---
+= Überprüfen der Linux-Hostkonfigurationen mithilfe des Konfigurationsprüfers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit dem Konfigurationsprüfungstool können Sie vor der Verwendung von SnapDrive für UNIX sicherstellen, dass alle erforderlichen Komponenten und korrekten Versionen auf dem Linux-Host verfügbar sind.

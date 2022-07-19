@@ -1,0 +1,72 @@
+---
+permalink: aix/concept_informationrequired_forusing_the_snapdrive_snapdelete_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, command, information, required 
+summary: Geben Sie zum Löschen einer Snapshot Kopie den Namen der zu löschenden Snapshot Kopie an. Mit dem SnapDrive Snap delete-Befehl können Sie die Liste der gelöschten Snapshot-Kopien anzeigen. 
+---
+= Für die Verwendung des Befehls SnapDrive Snap delete sind Informationen erforderlich
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Geben Sie zum Löschen einer Snapshot Kopie den Namen der zu löschenden Snapshot Kopie an. Verwenden der `snapdrive snap delete` Befehl Sie können die Liste der gelöschten Snapshot Kopien anzeigen.
+
+Die folgende Tabelle enthält Informationen zum `snapdrive snap delete` Befehl.
+
+|===
+| Anforderung/Option | Argument 
+
+
+ a| 
+Geben Sie den Namen für die Snapshot Kopie an. Verwenden Sie die lange Form des Namens der Snapshot-Kopie, wobei Sie den Namen des Storage-Systems, des Volumes und der Snapshot-Kopie eingeben. Nachfolgend das Beispiel eines langen Namens für Snapshot-Kopien: `big_filer:/vol/account_vol:snap_20031115`
+
+Wenn Sie weitere Snapshot Kopien angeben möchten, können Sie die kurze Form des Namens verwenden, wenn sie sich auf demselben Storage-System und auf dem Volume wie die erste Snapshot Kopie befinden. Verwenden Sie andernfalls erneut die lange Form des Namens.
+
+
+
+ a| 
+Der Name der Snapshot Kopie (`-snapname`)
+ a| 
+`_long_Snapshot copy_name_`
+
+
+
+ a| 
+Weitere Snapshot Kopien
+ a| 
+`_Snapshot copy_name_` (Entweder lang oder kurz)
+
+
+
+ a| 
+`-verbose`
+ a| 
+~
+
+
+
+ a| 
+Um eine Liste der gelöschten Snapshot Kopien anzuzeigen, geben Sie die -ausführliche Option an. Diese Option füllt das fehlende Storage-System und die fehlenden Volume-Informationen aus, falls Sie die kurze Form des Namens der Snapshot Kopie verwendet haben.
+
+
+
+ a| 
+`-force`
+ a| 
+~
+
+
+
+ a| 
+`-noprompt`
+ a| 
+~
+
+
+
+ a| 
+Optional: Entscheiden Sie, ob Sie eine vorhandene Snapshot Kopie überschreiben möchten. Ohne diese Option stoppt dieser Vorgang, wenn Sie den Namen einer vorhandenen Snapshot Kopie angeben. Wenn Sie diese Option angeben und den Namen einer vorhandenen Snapshot Kopie angeben, werden Sie aufgefordert, zu bestätigen, dass Sie die Snapshot Kopie überschreiben möchten. Um zu verhindern, dass SnapDrive für UNIX die Eingabeaufforderung anzeigt, fügen Sie den ein `-noprompt` Optionen ebenfalls. (Sie müssen immer die einschließen `-force` Option, wenn Sie die verwenden möchten `-noprompt` Option.)
+
+|===

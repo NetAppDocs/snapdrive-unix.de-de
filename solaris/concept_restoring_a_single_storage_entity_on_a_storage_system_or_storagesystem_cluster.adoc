@@ -1,0 +1,16 @@
+---
+permalink: solaris/concept_restoring_a_single_storage_entity_on_a_storage_system_or_storagesystem_cluster.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, snapshot, copy, ha, storage, pair 
+summary: Sie können eine Snapshot Kopie wiederherstellen, die eine einzelne Storage-Einheit enthält. 
+---
+= Wiederherstellung einer einzelnen Storage-Einheit auf einem Storage-System oder einem Storage-System HA-Paar
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie wiederherstellen, die eine einzelne Storage-Einheit enthält.
+
+Sie können eine Snapshot Kopie wiederherstellen, die eine einzelne Storage-Einheit enthält, die sich in einem Storage-System oder auf einem Storage-HA-Paar befindet. Der Name des Volume auf dem Ziel-Storage-System muss mit dem Namen des Volumes auf dem Quell-Storage-System übereinstimmen.

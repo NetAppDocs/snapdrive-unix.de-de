@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_configuration_information_for_vserver_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuraiton, vserver 
+summary: Sie müssen Vserver in SnapDrive für UNIX konfigurieren, um SnapDrive Vorgänge auszuführen. 
+---
+= Konfigurationsinformationen für Vserver
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen Vserver in SnapDrive für UNIX konfigurieren, um SnapDrive Vorgänge auszuführen.
+
+Zur Konfiguration von Vserver mit SnapDrive für UNIX stellen Sie in Clustered Data ONTAP sicher, dass die IP-Adresse der logischen Management Interface (LIF) des vServer entweder im Domain Name Service (DNS) oder im zugeordnet ist `/etc/hosts` Datei: Sie müssen außerdem sicherstellen, dass der Vserver Name in SnapDrive für UNIX konfiguriert ist. Verwenden Sie dazu den folgenden Befehl:
+
+`*snapdrive config set <vsadmin> <Vserver name>*`
+
+*Verwandte Informationen*
+
+xref:concept_support_for_vserver.adoc[Support für Vserver]

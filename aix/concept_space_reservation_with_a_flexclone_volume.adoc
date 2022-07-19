@@ -1,0 +1,24 @@
+---
+permalink: aix/concept_space_reservation_with_a_flexclone_volume.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, space, reservation, flexclone, volume 
+summary: Sie können Speicherplatz sowohl für eingeschränkten als auch für uneingeschränkte Typ von FlexClone Volumes reservieren. Standardmäßig verfügen FlexClone Volumes über keine Schreibreservierungen. 
+---
+= Platzreservierung mit einem FlexClone Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Speicherplatz sowohl für eingeschränkten als auch für uneingeschränkte Typ von FlexClone Volumes reservieren. Standardmäßig verfügen FlexClone Volumes über keine Schreibreservierungen.
+
+Im Folgenden finden Sie die Einstellungen zur Speicherplatzreservierung für FlexClone für uneingeschränkte und eingeschränkte FlexClone Volumes:
+
+*Nicht beschränkte FlexClone-Volumes:* Wenn `-reserve` Die Option wird in der CLI oder angegeben `flexclone-writereserve-enabled = on` In `snapdrive.conf`, Die Platzreservierung würde auf das Volume über den FlexClone gesetzt werden, ansonsten ist es keine. SnapDrive für UNIX zeigt eine Fehlermeldung an, wenn der auf dem Aggregat verfügbare Platz nicht ausreicht, um diese Einstellung einzuhalten.
+
+*Beschränkte FlexClone-Volumes:*
+
+* Die Einstellung für die Platzreservierung auf Volume-Ebene ist immer deaktiviert, das heißt, die Platzreservierung ist AUF KEINE gesetzt.
+* Wenn `-reserve` Oder `-noreserve` Option wird in der CLI angegeben, dann ist die Platzreservierung für die LUNs aktiviert oder deaktiviert, die zur Host-Dateispezifikation gehören. Anderenfalls erben die im FlexClone verwandten LUNs für die Host Datei die Speicherplatzreservierung von den übergeordneten Volume LUNs.
+

@@ -1,0 +1,31 @@
+---
+permalink: aix/concept_error_message_format.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, message, format 
+summary: Das Format der Fehlermeldung hilft Ihnen, die Ursache des Fehlers zu bestimmen. 
+---
+= Fehlermeldformat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Format der Fehlermeldung hilft Ihnen, die Ursache des Fehlers zu bestimmen.
+
+SnapDrive für UNIX liefert die Standard-Fehlercodeinformationen, die eine genauere Beschreibung der Ursachen für die anfängliche Fehlerbedingung liefert. Fehlermeldungen von SnapDrive für UNIX entsprechen dem folgenden Format:
+
+`return code message-ID error type: message text`
+
+* `_return code_` -- SnapDrive für UNIX-Fehlermeldungs-ID, die mit einem Exit-Status-Wert verknüpft ist, der die grundlegende Ursache der Fehlerbedingung angibt.
+* `_message-ID_` -- Eine eindeutige Kennung, die vom technischen Support von NetApp verwendet wird, um den spezifischen Code zu finden, der den Fehler verursacht hat. Wenn Sie den technischen Support von NetApp anrufen müssen, empfiehlt NetApp, die Nachricht-ID, die zusammen mit der Fehlermeldung steht, zu notieren.
+* `_error type_` -- gibt die Art des Fehlers an, der bei SnapDrive für UNIX aufgetreten ist. Die Rückgabewerte umfassen Folgendes:
++
+** `_Warning_` -- SnapDrive für UNIX hat den Befehl ausgeführt, hat aber eine Warnung über Bedingungen ausgegeben, die Ihre Aufmerksamkeit erfordern könnten.
+** `_Command_` -- SnapDrive für UNIX konnte den Befehl aufgrund eines Fehlers in der Kommandozeile nicht ausführen. Überprüfen Sie das Befehlszeilenformat und die Variablen, um sicherzustellen, dass sie korrekt sind.
+** `_Admin_` -- SnapDrive für UNIX konnte den Befehl aufgrund von Inkompatibilitäten in der Systemkonfiguration nicht ausführen. Wenden Sie sich an Ihren Systemadministrator, um Ihre Konfigurationsparameter zu überprüfen.
+** `_Fatal_` -- SnapDrive für UNIX konnte den Befehl aufgrund einer unerwarteten Bedingung nicht ausführen. Schwere Fehler sind selten. Falls ein schwerwiegender Fehler auftritt und Probleme beim Beheben von Problemen auftreten, wenden Sie sich an den technischen Support von NetApp.
+
+
+* `_message text_`--Information, die den Fehler erklärt. Dieser Text kann Informationen von einer anderen Komponente enthalten, um weitere Einzelheiten über den Fehler zu erfahren. Wenn beispielsweise ein Befehlszeilenargument, wie z. B. eine Festplattengruppe, fehlt, gibt die Fehlermeldung an, was fehlt. Oder die Manage ONTAP APIs, die SnapDrive für UNIX zur Steuerung des Storage-Systems verwendet, liefern möglicherweise zusätzlichen Text, um die Fehlerquote zu erklären. In diesem Fall folgt der Text der grundlegenden Fehlermeldung SnapDrive for UNIX.
+

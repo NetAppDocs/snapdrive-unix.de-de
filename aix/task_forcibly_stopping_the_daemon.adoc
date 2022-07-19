@@ -1,0 +1,23 @@
+---
+permalink: aix/task_forcibly_stopping_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, daemon, stop, daemon 
+summary: Sie können den Daemon gewaltsam anhalten, wenn Sie nicht darauf warten möchten, dass alle Befehle ausgeführt werden. Nachdem die Anforderung zum gewaltsamen Stoppen des Daemon empfangen wurde, storniert der SnapDrive for UNIX Daemon alle Befehle, die ausgeführt werden oder sich in der Warteschlange befinden. Wenn Sie den Dämon gewaltsam stoppen, ist der Zustand Ihres Systems möglicherweise undefiniert. Diese Methode wird nicht empfohlen. 
+---
+= Gewaltsam das Anhalten des Dämons
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Daemon gewaltsam anhalten, wenn Sie nicht darauf warten möchten, dass alle Befehle ausgeführt werden. Nachdem die Anforderung zum gewaltsamen Stoppen des Daemon empfangen wurde, storniert der SnapDrive for UNIX Daemon alle Befehle, die ausgeführt werden oder sich in der Warteschlange befinden. Wenn Sie den Dämon gewaltsam stoppen, ist der Zustand Ihres Systems möglicherweise undefiniert. Diese Methode wird nicht empfohlen.
+
+Sie müssen als Root-Benutzer angemeldet sein.
+
+.Schritte
+. Beenden Sie den Dämon gewaltsam:
++
+`*snapdrived -force stop*`
+
+

@@ -1,0 +1,65 @@
+---
+permalink: solaris/task_setting_up_access_control_permission.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control, permission 
+summary: Sie können Zugriffskontrollrechte in SnapDrive für UNIX einrichten, indem Sie ein spezielles Verzeichnis und eine Datei im Root-Volume des Speichersystems erstellen. 
+---
+= Einrichten der Zugriffskontrollberechtigung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Zugriffskontrollrechte in SnapDrive für UNIX einrichten, indem Sie ein spezielles Verzeichnis und eine Datei im Root-Volume des Speichersystems erstellen.
+
+Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+
+.Schritte
+. Erstellen Sie das Verzeichnis `sdprbac` Im Root-Volume des Ziel-Storage-Systems.
++
+Eine Möglichkeit, auf das Root-Volume zugreifen zu können, ist das Mounten des Volumes mit NFS.
+
+. Erstellen Sie die Berechtigungsdatei im `sdprbac` Verzeichnis. Stellen Sie sicher, dass die folgenden Aussagen richtig sind:
++
+** Die Datei muss benannt sein `sdhost-name.prbac` Dabei ist der Hostname der Name des Hosts, für den Sie die Zugriffsberechtigungen angeben.
+** Die Datei muss schreibgeschützt sein, um sicherzustellen, dass SnapDrive für UNIX sie lesen kann, aber dass sie nicht geändert werden kann.
+
+
++
+Um einem Host namens „dev-sun1“ Zugriff zu gewähren, würden Sie folgende Datei auf dem Storage-System erstellen: `/vol/vol1/sdprbac/sddev-sun1.prbac`
+
+. Legen Sie die Berechtigungen in der Datei für diesen Host fest.
++
+Sie müssen das folgende Format für die Datei verwenden:
+
++
+** Sie können nur eine Berechtigungsstufe angeben. Um dem Host vollständigen Zugriff auf alle Vorgänge zu geben, geben Sie die Zeichenfolge ALLEN ZUGRIFF ein.
+** Die Berechtigungszeichenfolge muss das erste in der Datei sein. Das Dateiformat ist ungültig, wenn sich die Berechtigungszeichenfolge nicht in der ersten Zeile befindet.
+** Die Groß-/Kleinschreibung von Berechtigungs-Strings wird nicht berücksichtigt.
+** Kein Leerzeichen kann vor der Berechtigungszeichenfolge liegen.
+** Keine Kommentare sind erlaubt.
++
+Diese gültigen Berechtigungs-Strings ermöglichen die folgenden Zugriffsebenen:
+
+** KEINE – der Host hat keinen Zugriff auf das Speichersystem.
+** SNAP ERSTELLEN – der Host kann Snapshot Kopien erstellen.
+** SNAP USE – der Host kann Snapshot Kopien löschen und umbenennen.
+** SNAP ALL – der Host kann Snapshot Kopien erstellen, wiederherstellen, löschen und umbenennen.
+** STORAGE CREATE DELETE - der Host kann Speicher erstellen, anpassen und löschen.
+** STORAGE-NUTZUNG – der Host kann eine Verbindung zum Storage herstellen und die Verbindung trennen. Außerdem lassen sich Aufteilungen von Klonen und Split beginnen auf dem Storage.
+** GESAMTER STORAGE – der Host kann Storage erstellen, löschen, verbinden und trennen. Außerdem kann er die Klonteilschätzung und den Start der Klonteilteilung auf dem Storage vornehmen.
+** ZUGRIFF – der Host hat Zugriff auf alle zuvor genannten SnapDrive für UNIX-Vorgänge.
++
+Jeder dieser Berechtigungs-Strings ist diskret. Wenn Sie SNAP USE angeben, kann der Host Snapshot Kopien löschen oder umbenennen, dies kann aber keine Snapshot Kopien oder Restores erstellen oder Storage-Bereitstellungsvorgänge ausführen.
+
++
+Unabhängig von den festgelegten Berechtigungen kann der Host Anzeigen- und Listenvorgänge durchführen.
+
+
+
+. Überprüfen Sie die Zugriffsberechtigungen, indem Sie den folgenden Befehl eingeben:
++
+`*snapdrive config access show _filer_name_*`
+
+

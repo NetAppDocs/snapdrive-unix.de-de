@@ -1,0 +1,29 @@
+---
+permalink: aix/task_viewing_the_list_of_igroups.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, view, igroup, list 
+summary: Sie können alle auf dem Host konfigurierten Initiatorgruppen anzeigen. 
+---
+= Anzeigen der Liste der Initiatorgruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können alle auf dem Host konfigurierten Initiatorgruppen anzeigen.
+
+.Schritte
+. Geben Sie auf dem Host-System den folgenden Befehl ein:
++
+`*snapdrive igroup list*`
+
++
+[listing]
+----
+snapdrive igroup list
+appliance name   igroup name
+-----------------------------
+toaster        ig
+----
+

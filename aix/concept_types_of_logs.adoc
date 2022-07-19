@@ -1,0 +1,31 @@
+---
+permalink: aix/concept_types_of_logs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, log, type, troubleshoot 
+summary: SnapDrive für UNIX unterstützt verschiedene Arten von Protokolldateien, die Ihnen bei der Fehlerbehebung helfen, wenn SnapDrive für UNIX nicht wie erwartet funktioniert. 
+---
+= Protokolltypen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt verschiedene Arten von Protokolldateien, die Ihnen bei der Fehlerbehebung helfen, wenn SnapDrive für UNIX nicht wie erwartet funktioniert.
+
+* Prüfprotokoll
++
+SnapDrive für UNIX protokolliert alle Befehle und ihre Rückgabecodes in einem Prüfprotokoll. SnapDrive für UNIX macht einen Eintrag, wenn Sie einen Befehl und einen anderen initiieren, wenn der Befehl abgeschlossen ist. Der spätere Eintrag enthält sowohl den Status des Befehls als auch die Abschlusszeit.
+
+* Wiederherstellungsprotokoll
++
+Einige SnapDrive für UNIX-Vorgänge können das System bei Unterbrechung in einem inkonsistenten oder weniger nutzbaren Zustand belassen. Diese Situation kann auftreten, wenn ein Benutzer das Programm beendet oder wenn der Host während eines Vorgangs abstürzt. Das Wiederherstellungsprotokoll enthält die Schritte einer Snap-Wiederherstellungsoperation. Er dokumentiert die auszuführende Schritte und den Fortschritt, sodass Sie beim manuellen Recovery-Prozess vom technischen Support unterstützt werden.
+
+* Trace-Protokoll
++
+SnapDrive für UNIX meldet Informationen, die sich bei der Diagnose von Problemen nützlich erweisen. Wenn Sie ein Problem haben, kann der technische Support von NetApp diese Protokolldatei anfordern.
+
++
+SnapDrive 4.0 für UNIX hat den Daemon Service SnapDrive für UNIX eingeführt. Damit die Befehle von SnapDrive für UNIX ausgeführt werden können, muss der Daemon ausgeführt werden. Daemon-Tracing muss für jeden einzelnen Befehl ausgeführt werden, auch wenn Befehle parallel ausgeführt werden. Der Speicherort und Name der Protokolldatei lautet `/var/log/sd-trace.log`. Diese Trace-Dateien haben nur die befehlsspezifischen Trace-Einträge. Die Trace-Protokolle für die Ausführung des Daemon werden in einer anderen Trace-Datei aufgezeichnet `/var/log/sd-daemon-trace.log`.
+
+

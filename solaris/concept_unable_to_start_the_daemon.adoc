@@ -1,0 +1,32 @@
+---
+permalink: solaris/concept_unable_to_start_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, start, daemon, error 
+summary: Der Daemon kann nicht gestartet werden, wenn der Daemon einige veraltete Einträge im SnapDrive-Prozess findet. 
+---
+= Der Daemon konnte nicht gestartet werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Daemon kann nicht gestartet werden, wenn der Daemon einige veraltete Einträge im SnapDrive-Prozess findet.
+
+Die folgende Fehlermeldung wird angezeigt, wenn der Daemon gestartet oder neu gestartet wird.
+
+[listing]
+----
+Starting snapdrive daemon: snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+snapdrive daemon port 4094 is in use ...
+Unable to start daemon...check daemon log file for more details
+----
+Während des Neustarts/Startvorgangs des Daemon können Sie auf gestalbene SnapDrive-Prozesseinträge stoßen, die zum Fehlschlagen des Daemon führen.
+
+Die Behelfslösung für dieses Problem besteht darin, Folgendes auszuführen:
+
+* Löschen Sie die veralteten Einträge im SnapDrive-Prozess manuell.
+* Suchen Sie die freien Ports, die im Host verfügbar sind. Dann im `snapdrive.conf` Datei, geben Sie den Port in der Option an `_contact-http-port-sdu-daemon_`.
+

@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/task_stopping_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, daemon, configuration 
+summary: Wenn Sie die Konfigurationsdatei SnapDrive für UNIX ändern, müssen Sie den Daemon anhalten und neu starten. Sie können den Dämon gewaltsam oder gewaltsam stoppen. 
+---
+= Beenden des Daemon
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Konfigurationsdatei SnapDrive für UNIX ändern, müssen Sie den Daemon anhalten und neu starten. Sie können den Dämon gewaltsam oder gewaltsam stoppen.

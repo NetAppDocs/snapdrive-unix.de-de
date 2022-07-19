@@ -1,0 +1,56 @@
+---
+permalink: linux-installation-cmode/task_provisioning_rdm_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, provision, rdm, lun, create, fc 
+summary: Mit SnapDrive für UNIX können Sie RDM LUNs erstellen und bereitstellen, wobei FC-Protokoll auf einem Gastbetriebssystem in einer virtuellen VMware Umgebung aktiviert ist. Sie können darüber hinaus RDM LUNs mithilfe von ONTAP bereitstellen. 
+---
+= Bereitstellung RDM-LUNs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie RDM LUNs erstellen und bereitstellen, wobei FC-Protokoll auf einem Gastbetriebssystem in einer virtuellen VMware Umgebung aktiviert ist. Sie können darüber hinaus RDM LUNs mithilfe von ONTAP bereitstellen.
+
+* NetApp Virtual Storage Console (VSC) muss mit VMware vCenter™ installiert und konfiguriert sein.
+* Die Backup- und Recovery-Funktion der NetApp Virtual Storage Console für VMware vSphere™ muss im Windows Betriebssystem installiert sein, das bei vCenter™ registriert ist.
+* `default-transport` Muss als festgelegt werden `fcp` Im `snapdrive.conf` Datei, und der SnapDrive für UNIX Daemon müssen neu gestartet werden.
+
+
+.Schritte
+. Konfigurieren Sie das Gastbetriebssystem zum Erstellen einer RDM LUN:
++
+`*snapdrive config set -viadmin _user viadmin_name_*`
+
++
+** `_user_` Ist der Name des virtuellen Schnittstellensystems.
+** `_viadmin_name_` Ist der Name der IP-Adresse des virtuellen Schnittstellensystems.
+
+
+. Überprüfen Sie die Anmeldeinformationen für die virtuelle Speicherkonsole:
++
+`*snapdrive config list*`
+
++
+Mit diesem Befehl wird der Benutzername oder die virtuelle Schnittstelle angezeigt, die in SnapDrive für UNIX angegeben wird.
+
+. Überprüfen Sie, ob das Gastbetriebssystem mit dem Speichersystem kommunizieren kann:
++
+`*storage show-all _command_*`
+
+. Erstellen einer RDM-LUN auf dem Speichersystem:
++
+`*snapdrive storage create -lun _long_lun_name_ -lunsize _size_of_the_lun_*`
+
+. Verbinden Sie die RDM-LUN mit dem Host:
++
+`*snapdrive storage connect-lun _long_lun_name_*`
+
+
+
+*Verwandte Informationen*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2843698["Virtual Storage Console, VASA Provider und Storage Replication Adapter für VMware vSphere Administration Guide für Version 7.2"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1368859["Data ONTAP 8.2 Storage Management Guide für 7-Mode"]

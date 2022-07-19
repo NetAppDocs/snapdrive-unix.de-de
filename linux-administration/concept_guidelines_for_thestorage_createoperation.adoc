@@ -1,0 +1,41 @@
+---
+permalink: linux-administration/concept_guidelines_for_thestorage_createoperation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, operation, lun, guidelines 
+summary: Wenn Sie den Befehl SnapDrive Storage create zum Erstellen des Storage verwenden, sollten Sie bestimmte Richtlinien befolgen. 
+---
+= Richtlinien für den Speichervorgang erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei Verwendung des sollten Sie bestimmte Richtlinien beachten `snapdrive storage create` Befehl für den Speichervorgang erstellen.
+
+* Wenn Sie LUNs aus den verschiedenen Storage-System-Volumes mit der Option -lun auflisten, können Sie die nicht einschließen `-dg`, `-hostvol`, Oder `-fs` Option an der Eingabeaufforderung.
+* Der `-nolvm` Mit Option wird ein Dateisystem direkt auf einem LUN erstellt, ohne den Host LVM zu aktivieren.
++
+Sie können keine Host-Volumes oder Datenträgergruppen angeben, wenn Sie diese Option verwenden.
+
+* Sie können SnapDrive Befehle zur Bereitstellung von Storage für UNIX für NFS-Dateien oder Verzeichnisbäume nicht verwenden.
+* Wenn Sie den verwenden `snapdrive storage create` Befehl zum Erstellen eines Dateisystems direkt auf einer LUN können Sie nicht mehr als eine LUN angeben.
++
+SnapDrive für UNIX erstellt immer eine neue LUN, wenn Sie diese Form des Befehls verwenden.
+
+* Einige Betriebssysteme verfügen über Einschränkungen für die Anzahl der LUNs, die Sie erstellen können.
++
+Wenn auf Ihrem Host eines dieser Betriebssysteme ausgeführt wird, können Sie die ausführen `snapdrive config check luns` Befehl.
+
+* Das Erstellen eines Filesystems auf einer RAW-LUN mit DMP-Multipathing wird unterstützt.
+* Der `enable-mount-with-netdev` Mit dem Parameter können Sie den einbeziehen `_netdev` Filesystem-Option mit `/etc/fstab` Datei:
++
+Wenn der Wert auf aus (Standardwert) gesetzt ist, müssen Sie manuell angeben `-mntopts _netdev` Im `snapdrive storage create` Befehl. Wenn Sie den Wert jedoch in ein ändern, wird der angezeigt `-mntopts _netdev` Wird automatisch ausgeführt, wenn Sie den ausführen `snapdrive storage create` Befehl.
+
+
+
+*Verwandte Informationen*
+
+xref:concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.adoc[Der Befehl zum Erstellen von SnapDrive für UNIX-Speicher schlägt beim Erkennen einiger zugeordneten Geräte fehl]
+
+xref:concept_configuration_options_and_their_default_values.adoc[Konfigurationsoptionen und ihre Standardwerte]

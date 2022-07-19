@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_snapdrive_for_unix_overview.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, overview, data, management 
+summary: SnapDrive für UNIX vereinfacht das Datenmanagement und erhöht die Verfügbarkeit und Zuverlässigkeit von Applikationsdaten durch vereinfachte Storage-Bereitstellung und konsistente Filesystem-Snapshot-Kopien. 
+---
+= SnapDrive für UNIX – Übersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX vereinfacht das Datenmanagement und erhöht die Verfügbarkeit und Zuverlässigkeit von Applikationsdaten durch vereinfachte Storage-Bereitstellung und konsistente Filesystem-Snapshot-Kopien.
+
+SnapDrive für UNIX vereinfacht das Backup von Daten, sodass Sie auch dann Daten wiederherstellen können, wenn diese gelöscht oder geändert werden. SnapDrive für UNIXnutzt Snapshot Technologie, um ein Image der Daten auf einem freigegebenen oder nicht freigegebenen Storage-System, das mit einem UNIX-Host verbunden ist, zu erstellen. Wenn Sie eine Snapshot Kopie wiederherstellen, werden die aktuellen Daten im Storage-System durch die Daten in der Snapshot Kopie ersetzt.
+
+SnapDrive für UNIX bietet Storage-Funktionen, mit denen Sie die gesamte Storage-Hierarchie managen können, z. B. die durch Host-Applikationen sichtbare Datei, den Volume Manager und die Storage-System-seitige logische Gerätenummer (LUN).
+
+SnapDrive für UNIX bietet Unterstützung für die rollenbasierte Zugriffssteuerung. Ein Storage-Administrator begrenzt anhand der Rolle und Aufgabe des Benutzers den Zugriff auf das Storage-System mithilfe der rollenbasierten Zugriffssteuerung.
+
+
+NOTE: Zur Nutzung der rollenbasierten Zugriffssteuerung müssen Sie die Operations Manager Konsole 3.7 oder höher verwenden.

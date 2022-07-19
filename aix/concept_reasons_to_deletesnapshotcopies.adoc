@@ -1,0 +1,26 @@
+---
+permalink: aix/concept_reasons_to_deletesnapshotcopies.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, copy, reason 
+summary: Löschen Sie ältere Snapshot Kopien, um Speicherplatz auf dem Storage-System-Volume freizugeben oder weniger Snapshot Kopien zu behalten. 
+---
+= Gründe für das Löschen von Snapshot Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Löschen Sie ältere Snapshot Kopien, um Speicherplatz auf dem Storage-System-Volume freizugeben oder weniger Snapshot Kopien zu behalten.
+
+Sie können ältere Snapshot Kopien aus den folgenden Gründen löschen:
+
+* Geringerer als der Obergrenze von 255 auf einem Storage-System-Volume gespeicherte Snapshot-Kopien aufbewahren. Sobald dieses Limit erreicht wird, schlägt das Erstellen neuer Snapshot Kopien fehl.
+* Um Speicherplatz auf dem Storage-System-Volume freizugeben. Selbst bevor die Snapshot-Kopie das Limit erreicht, schlägt eine Snapshot-Kopie fehl, wenn die Festplatte nicht über genügend reservierten Speicherplatz verfügt.
+* Sie können auch bei Namen von Snapshot Kopien das Platzhalterzeichen (*) verwenden. Im Rahmen der Snapshot-Anzeige können Sie das Platzhalterzeichen verwenden, um alle Namen von Snapshot Kopien anzuzeigen, die einem bestimmten Muster entsprechen. Es gelten die folgenden Regeln für die Verwendung von Platzhalterzeichen im Namen von Snapshot Kopien:
++
+** Sie können nur am Ende des Namens einen Platzhalter verwenden. Sie können die Platzhalterzeichen am Anfang oder mitten im Namen einer Snapshot Kopie nicht verwenden.
+** Im Feld „Storage-System“ oder „Storage System-Volume“ können Sie die Platzhalterzeichen für einen Namen für die Snapshot Kopie nicht verwenden.
+
+
+

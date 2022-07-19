@@ -1,0 +1,18 @@
+---
+permalink: solaris/concept_renaming_asnapshot_copy_thatspans_storage_systems_orvolumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rename, snapshot, copy, storage, volume 
+summary: Benennen Sie bei Snapshot Kopien, die mehrere Storage-Systeme oder Storage-System-Volumes umfassen, alle zugehörigen Snapshot Kopien um. 
+---
+= Umbenennen einer Snapshot Kopie, die sich über Storage-Systeme oder Volumes erstreckt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Benennen Sie bei Snapshot Kopien, die mehrere Storage-Systeme oder Storage-System-Volumes umfassen, alle zugehörigen Snapshot Kopien um.
+
+Mit diesem Befehl können Sie auch eine Snapshot Kopie umbenennen, die sich über mehrere Storage-Systeme oder mehrere Storage-System-Volumes hinweg befindet.
+
+Wenn Sie eine dieser Snapshot Kopien umbenennen, müssen Sie auch alle zugehörigen Snapshot Kopien mit demselben Namen umbenennen. Der Grund dafür ist, dass SnapDrive für UNIX bei der Erstellung der Snapshot Kopie einen kurzen Namen verwendet, auch wenn diese sich auf mehrere Storage-Systeme oder Volumes erstreckt. Mit dem Befehl umbenennen wird der Name der aktuellen Snapshot Kopie geändert, aber er ändert den Namen der verwandten Snapshot Kopien in den anderen Speicherorten nicht.

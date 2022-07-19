@@ -1,0 +1,40 @@
+---
+permalink: solaris/concept_san_filespec_created_with_solaris_volume_manager_svm_using_iscsi_does_not_automount.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, filespec, iscsi, volume, solaris, manager, network, mount 
+summary: 'Wenn das Hostsystem neu gestartet wird, wird die Spezifikation für die Speicherbereich-Netzwerkdatei, die mit Solaris Volume Manager \(SVM\) mit iSCSI erstellt wurde, nicht automatisch bereitgestellt und der Host startet nicht.' 
+---
+= Die Spezifikation für die Speicherbereich-Netzwerkdatei, die mit Solaris Volume Manager unter Verwendung von iSCSI erstellt wurde, wird nicht automatisch bereitgestellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn das Hostsystem neu gestartet wird, wird die Spezifikation für die Speicherbereich-Netzwerkdatei, die mit Solaris Volume Manager (SVM) mit iSCSI erstellt wurde, nicht automatisch bereitgestellt und der Host startet nicht.
+
+Wenn der Host startet, können Sie die Dateispezifikation mithilfe der genannten Schritte mounten.
+
+
+
+== Behelfslösung
+
+. Geben Sie den Metaset ein
++
+`*-s dgname -t*`
+
++
+Befehl zum manuellen Ändern der Festplatteneigentümer.
+
++
+
+NOTE: Stellen Sie sicher, dass metadb definiert ist.
+
+. Geben Sie das ein
++
+`*mount -a*`
+
++
+Befehl zum Mounten der Dateispezifikation.
+
+

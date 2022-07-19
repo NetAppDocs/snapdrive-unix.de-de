@@ -1,0 +1,27 @@
+---
+permalink: solaris/concept_creating_a_file_system_directly_on_a_lun_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, lun, fail, create, file, system 
+summary: Auf Solaris-Hosts schlägt das Erstellen eines UFS-Dateisystems direkt auf einer LUN fehl. 
+---
+= Das Erstellen eines Dateisystems direkt auf einer LUN schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf Solaris-Hosts schlägt das Erstellen eines UFS-Dateisystems direkt auf einer LUN fehl.
+
+Wenn Sie sowohl UFS als auch Veritas Stack auf demselben Solaris Host installiert haben, und nach der Einstellung der Standard-Transport-Konfigurationsvariable als `_iscsi_`, SnapDrive für UNIX wählt nicht UFS als Standard-Dateisystem für die Erstellung eines Dateisystems direkt auf einer LUN. Der Vorgang schlägt mit der folgenden Fehlermeldung fehl:
+
+[listing]
+----
+0002-138 Admin error: Transport Type: iscsi Volume Manager: VxVM is
+not supported combination.
+----
+
+
+== Behelfslösung
+
+Verwenden Sie die `ufs` Wert für das `-fstype` Befehl zum Erstellen eines UFS-Dateisystems direkt auf einer LUN.

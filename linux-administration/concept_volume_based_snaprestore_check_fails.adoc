@@ -1,0 +1,16 @@
+---
+permalink: linux-administration/concept_volume_based_snaprestore_check_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, volume, snaprestore, check, fail, nfs, vbsr, host, export 
+summary: 'Volume-basierte SnapRestore \(Vbsr\)-Prüfung schlägt fehl, \(Wenn NFS versucht, die Liste zu exportieren, die keine ausländischen Hosts hat\) auf dem Clientcomputer \(SLES 11\), der zwei verschiedene IPs für einen Hostnamen in der Datei /etc/Hosts hat.' 
+---
+= Die Volume-basierte SnapRestore-Prüfung schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Volume-basierte SnapRestore-Prüfung (Vbsr) schlägt fehl (wenn NFS versucht, die Liste zu exportieren, die keine ausländischen Hosts hat) auf dem Client-Rechner (SLES 11), der zwei verschiedene IPs für einen Hostnamen im hat `/etc/hosts` Datei:
+
+Um das Problem zu lösen, müssen Sie sicherstellen, dass nur eine IP für einen Hostnamen im vorhanden ist `/etc/hosts` Datei:

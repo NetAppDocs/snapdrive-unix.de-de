@@ -1,0 +1,186 @@
+---
+permalink: solaris/reference_stack_requirements.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, stack, requirements 
+summary: 'SnapDrive für UNIX erfordert ein Host-Betriebssystem, Host-Filesysteme, NFS, Volume-Manager, FC- oder iSCSI-Host Utilities, Lizenzen für Storage-Systeme, ONTAP Software, MultiStore Software und Internet Protocol \(IP\)-Zugriff. SnapDrive für UNIX hat darüber hinaus bestimmte Stack-Anforderungen, die das Unternehmen erfüllen muss.' 
+---
+= Stack-Anforderungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX erfordert ein Host-Betriebssystem, Host-Filesysteme, NFS, Volume Manager, FC- oder iSCSI-Host Utilities, Lizenzen für Storage-Systeme, ONTAP Software, MultiStore Software und IP-Zugriff (Internet Protocol). SnapDrive für UNIX hat darüber hinaus bestimmte Stack-Anforderungen, die das Unternehmen erfüllen muss.
+
+
+
+== Host-seitige Einheiten
+
+Nachfolgend eine Liste der Host-seitigen Einheiten:
+
+* Das Host-Betriebssystem
+* Einen Volumenmanager
+* File-System
+* Solaris Host Utilitys
+
+
+
+
+== Gastbetriebssysteme für RDM LUN Support
+
+Nachfolgend finden Sie eine Liste der Gastunternehmen:
+
+* Das Gastbetriebssystem
+* Einen Volumenmanager
+* File-System
+* Solaris iSCSI Host Utility allein ist ausreichend, wenn das Protokoll iSCSI ist
+
+
+
+
+== SnapDrive für UNIX Stack
+
+Sie müssen akzeptable Werte für das eingeben `_multipathing-type_`, `_fstype_`, `_default-transport_`, und `_vmtype_` Variablen in `snapdrive.conf` Datei wie im Matrix-Stack angegeben. Sie müssen überprüfen, ob die eingegebenen Werte in Ihrem Hostsystem installiert sind und ausgeführt werden.
+
+|===
+| Host-Plattform | Standardtransportart | Multipathing-Typ | Fstype | Vmtype 
+
+
+ a| 
+Solaris x86
+ a| 
+FCP
+ a| 
+Keine
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+FCP
+ a| 
+Mpxio
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+ISCSI
+ a| 
+Keine
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+ISCSI
+ a| 
+Mpxio
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+Solaris SPARC
+ a| 
+FCP
+ a| 
+DMP
+ a| 
+vxfs
+ a| 
+vxvm
+
+
+
+ a| 
+FCP
+ a| 
+Keine
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+FCP
+ a| 
+Mpxio
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+ISCSI
+ a| 
+Keine
+ a| 
+ufs
+ a| 
+svm
+
+
+
+ a| 
+ISCSI
+ a| 
+Mpxio
+ a| 
+ufs
+ a| 
+svm
+
+|===
+* Wenn Sie FCP- und iSCSI-Storage-Stacks haben, unterstützt SnapDrive nur FCP Storage-Stacks.
++
+SnapDrive unterstützt iSCSI Storage Stacks für AIX nicht.
+
+* Das Host-Betriebssystem und die entsprechenden Patches für Solaris sind installiert.
+* Der Volume Manager für Solaris ist VxVM und Solaris Volume Manager (SVM).
++
+Sie müssen VxVM separat installieren; SVM ist im Solaris Betriebssystem enthalten.
+
+* Host Utilities sind in Solaris installiert
+* ONTAP Software ist auf Ihrem Storage-System installiert.
+* Für eine Einrichtung der vFiler Einheit wird MultiStore Software auf Ihrem Storage-System installiert.
+* Der Zugriff auf das Internet-Protokoll (IP) ist zwischen dem Host und dem Speichersystem möglich.
+
+
+NetApp ändert regelmäßig Host Utilities und Komponenten. Diese Änderungen können Sie verfolgen, indem Sie die Interoperabilitäts-Matrix verwenden, die aktuelle Informationen zur Verwendung von NetApp Produkten in einer SAN-Umgebung enthält.
+
+Die Lizenz des Storage-Systems und die Lizenz des MultiStore bilden die Einheiten des Storage-Systems.
+
+
+
+== Lizenzierungsanforderungen für Storage-Systeme
+
+* Eine FC-, iSCSI- oder NFS-Lizenz, je nach Konfiguration
+* Eine FlexClone Lizenz
+* Eine SnapRestore-Lizenz auf dem Storage-System
+
+
+*Verwandte Informationen*
+
+xref:concept_unable_to_select_a_storage_stack.adoc[Es kann kein Storage-Stack ausgewählt werden]
+
+xref:concept_when_to_use_the_snapdrive_configuration_wizard.adoc[SnapDrive-Konfigurationsassistent]
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp Interoperabilität"]

@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_manual_pages_installed_by_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, man, page, install 
+summary: SnapDrive für UNIX bietet man-Pages in mehreren Formaten. 
+---
+= Man-Pages installiert von SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX bietet man-Pages in mehreren Formaten.
+
+Die man-Pages sind unter folgender Adresse verfügbar:
+
+* `/opt/NTAPsnapdrive/docs/snapdrive.1`
+* `/opt/NTAPsnapdrive/docs/snapdrived.1`
+* `/opt/NTAPsnapdrive/docs/snapdrive.1.html`
+* `/opt/NTAPsnapdrive/docs/snapdrived.1.html`
+* `/opt/NTAPsnapdrive/docs/solaris_info.1`
+* `/opt/NTAPsnapdrive/docs/brocade_info.1`
+* `/opt/NTAPsnapdrive/docs/mcdata_info.1`
+* `/opt/NTAPsnapdrive/docs/cisco_info.1`
+* `/opt/NTAPsnapdrive/docs/filer_info.1`
+* `/opt/NTAPsnapdrive/docs/snapdrive.dc.1`
+
+
+Wenn Sie SnapDrive für UNIX in einer spärlichen Root-Zone installieren, werden keine man-Pages unter hinzugefügt `/usr/share/man/` Weil `/usr/share/man/` Wird als schreibgeschütztes Dateisystem gemountet. Um die man-Pages in einer spärlichen Root-Zone zu extrahieren, führen Sie den aus `pkgtrans NTAPsnapdrive.pkg /tmp` Befehl. Nachdem Sie den Befehl ausgeführt haben, werden die man-Pages in extrahiert `/tmp/NTAPsnapdrive/root/opt/NTAPsnapdrive/docs` .

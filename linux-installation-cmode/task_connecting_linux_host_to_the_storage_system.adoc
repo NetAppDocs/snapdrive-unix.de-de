@@ -1,0 +1,53 @@
+---
+permalink: linux-installation-cmode/task_connecting_linux_host_to_the_storage_system.html 
+sidebar: sidebar 
+keywords: snapdrive, snap, connect, hosts, storage, system 
+summary: 'Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines einrichten \ (SVMs, früher Vserver\).' 
+---
+= Verbinden von Linux-Hosts mit Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines (SVMs, früher Vserver genannt) einrichten.
+
+* Sie müssen die Aggregate, die Volumes enthalten, der Aggregatliste der SVMs zuweisen, damit Sie die SnapDrive für UNIX Vorgänge ausführen können.
+* Sie müssen über eine oder mehrere SVMs verfügen, um Daten aus dem Cluster bereitzustellen.
++
+Die IP-Adresse der logischen SVM-Managementoberfläche (LIF) muss dem SVM-Namen zugeordnet sein, entweder im Domain Name Service (DNS) oder im `/etc/hosts` Datei:
+
+
+
+.Schritte
+. Wenn Sie ONTAP 8.2.2 oder eine frühere Version verwenden, erstellen Sie einen Benutzer auf dem Cluster-Managementserver, auch als „adminSVM: +“ bezeichnet
++
+`*snapdrive config set -cserver _csadmin_name cserver_name_*`
+
++
+Wenn Sie ONTAP 8.2.3 oder höher verwenden, überspringen Sie diesen Schritt.
+
+. Erstellen eines Benutzers für die Daten-SVM:
++
+`*snapdrive config set*`
+
++
+`_vsadmin_name Vserver_name_`
+
+. Vergewissern Sie sich, dass die SVM in SnapDrive für UNIX konfiguriert ist:
++
+`*snapdrive config list*`
+
++
+Der Befehl führt den Benutzernamen und die IP-Adresse des Cluster-Managementservers und die Daten-SVM auf.
+
+. Ändern Sie den Pfad der Managementoberfläche zum Datenpfad der SVM:
++
+`*snapdrive config set -mgmtpath _management_interface_path data_interface_path_*`
+
+. Überprüfen Sie, ob alle Daten- und Management-Schnittstellen ordnungsgemäß konfiguriert sind:
++
+`*snapdrive config list -mgmtpath*`
+
+

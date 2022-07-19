@@ -1,0 +1,14 @@
+---
+permalink: linux-administration/concept_multipath_setup.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multipath, steup, host, hba, driver, lvm, multipath 
+summary: Linux MPIO funktioniert, wenn die Hosteinrichtung abgeschlossen ist. Die Host-Einrichtung ist weitgehend als HBA-Einrichtung, HBA-Treibereinrichtung, Multipath-Setup, LVM-Einrichtung und SnapDrive für die UNIX Einrichtung klassifiziert. 
+---
+= Multipath-Einrichtung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Linux MPIO funktioniert, wenn die Hosteinrichtung abgeschlossen ist. Die Host-Einrichtung ist weitgehend als HBA-Einrichtung, HBA-Treibereinrichtung, Multipath-Setup, LVM-Einrichtung und SnapDrive für die UNIX Einrichtung klassifiziert.

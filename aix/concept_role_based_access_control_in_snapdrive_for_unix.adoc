@@ -1,0 +1,24 @@
+---
+permalink: aix/concept_role_based_access_control_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rbac, access, control, role 
+summary: 'Die rollenbasierte Zugriffssteuerung \(RBAC\) wird für die Benutzeranmeldung und Rollenberechtigungen verwendet. RBAC bietet Administratoren die Möglichkeit, Benutzergruppen zu managen, indem sie Rollen definieren. Wenn Sie den Zugriff auf die Datenbank auf bestimmte Administratoren beschränken müssen, müssen Sie Administratorkonten für sie einrichten. Außerdem müssen Sie Rollen auf die von Ihnen erstellten Administratorkonten anwenden, wenn Sie die Informationen einschränken möchten, können diese Administratoren anzeigen und die Vorgänge, die sie ausführen können, anzeigen.' 
+---
+= Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die rollenbasierte Zugriffssteuerung (Role Based Access Control, RBAC) wird für die Anmeldung bei Benutzern und für Rollenberechtigungen verwendet. RBAC bietet Administratoren die Möglichkeit, Benutzergruppen zu managen, indem sie Rollen definieren. Wenn Sie den Zugriff auf die Datenbank auf bestimmte Administratoren beschränken müssen, müssen Sie Administratorkonten für sie einrichten. Außerdem müssen Sie Rollen auf die von Ihnen erstellten Administratorkonten anwenden, wenn Sie die Informationen einschränken möchten, können diese Administratoren anzeigen und die Vorgänge, die sie ausführen können, anzeigen.
+
+RBAC wird in SnapDrive für UNIX mithilfe der Operations Manager Konsole verwendet. Operations Manager Konsole ermöglicht den granularen Zugriff auf Storage-Objekte, beispielsweise LUNs, qtrees, Volumes, Aggregate und vFiler Einheiten.
+
+*Verwandte Informationen*
+
+xref:concept_mandatory_checks_for_volume_based_snaprestore.adoc[Obligatorische Überprüfungen für Volume-basierte SnapRestore]
+
+xref:concept_restoring_snapshotcopies_ona_destination_storagesystem.adoc[Wiederherstellen von Snapshot Kopien auf einem Ziel-Storage-System]
+
+xref:concept_snap_disconnect_procedure.adoc[Vorgehensweise zum Abtrennen von Schnappverbindungen]

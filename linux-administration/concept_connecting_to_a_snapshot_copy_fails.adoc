@@ -1,0 +1,36 @@
+---
+permalink: linux-administration/concept_connecting_to_a_snapshot_copy_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, fails 
+summary: SnapDrive für UNIX stellt keine Verbindung zu einer Snapshot Kopie her, wenn ein Linux Host während des SnapDrive für den UNIX-Betrieb neu startet. 
+---
+= Das Herstellen einer Snapshot-Kopie schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX stellt keine Verbindung zu einer Snapshot Kopie her, wenn ein Linux Host während des SnapDrive für den UNIX-Betrieb neu startet.
+
+Dies geschieht auf Linux LVM2 während einer Snap-Connect-Operation auf einem Host, der direkt während des SnapDrive für den UNIX-Betrieb neu startet.
+
+[listing]
+----
+Volume manager configuration file has tags that are added by SnapDrive for UNIX. Clean the file manually.
+----
+
+
+== Behelfslösung
+
+. Stellen Sie sicher, dass die LUN-Klone von den Festplattengruppen zugeordneten Geräten dem Host nicht zugeordnet sind. Wenn sie dem Host zugeordnet sind, heben Sie die Zuordnung auf und löschen Sie sie. Möglicherweise waren sie bereits von einer zuvor fehlgeschlagenen SnapDrive-Operation anwesend.
+. Bearbeiten Sie das `lvm.configfile` (Befindet sich unter `/etc/lvm/`) Auf folgende Weise:
++
+.. Entfernen Sie alle Zeilen mit Suffix `##SDUTEMP`.
+.. Stellen Sie alle Zeilen wieder her, die dem Kommentar-Tag vorangestellt sind `#SDUEXISTING`.
++
+Wenn eines der oben genannten Produkte nicht funktioniert, wenden Sie sich an den technischen Support von NetApp.
+
+
+
+

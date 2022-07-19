@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_guest_os_preparation_for_installing_sdu.html 
+sidebar: sidebar 
+keywords: snap, snapdrve, guest, os, install, prepare 
+summary: Sie müssen das Gastsystem vorbereiten, bevor Sie SnapDrive für UNIX auf Ihrem System installieren können. Zur Vorbereitung des Gasts müssen Sie die Solaris Host Utilities installieren. 
+---
+= Vorbereitung des Gastbetriebssystems für die Installation von SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen das Gastsystem vorbereiten, bevor Sie SnapDrive für UNIX auf Ihrem System installieren können. Zur Vorbereitung des Gasts müssen Sie die Solaris Host Utilities installieren.
+
+*Verwandte Informationen*
+
+xref:task_configuring_virtual_storage_console_in_snapdrive_for_unix.adoc[Konfiguration der Virtual Storage Console für SnapDrive für UNIX]
+
+xref:concept_storage_provisioning_for_rdm_luns.adoc[VMware VMotion-Unterstützung in SnapDrive für UNIX]
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[Grenzen von RDM LUNs, die von SnapDrive gemanagt werden]
+
+xref:task_verifying_virtual_storage_console.adoc[Überprüfen der Anmeldeinformationen für die Virtual Storage Console]
+
+xref:concept_configuration_options_and_their_default_values.adoc[Konfigurationsoptionen und ihre Standardwerte]
+
+xref:task_hosts_preparation_for_adding_luns.adoc[Host-Vorbereitung für das Hinzufügen von LUNs]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[Überlegungen bei der Bereitstellung von RDM LUNs]

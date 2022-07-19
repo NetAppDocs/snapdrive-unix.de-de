@@ -1,0 +1,51 @@
+---
+permalink: aix/concept_snapdrive_for_unix_incorrectly_interprets_the_dollar_sign_symbol.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, dollar, sign, incorrect, interpret 
+summary: 'SnapDrive für UNIX interpretiert das Dollarzeichen \(\) und alle Sonderzeichen falsch, wenn die Sonderzeichen als Teil eines Konfigurationswerts angegeben werden.' 
+---
+= SnapDrive für UNIX interpretiert das Dollarzeichen falsch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX interpretiert das Dollarzeichen (€) und alle Sonderzeichen falsch, wenn die Sonderzeichen als Teil eines Konfigurationswerts angegeben werden.
+
+Alle angegebenen Konfigurationswerte sollten numerisch sein. Wenn Sie als Teil des Konfigurationswerts € oder ein anderes Sonderzeichen angeben, akzeptiert SnapDrive für UNIX den Wert, interpretiert aber den nach dem Sonderzeichen genannten numerischen Wert auf andere Weise.
+
+
+
+== Beispiel
+
+Das folgende Beispiel zeigt die Interpretation von USD:
+
+[listing]
+----
+#a=$123
+#echo $a
+23
+
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_set volume-clone-retry-sleep=$129
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_show |grep volume-clone-retry-sleep
+volume-clone-retry-sleep:Number of seconds between retries during flex-clone create:'3':'29':1:0:'^[0-9]+$':filer
+----
+In diesem Beispiel interpretiert SnapDrive für UNIX den Konfigurationswert (123 US-Dollar) als 23.
+
+
+
+== Behelfslösung
+
+Geben Sie einen umgekehrten Schrägstrich (\) vor € an. Ändern Sie das vorherige Beispiel wie folgt:
+
+[listing]
+----
+#a=\$123
+#echo $a
+23
+
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_set volume-clone-retry-sleep=$129
+[root@vm-linux-51-233 ~]# /opt/NetApp/snapdrive/bin/config_show |grep volume-clone-retry-sleep
+volume-clone-retry-sleep:Number of seconds between retries during flex-clone create:'3':'29':1:0:'^[0-9]+$':filer
+----

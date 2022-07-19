@@ -1,0 +1,44 @@
+---
+permalink: solaris/concept_understanding_how_snapdrive_commands_mount_file_systems_and_modify_system_files.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, command, mounting, modify, file 
+summary: Bestimmte SnapDrive für UNIX-Befehle können dazu führen, dass Dateisysteme gemountet oder abgehängt werden. Wenn ein Befehl einen Vorgang durchführt, der ein Dateisystem einhängt, fügt SnapDrive für UNIX den Namen des Dateisystems zur Standardsystemdatei für Ihre Host-Plattform hinzu. Wenn ein Vorgang ein Dateisystem abgehängt hat, entfernt SnapDrive für UNIX den Namen aus der Systemdatei. Dies sollte kein Problem darstellen, aber es ist sinnvoll zu wissen, wann Systemdateien geändert werden. 
+---
+= SnapDrive Befehle führen manchmal zum Mounten oder Aufhängen von Dateisystemen und zum Ändern von Systemdateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bestimmte SnapDrive für UNIX-Befehle können dazu führen, dass Dateisysteme gemountet oder abgehängt werden. Wenn ein Befehl einen Vorgang ausführt, der ein Dateisystem mountet, fügt SnapDrive für UNIX den Namen des Dateisystems zur Standardsystemdatei für Ihre Host-Plattform hinzu. Wenn ein Vorgang ein Dateisystem abgehängt hat, entfernt SnapDrive für UNIX den Namen aus der Systemdatei. Dies sollte kein Problem darstellen, aber es ist sinnvoll zu wissen, wann Systemdateien geändert werden.
+
+Der Name der Systemdatei variiert je nach Hostplattform. In der folgenden Tabelle sind die Host-Plattformen und ihre Systemdateien aufgeführt.
+
+|===
+| *Gastgeber* | *Systemdatei* 
+
+
+ a| 
+Solaris
+ a| 
+`etc/vfstab`
+
+|===
+Jeder der folgenden Befehle kann Dateisysteme mounten:
+
+* `snapdrive snap restore`
+* `snapdrive snap connect`
+* `snapdrive storage create`
+* `snapdrive host connect`
+* `snapdrive storage connect`
+
+
+Mit den folgenden Befehlen werden Vorgänge ausgeführt, die das Mounten eines Dateisystems aufheben können:
+
+* `snapdrive snap restore`
+* `snapdrive snap disconnect`
+* `snapdrive storage disconnect`
+* `snapdrive storage delete`
+* `snapdrive host disconnect`
+

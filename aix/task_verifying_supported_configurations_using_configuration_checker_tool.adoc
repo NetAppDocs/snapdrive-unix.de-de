@@ -1,0 +1,18 @@
+---
+permalink: aix/task_verifying_supported_configurations_using_configuration_checker_tool.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, verify, supported, configuration 
+summary: Das SnapDrive for UNIX Configuration Checker Tool hilft Ihnen, die zu SnapDrive für UNIX unterstützten Konfigurationen zu identifizieren und zu überprüfen. 
+---
+= Überprüfen unterstützter Konfigurationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das SnapDrive for UNIX Configuration Checker Tool hilft Ihnen, die zu SnapDrive für UNIX unterstützten Konfigurationen zu identifizieren und zu überprüfen.
+
+Das Konfigurationsprüfungstool mit der aktualisierten Datendatei überprüft die von SnapDrive für UNIX unterstützten Konfigurationen und listet alle unterstützten und nicht unterstützten Komponenten im System auf.
+
+Das Tool hilft, vor der Verwendung von SnapDrive für UNIX zu bestätigen, dass alle erforderlichen Komponenten und korrekten Versionen auf dem Host zur Verfügung stehen.

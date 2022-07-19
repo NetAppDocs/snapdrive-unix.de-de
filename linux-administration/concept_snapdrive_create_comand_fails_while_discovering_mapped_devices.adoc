@@ -1,0 +1,28 @@
+---
+permalink: linux-administration/concept_snapdrive_create_comand_fails_while_discovering_mapped_devices.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, command, fail, discover, create, mapped, rejected 
+summary: Wenn Sie den Befehl Storage create in SnapDrive für UNIX ausführen, wird während der Bestandsaufnahme die Erkennung einiger der zugeordneten Geräte abgelehnt, und der Befehl schlägt fehl. 
+---
+= Der Befehl zum Erstellen von SnapDrive für UNIX-Speicher schlägt beim Erkennen einiger zugeordneten Geräte fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie den ausführen `storage create` Befehl in SnapDrive für UNIX wird während der Ermittlungsphase die Erkennung einiger der zugeordneten Geräte abgelehnt und der Befehl schlägt fehl.
+
+
+
+== Behelfslösung
+
+Bearbeiten Sie den Filterbereich des, wenn alle Geräte akzeptiert werden sollen `/etc/lvm/lvm.conf` Datei:
+
+[listing]
+----
+filter = [ "a/.*/" ]
+----
+*Verwandte Informationen*
+
+xref:concept_guidelines_for_thestorage_createoperation.adoc[Richtlinien für den Speichervorgang erstellen]

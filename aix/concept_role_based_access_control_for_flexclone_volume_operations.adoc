@@ -1,0 +1,30 @@
+---
+permalink: aix/concept_role_based_access_control_for_flexclone_volume_operations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, rbac, flexcone, volume, operation, role, access, control 
+summary: Wenn Operations Manager mit dem System konfiguriert ist, muss der Operations Manager Administrator Ihnen die erforderlichen Funktionen für die Durchführung von Storage-Vorgängen auf FlexClone Volumes zuweisen. 
+---
+= Rollenbasierte Zugriffssteuerung für FlexClone Volume-Vorgänge
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Operations Manager mit dem System konfiguriert ist, muss der Operations Manager Administrator Ihnen die erforderlichen Funktionen für die Durchführung von Storage-Vorgängen auf FlexClone Volumes zuweisen.
+
+*Nicht eingeschränktes FlexClone Volume*: Sie müssen über die folgenden Fähigkeiten verfügen, um Storage-Vorgänge auf einem unbeschränkten FlexClone Volume auszuführen:
+
+* Für `snap connect`, Sie müssen haben `SD.SnapShot.UnrestrictedClone` Fähigkeit auf dem übergeordneten Volume.
+* Für `snap disconnect`, Sie müssen haben `SD.SnapShot.DestroyUnrestrictedClone` Funktion auf dem FlexClone Volume.
+
+
+*Beschränkte FlexClone Volumes*: Sie müssen die folgenden Funktionen für Storage-Vorgänge auf einem beschränkten FlexClone Volume nutzen:
+
+* Für `snap connect` Dieser muss unbedingt vorhanden sein `SD.SnapShot.Clone` Fähigkeit auf dem übergeordneten Volume.
+* Für `snap disconnect` Dieser muss unbedingt vorhanden sein `SD.SnapShot.Clone` Fähigkeit auf dem übergeordneten Volume.
+
+
+Um das FlexClone Volume während des aufzuteilen `snap connect` Betrieb, `SD.Storage.Write` Zugriffsmöglichkeit auf dem übergeordneten Volume.
+
+Um Storage-Vorgänge auf geteilten FlexClone Volumes während des durchzuführen `snap disconnect`, Für die Aufteilung von FlexClone-Volumes müssen Sie haben `SD.Storage.Delete` Auf dem Split Volume Clone.

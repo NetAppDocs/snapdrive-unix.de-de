@@ -1,0 +1,18 @@
+---
+permalink: solaris/task_enabling_thin_provisioning_for_nfs_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, enable, thin, provisioning, nfs, entity 
+summary: Mit SnapDrive für UNIX können Sie Thin Provisioning für NFS-Einheiten auf Ihrem Storage-System durchführen. Thin Provisioning wird als Speicherplatzreservierung bezeichnet. 
+---
+= Aktivieren von Thin Provisioning für NFS-Einheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie Thin Provisioning für NFS-Einheiten auf Ihrem Storage-System durchführen. Thin Provisioning wird als Speicherplatzreservierung bezeichnet.
+
+.Schritte
+. Um die Speicherplatzreservierung für Snap Connect-Vorgänge zu aktivieren, können Sie mithilfe der die Speicherplatzreservierung für Volumes aktivieren `_-reserve_` Parameter mit den Befehlen, die NFS-Einheiten involvieren. Für NFS-Einheiten verwendet SnapDrive für UNIX die in der Snapshot-Kopie verfügbare Speicherplatzreservierung, wenn das der Fall ist `_-reserve_` Oder `_-noreserve_` Parameter werden mit einem Befehl nicht angegeben.
+

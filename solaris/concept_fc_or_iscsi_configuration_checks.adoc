@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_fc_or_iscsi_configuration_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fc, iscsi, configuration 
+summary: 'Obwohl das Fibre Channel Protocol \ (FCP\) und Internet Small Computer System Interface \ (iSCSI\) einmal als separate Dienstprogramme verteilt wurden, sind unter Solaris Host Utilities sowohl FCP- als auch iSCSI-Konfigurationsunterstützung verfügbar.' 
+---
+= FC- oder iSCSI-Konfigurationsprüfungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Obwohl das Fibre Channel Protocol (FCP) und das Internet Small Computer System Interface (iSCSI) einmal als separate Dienstprogramme verteilt wurden, sind unter Solaris Host Utilities sowohl die FCP- als auch die iSCSI-Konfiguration erhältlich.
+
+Wenn Sie über eine Konfiguration mit FC oder iSCSI verfügen, müssen Sie vor der Installation von SnapDrive für UNIX die folgenden Aufgaben ausführen:
+
+* Stellen Sie sicher, dass Sie Solaris Host Utilities auf Ihrem Host-System installiert haben.
+* Richten Sie Ihre Host- und Storage-Systeme ein.
++
+Um mit dem Host zu arbeiten, befolgen Sie die Anweisungen in der Dokumentation, die mit den Host Utilities zu Ihren Speichersystemen geliefert wird. Konfigurationen, die Multipathing oder Volume Manager umfassen, müssen die Software verwenden, die von den Solaris Host Utilities und SnapDrive für UNIX unterstützt wird.
+
+
+
+
+NOTE: Die neuesten Informationen zu SnapDrive für UNIX und den entsprechenden Anforderungen sind in der Interoperabilitäts-Matrix zu finden.
+
+*Verwandte Informationen*
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp Interoperabilität"]

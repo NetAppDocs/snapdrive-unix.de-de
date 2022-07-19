@@ -1,0 +1,58 @@
+---
+permalink: linux-administration/task_specifying_login_information.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, user, password 
+summary: Sie müssen die Anmeldeinformationen des Benutzers für ein Speichersystem angeben. Je nachdem, was Sie beim Einrichten des Storage-Systems angegeben haben, kann jedes Storage-System entweder denselben Benutzernamen oder dasselbe Passwort oder einen eindeutigen Benutzernamen oder ein Kennwort verwenden. Wenn alle Speichersysteme denselben Benutzernamen oder dieselben Kennwortinformationen verwenden, müssen Sie die folgenden Schritte einmal ausführen. Wenn die Speichersysteme eindeutige Benutzernamen oder Passwörter verwenden, müssen Sie die folgenden Schritte für jedes Speichersystem wiederholen. 
+---
+= Angeben von Anmeldeinformationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Anmeldeinformationen des Benutzers für ein Speichersystem angeben. Je nachdem, was Sie beim Einrichten des Storage-Systems angegeben haben, kann jedes Storage-System entweder denselben Benutzernamen oder dasselbe Passwort oder einen eindeutigen Benutzernamen oder ein Kennwort verwenden. Wenn alle Speichersysteme denselben Benutzernamen oder dieselben Kennwortinformationen verwenden, müssen Sie die folgenden Schritte einmal ausführen. Wenn die Speichersysteme eindeutige Benutzernamen oder Passwörter verwenden, müssen Sie die folgenden Schritte für jedes Speichersystem wiederholen.
+
+Stellen Sie sicher, dass Sie als Root-Benutzer angemeldet sind.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config set _user_name filername_ [_filername..._]*`
+
++
+`_user_name_` Ist der Benutzername, der beim ersten Einrichten für dieses Storage-System angegeben wurde.
+
++
+`_filername_` Ist der Name des Storage-Systems.
+
++
+`_[filername...]_` Definiert, dass Sie mehrere Storage-Systemnamen in einer Befehlszeile eingeben können, wenn alle über dasselbe Benutzeranmeldung oder Passwort verfügen. Sie müssen den Namen von mindestens einem Storage-System eingeben.
+
+. Geben Sie an der Eingabeaufforderung das Passwort ein, wenn vorhanden.
++
+
+NOTE: Wenn kein Passwort festgelegt wurde, drücken Sie die Eingabetaste (der Null-Wert), wenn Sie zur Eingabe eines Passworts aufgefordert werden.
+
++
+In diesem Beispiel wird ein Benutzer mit dem Namen eingerichtet `root` Für ein Speichersystem namens Toaster:
+
++
+[listing]
+----
+# snapdrive config set root toaster
+Password for root:
+Retype Password:
+----
++
+In diesem Beispiel wird ein Benutzer mit dem Namen eingerichtet `root` Für drei Storage-Systeme:
+
++
+[listing]
+----
+# snapdrive config set root toaster oven broiler
+Password for root:
+Retype Password:
+----
+. Wenn Sie ein anderes Speichersystem mit einem anderen Benutzernamen oder einem anderen Kennwort haben, wiederholen Sie diese Schritte.
+

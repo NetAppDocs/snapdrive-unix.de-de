@@ -1,0 +1,16 @@
+---
+permalink: aix/concept_what_the_trace_log_file_is.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, trace, log, file 
+summary: Der technische Support verwendet die Trace-Log-Datei zur Behebung von Problemen. 
+---
+= Was die Trace-Log-Datei ist
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der technische Support verwendet die Trace-Log-Datei zur Behebung von Problemen.
+
+Die Aktivierung der Trace-Log-Datei hat keine Auswirkungen auf die Systemleistung. Standardmäßig ist diese Datei aktiviert. Sie können die Option deaktivieren, indem Sie die einstellen `snapdrive.conf trace-enabled` Variabel auf `off`.

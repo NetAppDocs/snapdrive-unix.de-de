@@ -1,0 +1,57 @@
+---
+permalink: solaris/task_specifying_login_information_for_virtual_storage_console.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, information, virtual, console, storage, specify 
+summary: Zur Bereitstellung von RDM LUNs im Gastbetriebssystem muss die Virtual Storage Console in SnapDrive für UNIX konfiguriert sein. Es gibt jedoch einen Benutzernamen und ein Passwort, mit denen SnapDrive für UNIX auf die Virtual Storage Console zugreifen kann. Die virtuelle Speicherkonsole authentifiziert diese Anmeldedaten nicht. 
+---
+= Angeben von Anmeldeinformationen für die virtuelle Speicherkonsole
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Bereitstellung von RDM LUNs im Gastbetriebssystem muss die Virtual Storage Console in SnapDrive für UNIX konfiguriert sein. Es gibt jedoch einen Benutzernamen und ein Passwort, mit denen SnapDrive für UNIX auf die Virtual Storage Console zugreifen kann. Die virtuelle Speicherkonsole authentifiziert diese Anmeldedaten nicht.
+
+Stellen Sie sicher, dass Virtual Storage Console mit vCenter konfiguriert ist.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein:
++
+`*snapdrive config set -viadmin <user> <viadmin_name>*`
+
++
+`_user_` Ist der Benutzername des virtuellen Schnittstellensystems.
+
++
+`_viadmin_name_` Ist der Name oder die IP-Adresse des virtuellen Schnittstellensystems.
+
+. Geben Sie an der Eingabeaufforderung das Passwort ein, wenn vorhanden.
++
+[NOTE]
+====
+Wenn Sie kein Kennwort festgelegt haben, drücken Sie
+
+`*Enter*`
+
+(Der Null-Wert), wenn Sie zur Eingabe eines Passworts aufgefordert werden.
+
+====
++
+In diesem Beispiel wird ein Benutzer mit dem Namen eingerichtet `sdadmin` Für eine virtuelle Schnittstelle:
+
++
+[listing]
+----
+guest# snapdrive config set -viadmin sdadmin ruffleskin
+Password for sdadmin:
+Retype Password:
+----
++
+SnapDrive für UNIX ist jetzt bereit, RDM LUNs auf dem Gast-Betriebssystem bereitzustellen.
+
++
+
+NOTE: Wenn Sie eine neue virtuelle Schnittstelle konfigurieren möchten, werden die Details der vorhandenen virtuellen Schnittstelle überschrieben, da mit SnapDrive für UNIX nur eine virtuelle Schnittstelle einem Gastbetriebssystem konfiguriert werden kann.
+
+

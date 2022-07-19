@@ -1,0 +1,30 @@
+---
+permalink: linux-administration/concept_creating_snapshotcopies_of_unrelatedentities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, unrelated, lun, disk 
+summary: SnapDrive für UNIX erstellt Snapshot Kopien von nicht verwandten Einheiten, indem individuelle absturzkonsistente Snapshot Kopien beibehalten werden. 
+---
+= Erstellen von Snapshot-Kopien von nicht verwandten Elementen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX erstellt Snapshot Kopien von nicht verwandten Einheiten, indem individuelle absturzkonsistente Snapshot Kopien beibehalten werden.
+
+Wenn Sie nichts anderes angeben, geht SnapDrive für UNIX davon aus, dass alle Einheiten, die Sie in einer bestimmten SnapDrive-Befehlszeile angeben, mit anderen Worten, die Gültigkeit von Updates für eine Einheit kann von Aktualisierungen der anderen angegebenen Entitäten abhängen. Wenn Storage-Einheiten auf diese Weise abhängige Schreibvorgänge besitzen, führt SnapDrive für UNIX Schritte aus, um eine Snapshot Kopie zu erstellen, die für alle Storage-Einheiten als Gruppe absturzkonsistent ist.
+
+Das folgende Beispiel zeigt, wie SnapDrive für UNIX eine Snapshot Kopie von Storage-Einheiten erstellt, die möglicherweise abhängige Schreibvorgänge haben. Im folgenden Beispiel gibt der Befehl SnapDrive Snap create ein Dateisystem auf einer LUN und auch eine Festplattengruppe an. Die Festplattengruppe besteht aus LUNs auf einem einzigen Storage-System (siehe Erstellen einer Snapshot-Kopie). Das Filesystem auf einer LUN befindet sich auf einem anderen Storage-System und einem anderen Volume des Storage-Systems. Als Gruppe umfassen das Dateisystem und die Laufwerksgruppe mehrere Storage-System-Volumes, individuell jedoch nicht.
+
+Mit dem folgenden Befehl wird eine Snapshot Kopie angegeben, die sowohl das Dateisystem /mnt/fs1 als auch die Festplattengruppe dg1 enthält: `snapdrive snap create -fs /mnt/fs1 -dg dg1 -snapname fs1_dg1`
+
+Da diese Storage-Einheiten abhängige Schreibvorgänge haben können, versucht SnapDrive für UNIX, eine absturzkonsistente Snapshot-Kopie zu erstellen und behandelt das Filesystem /mnt/fs1 und die Festplattengruppe dg1 als Gruppe. Das bedeutet, dass SnapDrive für UNIX I/O-Vorgänge auf den Storage-System-Volumes frieren müssen, bevor die Snapshot Kopie erstellt wird.
+
+Das Erstellen absturzkonsistenter Snapshot-Kopien für mehrere Storage-Einheiten über Volumes hinweg dauert zusätzliche Zeit und ist nicht immer möglich, wenn SnapDrive für UNIX I/O-Vorgänge nicht frieren kann. Weil dies der Fall ist, können Sie mit SnapDrive für UNIX Snapshot Kopien von nicht verwandten Storage-Einheiten erstellen. Unabhängige Storage-Einheiten sind Einheiten, die Sie angeben können, die beim Erstellen der Snapshot Kopie keine abhängigen Schreibvorgänge haben. Da die Einheiten keine abhängigen Schreibvorgänge haben, führt SnapDrive für UNIX keine Schritte aus, um die Entitäten als Gruppe konsistent zu gestalten. Stattdessen erstellt SnapDrive für UNIX eine Snapshot Kopie, in der jede der einzelnen Storage-Einheiten absturzkonsistent ist.
+
+Mit dem folgenden Befehl wird eine Snapshot-Kopie des Dateisystems auf einer LUN und der zuvor beschriebenen Festplattengruppe angegeben. Da die Option -unverwandt angegeben ist, erstellt SnapDrive für UNIX eine Snapshot Kopie, in der das Dateisystem /mnt/fs1 und die Festplattengruppe dg1 als einzelne Speichereinheiten absturzkonsistent sind, jedoch nicht als Gruppe behandelt werden. Der folgende Befehl erfordert kein SnapDrive für UNIX, um I/O-Vorgänge auf den Storage-System-Volumes einzufrieren: `snapdrive snap create -fs /mnt/fs1 -dg dg1 -unrelated -snapname fs1_dg1`
+
+*Verwandte Informationen*
+
+xref:task_creating_asnapshot_copy.adoc[Erstellen einer Snapshot Kopie]

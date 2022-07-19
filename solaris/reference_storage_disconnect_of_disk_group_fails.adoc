@@ -1,0 +1,20 @@
+---
+permalink: solaris/reference_storage_disconnect_of_disk_group_fails.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, disconnect, disk, group, fail 
+summary: Auf Speichersystemen mit Solaris Version 10, Update 10 oder höher, der Befehl SnapDrive für UNIX zum Löschen und Trennen der Laufwerksgruppen schlägt ohne die Option -full fehl. Der Befehl Löschen und Trennen schlägt fehl, da die Host-Volumes nicht vollständig getrennt oder gelöscht werden. 
+---
+= Die Trennung der Speicherverbindung der Laufwerksgruppe schlägt fehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf Speichersystemen, die Solaris Version 10, Update 10 oder höher verwenden, funktioniert der Befehl SnapDrive für UNIX, um die Laufwerksgruppen zu löschen und zu trennen, ohne dass die `-full` Option. Der Befehl Löschen und Trennen schlägt fehl, da die Host-Volumes nicht vollständig getrennt oder gelöscht werden.
+
+
+
+== Behelfslösung
+
+Führen Sie die aus `-full` Befehl zum Trennen aller Dateisysteme und der zugehörigen Host-Volumes.

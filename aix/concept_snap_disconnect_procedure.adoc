@@ -1,0 +1,36 @@
+---
+permalink: aix/concept_snap_disconnect_procedure.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, procedure 
+summary: In diesem Abschnitt wird das Verfahren für die Schnappabtrennung erläutert. 
+---
+= Vorgehensweise zum Abtrennen von Schnappverbindungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In diesem Abschnitt wird das Verfahren für die Schnappabtrennung erläutert.
+
+Die folgenden Schritte zeigen das Verfahren zum Trennen von Schnappschaufeln:
+
+.Schritte
+. SnapDrive für UNIX bezieht Hostdateispezifikationen aus `snap disconnect` CLI ermittelt und das Storage-System-Volume heraus.
+. Nach dem Löschen der Spezifikationen für die Host-Datei und dem Aufheben der Zuordnung der LUNs überprüft SnapDrive für UNIX, ob es sich bei dem aktuellen Volume um einen von SnapDrive erstellten Klon handelt.
+. Wenn der FlexClone von SnapDrive erstellt wird, überprüft SnapDrive für UNIX, ob:
++
+.. Dem Klon-Volume sind alle zugeordneten LUNs zugeordnet
+.. Es gibt neue LUNs im geklonten Volume
+.. Es gibt neue Snapshot Kopien
+
+
+
+
+Wenn alle Bedingungen erfüllt sind, löscht SnapDrive für UNIX das geklonte Volume. Wenn die RBAC für einen uneingeschränkten FlexClone konfiguriert ist, führt SnapDrive für UNIX keine Prüfungen in Unterschritt 1 und Unterschritt 2 durch.
+
+Auf Storage-Systemen mit Data ONTAP Version vor 7.2 werden eingeschränkte FlexClone Volumes nicht durch SnapDrive für UNIX gelöscht. Sie sollten über Befehle des Speichersystems gelöscht werden. Nicht beschränkte FlexClone Volumes werden jedoch gelöscht, wenn der Benutzer die entsprechende RBAC-Funktion zur Verfügung stellt.
+
+*Verwandte Informationen*
+
+xref:concept_role_based_access_control_in_snapdrive_for_unix.adoc[Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX]

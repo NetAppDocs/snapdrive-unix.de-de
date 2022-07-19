@@ -1,0 +1,16 @@
+---
+permalink: aix/concept_connectingsnapshot_copies_onmirrored_storagesystems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, snapshot, copy, mirrored, storage 
+summary: Im Fall einer Snapshot Kopie auf einem gespiegelten Storage-System können Sie die Snapshot-Kopie auf dem Quell-Storage-System und dem Zielsystem verbinden. 
+---
+= Verbinden von Snapshot Kopien auf gespiegelten Speichersystemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Fall einer Snapshot Kopie auf einem gespiegelten Storage-System können Sie die Snapshot-Kopie auf dem Quell-Storage-System und dem Zielsystem verbinden.
+
+Wenn Sie eine Snapshot Kopie auf einem gespiegelten Storage-System erstellen, wird die Snapshot Kopie automatisch vom Quellsystem, an dem sie erstellt wird, zum Zielspeichersystem (gespiegelt) repliziert. Mit SnapDrive für UNIX können Sie die Snapshot-Kopie auf dem Quell-Storage-System verbinden. Sie können die Snapshot-Kopie auch auf dem Ziel-Storage-System verbinden.

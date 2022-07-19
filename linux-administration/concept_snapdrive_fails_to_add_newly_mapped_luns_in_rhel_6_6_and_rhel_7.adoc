@@ -1,0 +1,22 @@
+---
+permalink: linux-administration/concept_snapdrive_fails_to_add_newly_mapped_luns_in_rhel_6_6_and_rhel_7.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fails, lun, rhel, rescan, red, hat, enterprise 
+summary: Das Scan-Skript /usr/bin/rescan-scsi-bus.sh, das mit dem Paket sg3_utils gebündelt wurde, fügt die neu zugeordneten LUNs nicht in SnapDrive für UNIX hinzu, die unter Red hat Enterprise Linux 6.6 und höher ausgeführt werden. 
+---
+= SnapDrive fügt in RHEL 6.6 und höher nicht neu zugeordnete LUNs hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Scriptum erneut scannen `/usr/bin/rescan-scsi-bus.sh` Im Paket mit sg3_utils können die neu zugeordneten LUNs nicht in SnapDrive für UNIX hinzugefügt werden, die auf Red hat Enterprise Linux 6.6 und höher ausgeführt werden.
+
+
+
+== Behelfslösung
+
+. Erstellen Sie eine Datei mit dem Namen `dynamic-lun-rescan.sh` Im `/root` Verzeichnis erstellen und vollständige Berechtigungen für die Datei erteilen.
+. Fügen Sie den Befehl hinzu `/usr/bin/rescan-scsi-bus.sh -a -r` Im `dynamic-lun-rescan.sh` Datei:
+

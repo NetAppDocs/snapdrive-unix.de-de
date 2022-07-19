@@ -1,0 +1,32 @@
+---
+permalink: linux-administration/task_verifying_virtual_storage_console.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, verify, virtual, console, storage 
+summary: Sie können mit dem Befehl SnapDrive config list überprüfen, ob die virtuelle Schnittstelle in SnapDrive für UNIX konfiguriert ist. 
+---
+= Überprüfen der Anmeldeinformationen für die Virtual Storage Console
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können mithilfe des überprüfen, ob die virtuelle Schnittstelle in SnapDrive für UNIX konfiguriert ist `snapdrive config list` Befehl.
+
+. Geben Sie den folgenden Befehl ein: `snapdrive config list`
++
+Mit diesem Befehl wird der Benutzername oder die virtuelle Schnittstelle angezeigt, die in SnapDrive für UNIX angegeben ist. Dadurch werden die Passwörter für das virtuelle Schnittstellensystem nicht angezeigt.
+
++
+Im folgenden Beispiel wird der Benutzer angezeigt, der mit einer virtuellen Schnittstelle namens ruffleskin korrespondiert.
+
++
+[listing]
+----
+# snapdrive config list
+user name    appliance name   appliance type
+------------------------------------------------
+root       rumplestiltskins   StorageSystem
+sdadmin    ruffleskin	     VirtualInterface
+----
+

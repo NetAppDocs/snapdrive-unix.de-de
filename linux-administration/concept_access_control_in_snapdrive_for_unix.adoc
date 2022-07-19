@@ -1,0 +1,16 @@
+---
+permalink: linux-administration/concept_access_control_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, access, control 
+summary: Mit SnapDrive für UNIX können Sie die Zugriffsebene kontrollieren, die jeder Host für jedes Storage-System hat, mit dem der Host verbunden ist. 
+---
+= Zugriffssteuerung in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie die Zugriffsebene kontrollieren, die jeder Host für jedes Storage-System hat, mit dem der Host verbunden ist.
+
+Die Zugriffsebene in SnapDrive für UNIX gibt an, welche Vorgänge der Host ausführen darf, wenn er auf ein bestimmtes Speichersystem ausgerichtet ist. Mit Ausnahme der Show- und Listenvorgänge können sich die Berechtigungen für die Zugriffssteuerung auf alle Snapshot- und Storage-Vorgänge auswirken.

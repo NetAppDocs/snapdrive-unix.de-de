@@ -1,0 +1,16 @@
+---
+permalink: aix/concept_limitations_for_nfs_file_or_directory_trees.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, limitations, nfs, directory, trees, files 
+summary: SnapDrive bietet keine Befehle zur Storage-Bereitstellung für NFS-Dateien oder Verzeichnisbäume. SnapDrive unterstützt SnapDrive Snap create und SnapDrive Snap Restore Befehle nur, wenn Sie Data ONTAP 7.3.5 und höher verwenden. 
+---
+= Einschränkungen für NFS-Dateien oder Verzeichnisbäume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive bietet keine Befehle zur Storage-Bereitstellung für NFS-Dateien oder Verzeichnisbäume. SnapDrive unterstützt `snapdrive snap create` Und `snapdrive snap restore` Befehle nur, wenn Sie Data ONTAP 7.3.5 und höher verwenden.
+
+Der `snapdrive snap connect` Und `snapdrive snap disconnect` Befehle umfassen NFS und verwenden die Data ONTAP FlexVol-Volumes-Funktion für Lese- und Schreibzugriff. Daher können Sie diese Befehle nur ausführen, wenn Sie Data ONTAP 7.3.5 oder höher verwenden. Mit den Konfigurationen mit Data ONTAP 7.3.5 oder höher und mit herkömmlichen Volumes können Sie Snapshot Kopien erstellen und wiederherstellen. Die Verbindung mit Snapshot ist jedoch nur Lesezugriff möglich.

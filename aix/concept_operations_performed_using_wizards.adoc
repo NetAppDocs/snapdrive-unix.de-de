@@ -1,0 +1,23 @@
+---
+permalink: aix/concept_operations_performed_using_wizards.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, operations, wizard 
+summary: Mit verschiedenen Assistenten lassen sich Storage-Einheiten erstellen und SnapDrive für UNIX effizient manipulieren. 
+---
+= Vorgänge werden mithilfe von Assistenten durchgeführt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit verschiedenen Assistenten lassen sich Storage-Einheiten erstellen und SnapDrive für UNIX effizient manipulieren.
+
+Die folgenden SnapDrive für UNIX Befehle verfügen über einen entsprechenden Assistenten zum Ausführen von Vorgängen:
+
+* `Astorage create`
+* `storage delete`
+* `snap restore`
+* `snap connect`
+* `snap disconnect`
+

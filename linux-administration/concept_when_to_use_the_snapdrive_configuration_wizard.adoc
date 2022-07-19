@@ -1,0 +1,25 @@
+---
+permalink: linux-administration/concept_when_to_use_the_snapdrive_configuration_wizard.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, wizard, update 
+summary: Verwenden Sie den SnapDrive-Konfigurationsassistenten, um die Konfigurationsvariablen im Assistenten zu aktualisieren. Sie können den Konfigurationsassistenten jederzeit ausführen, um die Konfigurationsänderungen an SnapDrive zu ändern. 
+---
+= SnapDrive-Konfigurationsassistent
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie den SnapDrive-Konfigurationsassistenten, um die Konfigurationsvariablen im Assistenten zu aktualisieren. Sie können den Konfigurationsassistenten jederzeit ausführen, um die Konfigurationsänderungen an SnapDrive zu ändern.
+
+Sie können den Konfigurationsassistenten über ausführen
+`/opt/NetApp/snapdrive/setup/config_wizard`
+
+Eingabe `exit` Zum Schließen des Konfigurationsassistenten, ohne die Änderungen zu speichern.
+
+Alternativ können Sie den Wert der Konfigurationsvariablen direkt im ändern `snapdrive.conf` Datei:
+
+*Verwandte Informationen*
+
+xref:reference_stack_requirements.adoc[Stack-Anforderungen]

@@ -1,0 +1,27 @@
+---
+permalink: solaris/concept_methods_fordisplaying_storageinformation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, information, display 
+summary: Damit Informationen zum Storage leichter angezeigt werden können, bietet SnapDrive für UNIX verschiedene Formate für den SnapDrive-Storage-Befehl show. 
+---
+= Methoden zum Anzeigen von Speicherinformationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Damit Informationen zum Storage leichter angezeigt werden können, bietet SnapDrive für UNIX verschiedene Formate für `snapdrive storage show` Befehl.
+
+Storage-Show-Operationen lassen sich in folgende allgemeine Kategorien einteilen:
+
+* Anzeigen von Informationen über eine bestimmte LUN.
+* Auflistung von Informationen über LUNs, die für bestimmte Storage-Systeme oder Storage-System-Volumes verfügbar sind
+* Anzeigen von Informationen über LUNs, die mit den angegebenen Argumenten verbunden sind.
++
+Dies können NFS-Einheiten, File-Systeme, Host-Volumes oder Festplattengruppen sein. Wenn Sie den verwenden `-verbose` Die Option an der Eingabeaufforderung von SnapDrive für UNIX bietet eine detaillierte Ausgabe, beispielsweise das Anzeigen der Speicherhierarchie einschließlich der zugrunde liegende LUNs.
+
+* Anzeigen von Informationen zu den Geräten, die dem Host bekannt sind.
+* Anzeigen von Informationen zu allen Geräten und LVM-Einheiten, die dem Host bekannt sind.
+* Anzeigen des Status einer Ressource als „Shared“ oder „Dedicated“.
+

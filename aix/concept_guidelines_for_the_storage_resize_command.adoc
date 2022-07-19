@@ -1,0 +1,20 @@
+---
+permalink: aix/concept_guidelines_for_the_storage_resize_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, guidelines, storage, resize, command 
+summary: Folgen Sie wenigen Richtlinien, wenn Sie den Befehl „Ändern der Größe von SnapDrive Storage“ verwenden. 
+---
+= Richtlinien für den Befehl „Speichergröße ändern“
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie den verwenden, müssen Sie nur wenige Richtlinien befolgen `snapdrive storage resize` Befehl.
+
+* Der Vorgang der Speichergröße kann nur die Größe des Speichers erhöhen. Sie können es nicht verwenden, um die Größe eines Elements zu verringern.
+* Alle LUNs müssen sich im selben Storage-System-Volume befinden.
+* Die Größenänderung unterstützt nicht direkt auf logischen Host Volumes oder auf Filesystemen, die sich auf logischen Host-Volumes oder auf LUNs befinden. In diesen Fällen müssen Sie die Größe des Speichers mithilfe der LVM-Befehle ändern.
+* Sie können die Größe einer LUN nicht ändern. Sie müssen das verwenden `-addlun` Option zum Hinzufügen einer neuen LUN.
+

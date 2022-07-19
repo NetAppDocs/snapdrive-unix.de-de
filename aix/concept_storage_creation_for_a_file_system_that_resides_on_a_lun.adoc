@@ -1,0 +1,17 @@
+---
+permalink: aix/concept_storage_creation_for_a_file_system_that_resides_on_a_lun.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, create, lun, file, system 
+summary: Wenn Sie SnapDrive für UNIX verwenden, um ein Dateisystem zu erstellen, das sich direkt auf einer LUN befindet, erstellt und ordnet SnapDrive für UNIX die LUN zu und erstellt dann das Dateisystem, ohne den Host LVM zu involvieren. 
+---
+= Speichererstellung für ein Dateisystem, das sich auf einer LUN befindet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie SnapDrive für UNIX verwenden, um ein Dateisystem zu erstellen, das sich direkt auf einer LUN befindet, erstellt und ordnet SnapDrive für UNIX die LUN zu und erstellt dann das Dateisystem, ohne den Host LVM zu involvieren.
+
+
+NOTE: SnapDrive für UNIX-Vorgänge werden nicht unterstützt, wenn das Root-Dateisystem des Hosts über schreibgeschützte Berechtigungen verfügt.

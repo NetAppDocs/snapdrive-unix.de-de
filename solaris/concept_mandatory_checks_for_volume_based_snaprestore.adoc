@@ -1,0 +1,30 @@
+---
+permalink: solaris/concept_mandatory_checks_for_volume_based_snaprestore.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, mandatory, check, volume, snaprestore 
+summary: Bevor Volume-basierte SnapRestore durchgeführt wird, führt SnapDrive für UNIX einige obligatorische Überprüfungen des Systems durch. Diese Prüfungen sind erforderlich, sodass Volume-basierte SnapRestore sicher verwendet werden können. Die obligatorischen Prüfungen können vom Benutzer nicht übergangen werden. 
+---
+= Obligatorische Überprüfungen für Volume-basierte SnapRestore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Volume-basierte SnapRestore durchgeführt wird, führt SnapDrive für UNIX einige obligatorische Überprüfungen des Systems durch. Diese Prüfungen sind erforderlich, sodass Volume-basierte SnapRestore sicher verwendet werden können. Die obligatorischen Prüfungen können vom Benutzer nicht übergangen werden.
+
+SnapDrive für UNIX muss vor der Implementierung von Volume-basiertem SnapRestore folgende Prüfungen vornehmen:
+
+* Volume-basierte SnapRestore funktionieren nur mit Snapshots, die mit SnapDrive für UNIX erstellt werden.
+* Das Volumen in Volume-basiertem SnapRestore sollte kein Root-Volume des Storage-Systems sein.
+* SnapDrive für UNIX Prüfung auf Volume-Klone Die Wiederherstellung des Volumes ist nicht zulässig, wenn Volume-Klone aus neuen Snapshot Kopien vorliegen. Diese Einschränkung wird von Data ONTAP auferlegt.
+* Das Volume in Volume-based SnapRestore sollte keine zugeordneten LUNs haben, abgesehen von den angegebenen LUNs (RAW-LUN oder LUNs im Dateisystem vorhanden, Disk-Gruppe oder Host-Volume) für die Wiederherstellung.
+* SnapDrive für UNIX prüft, ob das Volume in einer SnapMirror Beziehung vorhanden ist.
+* SnapDrive für UNIX prüft, ob das Volume in einer SnapVault-Beziehung vorhanden ist.
+
+
+Die Überprüfungen von SnapMirror und SnapVault können außer Kraft gesetzt werden, wenn SnapDrive für UNIX Operations Manager für RBAC verwendet und der Benutzer SD.Snapshot.DisruptBaseline-Funktion auf dem Volume hat. Weitere Informationen über die spezifische RBAC-Funktion, mit der Benutzer diese Prüfungen außer Kraft setzen kann, finden Sie unter rollenbasierte Zugriffssteuerung in SnapDrive für UNIX.
+
+*Verwandte Informationen*
+
+xref:concept_role_based_access_control_in_snapdrive_for_unix.adoc[Rollenbasierte Zugriffssteuerung in SnapDrive für UNIX]

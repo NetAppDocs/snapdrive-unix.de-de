@@ -1,0 +1,21 @@
+---
+permalink: aix/concept_what_flexclone_volumes_are.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, flexclone, volume, clone 
+summary: Ein flexibler Volume-Klon, FlexClone, ist eine zeitpunktgenaue Kopie eines übergeordneten flexiblen Volume. Das FlexClone Volume übernimmt nach der Erstellung des Klons keine Änderungen am übergeordneten flexiblen Volume. 
+---
+= Welche FlexClone Volumes sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein flexibler Volume-Klon, FlexClone, ist eine zeitpunktgenaue Kopie eines übergeordneten flexiblen Volume. Das FlexClone Volume übernimmt nach der Erstellung des Klons keine Änderungen am übergeordneten flexiblen Volume.
+
+Die Data ONTAP FlexClone Technologie ermöglicht eine sofortige Replizierung von Datenvolumes, ohne dass zum Zeitpunkt der Erstellung zusätzlicher Speicherplatz erforderlich ist. Jedes Klon-Volume ist eine transparente, virtuelle Kopie, die Sie für verschiedene Zwecke einsetzen können, beispielsweise bei Test der Produktentwicklung oder Systementwicklung, Fehlerbehebung, Upgrade-Prüfungen usw.
+
+Die FlexClone Technologie ermöglicht bei minimalem Overhead deutliche Einsparungen bei der Storage-Kapazität. Mithilfe dieser Technologie lassen sich weitaus mehr Datenset-Kombinationen in kürzerer Zeit und bei geringerem Risiko managen. FlexClone Volumes haben standardmäßig keine Schreibreservierung. SnapDrive 4.1 für UNIX nutzt FlexClone Technologie in NFS- und SAN-Umgebungen.
+
+
+NOTE: FlexClone Volumes werden auf Data ONTAP 7.0.x und höher unterstützt, werden aber nicht durch vFiler Einheiten auf Storage-Systemen mit Data ONTAP 7.2 oder einer älteren Version unterstützt.

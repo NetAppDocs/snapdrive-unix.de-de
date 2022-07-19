@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_guidelines_for_using_the_disconnect_command_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, disconnect, command, host, cluster 
+summary: Im Folgenden finden Sie die Richtlinien zur Verwendung des Befehls SnapDrive Storage Disconnect in einer Host-Cluster-Umgebung. 
+---
+= Richtlinien für die Verwendung des Befehls zum Trennen in einer Host-Cluster-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Folgenden finden Sie die Richtlinien für die Verwendung von `snapdrive storage disconnect` Befehl in einer Host-Cluster-Umgebung:
+
+* Der `snapdrive storage disconnect` Der Befehl kann von jedem Node im Host-Cluster ausgeführt werden.
+* Damit die Speichertrennung erfolgreich ausgeführt werden kann, sollte eine der folgenden Optionen wahr sein:
++
+** Die Speichereinheiten sollten von allen Nodes im Host-Cluster gemeinsam genutzt werden.
+** Die LUNs sollten allen Nodes im Host-Cluster zugeordnet sein.
+
+
+* Sie können eine Speichereinheit mithilfe des von einem bestimmten Knoten trennen `-devicetype dedicated` Option oder durch Auslassen des `-devicetype` Option im Befehl komplett, da der Standardwert dediziert ist.
+* Der `snapdrive storage disconnect` Befehl gibt einen Fehler aus, wenn eine gemeinsam genutzte Speichereinheit oder LUN mit getrennt wird `dedicated` Option oder wenn eine dedizierte Speichereinheit oder LUN mit getrennt wird `shared` Option.
+* SnapDrive für UNIX führt die aus `snapdrive storage disconnect` Befehl auf dem Master-Knoten. Er zerstört die Storage-Einheiten, trennt die LUNs auf allen nicht-Master-Nodes und trennt dann die Verbindung der LUNs vom Master-Node im Host-Cluster. Wenn während dieser Sequenz eine Fehlermeldung auftritt, schlägt die Trennung des Speichers fehl.
+

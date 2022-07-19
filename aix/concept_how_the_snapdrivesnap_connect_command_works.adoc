@@ -1,0 +1,26 @@
+---
+permalink: aix/concept_how_the_snapdrivesnap_connect_command_works.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, connect, command 
+summary: Wenn Sie den SnapDrive Snap connect-Befehl verwenden, wird der Storage für die Einheit, die Sie angeben, kopiert und auf den Host importiert. 
+---
+= Funktionsweise des SnapDrive Snap connect -Befehls
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie das verwenden `snapdrive snap connect` Befehl, es klont den Storage für die Einheit, die Sie angeben und importiert ihn auf den Host:
+
+* Wenn Sie eine Snapshot Kopie angeben, die eine LUN enthält (`-lun`), SnapDrive für UNIX ordnet dem Host eine neue Kopie der LUN zu. Sie können das nicht verwenden `snapdrive snap connect` Befehl zum Angeben einer LUN in derselben Befehlszeile mit anderen Storage-Einheiten (`-vg`, `-dg`, `-fs`, `-lvol`, Oder `- hostvol`).
+* Wenn Sie ein Dateisystem angeben, das sich direkt auf einer LUN befindet, ordnet SnapDrive für UNIX die LUN dem Host zu und mountet das Dateisystem.
+* Wenn der Mount-Punkt der Quelle im als relativen Pfadnamen angegeben wird `snap connect` Befehl, SnapDrive für UNIX ignoriert den in CLI angegebenen Ziel-Mount-Punkt und verwendet die interne Namenskonvention des Formats `source_mount_point_<N>` Um den Zieleinhängungspunkt zu benennen.
+* Wenn Sie eine Snapshot Kopie angeben, die eine Laufwerksgruppe oder ein Host-Volume oder Dateisystem enthält, die Teil einer Laufwerksgruppe ist, wird das angezeigt `snapdrive snap connect` Mit dem Befehl wird die gesamte Zielfestplattengruppe verbunden. Um eine Verbindung herzustellen, aktiviert SnapDrive für UNIX alle logischen Volumes für die Zielplattengruppe erneut und mountet alle Dateisysteme auf den logischen Volumes.
+* Wenn Sie angeben `autorename` Option mit dem `snap connect` Befehl, Host-Volumes und Dateisysteme werden immer umbenannt. Die Laufwerksgruppen werden nur umbenannt, wenn sie bereits auf dem Host vorhanden sind.
+* Wenn Sie eine Snapshot Kopie angeben, die eine NFS Verzeichnisstruktur enthält, erstellt SnapDrive für UNIX einen Klon des FlexVol Volume, der die NFS Verzeichnisstruktur enthält. SnapDrive für UNIX verbindet dann das Volume mit dem Host und bindet das NFS-Dateisystem ein. Innerhalb der Verzeichnisstruktur löscht SnapDrive für UNIX alle neuen NFS-Dateien oder Verzeichnisse, die Sie nach dem Erstellen der Snapshot Kopie erstellen. SnapDrive für UNIX löscht alle Dateien oder Verzeichnisse aus dem FlexVol Volume, die sich außerhalb der NFS Verzeichnisse befinden, die Sie verbinden, wenn der `snapconnect-nfs-removedirectories` Die Konfigurationsoption ist auf ein festgelegt.
+* Wenn Sie eine Snapshot Kopie mit NFS Verzeichnisbäumen mithilfe des verbinden `-readonly` Option, SnapDrive für UNIX mountet die Snapshot Kopie des Verzeichnisses direkt, ohne einen Klon zu erstellen. Sie können das nicht verwenden `snapdrive snap connect` Befehl zum Angeben von NFS-Mountpunkten auf derselben Befehlszeile wie nicht-NFS-Einheiten; das heißt, über die Optionen `-vg`, `-dg`, `-fs`, `-lvol`, Oder `- hostvol`.
+
+
+
+NOTE: Der `snap connect` Operations mit `-split` Die Option in der vFiler Umgebung wird unterstützt von Data ONTAP 7.3 und höher.

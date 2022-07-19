@@ -1,0 +1,14 @@
+---
+permalink: linux-installation-7mode/concept_provisioning_storage.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, provision, connect 
+summary: Mit SnapDrive für UNIX können Sie Storage bereitstellen und mithilfe von Befehlszeilenoptionen des Hosts eine Verbindung zu einem vorhandenen Storage-System herstellen. Mit Data ONTAP können Sie auch Storage bereitstellen. 
+---
+= Storage-Bereitstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit SnapDrive für UNIX können Sie Storage bereitstellen und mithilfe von Befehlszeilenoptionen des Hosts eine Verbindung zu einem vorhandenen Storage-System herstellen. Mit Data ONTAP können Sie auch Storage bereitstellen.

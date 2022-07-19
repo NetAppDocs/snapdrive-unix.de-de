@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_restoring_multiple_storage_entities.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, restore, storage, multiple 
+summary: Sie können eine Snapshot Kopie wiederherstellen, die mehrere Storage-Einheiten enthält. 
+---
+= Wiederherstellung mehrerer Speichereinheiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot Kopie wiederherstellen, die mehrere Storage-Einheiten enthält.
+
+Um eine Snapshot Kopie mit Storage-Einheiten wiederherzustellen, die sich auf mehreren Ziel-Storage-Systemen befinden, müssen Sie folgende Anforderungen erfüllen:
+
+* Die Storage-Einheiten, die Sie an der Eingabeaufforderung angeben, müssen sich auf einem einzelnen Storage-System oder auf einem HA-Paar befinden.
+* Der Name des Volume des Quell-Storage-Systems muss mit dem Namen des Volume des Ziel-Storage-Systems übereinstimmen.
+* Sie müssen die einstellen `snapmirror-dest-multiple-filervolumes-enabled` Argument in `snapdrive.conf` Datei auf ein.
+
+
+Mit einem Befehl können Sie Storage-Einheiten wiederherstellen, die sich in einem einzelnen Storage-System oder einem HA-Paar befinden.

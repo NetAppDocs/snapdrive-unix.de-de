@@ -1,0 +1,81 @@
+---
+permalink: linux-administration/task_starting_the_volume_or_lun_clone_split_start.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, clone, lun, split, volume 
+summary: Sie können einen Volume-Klon oder einen LUN-Klon-Split-Vorgang starten. 
+---
+= Starten der Trennung des Volume-Klons oder des LUN-Klons
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Volume-Klon oder einen LUN-Klon-Split-Vorgang starten.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um einen Volume-Klon oder eine LUN-Teilung zu starten.
++
+`*# snapdrive clone split start [-lun] _long_lun_name_ [_long_lun_name..._] | [{-dg | -vg | -fs | -hostvol | -lvol} _file_spec_ [_file_spec ..._]] [-force][-noprompt] [-dump | -dumpall]*`
+
++
+Die folgenden Optionen können verwendet werden, wenn der Speicherstatus als NICHT VERFÜGBAR angezeigt wird.
+
++
+** Sie können das verwenden `-force` Option zum gewaltsamen Starten des Clone-Split-Vorgangs und Empfangen einer Bestätigungsmeldung, dass der Vorgang gestartet wurde.
+** Sie können das verwenden `-noprompt` Zusammen mit `-force` Option zum Starten des Startvorgangs „Clone Split“ ohne Erhalt einer Bestätigungsmeldung.
+
+
+
+
+
+NOTE: Wenn Sie einen anderen Klon-Split-Vorgang kurz nach dem Beenden eines laufenden Klon-Split-Vorgangs starten, kann der Vorgang fehlschlagen. Dieses Problem kann auftreten, wenn die Verzögerung zwischen dem Start und dem Beenden des Klonabteilvorgangs nicht ausreicht, um es dem Speichersystem zu ermöglichen, den Vorgang des Stopp-Vorgangs zu synchronisieren.
+
+Im folgenden Beispiel wird gezeigt, wie ein Volume-Klon aufgeteilt wird:
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt4_0 /mnt/my_mnt3_0
+Resource    Container  Required Available Storage
+                       Space(MB)Space(MB) Status
+--------------------------------------------------
+/mnt/my_mnt4_0 f3050-220 3295   66033 AVAILABLE
+             -111:aggr0
+/mnt/my_mnt3_0 f3050-220  293   37707 AVAILABLE
+             -112:aggr1
+
+Job ID: B265Dbv8gh
+Clone-Split for "/mnt/my_mnt4_0" is started
+Clone-Split for "/mnt/my_mnt3_0" is started
+----
+Im folgenden Beispiel wird gezeigt, wie ein Klon mit geteilt wird `-force` Option:
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt5 /mnt/my_mnt6 -force
+Resource    Container Required  Available Storage
+                      Space(MB) Space(MB) Status
+----------------------------------------------------
+/mnt/my_mnt5 f3050-220 1198   20033   AVAILABLE
+             -111:aggr0
+/mnt/my_mnt6 f3050-220  3294  2196  NOT AVAILABLE
+             -112:aggr1
+Not enough space available for Clone-Split.  Do you want to continue (y/n)?y
+Clone-Split for "/mnt/my_mnt5" is started
+Clone-Split for "/mnt/my_mnt6" is started
+----
+Im folgenden Beispiel wird gezeigt, wie ein Klon mit direkt gestartet wird `-noprompt` Option bedeutet, dass es keine Bestätigungsmeldung gibt:
+
+[listing]
+----
+# snapdrive clone split start -fs /mnt/my_mnt5 /mnt/my_mnt6 -force -noprompt
+Resource    Container  Required  Available Storage
+                       Space(MB) Space(MB) Status
+-----------------------------------------------------
+/mnt/my_mnt5 f3050-220  1198     20033   AVAILABLE
+             -111:aggr0
+/mnt/my_mnt6 f3050-220  3294     2196  NOT AVAILABLE
+             -112:aggr1
+Clone-Split for "/mnt/my_mnt5" is started
+Clone-Split for "/mnt/my_mnt6" is started
+----

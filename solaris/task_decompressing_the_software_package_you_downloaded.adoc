@@ -1,0 +1,51 @@
+---
+permalink: solaris/task_decompressing_the_software_package_you_downloaded.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, download, decompress, software, package 
+summary: Sie müssen das Paket NTAPSnapdrive_Sun_x86_5.2.tar.Z oder NTAPSnapdrive_Sun_sparc_5.2.tar.Z herunterladen und dekomprimieren, um SnapDrive auf einem Solaris Host zu installieren. Das Softwarepaket hängt davon ab, ob Sie Solaris auf x86 oder SPARC Plattform verwenden. 
+---
+= Herunterladen und Dekomprimieren des Softwarepakets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen das Paket NTAPSnapdrive_Sun_x86_5.2.tar.Z oder NTAPSnapdrive_Sun_sparc_5.2.tar.Z herunterladen und dekomprimieren, um SnapDrive auf einem Solaris Host zu installieren. Das Softwarepaket hängt davon ab, ob Sie Solaris auf x86 oder SPARC Plattform verwenden.
+
+.Schritte
+. Je nachdem, ob Sie Solaris auf x86 oder SPARC verwenden, können Sie das Softwarepaket NTAPSnapdrive_Sun_x86_5.2.tar.Z oder NTAPSnapdrive_Sun_sparc_5.2.tar.Z von der NetApp Support Site herunterladen.
+. Greifen Sie auf das Verzeichnis zu, auf das Sie die komprimierte Datei heruntergeladen haben.
++
+Geben Sie zum Beispiel den folgenden Befehl ein, um auf das Verzeichnis /tmp zuzugreifen:
+
++
+`*# cd /tmp*`
+
+. Geben Sie den folgenden Befehl ein, um das Softwarepaket für Solaris unter x86 zu dekomprimieren:
++
+`*# uncompress NTAPsnapdrive_sun_x86_5.2.tar.Z*`
+
++
+Geben Sie für Solaris auf SPARC den folgenden Befehl ein:
+
++
+`*NTAPsnapdrive_sun_sparc_5.2.tar.Z*`
+
+. Geben Sie den folgenden Befehl ein, um die Datei für Solaris unter x86 zu extrahieren:
++
+`*# tar -xvf NTAPsnapdrive_sun_x86_5.2.tar*`
+
++
+Geben Sie für Solaris auf SPARC den folgenden Befehl ein:
+
++
+`*tar -xvf NTAPsnapdrive_sun_sparc_5.2.tar*``
+
+
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com["NetApp Support"]
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp Interoperabilität"]

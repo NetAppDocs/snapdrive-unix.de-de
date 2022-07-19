@@ -1,0 +1,26 @@
+---
+permalink: linux-administration/concept_commands_appear_blocked_commands_appear_blocked.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, commands, blocked 
+summary: Sie können SnapDrive für Unix Befehle nicht ausführen, da die Befehle mehr als 10 Minuten blockiert sind. Sie müssen möglicherweise warten, bis der Befehl abgeschlossen ist. 
+---
+= Befehle werden blockiert angezeigt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können SnapDrive für Unix Befehle nicht ausführen, da die Befehle mehr als 10 Minuten blockiert sind. Sie müssen möglicherweise warten, bis der Befehl abgeschlossen ist.
+
+Dieses Verhalten tritt in seltenen Fällen auf, wenn VxVM/DMP Zeit für die Verwaltung des Volume-Konfigurations-Daemon benötigt. Trigger für dieses Verhalten umfassen die folgenden:
+
+* Ein Speichersystem, das aus einem Panikzustand wiederhergestellt ist
+* Ein Target-Adapter für das Storage-System, der aus dem Offline- in den Online-Modus gewechselt ist
+
+
+
+
+== Behelfslösung
+
+Warten Sie, bis die Ausführung des Befehls abgeschlossen ist. Der Veritas Configuration Daemon benötigt mehrere Minuten, um ausgeführt zu werden und den aktuellen Status der Geräte zu ermitteln.

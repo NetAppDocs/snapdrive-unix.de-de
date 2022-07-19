@@ -1,0 +1,42 @@
+---
+permalink: solaris/concept_storage_provisioning_for_rdm_luns.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, vmware, vmotion, support, unix 
+summary: SnapDrive für UNIX ermöglicht es Ihnen, die RDM LUNs vor und nach VMware VMotion zu trennen und zu verbinden. Nach Abschluss des VMotion-Vorgangs lassen sich die für das Storage-System erforderlichen Storage-Vorgänge ausführen. 
+---
+= VMware VMotion-Unterstützung in SnapDrive für UNIX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX ermöglicht es Ihnen, die RDM LUNs vor und nach VMware VMotion zu trennen und zu verbinden. Nach Abschluss des VMotion-Vorgangs lassen sich die für das Storage-System erforderlichen Storage-Vorgänge ausführen.
+
+*Über VMware VMotion:*
+
+VMware VMotion ermöglicht das Verschieben eines Gastbetriebssystems von einem ESX Server auf einen anderen ESX Server.
+
+Die folgenden Vorgänge müssen ausgeführt werden, um die RDM LUNs in SnapDrive für UNIX zu trennen und zu verbinden.
+
+*Vor VMotion*
+
+Sie müssen den verwenden `snapdrive storage disconnect` Befehl zum Entfernen der Zuordnungen für die RDM LUNs. Die folgende Syntax:
+
+`*snapdrive storage disconnect -lun _long_lun_name_ [_lun_name..._]*`
+
+*Nach VMotion*
+
+Nach Abschluss von VMotion müssen Sie den verwenden `snapdrive storage connect` Befehl zum Verbinden von RDM LUNs. Die folgende Syntax:
+
+`*snapdrive storage connect -lun _long_lun_name_ [_lun_name..._]*`
+
+*Verwandte Informationen*
+
+xref:concept_limitations_of_rdm_luns_managed_by_snapdrive.adoc[Grenzen von RDM LUNs, die von SnapDrive gemanagt werden]
+
+xref:task_configuring_virtual_storage_console_in_snapdrive_for_unix.adoc[Konfiguration der Virtual Storage Console für SnapDrive für UNIX]
+
+xref:concept_guest_os_preparation_for_installing_sdu.adoc[Vorbereitung des Gastbetriebssystems für die Installation von SnapDrive für UNIX]
+
+xref:task_considerations_for_provisioning_rdm_luns.adoc[Überlegungen bei der Bereitstellung von RDM LUNs]

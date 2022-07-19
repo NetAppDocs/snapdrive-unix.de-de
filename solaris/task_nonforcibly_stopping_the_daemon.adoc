@@ -1,0 +1,23 @@
+---
+permalink: solaris/task_nonforcibly_stopping_the_daemon.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, stopp, daemon, nonforcibly, command 
+summary: Wenn Ihre SnapDrive für UNIX-Konfigurationsdatei geändert wird, müssen Sie den Daemon stoppen, damit die Änderungen der Konfigurationsdatei wirksam werden. Nachdem der Daemon angehalten und neu gestartet wurde, werden die Änderungen in der Konfigurationsdatei wirksam. Der Daemon kann nicht erzwungenbar angehalten werden, damit alle Befehle in der Warteschlange ausgeführt werden können. Nachdem die Stopp-Anforderung empfangen wurde, werden keine neuen Befehle ausgeführt. 
+---
+= Den Dämon gewaltsam stoppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Ihre SnapDrive für UNIX-Konfigurationsdatei geändert wird, müssen Sie den Daemon stoppen, damit die Änderungen der Konfigurationsdatei wirksam werden. Nachdem der Daemon angehalten und neu gestartet wurde, werden die Änderungen in der Konfigurationsdatei wirksam. Der Daemon kann nicht erzwungenbar angehalten werden, damit alle Befehle in der Warteschlange ausgeführt werden können. Nachdem die Stopp-Anforderung empfangen wurde, werden keine neuen Befehle ausgeführt.
+
+Sie müssen als Root-Benutzer angemeldet sein.
+
+.Schritte
+. Geben Sie den folgenden Befehl ein, um den Daemon nicht gewaltsam zu beenden:
++
+`*snapdrived stop*`
+
+

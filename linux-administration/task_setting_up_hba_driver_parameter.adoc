@@ -1,0 +1,31 @@
+---
+permalink: linux-administration/task_setting_up_hba_driver_parameter.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, hba, driver, parameter, mpio 
+summary: Um HBA-Treiber für Linux MPIO einzurichten, hängt die genaue Reihenfolge der erforderlichen Schritte vom verwendeten Betriebssystem ab. Das Setup hängt auch von der verwendeten HBA-Karte ab. 
+---
+= Einrichten des HBA-Treiberparameters
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um HBA-Treiber für Linux MPIO einzurichten, hängt die genaue Reihenfolge der erforderlichen Schritte vom verwendeten Betriebssystem ab. Das Setup hängt auch von der verwendeten HBA-Karte ab.
+
+Die folgenden Schritte sind erforderlich, um den HBA-Treiberparameter für Linux MPIO einzurichten:
+
+.Schritte
+. Deinstallieren Sie die integrierten Treiber.
+. Installieren Sie die neuesten Treiber von der Website des Anbieters.
+. Legen Sie die Treiberparameter mithilfe des CLI-Konfigurationstools des Anbieters fest.
+. Bearbeiten Sie das `/etc/modprobe.conf` Datei zum Einrichten von Standardparametern für den HBA-Treiber
+. Generieren Sie das initrd (RAM Disk Image) mit den HBA-Treiberparametern neu.
+. Starten Sie den Host neu, damit die neuen HBA-Treibereinstellungen wirksam sind.
+
+
+*Verwandte Informationen*
+
+http://mysupport.netapp.com["NetApp Support"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["Installationsleitfaden Für Linux Unified Host Utilities 7.1"]

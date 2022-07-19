@@ -1,0 +1,97 @@
+---
+permalink: linux-administration/concept_informationrequired_forusing_the_snapdrive_storageresize_command.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, resize, command, storage 
+summary: Bevor Sie den Befehl SnapDrive Storage Resize verwenden können, müssen Sie einige Informationen angeben. Diese Informationen helfen Ihnen bei der korrekten Verwendung des Befehls. 
+---
+= Für die Verwendung des Befehls SnapDrive Storage Resize benötigte Informationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es gibt einige Informationen, die Sie angeben müssen, bevor Sie den verwenden können `snapdrive storage resize` Befehl. Diese Informationen helfen Ihnen bei der korrekten Verwendung des Befehls.
+
+|===
+| Anforderungen | Argument 
+
+
+ a| 
+Entscheiden Sie, ob Sie die Größe einer Festplatte oder einer Volume-Gruppe erhöhen möchten, und geben Sie den Namen dieses Entity mit dem entsprechenden Argument ein.
+
+
+
+ a| 
+Festplattengruppe (-dg file_Spec) oder Volume-Gruppe (-vg file_Spec)
+ a| 
+_Name der Festplatte oder Volume-Gruppe_
+
+
+
+ a| 
+Entscheiden Sie, wie Sie die Storage-Größe erhöhen möchten. Beachten Sie bei Verwendung dieses Befehls Folgendes:
+
+* Verwenden Sie die `-growby` Option zum Erhöhen der Entity-Größe um die im Argument Größe angegebenen Bytes.
+* Verwenden Sie die `-growto` Option zum Erhöhen der Entity-Größe, so dass die neue Gesamtgröße die Anzahl der Bytes ist, die in angegeben sind `_size_` Argument:
+* Verwenden Sie die `-addlun` Option zum Erhöhen der Entity-Größe durch Hinzufügen einer neuen, intern generierten LUN zur zugrunde liegenden Festplattengruppe. Wenn Sie dieses Argument nicht verwenden, erhöht SnapDrive für UNIX die Größe der letzten LUN in der Festplattengruppe, um die Byte-Größe zu erfüllen, die in beiden angegeben ist `-growby` Oder die Option `-growto` Option.
+
+
+
+
+ a| 
+Geben Sie die Anzahl der Bytes an, um die der Speicher erhöht werden soll (`-growby _size_`)
+ a| 
+`_number_of_bytes_`
+
+
+
+ a| 
+Geben Sie die Größe in Bytes an, die der Speicher erreichen soll (`-growto _size_`)
+ a| 
+`_number_of_bytes_`
+
+
+
+ a| 
+Teilen Sie SnapDrive für UNIX mit, die Größe zu erhöhen, indem Sie der Laufwerksgruppe eine neue LUN hinzufügen (`-addlun`)
+ a| 
+
+
+
+ a| 
+Teilen Sie SnapDrive für UNIX mit, die Größe zu erhöhen, mit oder ohne eine Platzreservierung zu erstellen `-reserve | -noreserve`
+ a| 
+
+
+
+ a| 
+*Optional:* Es wird empfohlen, die Standardigroup für Ihren Host zu verwenden, anstatt einen igroup-Namen anzugeben.
+
+
+
+ a| 
+Der Initiatorgruppenname (`-igroup`)
+ a| 
+`_ig_name_`
+
+
+
+ a| 
+`-fstype`
+ a| 
+`_type_`
+
+
+
+ a| 
+`-vmtype`
+ a| 
+`_type_`
+
+
+
+ a| 
+*Optional:* gibt den Typ des Dateisystems und Volume Managers an, der für SnapDrive für UNIX-Vorgänge verwendet werden soll.
+
+|===

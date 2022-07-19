@@ -1,0 +1,33 @@
+---
+permalink: aix/concept_storage_system_partner_ip_address_or_interface_name_confirmation.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, system, ip, interface, name, address 
+summary: Wenn Sie das Setup-Programm auf Ihrem Speichersystem ausführen, werden Sie aufgefordert, eine IP-Adresse oder einen Schnittstellennamen anzugeben, damit ein Partnerspeichersystem bei einem Failover verwendet werden kann. Wenn Sie dies nicht anbieten, kann SnapDrive für UNIX nicht nach den Storage-Einheiten eines Speichersystems suchen, das den Vorgang übernommen hat. 
+---
+= IP-Adresse oder Bestätigung des Schnittstellennamens des Storage-Systems
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie das Setup-Programm auf Ihrem Speichersystem ausführen, werden Sie aufgefordert, eine IP-Adresse oder einen Schnittstellennamen anzugeben, damit ein Partnerspeichersystem bei einem Failover verwendet werden kann. Wenn Sie dies nicht anbieten, kann SnapDrive für UNIX nicht nach den Storage-Einheiten eines Speichersystems suchen, das den Vorgang übernommen hat.
+
+Eine Partner-IP-Adresse oder der Schnittstellenname ist die IP-Adresse oder der Schnittstellenname des Partner-Storage-Systems in einem HA-Paar-Setup. Fällt das primäre Storage-System aus, übernimmt das Partner Storage-System die Funktion des primären Storage-Systems.
+
+
+
+== Beispiel: Skript zur Einrichtung des Storage-Systems
+
+Im folgenden Beispiel wird die IP-Adresse vom Setup-Skript des Storage-Systems abgerufen:
+
+[listing]
+----
+storage_system_A> setup...
+Should interface e0 take over a partner IP address during failover?
+[n]: y
+Please enter the IP address or interface name to be taken over by e0
+[]: 10.2.21.35
+storage_system_A> reboot -t 0
+----
+In diesem Beispiel wird die IP-Adresse 10.2.21.35 verwendet.

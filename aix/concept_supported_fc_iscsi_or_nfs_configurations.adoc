@@ -1,0 +1,26 @@
+---
+permalink: aix/concept_supported_fc_iscsi_or_nfs_configurations.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, fc, iscsi, nfs, configuration 
+summary: SnapDrive für UNIX unterstützt Host-Cluster und HA-Paar-Topologien. FC- oder iSCSI-Konfigurationen unterstützen dieselben Host-Cluster- und HA-Paar-Konfigurationen, die von FC Host Utilities oder iSCSI Host Utilities unterstützt werden. 
+---
+= Unterstützte FC-, iSCSI- oder NFS-Konfigurationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX unterstützt Host-Cluster und HA-Paar-Topologien. FC- oder iSCSI-Konfigurationen unterstützen dieselben Host-Cluster- und HA-Paar-Konfigurationen, die von FC Host Utilities oder iSCSI Host Utilities unterstützt werden.
+
+SnapDrive für UNIX unterstützt die folgenden Host-Cluster und HA-Paar-Topologien:
+
+* Eine Standalone-Konfiguration, bei der ein einzelner Host mit einem einzelnen Storage-System verbunden ist
+* Jede Topologie, bei der ein HA-Paar-Failover eines Storage-Systems stattfindet
+* Jede Topologie mit Host-Clustern, die von NetApp unterstützt werden
+
+
+Weitere Informationen zu den empfohlenen Konfigurationen für Ihren Host und die Speichersysteme, die Sie verwenden, finden Sie in der Dokumentation zu AIX Host Utilities.
+
+
+NOTE: Wenn Sie eine SnapDrive für UNIX-Konfiguration benötigen, die nicht in der Dokumentation der Dienstprogramme aufgeführt ist, wenden Sie sich an den technischen Support.

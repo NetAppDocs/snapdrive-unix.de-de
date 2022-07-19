@@ -1,0 +1,18 @@
+---
+permalink: solaris/concept_login_information_for_storage_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, login, storage, system 
+summary: Ein Benutzername oder Passwort ermöglicht SnapDrive für UNIX den Zugriff auf jedes Speichersystem. Es bietet auch Sicherheit, weil die Person, die SnapDrive für UNIX ausführt, neben der Anmeldung als root den korrekten Benutzernamen oder das richtige Passwort angeben muss, wenn sie dazu aufgefordert wird. Wenn eine Anmeldung kompromittiert ist, können Sie sie löschen und einen neuen Benutzer anmelden. 
+---
+= Anmeldeinformationen für Storage-Systeme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Benutzername oder Passwort ermöglicht SnapDrive für UNIX den Zugriff auf jedes Speichersystem. Es bietet auch Sicherheit, weil die Person, die SnapDrive für UNIX ausführt, neben der Anmeldung als root den korrekten Benutzernamen oder das richtige Passwort angeben muss, wenn sie dazu aufgefordert wird. Wenn eine Anmeldung kompromittiert ist, können Sie sie löschen und einen neuen Benutzer anmelden.
+
+Sie haben bei Ihrer Einrichtung die Benutzer-Anmeldung für die einzelnen Storage-Systeme erstellt. Damit SnapDrive für UNIX mit dem Speichersystem arbeiten kann, müssen Sie diese Anmeldedaten angeben. Je nachdem, was Sie beim Einrichten der Storage-Systeme angegeben haben, kann jedes Storage-System entweder dieselbe Anmeldung oder eine eindeutige Anmeldung verwenden.
+
+SnapDrive für UNIX speichert diese Anmeldungen und Passwörter in verschlüsselter Form auf jedem Host. Sie können angeben, dass SnapDrive für UNIX diese Informationen verschlüsseln, wenn sie mit dem Speichersystem kommunizieren, indem Sie auf setzen `_snapdrive.conf_` Konfigurationsvariable `_use-https-to-filer=on_`.

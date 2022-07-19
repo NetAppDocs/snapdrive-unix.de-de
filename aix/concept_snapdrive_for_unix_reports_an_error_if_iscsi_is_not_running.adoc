@@ -1,0 +1,43 @@
+---
+permalink: aix/concept_snapdrive_for_unix_reports_an_error_if_iscsi_is_not_running.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, error, iscsi, hba 
+summary: SnapDrive für UNIX, der auf einem Linux-Host läuft, gibt eine Fehlermeldung als „HBA-Assistent nicht gefunden“ zurück. 
+---
+= SnapDrive für UNIX meldet einen Fehler, wenn iSCSI nicht ausgeführt wird
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX, der auf einem Linux-Host ausgeführt wird, gibt eine Fehlermeldung als zurück `"HBA assistant not found"`.
+
+Dies geschieht nach einer der folgenden Situationen:
+
+* Ein iSCSI-Stopp wurde ausgegeben.
+* Ein Takeover ist eingetreten, und der iSCSI Service wurde noch nicht gestartet.
+* Ein Giveback läuft, und der iSCSI-Service hat noch nicht gestartet.
+
+
+Damit SnapDrive für UNIX ausgeführt werden kann, muss der iSCSI-Service ausgeführt werden. Wenn der Dienst angehalten wird, gibt SnapDrive für UNIX eine Fehlermeldung aus. Wenn Sie z. B. die ausführen `snapdrive storage show` Befehl wenn der iSCSI-Service nicht ausgeführt wird, können Sie die Ausgabe ähnlich der folgenden anzeigen: `# snapdrive storage show -dg toaster1 0001-877 Admin error: HBA assistant not found. Commands involving LUNs should fail`.
+
+
+
+== Behelfslösung
+
+Stellen Sie sicher, dass der iSCSI-Dienst ausgeführt wird. Wenn das Storage-System gerade eine Übernahme oder Rückgabe durchführt, warten Sie, bis der iSCSI-Service gestartet wird. Wenn sich das Speichersystem im normalen Betriebsmodus befindet, starten Sie den iSCSI-Service neu und starten Sie dann den SnapDrive für UNIX-Daemon neu, indem Sie den ausführen `snapdrived restart` Befehl. Nachdem der Dienst ausgeführt wurde, geben Sie den erneut aus `snapdrive storage show` Befehl. Dieses Mal sollten Sie eine Ausgabe wie folgt sehen:
+
+[listing]
+----
+# snapdrive storage show -dg toaster1
+dg: toaster1 dgtype lvm
+hostvol: /dev/mapper/toaster1-lvol1 state: AVAIL
+hostvol: /dev/mapper/toaster1-lvol2 state: AVAIL
+fs: /dev/mapper/toaster1-lvol1 mount point: /mnt/um1 (nonpersistent)
+fstype ext3
+fs: /dev/mapper/toaster1-lvol2 mount point: NOT MOUNTED
+device filename adapter path size proto state clone lun path backing snapshot
+/dev/sde - P 64m iscsi online No gin:/vol/vol1/Lun1
+/dev/sdf - P 64m iscsi online No gin:/vol/vol1/Lun2
+----

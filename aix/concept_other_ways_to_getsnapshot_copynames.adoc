@@ -1,0 +1,19 @@
+---
+permalink: aix/concept_other_ways_to_getsnapshot_copynames.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, snapshot, copy, name 
+summary: Verwenden Sie den Befehl SnapDrive Snap list, um den Namen der Snapshot Kopie anzuzeigen. 
+---
+= Andere Möglichkeiten, Namen von Snapshot Kopien zu erhalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie die `snapdrive snap list` Befehl zum Anzeigen des Namens der Snapshot Kopie.
+
+Eine andere Möglichkeit, den Namen einer Snapshot Kopie zu bekommen, ist die Anmeldung beim Storage-System und die Verwendung von `snapdrive snap list` Befehl dort. Mit diesem Befehl werden die Namen der Snapshot Kopien angezeigt.
+
+
+NOTE: Der `snapdrive snap show` Der Befehl entspricht dem Storage-System `snapdrive snap list` Befehl.

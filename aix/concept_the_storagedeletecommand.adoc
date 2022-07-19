@@ -1,0 +1,17 @@
+---
+permalink: aix/concept_the_storagedeletecommand.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, command 
+summary: Mit dem befehl SnapDrive Storage delete werden die Speichereinheiten auf dem Host zusätzlich zu allen zugrunde liegenden Host-seitigen Einheiten und Storage-System-LUNs entfernt, die diese unterstützen. 
+---
+= Der Befehl Storage delete
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der `snapdrive storage delete` Durch den Befehl werden die Speichereinheiten auf dem Host zusätzlich zu allen zugrunde liegenden Host-seitigen Einheiten und Storage-System-LUNs entfernt, die diese unterstützen.
+
+
+IMPORTANT: Mit diesem Befehl werden Daten gelöscht.

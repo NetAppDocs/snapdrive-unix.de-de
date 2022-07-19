@@ -1,0 +1,44 @@
+---
+permalink: aix/concept_postinstallation_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, check, post, installation 
+summary: Nach Abschluss der Installation müssen Sie einige Aufgaben durchführen, um sicherzustellen, dass SnapDrive für UNIX erfolgreich installiert wurde. 
+---
+= Prüfungen nach der Installation durchführen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach Abschluss der Installation müssen Sie einige Aufgaben durchführen, um sicherzustellen, dass SnapDrive für UNIX erfolgreich installiert wurde.
+
+.Schritte
+. Überprüfen Sie, ob das Installationsprogramm alle erforderlichen Dateien auf Ihrem Host installiert hat.
+. Vergewissern Sie sich, dass die Konfigurationsvariablen im vorhanden sind `snapdrive.conf` Die Datei hat die richtigen Einstellungen.
++
+Für den Großteil dieser Variablen sollten die Standardwerte gelten.
+
+. Geben Sie SnapDrive für UNIX die aktuellen Anmeldeinformationen des Storage-Systems an.
++
+Bei der Einrichtung Ihres Speichersystems haben Sie einen Benutzer angemeldet. SnapDrive für UNIX benötigt diese Anmeldedaten, um mit dem Storage-System arbeiten zu können.
+
+. Um die rollenbasierte Zugriffssteuerung (Role Based Access Control, RBAC) zu verwenden, legen Sie die fest `_rbac-method=dfm_` Variable im `snapdrive.conf` Datei:
++
+Standardmäßig greift SnapDrive 4.0 für UNIX und höher mithilfe der Root-Anmeldedaten auf die Speichersysteme zu. Die RBAC-Funktionen sind nicht aktiviert.
+
+. Wenn Sie HTTPS für eine sichere Verbindung mit dem Speichersystem und dem Daemon-Service verwenden möchten, legen Sie den fest `_use-https-to-sdu-daemon=on_` Im `snapdrive.conf` Datei:
++
+
+NOTE: SnapDrive 5.0 für UNIX und neuere Versionen unterstützen HTTPS für die Kommunikation mit dem Daemon. Standardmäßig ist die Option auf festgelegt `off`.
+
+. Installieren Sie das Serverzertifikat, das von SnapDrive für UNIX in verwendet wird
++
+`sdu-daemon-certificate-path=/opt/NetApp/snapdrive/snapdrive.pem path as specified in the snapdrive.conf` Datei:
+
+. Ändern Sie das Standardpasswort für den SnapDrive for UNIX Daemon Service, indem Sie den folgenden Befehl ausführen:
++
+`*snapdrived passwd*`
+
+. Überprüfen Sie die Details der installierten Konfigurationskomponenten in `/var/log/sdconfcheck.out`.
+

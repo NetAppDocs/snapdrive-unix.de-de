@@ -1,0 +1,14 @@
+---
+permalink: aix/concept_deleting_a_snapshot_copy.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, delete, snapshot, copy 
+summary: Sie können eine Snapshot-Kopie auf einem Storage-System mit dem Befehl SnapDrive Snap delete löschen. 
+---
+= Löschen einer Snapshot Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Snapshot-Kopie auf einem Storage-System mit löschen `snapdrive snap delete` Befehl.

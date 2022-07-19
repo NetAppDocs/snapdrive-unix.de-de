@@ -1,0 +1,36 @@
+---
+permalink: solaris/concept_reason_to_refresh_the_dmp_paths.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, refresh, dmp, path 
+summary: Auf Hosts mit FC- und DMP-Konfigurationen kann der Befehl SnapDrive Storage delete - lun hängen. 
+---
+= Grund für die Aktualisierung der DMP-Pfade
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf Hosts mit FC- und DMP-Konfigurationen wird das von Ihnen aufgeführt `snapdrive storage delete - lun` Befehl kann hängen.
+
+Der Befehl kann aufgrund einer unangemessenen Installation oder Konfiguration der folgenden Komponenten hängen:
+
+* NTAPasl
+* Veritas Stack (Storage-Grundlage)
+* Multipathing-Lizenzen
+
+
+Sie müssen die Informationen zu den DMP-Pfaden ordnungsgemäß aktualisieren, nachdem ein FC-Pfad aktiviert, deaktiviert oder hinzugefügt wurde. Um die DMP-Pfade zu aktualisieren, führen Sie die folgenden Befehle nacheinander aus, wie unten aufgeführt.
+
+|===
+| * Plattform* | *Befehl* 
+
+
+ a| 
+Solaris
+ a| 
+* `devfsadm -Cv`
+* `vxdisk scandisk`
+
+
+|===

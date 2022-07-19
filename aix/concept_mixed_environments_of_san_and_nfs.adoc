@@ -1,0 +1,27 @@
+---
+permalink: aix/concept_mixed_environments_of_san_and_nfs.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, mixed, san, nfs, environment 
+summary: In gemischten SAN- und NFS-Umgebungen müssen Management- und Datenschnittstelle abgebildet werden, sodass die erste Datenschnittstelle die gleiche ist wie die Managementoberfläche. 
+---
+= Kombinierte SAN- und NFS-Umgebungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In gemischten SAN- und NFS-Umgebungen müssen Management- und Datenschnittstelle abgebildet werden, sodass die erste Datenschnittstelle die gleiche ist wie die Managementoberfläche.
+
+Im folgenden Beispiel ist die Managementoberfläche `10.72.197.91`, Und die Datenschnittstelle ist `a10.72.220.91`.
+
+[listing]
+----
+
+#snapdrive config set -mgmtpath f3050-197-91 f3050-197-91 f3050-197-91 f3050-220-91
+
+#snapdrive config list -mgmtpath
+ system name        management interface   datapath interface
+ --------------------------------------------------------------------
+ bart               10.72.197.91           10.72.197.91|10.72.220.91
+----

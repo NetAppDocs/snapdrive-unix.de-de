@@ -1,0 +1,47 @@
+---
+permalink: linux-administration/concept_contents_of_autosupport_message_in_snapdrive_for_unix.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, autosupport, message, error 
+summary: AutoSupport Meldungen enthalten die folgenden Informationen. 
+---
+= Inhalt von AutoSupport Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport Meldungen enthalten die folgenden Informationen.
+
+* Ereignisquelle
+* Ereignis-ID
+* Version von SnapDrive für UNIX
+* Meldungsstatus: Meldungen auf Protokollebene, z. B. 1 für Warnung, 2 für kritisch, 3 für Fehler, 4 für Warnung, 5 für Hinweis, 6 für Informationen, und 7 für Debug
+* Host-Name
+* Host-Betriebssystem
+* Release-Version des Host-Betriebssystems
+* Der Name des Storage-Systems
+* Nutzung von Protection Manager/rollenbasierter Zugriffssteuerung
+* Fehlerkategorie
+* AutoSupport Nachrichteneintrag als FALSE markieren
+* Host-Multipathing-Typ: Der in konfigurierte Wert `snapdrive.conf` Datei wird protokolliert. Wenn der Assistent aufgrund eines falschen Konfigurationswerts nicht geladen wird, wird kein Multipathing-Typ des Hosts protokolliert.
+* Host-Virtualisierung aktiviert: Dies wird nur für das VMware Gastbetriebssystem erfasst.
+* Protokoll: Der für konfigurierte Wert `default-transport` Im `snapdrive.conf` Datei:
+* Schutz aktiviert: Wenn OnCommand Data Fabric Manager (DFM) mit SnapDrive für UNIX konfiguriert ist, wird der Wert Ja protokolliert.
++
+
+NOTE: SnapDrive für UNIX überprüft nicht, ob OnCommand DFM verwendet wird.
+
+
+
+Die folgenden zusätzlichen Informationen stehen zur Verfügung, wenn Sie den ausführen `snapdrive storage show -all` Befehl:
+
+* Protokolltyp (FCP/iSCSI): Ggf. verwendete Protokolle zum Erstellen der luns
+* Anzahl der verbundenen LUNs
+* Anzahl der Festplatten- oder Volume-Gruppen
+* Anzahl der Dateispezifikationen
+* Anzahl der Host-Volumes
+
+
+
+NOTE: Wenn AutoSupport in SnapDrive für UNIX aktiviert ist, werden bei einem Betriebsausfall die Fehlermeldungen im Speichersystem des Ereignismanagements (EVM) protokolliert. Wenn die Fehlermeldung Sonderzeichen enthält, z. B. (<, >, &, ', „,“, \R) werden in der EMS-Protokollansicht des Speichersystems gegarte Werte angezeigt.

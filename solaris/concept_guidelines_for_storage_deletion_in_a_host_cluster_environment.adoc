@@ -1,0 +1,38 @@
+---
+permalink: solaris/concept_guidelines_for_storage_deletion_in_a_host_cluster_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, storage, delete, host, cluster 
+summary: Sie müssen einige Richtlinien kennen, um den Befehl zum Löschen von Speicher in einer Host-Cluster-Umgebung zu verwenden. 
+---
+= Richtlinien zum Löschen von Storage in einer Host-Cluster-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einige Richtlinien zur Verwendung des kennen `snapdrive storage delete` Befehl in einer Host-Cluster-Umgebung.
+
+* Wenn Sie den initiieren `snapdrive storage delete` Befehl mit `-devicetype` Shared-Option von einem beliebigen nicht-Master-Node im Host-Cluster aus wird der Befehl an den Master-Node gesendet und ausgeführt. Um dies zu erreichen, müssen Sie sicherstellen, dass die rsh oder ssh `access-without-password-prompt` Ist für alle Host-Cluster-Knoten zulässig.
+* Der `snapdrive storage delete` Der Befehl kann von jedem Node im Host-Cluster ausgeführt werden.
+* Damit der Speicherlösch erfolgreich sein kann, sollte auch nicht falsch sein:
++
+** Die Speichereinheiten müssen gemeinsam genutzt werden.
+** Die LUNs sollten allen Nodes im Host-Cluster zugeordnet sein.
+
+
+* Sie können eine Storage-Einheit auf einem bestimmten Node löschen, indem Sie die verwenden `-devicetype dedicated` Option oder durch Auslassen des `-devicetype` Option in der Befehlssyntax, zusammen, weil der Standardwert dediziert ist.
+* Der `snapdrive storage delete` Befehl zeigt eine Fehlermeldung an, wenn eine gemeinsam genutzte Storage-Einheit oder LUN mit gelöscht wird `-devicetype dedicated` Option oder wenn eine dedizierte Speichereinheit oder LUN mit gemeinsam genutzter Option gelöscht wird.
+* Der Speicherlösch schlägt fehl, wenn einer der folgenden Ereignisse eintritt:
++
+** Wenn während des Löschvorgangs einer Speichereinheit ein Fehler auftritt.
++
+SnapDrive für UNIX löscht die Storage-Einheiten, trennt die LUNs von allen nicht-Master-Knoten und trennt dann die LUNs vom Master-Knoten im Host-Cluster und löscht sie.
+
+** Wenn ein Node im Host-Cluster heruntergefahren wird, wird er vor dem heruntergefahren und neu gestartet `snapdrive storage delete` Befehl wird ausgeführt.
++
+Dies geschieht, da die LUNs noch dem nicht vorhandenen Node zugeordnet sind. Um dies zu vermeiden, verwenden Sie die `-force` Option.
+
+
+
+

@@ -1,0 +1,24 @@
+---
+permalink: aix/concept_multiple_subnet_configuration.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, multiple, subnet, configuration 
+summary: Mehrere Subnetze sind in einer Umgebung nützlich, in der Management-Traffic und Datenverkehr voneinander getrennt werden sollen. Durch diese Trennung entsteht eine sicherere Umgebung für das Management des Netzwerkdatenverkehrs. SnapDrive 4.1.1 für UNIX und neuere Versionen, die auf Servern in solchen Umgebungen ausgeführt werden, unterstützen alle SnapDrive Vorgänge, die in Standalone-Umgebungen und Host- und HA-Paar-Umgebungen zur Verfügung stehen. 
+---
+= Mehrere Subnetzkonfigurationen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mehrere Subnetze sind in einer Umgebung nützlich, in der Management-Traffic und Datenverkehr voneinander getrennt werden sollen. Durch diese Trennung entsteht eine sicherere Umgebung für das Management des Netzwerkdatenverkehrs. SnapDrive 4.1.1 für UNIX und neuere Versionen, die auf Servern in solchen Umgebungen ausgeführt werden, unterstützen alle SnapDrive Vorgänge, die in Standalone-Umgebungen und Host- und HA-Paar-Umgebungen zur Verfügung stehen.
+
+Daten in Verbindung mit dem Management von Storage-Systemen werden über die Management-Oberfläche übertragen. DataFabric Manager, Protection Manager und SnapDrive für UNIX können Teil der Management-Oberfläche sein. Die Datenschnittstelle wird für den Datenverkehr zwischen Storage-Systemen verwendet.
+
+Um mehrere Subnetze in Ihrer Umgebung zu konfigurieren, sollten Sie den verwenden `mgmtpath` Option mit dem `snapdrive config set` Befehl.
+
+SnapDrive für UNIX unterstützt Vorgänge in einer SAN-Umgebung nicht, in der sich der Host-Name des Storage-Systems vom öffentlichen Namen unterscheidet, aber beide Namen werden auf dieselbe IP-Adresse aufgelöst. Um diese Situation zu umgehen, können Sie einen der folgenden Schritte ausführen:
+
+* Weisen Sie dem Systemnamen eine andere IP-Adresse zu.
+* Konfigurieren Sie das System so, dass es nicht antwortet, wenn Sie versuchen, eine Verbindung zu ihm herzustellen.
+

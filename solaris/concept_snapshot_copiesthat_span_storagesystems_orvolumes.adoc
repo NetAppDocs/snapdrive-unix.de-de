@@ -1,0 +1,34 @@
+---
+permalink: solaris/concept_snapshot_copiesthat_span_storagesystems_orvolumes.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, copy, storage, volume 
+summary: SnapDrive für UNIX ermöglicht die Erstellung von Snapshot Kopien, die sich in mehreren Storage-System-Volumes auf demselben oder verschiedenen Storage-Systemen befinden. 
+---
+= Snapshot Kopien für Storage-Systeme oder Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX ermöglicht die Erstellung von Snapshot Kopien, die sich in mehreren Storage-System-Volumes auf demselben oder verschiedenen Storage-Systemen befinden.
+
+SnapDrive für UNIX ermöglicht die Erstellung von Snapshot Kopien, die über mehrere Storage-System-Volumes oder mehrere Storage-Systeme verteilt sind. Diese Volumes können im selben Storage-System oder in verschiedenen Storage-Systemen residieren. Obwohl der `snapdrive snap create` Befehl erstellt eine Snapshot-Kopie aller Volumes, die die von Ihnen beantragte Einheit umfassen. SnapDrive für UNIX stellt nur die Einheiten wieder her, die Sie in angeben `snapdrive snap create` Befehl.
+
+Wenn Sie das verwenden `snapdrive snap create` Der Befehl, um eine Snapshot Kopie zu erstellen, die sich über mehrere Volumes erstreckt, muss in der Eingabeaufforderung nicht die Volumes benannt werden. SnapDrive für UNIX ruft diese Informationen vom ab `file_spec` Argument, das Sie angeben.
+
+* Wenn der `file_spec` Wenn Sie eine Festplattengruppe, ein Dateisystem oder ein Host-Volume, das sich auf einer Festplattengruppe befindet, fordert SnapDrive für UNIX automatisch eine Snapshot-Kopie an, die alle Storage-System-Volumes für die von Ihnen angegebene Festplattengruppe, ein Volume oder ein Dateisystem umfasst.
+* Wenn der `file_spec` Geben Sie eine LUN an. SnapDrive für UNIX erstellt eine Snapshot-Kopie des Storage-System-Volume, das die LUN enthält.
+* Wenn der `file_spec` Geben Sie ein Dateisystem an, das sich direkt auf einer LUN befindet. SnapDrive für UNIX erstellt eine Snapshot-Kopie des Storage-System-Volumes, das die angegebene LUN und das angegebene Dateisystem enthält.
+* Wenn der `file_spec` Geben Sie ein NFS-Verzeichnis an. SnapDrive für UNIX erstellt eine Snapshot-Kopie des Volumes, das die NFS-Verzeichnisstruktur enthält.
+
+
+Zusätzlich zur Verwendung von A `file_spec` Argument, das auf Einheiten mehrerer Storage-Systeme und Storage-System-Volumes basiert, kann auch eine Kombination von genutzt werden `file_spec` Argumente, bei denen jeder Wert auf einem einzelnen Storage-System oder Storage-System-Volume basiert. Nehmen wir zum Beispiel an, dass Sie ein Setup haben, bei dem die Festplattengruppe dg1 die Storage-Systeme system2 und Storage-System3 umfasst, dg2 sich auf Storage-Systemen 2 und dg3 auf Storage-Systemen 3 befindet. In diesem Fall wäre eine der folgenden Befehlszeilen korrekt:
+
+`snapdrive snap create -dg dg1 -snapname snapdg1`
+
+`snapdrive snap create -dg dg2 dg3 -snapname snapdg23`
+
+`snapdrive snap create -dg dg1 dg2 dg3 -snapname snapdg123`
+
+Bedenken Sie beim Erstellen von Snapshot Kopien, die Storage-Systeme und Volumes umfassen, dass SnapDrive für UNIX mit kurzer Bezeichnung die Snapshot-Kopie auf jedem Volume des Storage-Systems erstellt. Er enthält nicht den vollständigen Pfadnamen, auch wenn sich die Volumes auf einem anderen Storage-System befinden. Das heißt, wenn Sie die Snapshot Kopie später umbenennen, müssen Sie zu jedem Storage-System und Volume wechseln und diese auch dort umbenennen.

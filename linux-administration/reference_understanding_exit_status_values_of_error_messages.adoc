@@ -1,0 +1,27 @@
+---
+permalink: linux-administration/reference_understanding_exit_status_values_of_error_messages.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, exit, error, status, warning, admin, command, fatal 
+summary: Jede SnapDrive für UNIX-Fehlermeldung ist mit einem Exit-Status-Wert verknüpft. Der Wert für den Exit-Status enthält die Ursache des Fehlers und den Typ Warnung, Befehl, Admin oder fatal. 
+---
+= Allgemeines zu Werten für den Exit-Status von Fehlermeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jede SnapDrive für UNIX-Fehlermeldung ist mit einem Exit-Status-Wert verknüpft. Der Wert für den Exit-Status enthält die Ursache des Fehlers und den Typ Warnung, Befehl, Admin oder fatal.
+
+Jede SnapDrive-Fehlermeldungs-ID ist mit einem Exit-Statuswert verknüpft. Werte für den Exit-Status enthalten die folgenden Informationen:
+
+* Exit-Status-Wert: Gibt die grundlegende Ursache der Fehlerbedingung an.
+* Typ- zeigt den Fehlertyp an. Die Schwere hängt von der Botschaft, nicht vom Wert ab. Folgende Werte sind möglich:
++
+** Warnung - SnapDrive für UNIX hat den Befehl ausgeführt, gab aber eine Warnung über Bedingungen aus, die möglicherweise Ihre Aufmerksamkeit erfordern könnten.
+** Befehl--SnapDrive für UNIX konnte den Befehl aufgrund eines Fehlers in der Kommandozeile nicht ausführen. Überprüfen Sie das Befehlszeilenformat, um sicherzustellen, dass sie korrekt sind.
+** Admin--SnapDrive für UNIX konnte den Befehl nicht ausführen aufgrund von Inkompatibilitäten in der Systemkonfiguration. Wenden Sie sich an Ihren Systemadministrator, um Ihre Konfigurationsparameter zu überprüfen.
+** Fatal--SnapDrive für UNIX konnte den Befehl aufgrund einer unerwarteten Bedingung nicht ausführen. Schwere Fehler sind selten. Wenn ein schwerer Fehler auftritt und Probleme beim Beheben auftreten, wenden Sie sich an den technischen Support von NetApp. Er wird Ihnen helfen, die Schritte zu bestimmen, die zum korrekten Wiederherstellen der Fehlerbedingung erforderlich sind.
+
+
+

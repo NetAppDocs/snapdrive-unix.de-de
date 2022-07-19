@@ -1,0 +1,23 @@
+---
+permalink: solaris/concept_operation_with_a_single_filespec_on_a_single_storage_object.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, single, filespec, storage, object 
+summary: SnapDrive für UNIX zeigt eine Fehlermeldung an, wenn Sie kein autorisierter Benutzer sind, um einen Dateiepec auf einem bestimmten Volume zu erstellen. 
+---
+= Vorgang mit einem einzigen Dateisystem auf einem einzigen Storage-Objekt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapDrive für UNIX zeigt eine Fehlermeldung an, wenn Sie kein autorisierter Benutzer sind, um einen Dateiepec auf einem bestimmten Volume zu erstellen.
+
+_Filepec: File-pec kann ein Dateisystem, ein Host-Volume, eine Datenträgergruppe oder eine LUN sein._
+
+[listing]
+----
+[john]$ snapdrive storage create -fs /mnt/testfs -filervol storage_array1:/vol/vol1 -dgsize 100m
+0002-332 Admin error:SD.Storage.Write access denied on volume storage_array1:/vol/vol1 for user unix_host\john on Operations Manager server ops_mngr_server
+----
+In diesem Beispiel ist John kein Root-Benutzer und ist nicht berechtigt, einen Dateisystem auf dem angegebenen Volume zu erstellen. John muss den Operations Manager-Konsolenadministrator bitten, zu gewähren `SD.Storage.Write` Zugriff auf das Volume `storage_array1:/vol/vol1`.

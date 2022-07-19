@@ -1,0 +1,188 @@
+---
+permalink: solaris/task_snapdrive_configuration_wizard_in_nfs_san_and_mixed_environment.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, configuration, wizard 
+summary: Der Konfigurationsassistent ermöglicht die Konfiguration in NFS-, SAN- oder gemischten Umgebungen. 
+---
+= Verwenden des SnapDrive-Konfigurationsassistenten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Konfigurationsassistent ermöglicht die Konfiguration in NFS-, SAN- oder gemischten Umgebungen.
+
+
+
+== Schritte zur Konfiguration in einer NFS-Umgebung
+
+Im Folgenden werden die Schritte beschrieben, die in der NFS-Umgebung konfiguriert werden sollen.
+
+.Schritte
+. Wählen Sie das Profil *NFS* aus.
+. Aktivieren Sie die Protection Manager-Integration.
++
+** Wählen Sie `Yes` Um die Zugriffsprüfungen mit DataFabric Manager zu aktivieren.
++
+*** Geben Sie den DataFabric Manager-Servernamen oder die IP-Adresse gefolgt von Benutzernamen und Passwort ein.
+*** Geben Sie das ein `http/https` Port zur Kommunikation mit dem DataFabric Manager. Der Standardwert ist `8088`.
+*** Geben Sie den SSL-Serverport ein, um auf den DataFabric Manager zuzugreifen. Der Standardwert ist `8488`.
+*** Aktivieren Sie HTTPS-aktiviert, um mit dem DataFabric Manager zu kommunizieren.
+
+
+** Wählen Sie `No` Um die Zugriffsprüfungen mithilfe der rollenbasierten zugriffssteuerung zu aktivieren.
+
+
+. Geben Sie die rollenbasierten Zugriffssteuerungsmethoden an. Die möglichen Werte sind `native` Und `dfm`.
++
+** Wählen Sie `native` So prüfen Sie die Zugriffsberechtigung für den Host mithilfe der in gespeicherten Steuerdatei `/vol/vol0/sdprbac/sdhost-name.prbac` Oder `/vol/vol0/sdprbac/sdgenericname.prbac`.
+** Wählen Sie `dfm` Um die Zugriffsberechtigungen über die Operations Manager-Konsole zu überprüfen.
++
+
+NOTE: Wenn Sie dfm als rbac-Methode ohne Konfiguration von DataFabric Manager auswählen, wird eine Warnmeldung angezeigt, die angibt, dass die RBAC-Methode als dfm ohne die Aktivierung der Protection Manager Integration ausgewählt wurde.
+
+
+
+. Angeben `https` Oder `http` Um mit dem Speichersystem zu kommunizieren.
+. Der letzte Schritt besteht darin, die Konfigurationsänderungen in der zu speichern `snapdrive.conf` Datei und starten Sie den Daemon neu.
++
+** Wenn Sie auswählen `Yes`, Der SnapDrive-Daemon wird neu gestartet und die Konfigurationsänderungen werden widergespiegelt.
+** Wenn Sie auswählen `No`, Die Variablenwerte werden in geändert `snapdrive.conf` Datei, die Änderungen werden jedoch nicht widergespiegelt.
+
+
+
+
+
+
+== Schritte zur Konfiguration in einer SAN-Umgebung
+
+Nachfolgend werden die Schritte beschrieben, die in der SAN-Umgebung konfiguriert werden müssen.
+
+.Schritte
+. Wählen Sie das SAN-Profil aus.
+. Wählen Sie das gewünschte Transportprotokoll aus.
++
+** Wählen Sie `fcp` So legen Sie den Standard-Transport fest:
+** Wählen Sie `iscsi` So legen Sie den Standard-Transport fest:
+
+
+. Wählen Sie den SAN-Storage-Stack aus (Kombination aus MPIO-Lösung, Volume-Manager und Dateisystem). Die Optionen sind `native`, und `none` Für Solaris SPARC stehen die Optionen zur Verfügung `native`, `veritas`, und `none`
++
+SnapDrive unterstützt veritas für das iSCSI Transportprotokoll nicht.
+
+. Aktivieren Sie die Protection Manager-Integration.
++
+** Wählen Sie `Yes` Um die Zugriffsprüfungen mit DataFabric Manager zu aktivieren.
++
+*** Geben Sie den DataFabric Manager-Servernamen oder die IP-Adresse gefolgt von Benutzernamen und Passwort ein.
+*** Geben Sie das ein `http/https` Port zur Kommunikation mit dem DataFabric Manager. Der Standardwert ist `8088`.
+*** Geben Sie den SSL-Serverport ein, um auf den DataFabric Manager zuzugreifen. Der Standardwert ist `8488`.
+*** Aktivieren Sie HTTPS-aktiviert, um mit dem DataFabric Manager zu kommunizieren
+
+
+** Wählen Sie `No` Um die Zugriffsprüfungen mithilfe der rollenbasierten zugriffssteuerung zu aktivieren.
+
+
+. Geben Sie die rollenbasierten Zugriffssteuerungsmethoden an. Die möglichen Werte sind `native` Und `dfm`.
++
+** Wählen Sie `native` So prüfen Sie die Zugriffsberechtigung für den Host mithilfe der in gespeicherten Steuerdatei `/vol/vol0/sdprbac/sdhost-name.prbac` Oder `/vol/vol0/sdprbac/sdgenericname.prbac`.
+** Wählen Sie `dfm` So prüfen Sie die Zugriffsberechtigung mithilfe des Operations Manager.
++
+
+NOTE: Wenn Sie auswählen `dfm` Als `rbac-method` Ohne die Konfiguration von DataFabric Manager wird eine Warnmeldung angezeigt, die angibt, dass die RBAC-Methode als ausgewählt wird `dfm` Ohne die Aktivierung der Protection Manager-Integration wird angezeigt.
+
+
+
+. Aktivieren Sie die SMVI Integration, um RDM LUNs im Gastbetriebssystem zu erstellen.
++
+** Wählen Sie `yes` Um RDM-LUNs im Gastbetriebssystem zu erstellen. Geben Sie dann die IP-Adresse, den Benutzernamen und das Passwort des SMVI-Servers ein.
+** Wählen Sie `no` Um diese Option zu überspringen.
++
+
+NOTE: Dieser Schritt zur Konfiguration von SMVI wird nur aufgefordert, wenn das Transportprotokoll fcp ist und das Host-Betriebssystem Solaris_x86 ist.
+
+
+
+. Angeben `https` Oder `http` Um mit dem Speichersystem zu kommunizieren.
+. Der letzte Schritt besteht darin, die Konfigurationsänderungen in der zu speichern `snapdrive.conf` Datei und starten Sie den Daemon neu.
++
+** Wenn Sie auswählen `Yes`, Der SnapDrive-Daemon wird neu gestartet und die Konfigurationsänderungen werden widergespiegelt.
+** Wenn Sie auswählen `No`, Die Variablenwerte werden in geändert `snapdrive.conf` Datei, die Änderungen werden jedoch nicht widergespiegelt.
+
+
+
+
+
+
+== Schritte zur Konfiguration in gemischten SAN- und NFS-Umgebungen
+
+Im Folgenden werden die Schritte zur Konfiguration in einer gemischten SAN- und NFS-Umgebung beschrieben.
+
+.Schritte
+. Wählen Sie das gemischte Profil aus.
+. Wählen Sie das gewünschte Transportprotokoll aus.
++
+** Wählen Sie `fcp` So legen Sie den Standard-Transport fest:
+** Wählen Sie `iscsi` So legen Sie den Standard-Transport fest:
+
+
+. Wählen Sie den SAN-Storage-Stack aus (Kombination aus MPIO-Lösung, Volume-Manager, Dateisystem). Die Optionen sind `native`, und `none`. Für Solaris SPARC stehen die Optionen zur Verfügung `native`, `veritas`, und `none`
++
+SnapDrive unterstützt veritas für das iSCSI Transportprotokoll nicht.
+
+. Aktivieren Sie die Protection Manager-Integration.
++
+** Wählen Sie `Yes` Um die Zugriffsprüfungen mit DataFabric Manager zu aktivieren
++
+*** Geben Sie den DataFabric Manager-Servernamen oder die IP-Adresse gefolgt von Benutzernamen und Passwort ein.
+*** Geben Sie das ein `http/https` Port zur Kommunikation mit dem DataFabric Manager. Der Standardwert ist `8088`.
+*** Geben Sie den SSL-Serverport ein, um auf den DataFabric Manager zuzugreifen. Der Standardwert ist `8488`.
+*** Aktivieren Sie HTTPS-aktiviert, um mit dem DataFabric Manager zu kommunizieren.
+
+
+** Wählen Sie `No` Um die Zugriffsprüfungen mithilfe der rollenbasierten zugriffssteuerung zu aktivieren.
+
+
+. Geben Sie die rollenbasierten Zugriffssteuerungsmethoden an. Die möglichen Werte sind `native` Und `dfm`.
++
+** Wählen Sie `native` So prüfen Sie die Zugriffsberechtigung für den Host mithilfe der in gespeicherten Steuerdatei `/vol/vol0/sdprbac/sdhost-name.prbac` Oder `/vol/vol0/sdprbac/sdgenericname.prbac`
+** Wählen Sie `dfm` Um die Zugriffsberechtigungen über die Operations Manager-Konsole zu überprüfen.
++
+
+NOTE: Wenn Sie auswählen `dfm` Als `rbac-method` Ohne die Konfiguration von DataFabric Manager wird eine Warnmeldung angezeigt, die angibt, dass die RBAC-Methode als ausgewählt wird `dfm` Ohne die Aktivierung der Protection Manager-Integration wird angezeigt.
+
+
+
+. Aktivieren Sie die SMVI Integration, um RDM LUNs im Gastbetriebssystem zu erstellen.
++
+** Wählen Sie `yes` Um RDM-LUNs im Gastbetriebssystem zu erstellen. Geben Sie dann die IP-Adresse, den Benutzernamen und das Passwort des SMVI-Servers ein.
+** Wählen Sie `no` Um diese Option zu überspringen.
++
+
+NOTE: Dieser Schritt zur Konfiguration von SMVI wird nur aufgefordert, wenn das Transportprotokoll fcp ist und das Host-Betriebssystem Solaris_x86 ist.
+
+
+
+. Angeben `https` Oder `http` Um mit dem Speichersystem zu kommunizieren.
+. Der letzte Schritt besteht darin, die Konfigurationsänderungen in der zu speichern `snapdrive.conf` Datei und starten Sie den Daemon neu.
++
+** Wenn Sie auswählen `Yes`, Der SnapDrive-Daemon wird neu gestartet und die Konfigurationsänderungen werden widergespiegelt.
+** Wenn Sie auswählen `No`, Die Variablenwerte werden in geändert `snapdrive.conf` Datei, die Änderungen werden jedoch nicht widergespiegelt.
+
+
+
+
+SnapDrive ändert die folgenden Variablen in `snapdrive.conf` Datei:
+
+* `_contact-http-dfm-port_`
+* `-contact-ssl-dfm-port_`
+* `_use-https-to-dfm_`
+* `_default-transport_`
+* `_use-https-to-filer_`
+* `_fstype_`
+* `_multipathing-type_`
+* `_vmtype_`
+* `_rbac-method_`
+* `_rbac-cache_`
+

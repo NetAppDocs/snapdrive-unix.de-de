@@ -1,0 +1,26 @@
+---
+permalink: solaris/concept_nfs_configuration_checks.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, nfs, configuration, check 
+summary: 'Bei Konfigurationen mit Network File System \ (NFS\) müssen Sie vor dem Einrichten Ihrer Host- und Speichersysteme prüfen, ob die NFS-Clients ordnungsgemäß funktionieren.' 
+---
+= NFS-Konfigurationsprüfungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bei Konfigurationen, die Network File System (NFS) verwenden, müssen Sie vor der Einrichtung der Host- und Speichersysteme überprüfen, ob die NFS-Clients ordnungsgemäß funktionieren.
+
+Wenn Sie über eine Konfiguration mit NFS verfügen, müssen Sie die folgenden Aufgaben ausführen:
+
+* Stellen Sie sicher, dass die NFS-Clients ordnungsgemäß funktionieren.
++
+Weitere Informationen zum Verwalten von NFS-Protokollen finden Sie im link:https://library.netapp.com/ecm/ecm_download_file/ECMP1401220["File Access und Protocols Management Guide für 7-Mode"] Wenn Sie Data ONTAP 7-Mode verwenden, lesen Sie den link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html["File Access Management-Leitfaden für NFS"] Wenn Sie Clustered Data ONTAP verwenden
+
+* Richten Sie Ihre Host- und Storage-Systeme ein.
++
+Um SnapDrive für UNIX mit über NFS eingebundenen Verzeichnissen auf den Storage-Systemen zu verwenden, müssen Sie sicherstellen, dass die Speichersystemverzeichnisse korrekt an den Host exportiert werden. Wenn Ihr Host über mehrere Internet Protocol (IP)-Schnittstellen sowie Daten- und Verwaltungsschnittstellen zum Speichersystem verfügt, müssen Sie sicherstellen, dass das Verzeichnis korrekt sowohl auf die Daten- als auch auf die Verwaltungsschnittstellen exportiert wird. SnapDrive für UNIX gibt Warnungen vor, wenn alle diese Schnittstellen Lese- oder Schreibberechtigungen haben oder im Fall von `snapdrive snap connect` Befehl mit dem `-readonly` Option, mindestens schreibgeschützten Berechtigungen. Der `snapdrive snap restore` Und `snapdrive snap connect` Befehle schlagen fehl, wenn keine dieser Schnittstellen über die Berechtigung zum Zugriff auf das Verzeichnis verfügen.
+
+

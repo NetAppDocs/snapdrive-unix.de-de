@@ -1,0 +1,22 @@
+---
+permalink: solaris/concept_operation_with_multiple_operations_manager_servers_managing_storage_systems.html 
+sidebar: sidebar 
+keywords: snap, snapdrive, console, server, storage, manage, multiple 
+summary: Die folgende Ausgabe zeigt die Fehlermeldung, die Sie erhalten, wenn Storage-Systeme von mehreren Operations Manager-Konsole gemanagt werden. 
+---
+= Betrieb mit mehreren Operations Manager Konsolen-Servern, die Storage-Systeme managen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die folgende Ausgabe zeigt die Fehlermeldung, die Sie erhalten, wenn Storage-Systeme von mehreren Operations Manager-Konsole gemanagt werden.
+
+[listing]
+----
+[root]# snapdrive storage create -lun storage_array1:/vol/vol1/lun5 lun6 -lun storage_array2:/vol/vol1/lun2 -lunsize 100m
+0002-332 Admin error:SD.Storage.Write access denied on volume storage_array1:/vol/vol1 for user unix_host\root on Operations Manager server ops_mngr_server1
+SD.Storage.Write access denied on volume storage_array2:/vol/vol1 for user unix_host\root on Operations Manager server ops_mngr_server2
+----
+Storage_array1 wird über OPS_mngr_server1 verwaltet und Storage_array2 wird über OPS_mngr_Server2 verwaltet. Administrator von unix_Host ist nicht berechtigt, DatePecs auf Storage_array1 und Storage_array2 zu erstellen. Im vorhergehenden Beispiel zeigt SnapDrive für UNIX die Operations Manager-Konsole an, die zur Ermittlung des Zugriffs verwendet wird.
