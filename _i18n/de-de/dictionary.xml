@@ -4511,7 +4511,6 @@
   <block id="cf3645f3f4a80e438a3f419f7ab9de9d" category="paragraph">Der SnapDrive-Daemon startet automatisch nach der Installation.</block>
   <block id="61e0e72bb0fbf4da3b5a5aed31611da7" category="summary">Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines einrichten \ (SVMs, früher Vserver\).</block>
   <block id="0329c2655eaf5f4c57b9c57897b1186b" category="doc">Verbinden von Linux-Hosts mit Speichersystemen</block>
-  <block id="d74dad33e2cb07d06b1b4554532c02ea" category="paragraph">Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines (SVMs, früher Vserver genannt) einrichten.</block>
   <block id="9c3bfbb4258153b74c0020a62e4cd796" category="list-text">Sie müssen die Aggregate, die Volumes enthalten, der Aggregatliste der SVMs zuweisen, damit Sie die SnapDrive für UNIX Vorgänge ausführen können.</block>
   <block id="eb384912c3be9db5d6660d46264838ed" category="list-text">Sie müssen über eine oder mehrere SVMs verfügen, um Daten aus dem Cluster bereitzustellen.</block>
   <block id="57aec4ff903084462b15d55ca74af37d" category="paragraph">Die IP-Adresse der logischen SVM-Managementoberfläche (LIF) muss dem SVM-Namen zugeordnet sein, entweder im Domain Name Service (DNS) oder im<block ref="ad942c725cd0cae65ca4c63717ec464c" prefix=" " category="inline-code"></block> Datei:</block>
@@ -4519,7 +4518,6 @@
   <block id="3bcf8c1a64b0bb423c747574ad73fa3c" category="paragraph"><block ref="7c136f36254a962004c015c13cf71131" prefix="" category="inline-code"></block></block>
   <block id="dfdb2046a90a16a55d367932ee482619" category="paragraph">Wenn Sie ONTAP 8.2.3 oder höher verwenden, überspringen Sie diesen Schritt.</block>
   <block id="624dd461537c07029c019223bd1ea847" category="list-text">Erstellen eines Benutzers für die Daten-SVM:</block>
-  <block id="da65dcd12ae47b1bf7ffe137ca8e3c26" category="paragraph"><block ref="ecd86b2e71c4198fdc834959d03a9a99" prefix="" category="inline-code"></block></block>
   <block id="6c36362c418d90842a961aeae5857ea5" category="list-text">Vergewissern Sie sich, dass die SVM in SnapDrive für UNIX konfiguriert ist:</block>
   <block id="651306054b05d1f189f40b4e67b7b862" category="paragraph">Der Befehl führt den Benutzernamen und die IP-Adresse des Cluster-Managementservers und die Daten-SVM auf.</block>
   <block id="df778a34ed8a84341d0f871565fc04eb" category="list-text">Ändern Sie den Pfad der Managementoberfläche zum Datenpfad der SVM:</block>
@@ -6000,4 +5998,7 @@
   <block id="f8627092c31ff43a006814ef7cf773a5" category="sidebar">Administration für Linux</block>
   <block id="42bd37a4c5629f76f268e0de7f45570f" category="sidebar">Installation und Administration für Solaris</block>
   <block id="80dd8a6d27a4c1b305d26c223c52a9a7" category="sidebar">Installation and Administration for IBM AIX</block>
+  <block id="45f4423b7c470ea0d04be6d812ad5996" category="paragraph">Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines (SVMs, früher Vserver genannt) einrichten.</block>
+  <block id="00930ba81ea27b6c62845d08e0500327" category="paragraph"><block ref="7affedb2caa000166a46aed3d9bd1a06" prefix="" category="inline-code"></block></block>
+  <block id="1483ad74a09b4a3124c82e285d93ae63" category="admonition"><block ref="992dacfc30bbe144d7e60d29d7bbd430" prefix="" category="inline-code"></block> Ist der Name der SVM, und sie muss der Management-LIF-IP-Adresse zugeordnet sein.</block>
 </blocks>
