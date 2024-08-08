@@ -17,4 +17,4 @@ Innerhalb von SnapDrive für UNIX können Sie den Wert der fraktionalen Reserve 
 
 *Verwandte Informationen*
 
-http://www.netapp.com/us/media/tr-3483.pdf["Technischer Bericht von NetApp 3483: Thin Provisioning in a NetApp SAN or IP SAN Enterprise Environment"]
+https://www.netapp.com/pdf.html?item=/media/19670-tr-3483.pdf["Technischer Bericht von NetApp 3483: Thin Provisioning in a NetApp SAN or IP SAN Enterprise Environment"^]

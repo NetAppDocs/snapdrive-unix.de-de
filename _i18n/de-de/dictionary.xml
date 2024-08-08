@@ -3086,7 +3086,6 @@
   <block id="464731ea68043c5dbd4b1a2255e0ddc9" category="summary">Die Thin Provisioning-Funktion von SnapDrive für UNIX ermöglicht es dem Benutzer, mehr Speicherplatz für die Hosts zu haben, als tatsächlich auf dem Storage-System verfügbar ist.</block>
   <block id="b5e25c86b8fc4729491227e86c44097c" category="paragraph">Innerhalb von SnapDrive für UNIX können Sie den Wert der fraktionalen Reserve nicht festlegen. Data ONTAP Funktionen wie Autodelete und Autosize werden nicht integriert. Diese Data ONTAP Funktionen können sicher in Verbindung mit SnapDrive für UNIX genutzt werden. SnapDrive für UNIX sorgt jedoch nicht für ein Bewusstsein bei Autodelete- oder Autosize-Ereignissen.</block>
   <block id="0fbd8971220ee7d0340edcc5aa07a5c0" category="inline-link">Technischer Bericht von NetApp 3483: Thin Provisioning in a NetApp SAN or IP SAN Enterprise Environment</block>
-  <block id="d067ada9dffcf5d06f760689bd642d06" category="paragraph"><block ref="d067ada9dffcf5d06f760689bd642d06" category="inline-link-rx"></block></block>
   <block id="a23a2f85d7b3f88bb0576690d908a45b" category="summary">Dies ist ein Beispiel für den Befehl zur Datenerfassung.</block>
   <block id="fa53a051fd3d41d006f288df5586d893" category="doc">Beispiele für die Verwendung von snapdrive.dc</block>
   <block id="293fb09a203f5093adb402a833921291" category="paragraph">Dieses Beispiel verwendet die Befehlszeilenoptionen, um ein Verzeichnis und einen Namen für die resultierende Datei anzugeben.</block>
@@ -6001,4 +6000,5 @@
   <block id="45f4423b7c470ea0d04be6d812ad5996" category="paragraph">Für den erfolgreichen Betrieb von SnapDrive für UNIX müssen Sie Ihre Storage Virtual Machines (SVMs, früher Vserver genannt) einrichten.</block>
   <block id="00930ba81ea27b6c62845d08e0500327" category="paragraph"><block ref="7affedb2caa000166a46aed3d9bd1a06" prefix="" category="inline-code"></block></block>
   <block id="1483ad74a09b4a3124c82e285d93ae63" category="admonition"><block ref="992dacfc30bbe144d7e60d29d7bbd430" prefix="" category="inline-code"></block> Ist der Name der SVM, und sie muss der Management-LIF-IP-Adresse zugeordnet sein.</block>
+  <block id="2a7e0c5b8e814e03c21799cbb69f2d18" category="paragraph"><block ref="2a7e0c5b8e814e03c21799cbb69f2d18" category="inline-link-rx"></block></block>
 </blocks>
